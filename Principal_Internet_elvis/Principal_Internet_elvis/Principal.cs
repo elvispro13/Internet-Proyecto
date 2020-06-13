@@ -1,0 +1,71 @@
+﻿using Principal_Internet_elvis;
+using Proyecto_Internet;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Proyecto_dawelin
+{
+    public partial class Principal : Form
+    {
+        public Principal()
+        {
+            InitializeComponent();
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Program.inicio = new Inicio();
+            Program.inicio.Show();
+            Program.inicio.TopMost = true; 
+            Program.inicio.Focus(); 
+            Program.inicio.BringToFront();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void bntPago_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            Program.registroCliente = new RegistroCliente();
+            Program.registroCliente.Show();
+            Program.registroCliente.TopMost = true;
+            Program.registroCliente.Focus();
+            Program.registroCliente.BringToFront();
+
+        }
+
+        private void Principal_Resize(object sender, EventArgs e)
+        {
+            panel_logo.Left = this.Width - (panel_logo.Width + 25);
+        }
+    }
+}
