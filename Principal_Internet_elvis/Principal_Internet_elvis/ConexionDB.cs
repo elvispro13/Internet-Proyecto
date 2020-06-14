@@ -125,7 +125,7 @@ namespace Principal_Internet_elvis
             catch (Exception ex)
             {
                 rows = null;
-                MessageBox.Show("Problema: Al conectar");
+                MessageBox.Show("Problema: Al conectar"+ex);
             }
             return rows;
         }
