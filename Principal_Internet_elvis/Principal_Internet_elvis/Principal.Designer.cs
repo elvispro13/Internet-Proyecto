@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel_botones = new System.Windows.Forms.FlowLayoutPanel();
-            this.bntPago = new System.Windows.Forms.Button();
+            this.btnPago = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnPaquetes = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             // panel_botones
             // 
             this.panel_botones.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel_botones.Controls.Add(this.bntPago);
+            this.panel_botones.Controls.Add(this.btnPago);
             this.panel_botones.Controls.Add(this.btnCliente);
             this.panel_botones.Controls.Add(this.btnPaquetes);
             this.panel_botones.Controls.Add(this.btnFactura);
@@ -62,25 +62,27 @@
             this.panel_botones.Size = new System.Drawing.Size(267, 528);
             this.panel_botones.TabIndex = 1;
             // 
-            // bntPago
+            // btnPago
             // 
-            this.bntPago.BackColor = System.Drawing.Color.White;
-            this.bntPago.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntPago.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bntPago.Image = ((System.Drawing.Image)(resources.GetObject("bntPago.Image")));
-            this.bntPago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntPago.Location = new System.Drawing.Point(4, 3);
-            this.bntPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bntPago.Name = "bntPago";
-            this.bntPago.Size = new System.Drawing.Size(259, 60);
-            this.bntPago.TabIndex = 0;
-            this.bntPago.Text = "Pagos";
-            this.bntPago.UseVisualStyleBackColor = false;
-            this.bntPago.Click += new System.EventHandler(this.bntPago_Click);
+            this.btnPago.BackColor = System.Drawing.Color.White;
+            this.btnPago.Enabled = false;
+            this.btnPago.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPago.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPago.Image = ((System.Drawing.Image)(resources.GetObject("btnPago.Image")));
+            this.btnPago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPago.Location = new System.Drawing.Point(4, 3);
+            this.btnPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnPago.Name = "btnPago";
+            this.btnPago.Size = new System.Drawing.Size(259, 60);
+            this.btnPago.TabIndex = 0;
+            this.btnPago.Text = "Pagos";
+            this.btnPago.UseVisualStyleBackColor = false;
+            this.btnPago.Click += new System.EventHandler(this.bntPago_Click);
             // 
             // btnCliente
             // 
             this.btnCliente.BackColor = System.Drawing.Color.White;
+            this.btnCliente.Enabled = false;
             this.btnCliente.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.Image = global::Principal_Internet_elvis.Properties.Resources._4;
             this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -96,6 +98,7 @@
             // btnPaquetes
             // 
             this.btnPaquetes.BackColor = System.Drawing.Color.White;
+            this.btnPaquetes.Enabled = false;
             this.btnPaquetes.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaquetes.Image = global::Principal_Internet_elvis.Properties.Resources._6;
             this.btnPaquetes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,6 +113,7 @@
             // btnFactura
             // 
             this.btnFactura.BackColor = System.Drawing.Color.White;
+            this.btnFactura.Enabled = false;
             this.btnFactura.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFactura.Image = global::Principal_Internet_elvis.Properties.Resources._7;
             this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -124,6 +128,7 @@
             // btnUbicacion
             // 
             this.btnUbicacion.BackColor = System.Drawing.Color.White;
+            this.btnUbicacion.Enabled = false;
             this.btnUbicacion.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUbicacion.Image = global::Principal_Internet_elvis.Properties.Resources._3;
             this.btnUbicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,10 +139,12 @@
             this.btnUbicacion.TabIndex = 4;
             this.btnUbicacion.Text = "Ubicaion";
             this.btnUbicacion.UseVisualStyleBackColor = false;
+            this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
             // 
             // btnReportes
             // 
             this.btnReportes.BackColor = System.Drawing.Color.White;
+            this.btnReportes.Enabled = false;
             this.btnReportes.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.Image = global::Principal_Internet_elvis.Properties.Resources._5;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,6 +159,7 @@
             // btnConfiguracion
             // 
             this.btnConfiguracion.BackColor = System.Drawing.Color.White;
+            this.btnConfiguracion.Enabled = false;
             this.btnConfiguracion.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracion.Image = global::Principal_Internet_elvis.Properties.Resources._2;
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,6 +175,7 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.Enabled = false;
             this.btnSalir.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
@@ -225,7 +234,7 @@
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel panel_botones;
-        private System.Windows.Forms.Button bntPago;
+        private System.Windows.Forms.Button btnPago;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnPaquetes;
         private System.Windows.Forms.Button btnFactura;

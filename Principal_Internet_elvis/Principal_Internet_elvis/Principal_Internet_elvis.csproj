@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capsula.cs" />
+    <Compile Include="FormGenerales\Opciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerales\Opciones.Designer.cs">
+      <DependentUpon>Opciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConexionDB.cs" />
     <Compile Include="Configuracion.cs">
       <SubType>Form</SubType>
@@ -83,12 +89,21 @@
     <Compile Include="RegistroCliente.Designer.cs">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ubicacion\UbicacionTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ubicacion\UbicacionTipo.Designer.cs">
+      <DependentUpon>UbicacionTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormGenerales\Opciones.resx">
+      <DependentUpon>Opciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ubicacion\UbicacionTipo.resx">
+      <DependentUpon>UbicacionTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
@@ -178,5 +196,6 @@
   <ItemGroup>
     <None Include="Resources\logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

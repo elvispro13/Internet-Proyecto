@@ -1,4 +1,6 @@
-﻿using Proyecto_dawelin;
+﻿using Principal_Internet_elvis.Cliente;
+using Principal_Internet_elvis.Ubicacion;
+using Proyecto_dawelin;
 using Proyecto_Internet;
 using System;
 using System.Collections.Generic;
@@ -16,9 +18,11 @@ namespace Principal_Internet_elvis
         public static Principal principal;
         public static Inicio inicio;
         public static Usuarios usuarios;
-        public static RegistroCliente registroCliente;
+        public static Opciones OpCliente;
         public static Configuracion configuracion;
         public static ElegirRoles elegirRoles;
+
+        public static UbicacionTipo ubicacionTipo;
 
         [STAThread]
         static void Main()

@@ -1,4 +1,5 @@
 ﻿using Principal_Internet_elvis;
+using Principal_Internet_elvis.Cliente;
 using Proyecto_Internet;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,18 @@ namespace Proyecto_dawelin
         public Principal()
         {
             InitializeComponent();
+        }
+
+        public void activarConUser()
+        {
+            btnPago.Enabled = true;
+            btnCliente.Enabled = true;
+            btnPaquetes.Enabled = true;
+            btnFactura.Enabled = true;
+            btnUbicacion.Enabled = true;
+            btnReportes.Enabled = true;
+            btnConfiguracion.Enabled = true;
+            btnSalir.Enabled = true;
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -55,17 +68,27 @@ namespace Proyecto_dawelin
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            Program.registroCliente = new RegistroCliente();
-            Program.registroCliente.Show();
-            Program.registroCliente.TopMost = true;
-            Program.registroCliente.Focus();
-            Program.registroCliente.BringToFront();
-
+            Program.OpCliente = new Opciones();
+            Program.OpCliente.Show();
+            Program.OpCliente.TopMost = true;
+            Program.OpCliente.Focus();
+            Program.OpCliente.BringToFront();
+            Program.OpCliente.Text = "Clientes";
         }
 
         private void Principal_Resize(object sender, EventArgs e)
         {
             panel_logo.Left = this.Width - (panel_logo.Width + 25);
+        }
+
+        private void btnUbicacion_Click(object sender, EventArgs e)
+        {
+            Program.OpCliente = new Opciones();
+            Program.OpCliente.Show();
+            Program.OpCliente.TopMost = true;
+            Program.OpCliente.Focus();
+            Program.OpCliente.BringToFront();
+            Program.OpCliente.Text = "Ubicacion";
         }
     }
 }

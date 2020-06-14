@@ -74,6 +74,7 @@ namespace Proyecto_Internet
                 MessageBox.Show("Decripcion del usuario: "+rows[0].getCampos()[3]);
                 Program.principal.Focus();
                 Program.principal.BringToFront();
+                Program.principal.activarConUser();
                 this.Close();
             }
         }
