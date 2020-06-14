@@ -75,7 +75,7 @@
             this.btnPago.Name = "btnPago";
             this.btnPago.Size = new System.Drawing.Size(259, 60);
             this.btnPago.TabIndex = 0;
-            this.btnPago.Text = "Pagos Prueba";
+            this.btnPago.Text = "Pagos";
             this.btnPago.UseVisualStyleBackColor = false;
             this.btnPago.Click += new System.EventHandler(this.bntPago_Click);
             // 
@@ -210,7 +210,7 @@
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(740, 563);
