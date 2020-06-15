@@ -12,7 +12,7 @@ namespace Principal_Internet_elvis
 {
     class ConexionDB
     {
-        string servar = "mmm";
+        string servar = "";
         string db = "proyecto";
         string conexion;
         public SqlConnection conectardb = new SqlConnection();
@@ -23,7 +23,7 @@ namespace Principal_Internet_elvis
 
         public ConexionDB()
         {
-            try
+            /*try
             {
                 string ruta = Application.StartupPath + "\\config.txt";
                 if (File.Exists(ruta))
@@ -44,7 +44,7 @@ namespace Principal_Internet_elvis
             catch(Exception ex)
             {
 
-            }
+            }*/
 
             conexion = "Data Source=" + servar + ";Initial Catalog="+ db + ";Integrated Security=true";
             conectardb.ConnectionString = conexion;
