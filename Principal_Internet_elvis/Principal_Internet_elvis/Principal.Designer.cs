@@ -40,6 +40,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.img_logo = new System.Windows.Forms.PictureBox();
+            this.bntTemporal = new System.Windows.Forms.Button();
             this.panel_botones.SuspendLayout();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
@@ -208,12 +209,24 @@
             this.img_logo.TabIndex = 0;
             this.img_logo.TabStop = false;
             // 
+            // bntTemporal
+            // 
+            this.bntTemporal.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntTemporal.Location = new System.Drawing.Point(550, 286);
+            this.bntTemporal.Name = "bntTemporal";
+            this.bntTemporal.Size = new System.Drawing.Size(127, 123);
+            this.bntTemporal.TabIndex = 3;
+            this.bntTemporal.Text = "Temporal, prueba de fuentes";
+            this.bntTemporal.UseVisualStyleBackColor = true;
+            this.bntTemporal.Click += new System.EventHandler(this.bntTemporal_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(740, 563);
+            this.Controls.Add(this.bntTemporal);
             this.Controls.Add(this.panel_logo);
             this.Controls.Add(this.panel_botones);
             this.Font = new System.Drawing.Font("Vivaldi", 8.25F);
@@ -244,6 +257,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox img_logo;
+        private System.Windows.Forms.Button bntTemporal;
     }
 }
 

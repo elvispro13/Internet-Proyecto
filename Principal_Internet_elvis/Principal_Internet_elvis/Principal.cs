@@ -90,5 +90,14 @@ namespace Proyecto_dawelin
             Program.OpCliente.BringToFront();
             Program.OpCliente.Text = "Ubicacion";
         }
+
+        private void bntTemporal_Click(object sender, EventArgs e)
+        {
+
+            Prueba_de_fuentes fuente = new Prueba_de_fuentes();
+            fuente.Show();
+
+
+        }
     }
 }

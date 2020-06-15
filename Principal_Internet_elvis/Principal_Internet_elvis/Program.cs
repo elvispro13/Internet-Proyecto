@@ -21,6 +21,7 @@ namespace Principal_Internet_elvis
         public static Opciones OpCliente;
         public static Configuracion configuracion;
         public static ElegirRoles elegirRoles;
+        public static Prueba_de_fuentes Prueba_de_fuentes;
 
         public static UbicacionTipo ubicacionTipo;
 
