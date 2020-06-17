@@ -30,56 +30,56 @@ namespace Principal_Internet_elvis.Cliente
 
         private void bt_agregar_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("Ubicacion"))
+            if (this.Text.Equals("UBICACION"))
             {
                 Program.ubicacionTipo = new UbicacionTipo();
                 Program.ubicacionTipo.Show();
                 Program.ubicacionTipo.TopMost = true;
                 Program.ubicacionTipo.Focus();
                 Program.ubicacionTipo.BringToFront();
-                Program.ubicacionTipo.Text = "Ubicacion-Agregar";
+                Program.ubicacionTipo.Text = "UBICACION-AGREGAR";
                 this.Close();
             }
         }
 
         private void bt_buscar_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("Ubicacion"))
+            if (this.Text.Equals("UBICACION"))
             {
                 Program.ubicacionTipo = new UbicacionTipo();
                 Program.ubicacionTipo.Show();
                 Program.ubicacionTipo.TopMost = true;
                 Program.ubicacionTipo.Focus();
                 Program.ubicacionTipo.BringToFront();
-                Program.ubicacionTipo.Text = "Ubicacion-Buscar";
+                Program.ubicacionTipo.Text = "UBICACION-BUSCAR";
                 this.Close();
             }
         }
 
         private void bt_modificar_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("Ubicacion"))
+            if (this.Text.Equals("UBICACION"))
             {
                 Program.ubicacionTipo = new UbicacionTipo();
                 Program.ubicacionTipo.Show();
                 Program.ubicacionTipo.TopMost = true;
                 Program.ubicacionTipo.Focus();
                 Program.ubicacionTipo.BringToFront();
-                Program.ubicacionTipo.Text = "Ubicacion-Modificar";
+                Program.ubicacionTipo.Text = "UBICACION-MODIFICAR";
                 this.Close();
             }
         }
 
         private void bt_estado_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("Ubicacion"))
+            if (this.Text.Equals("UBICACION"))
             {
                 Program.ubicacionTipo = new UbicacionTipo();
                 Program.ubicacionTipo.Show();
                 Program.ubicacionTipo.TopMost = true;
                 Program.ubicacionTipo.Focus();
                 Program.ubicacionTipo.BringToFront();
-                Program.ubicacionTipo.Text = "Ubicacion-Estado";
+                Program.ubicacionTipo.Text = "UBICACION-ESTADO";
                 this.Close();
             }
         }

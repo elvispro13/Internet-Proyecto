@@ -47,7 +47,7 @@
             // 
             // panel_botones
             // 
-            this.panel_botones.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel_botones.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel_botones.Controls.Add(this.btnPago);
             this.panel_botones.Controls.Add(this.btnCliente);
             this.panel_botones.Controls.Add(this.btnPaquetes);

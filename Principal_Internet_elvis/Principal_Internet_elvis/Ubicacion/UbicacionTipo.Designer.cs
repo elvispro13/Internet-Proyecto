@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bt_lugar = new System.Windows.Forms.Button();
-            this.bt_barrio = new System.Windows.Forms.Button();
             this.bt_sector = new System.Windows.Forms.Button();
+            this.bt_barrio = new System.Windows.Forms.Button();
+            this.bt_lugar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,14 +47,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo";
             // 
-            // bt_lugar
+            // bt_sector
             // 
-            this.bt_lugar.Location = new System.Drawing.Point(6, 19);
-            this.bt_lugar.Name = "bt_lugar";
-            this.bt_lugar.Size = new System.Drawing.Size(139, 51);
-            this.bt_lugar.TabIndex = 1;
-            this.bt_lugar.Text = "LUGAR";
-            this.bt_lugar.UseVisualStyleBackColor = true;
+            this.bt_sector.Location = new System.Drawing.Point(6, 133);
+            this.bt_sector.Name = "bt_sector";
+            this.bt_sector.Size = new System.Drawing.Size(139, 51);
+            this.bt_sector.TabIndex = 3;
+            this.bt_sector.Text = "SECTOR";
+            this.bt_sector.UseVisualStyleBackColor = true;
+            this.bt_sector.Click += new System.EventHandler(this.bt_sector_Click);
             // 
             // bt_barrio
             // 
@@ -64,15 +65,17 @@
             this.bt_barrio.TabIndex = 2;
             this.bt_barrio.Text = "BARRIO";
             this.bt_barrio.UseVisualStyleBackColor = true;
+            this.bt_barrio.Click += new System.EventHandler(this.bt_barrio_Click);
             // 
-            // bt_sector
+            // bt_lugar
             // 
-            this.bt_sector.Location = new System.Drawing.Point(6, 133);
-            this.bt_sector.Name = "bt_sector";
-            this.bt_sector.Size = new System.Drawing.Size(139, 51);
-            this.bt_sector.TabIndex = 3;
-            this.bt_sector.Text = "SECTOR";
-            this.bt_sector.UseVisualStyleBackColor = true;
+            this.bt_lugar.Location = new System.Drawing.Point(6, 19);
+            this.bt_lugar.Name = "bt_lugar";
+            this.bt_lugar.Size = new System.Drawing.Size(139, 51);
+            this.bt_lugar.TabIndex = 1;
+            this.bt_lugar.Text = "LUGAR";
+            this.bt_lugar.UseVisualStyleBackColor = true;
+            this.bt_lugar.Click += new System.EventHandler(this.bt_lugar_Click);
             // 
             // UbicacionTipo
             // 

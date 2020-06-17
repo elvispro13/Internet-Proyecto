@@ -73,7 +73,7 @@ namespace Proyecto_dawelin
             Program.OpCliente.TopMost = true;
             Program.OpCliente.Focus();
             Program.OpCliente.BringToFront();
-            Program.OpCliente.Text = "Clientes";
+            Program.OpCliente.Text = "CLIENTES";
         }
 
         private void Principal_Resize(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace Proyecto_dawelin
             Program.OpCliente.TopMost = true;
             Program.OpCliente.Focus();
             Program.OpCliente.BringToFront();
-            Program.OpCliente.Text = "Ubicacion";
+            Program.OpCliente.Text = "UBICACION";
         }
     }
 }
