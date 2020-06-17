@@ -46,3 +46,4 @@ C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\P
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.csproj.CoreCompileInputs.cache
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.exe
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.pdb
+C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Prueba_de_fuentes.resources
