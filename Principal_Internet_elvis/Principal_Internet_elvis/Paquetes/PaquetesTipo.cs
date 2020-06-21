@@ -37,9 +37,12 @@ namespace Principal_Internet_elvis.Paquetes
 
         }
 
-        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyValue.Equals(13))
+            {
 
+            }
         }
     }
 }

@@ -89,9 +89,26 @@ namespace Principal_Internet_elvis.Ubicacion
             this.Close();
         }
 
-        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        private void UbicacionTipo_Load(object sender, EventArgs e)
         {
-            
+            ConexionDB conn = new ConexionDB();
+            conn.abrir();
+            List<string> campos = new List<string>();
+            campos.Add("' '");
+            campos.Add("4");
+            conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
+            conn.cerrar();
+            dgv_tabla.Columns[6].Visible = false;
+            dgv_tabla.Columns[7].Visible = false;
+            dgv_tabla.Columns[8].Visible = false;
+        }
+
+        private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue.Equals(13))
+            {
+                
+            }
         }
     }
 }

@@ -102,7 +102,7 @@
             this.groupBox2.Size = new System.Drawing.Size(202, 46);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "BUSCAR";
+            this.groupBox2.Text = "BUSCAR PAQUETES";
             // 
             // txt_buscar
             // 
@@ -110,7 +110,7 @@
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(186, 20);
             this.txt_buscar.TabIndex = 2;
-            this.txt_buscar.TextChanged += new System.EventHandler(this.txt_buscar_TextChanged);
+            this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
             // 
             // dgv_tabla
             // 
@@ -118,8 +118,10 @@
             this.dgv_tabla.AllowUserToDeleteRows = false;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tabla.Location = new System.Drawing.Point(12, 164);
+            this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
+            this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tabla.Size = new System.Drawing.Size(530, 150);
             this.dgv_tabla.TabIndex = 4;
             // 

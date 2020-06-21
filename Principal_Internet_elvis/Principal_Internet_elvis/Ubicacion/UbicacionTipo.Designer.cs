@@ -90,7 +90,7 @@
             this.groupBox2.Size = new System.Drawing.Size(202, 46);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "BUSCAR";
+            this.groupBox2.Text = "BUSCAR UBICACIONES";
             // 
             // txt_buscar
             // 
@@ -98,7 +98,7 @@
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(186, 20);
             this.txt_buscar.TabIndex = 2;
-            this.txt_buscar.TextChanged += new System.EventHandler(this.txt_buscar_TextChanged);
+            this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
             // 
             // dgv_tabla
             // 
@@ -106,8 +106,10 @@
             this.dgv_tabla.AllowUserToDeleteRows = false;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tabla.Location = new System.Drawing.Point(12, 150);
+            this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
+            this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tabla.Size = new System.Drawing.Size(435, 150);
             this.dgv_tabla.TabIndex = 2;
             // 
@@ -122,6 +124,7 @@
             this.Name = "UbicacionTipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ubicacion Tipo";
+            this.Load += new System.EventHandler(this.UbicacionTipo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
