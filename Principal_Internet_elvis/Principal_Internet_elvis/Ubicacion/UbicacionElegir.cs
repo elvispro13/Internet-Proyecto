@@ -50,7 +50,8 @@ namespace Principal_Internet_elvis.Ubicacion
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("''");
+                campos.Add("' '");
+                campos.Add("1");
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
@@ -61,8 +62,9 @@ namespace Principal_Internet_elvis.Ubicacion
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("''");
+                campos.Add("' '");
                 campos.Add("2");
+                campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
                 dgv_tabla.Columns[0].Visible = false;

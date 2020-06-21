@@ -20,7 +20,6 @@ namespace Principal_Internet_elvis
         public static Usuarios usuarios;
         public static Opciones OpCliente;
         public static Configuracion configuracion;
-        public static ElegirRoles elegirRoles;
 
         public static UbicacionTipo ubicacionTipo;
         public static UbicacionAgregar ubicacionAgregar;

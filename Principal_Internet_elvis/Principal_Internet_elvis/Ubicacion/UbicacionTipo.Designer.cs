@@ -32,7 +32,12 @@
             this.bt_sector = new System.Windows.Forms.Button();
             this.bt_barrio = new System.Windows.Forms.Button();
             this.bt_lugar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_buscar = new System.Windows.Forms.TextBox();
+            this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -42,14 +47,14 @@
             this.groupBox1.Controls.Add(this.bt_lugar);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(152, 193);
+            this.groupBox1.Size = new System.Drawing.Size(439, 80);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tipo";
+            this.groupBox1.Text = "TIPO";
             // 
             // bt_sector
             // 
-            this.bt_sector.Location = new System.Drawing.Point(6, 133);
+            this.bt_sector.Location = new System.Drawing.Point(296, 19);
             this.bt_sector.Name = "bt_sector";
             this.bt_sector.Size = new System.Drawing.Size(139, 51);
             this.bt_sector.TabIndex = 3;
@@ -59,7 +64,7 @@
             // 
             // bt_barrio
             // 
-            this.bt_barrio.Location = new System.Drawing.Point(6, 76);
+            this.bt_barrio.Location = new System.Drawing.Point(151, 19);
             this.bt_barrio.Name = "bt_barrio";
             this.bt_barrio.Size = new System.Drawing.Size(139, 51);
             this.bt_barrio.TabIndex = 2;
@@ -77,16 +82,50 @@
             this.bt_lugar.UseVisualStyleBackColor = true;
             this.bt_lugar.Click += new System.EventHandler(this.bt_lugar_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txt_buscar);
+            this.groupBox2.Location = new System.Drawing.Point(12, 98);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(202, 46);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "BUSCAR";
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Location = new System.Drawing.Point(6, 19);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Size = new System.Drawing.Size(186, 20);
+            this.txt_buscar.TabIndex = 2;
+            this.txt_buscar.TextChanged += new System.EventHandler(this.txt_buscar_TextChanged);
+            // 
+            // dgv_tabla
+            // 
+            this.dgv_tabla.AllowUserToAddRows = false;
+            this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tabla.Location = new System.Drawing.Point(12, 150);
+            this.dgv_tabla.Name = "dgv_tabla";
+            this.dgv_tabla.ReadOnly = true;
+            this.dgv_tabla.Size = new System.Drawing.Size(435, 150);
+            this.dgv_tabla.TabIndex = 2;
+            // 
             // UbicacionTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 215);
+            this.ClientSize = new System.Drawing.Size(461, 317);
+            this.Controls.Add(this.dgv_tabla);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "UbicacionTipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ubicacion Tipo";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,5 +136,8 @@
         private System.Windows.Forms.Button bt_lugar;
         private System.Windows.Forms.Button bt_sector;
         private System.Windows.Forms.Button bt_barrio;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txt_buscar;
+        private System.Windows.Forms.DataGridView dgv_tabla;
     }
 }

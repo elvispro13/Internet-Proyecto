@@ -63,17 +63,17 @@
     <Compile Include="Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ElegirRoles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ElegirRoles.Designer.cs">
-      <DependentUpon>ElegirRoles.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paquetes\PaquetesTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paquetes\PaquetesTipo.Designer.cs">
+      <DependentUpon>PaquetesTipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -118,11 +118,11 @@
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ElegirRoles.resx">
-      <DependentUpon>ElegirRoles.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paquetes\PaquetesTipo.resx">
+      <DependentUpon>PaquetesTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -217,5 +217,6 @@
   <ItemGroup>
     <None Include="Resources\lapiz.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

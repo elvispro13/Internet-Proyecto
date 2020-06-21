@@ -88,5 +88,10 @@ namespace Principal_Internet_elvis.Ubicacion
             Program.ubicacionAgregar.Focus();
             this.Close();
         }
+
+        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
