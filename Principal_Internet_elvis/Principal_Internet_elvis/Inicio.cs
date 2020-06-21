@@ -96,6 +96,7 @@ namespace Proyecto_Internet
             {
                 MessageBox.Show("Debe agregar un usuario principal");
             }
+            this.Focus();
             txtUsuario.Select();
         }
 

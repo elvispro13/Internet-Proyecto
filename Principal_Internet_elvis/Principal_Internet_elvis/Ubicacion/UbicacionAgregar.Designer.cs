@@ -31,13 +31,13 @@
             this.gb_codigo = new System.Windows.Forms.GroupBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.gb_codigo2 = new System.Windows.Forms.GroupBox();
+            this.bt_codigo2 = new System.Windows.Forms.Button();
             this.txt_codigo2 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.bt_agregar = new System.Windows.Forms.Button();
             this.bt_salir = new System.Windows.Forms.Button();
-            this.bt_codigo2 = new System.Windows.Forms.Button();
             this.gb_codigo.SuspendLayout();
             this.gb_codigo2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -72,6 +72,16 @@
             this.gb_codigo2.TabStop = false;
             this.gb_codigo2.Text = "CodigoR";
             // 
+            // bt_codigo2
+            // 
+            this.bt_codigo2.Location = new System.Drawing.Point(145, 17);
+            this.bt_codigo2.Name = "bt_codigo2";
+            this.bt_codigo2.Size = new System.Drawing.Size(27, 23);
+            this.bt_codigo2.TabIndex = 2;
+            this.bt_codigo2.Text = "...";
+            this.bt_codigo2.UseVisualStyleBackColor = true;
+            this.bt_codigo2.Click += new System.EventHandler(this.bt_codigo2_Click);
+            // 
             // txt_codigo2
             // 
             this.txt_codigo2.Location = new System.Drawing.Point(6, 19);
@@ -95,6 +105,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(197, 20);
             this.txt_nombre.TabIndex = 1;
+            this.txt_nombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nombre_KeyDown);
             // 
             // dgv_tabla
             // 
@@ -108,6 +119,7 @@
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tabla.Size = new System.Drawing.Size(506, 178);
             this.dgv_tabla.TabIndex = 3;
+            this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // bt_agregar
             // 
@@ -115,7 +127,7 @@
             this.bt_agregar.Name = "bt_agregar";
             this.bt_agregar.Size = new System.Drawing.Size(88, 34);
             this.bt_agregar.TabIndex = 4;
-            this.bt_agregar.Text = "AGREGAR";
+            this.bt_agregar.Text = "ACEPTAR";
             this.bt_agregar.UseVisualStyleBackColor = true;
             this.bt_agregar.Click += new System.EventHandler(this.bt_agregar_Click);
             // 
@@ -128,16 +140,6 @@
             this.bt_salir.Text = "SALIR";
             this.bt_salir.UseVisualStyleBackColor = true;
             this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
-            // 
-            // bt_codigo2
-            // 
-            this.bt_codigo2.Location = new System.Drawing.Point(145, 17);
-            this.bt_codigo2.Name = "bt_codigo2";
-            this.bt_codigo2.Size = new System.Drawing.Size(27, 23);
-            this.bt_codigo2.TabIndex = 2;
-            this.bt_codigo2.Text = "...";
-            this.bt_codigo2.UseVisualStyleBackColor = true;
-            this.bt_codigo2.Click += new System.EventHandler(this.bt_codigo2_Click);
             // 
             // UbicacionAgregar
             // 

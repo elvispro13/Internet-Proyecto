@@ -24,7 +24,22 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void bt_aceptar_Click(object sender, EventArgs e)
         {
-            Program.ubicacionAgregar.agregarDatos(1,"Listo");
+            int row = dgv_tabla.CurrentRow.Index;
+            int id = 0;
+            string nombre = "";
+
+            if (this.Text.Equals("ELEGIR-SECTOR"))
+            {
+                id = Int32.Parse(dgv_tabla.Rows[row].Cells[0].Value.ToString());
+                nombre = dgv_tabla.Rows[row].Cells[1].Value.ToString();
+            }
+            else if (this.Text.Equals("ELEGIR-BARRIO"))
+            {
+                id = Int32.Parse(dgv_tabla.Rows[row].Cells[0].Value.ToString());
+                nombre = dgv_tabla.Rows[row].Cells[2].Value.ToString();
+            }
+
+            Program.ubicacionAgregar.agregarDatos(id,nombre);
             this.Close();
         }
 
@@ -39,6 +54,7 @@ namespace Principal_Internet_elvis.Ubicacion
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
+                dgv_tabla.Columns[0].Visible = false;
             }
             else if (this.Text.Equals("ELEGIR-BARRIO"))
             {
@@ -49,6 +65,8 @@ namespace Principal_Internet_elvis.Ubicacion
                 campos.Add("2");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
+                dgv_tabla.Columns[0].Visible = false;
+                dgv_tabla.Columns[1].Visible = false;
             }
         }
     }
