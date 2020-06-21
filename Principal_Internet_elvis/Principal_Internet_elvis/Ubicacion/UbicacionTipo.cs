@@ -19,86 +19,74 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void bt_sector_Click(object sender, EventArgs e)
         {
+            Program.ubicacionAgregar = new UbicacionAgregar();
             if (this.Text.Equals("UBICACION-AGREGAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "AGREGAR-SECTOR";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
             else if (this.Text.Equals("UBICACION-BUSCAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "BUSCAR-SECTOR";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
             else if (this.Text.Equals("UBICACION-MODIFICAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "MODIFICAR-SECTOR";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
+            else if (this.Text.Equals("UBICACION-ESTADO"))
+            {
+                Program.ubicacionAgregar.Text = "ESTADO-SECTOR";
+            }
+            Program.ubicacionAgregar.Show();
+            Program.ubicacionAgregar.Focus();
+            this.Close();
         }
 
         private void bt_barrio_Click(object sender, EventArgs e)
         {
+            Program.ubicacionAgregar = new UbicacionAgregar();
             if (this.Text.Equals("UBICACION-AGREGAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "AGREGAR-BARRIO";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
             else if (this.Text.Equals("UBICACION-BUSCAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "BUSCAR-BARRIO";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
             else if (this.Text.Equals("UBICACION-MODIFICAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "MODIFICAR-BARRIO";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
+            else if (this.Text.Equals("UBICACION-ESTADO"))
+            {
+                Program.ubicacionAgregar.Text = "ESTADO-BARRIO";
+            }
+            Program.ubicacionAgregar.Show();
+            Program.ubicacionAgregar.Focus();
+            this.Close();
         }
 
         private void bt_lugar_Click(object sender, EventArgs e)
         {
+            Program.ubicacionAgregar = new UbicacionAgregar();
             if (this.Text.Equals("UBICACION-AGREGAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "AGREGAR-LUGAR";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
             else if (this.Text.Equals("UBICACION-BUSCAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "BUSCAR-LUGAR";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
             else if (this.Text.Equals("UBICACION-MODIFICAR"))
             {
-                Program.ubicacionAgregar = new UbicacionAgregar();
                 Program.ubicacionAgregar.Text = "MODIFICAR-LUGAR";
-                Program.ubicacionAgregar.Show();
-                Program.ubicacionAgregar.Focus();
-                this.Close();
             }
+            else if (this.Text.Equals("UBICACION-ESTADO"))
+            {
+                Program.ubicacionAgregar.Text = "ESTADO-LUGAR";
+            }
+            Program.ubicacionAgregar.Show();
+            Program.ubicacionAgregar.Focus();
+            this.Close();
         }
     }
 }
