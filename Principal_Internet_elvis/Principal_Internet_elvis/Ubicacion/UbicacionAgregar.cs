@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Principal_Internet_elvis.Ubicacion
 {
     public partial class UbicacionAgregar : Form
     {
         private int id2;
+        private int row = -1;
 
         public UbicacionAgregar()
         {
@@ -31,7 +33,7 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void limpiar()
         {
-            if (this.Text.Equals("AGREGAR-SECTOR") || this.Text.Equals("BUSCAR-SECTOR") || this.Text.Equals("MODIFICAR-SECTOR"))
+            if (this.Text.Equals("AGREGAR-SECTOR") || this.Text.Equals("BUSCAR-SECTOR") || this.Text.Equals("MODIFICAR-SECTOR") || this.Text.Equals("ESTADO-SECTOR"))
             {
                 gb_codigo.Enabled = false;
                 gb_codigo2.Enabled = false;
@@ -45,7 +47,7 @@ namespace Principal_Internet_elvis.Ubicacion
                 conn.cerrar();
                 dgv_tabla.Columns[0].Visible = false;
             }
-            else if (this.Text.Equals("AGREGAR-BARRIO") || this.Text.Equals("BUSCAR-BARRIO") || this.Text.Equals("MODIFICAR-BARRIO"))
+            else if (this.Text.Equals("AGREGAR-BARRIO") || this.Text.Equals("BUSCAR-BARRIO") || this.Text.Equals("MODIFICAR-BARRIO") || this.Text.Equals("ESTADO-BARRIO"))
             {
                 gb_codigo.Enabled = false;
                 gb_codigo2.Enabled = true;
@@ -60,7 +62,7 @@ namespace Principal_Internet_elvis.Ubicacion
                 dgv_tabla.Columns[0].Visible = false;
                 dgv_tabla.Columns[1].Visible = false;
             }
-            else if (this.Text.Equals("AGREGAR-LUGAR") || this.Text.Equals("BUSCAR-LUGAR") || this.Text.Equals("MODIFICAR-LUGAR"))
+            else if (this.Text.Equals("AGREGAR-LUGAR") || this.Text.Equals("BUSCAR-LUGAR") || this.Text.Equals("MODIFICAR-LUGAR") || this.Text.Equals("ESTADO-LUGAR"))
             {
                 gb_codigo.Enabled = false;
                 gb_codigo2.Enabled = true;
@@ -164,7 +166,7 @@ namespace Principal_Internet_elvis.Ubicacion
                 }
                 limpiar();
             }
-            else if (this.Text.Equals("BUSCAR-SECTOR"))
+            else if (this.Text.Equals("BUSCAR-SECTOR") || this.Text.Equals("MODIFICAR-SECTOR"))
             {
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
@@ -173,8 +175,23 @@ namespace Principal_Internet_elvis.Ubicacion
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
+                if(row != -1)
+                {
+                    ConexionDB conn2 = new ConexionDB();
+                    conn2.abrir();
+                    List<string> campos2 = new List<string>();
+                    campos2.Add(""+txt_codigo.Text);
+                    campos2.Add("'" + txt_nombre.Text + "'");
+                    List<Capsula> m = conn2.insertar("sp_modificar_sector", campos2);
+                    conn.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                    limpiar();
+                }
             }
-            else if (this.Text.Equals("BUSCAR-BARRIO"))
+            else if (this.Text.Equals("BUSCAR-BARRIO") || this.Text.Equals("MODIFICAR-BARRIO"))
             {
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
@@ -183,8 +200,24 @@ namespace Principal_Internet_elvis.Ubicacion
                 campos.Add("2");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
+                if (row != -1)
+                {
+                    ConexionDB conn2 = new ConexionDB();
+                    conn2.abrir();
+                    List<string> campos2 = new List<string>();
+                    campos2.Add("" + txt_codigo.Text);
+                    campos2.Add("" + id2 + "");
+                    campos2.Add("'" + txt_nombre.Text + "'");
+                    List<Capsula> m = conn2.insertar("sp_modificar_barrio", campos2);
+                    conn.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                    limpiar();
+                }
             }
-            else if (this.Text.Equals("BUSCAR-LUGAR"))
+            else if (this.Text.Equals("BUSCAR-LUGAR") || this.Text.Equals("MODIFICAR-LUGAR"))
             {
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
@@ -193,6 +226,22 @@ namespace Principal_Internet_elvis.Ubicacion
                 campos.Add("3");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
+                if (row != -1)
+                {
+                    ConexionDB conn2 = new ConexionDB();
+                    conn2.abrir();
+                    List<string> campos2 = new List<string>();
+                    campos2.Add("" + txt_codigo.Text);
+                    campos2.Add("" + id2 + "");
+                    campos2.Add("'" + txt_nombre.Text + "'");
+                    List<Capsula> m = conn2.insertar("sp_modificar_lugar", campos2);
+                    conn.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                    limpiar();
+                }
             }
         }
 
@@ -201,14 +250,32 @@ namespace Principal_Internet_elvis.Ubicacion
             Int32 selectedRowCount = dgv_tabla.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount > 0 && Text.Contains("MODIFICAR"))
             {
-                int row = dgv_tabla.CurrentRow.Index;
-                seleccionar(row);
+                row = dgv_tabla.CurrentRow.Index;
+                seleccionar();
             }
         }
 
-        private void seleccionar(int row)
+        private void seleccionar()
         {
-            txt_nombre.Text = dgv_tabla.Rows[row].Cells[0].Value.ToString();
+            if (this.Text.Contains("SECTOR"))
+            {
+                txt_codigo.Text = dgv_tabla.Rows[row].Cells[0].Value.ToString();
+                txt_nombre.Text = dgv_tabla.Rows[row].Cells[1].Value.ToString();
+            }
+            else if (this.Text.Contains("BARRIO"))
+            {
+                txt_codigo.Text = dgv_tabla.Rows[row].Cells[0].Value.ToString();
+                txt_codigo2.Text = dgv_tabla.Rows[row].Cells[1].Value.ToString();
+                txt_nombre.Text = dgv_tabla.Rows[row].Cells[2].Value.ToString();
+                id2 = int.Parse(dgv_tabla.Rows[row].Cells[1].Value.ToString());
+            }
+            else if (this.Text.Contains("LUGAR"))
+            {
+                txt_codigo.Text = dgv_tabla.Rows[row].Cells[0].Value.ToString();
+                txt_codigo2.Text = dgv_tabla.Rows[row].Cells[1].Value.ToString();
+                txt_nombre.Text = dgv_tabla.Rows[row].Cells[2].Value.ToString();
+                id2 = int.Parse(dgv_tabla.Rows[row].Cells[1].Value.ToString());
+            }
         }
     }
 }
