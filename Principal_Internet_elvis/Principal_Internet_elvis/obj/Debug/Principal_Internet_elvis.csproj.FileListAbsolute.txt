@@ -39,7 +39,6 @@ C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\P
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Proyecto_Internet.Inicio.resources
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Proyecto_dawelin.Principal.resources
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Properties.Resources.resources
-C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Prueba_de_fuentes.resources
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Ubicacion.UbicacionTipo.resources
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Usuarios.resources
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.csproj.GenerateResource.cache
@@ -48,3 +47,6 @@ C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\P
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.pdb
 C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Ubicacion.UbicacionAgregar.resources
 C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Ubicacion.UbicacionElegir.resources
+C:\Users\hj\source\repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Pago.resources
+C:\Users\hj\source\repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Ubicacion.UbicacionAgregar.resources
+C:\Users\hj\source\repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Ubicacion.UbicacionElegir.resources

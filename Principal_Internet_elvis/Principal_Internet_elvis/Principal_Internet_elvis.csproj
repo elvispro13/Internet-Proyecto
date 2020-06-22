@@ -75,6 +75,12 @@
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pago\Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pago\Pago.Designer.cs">
+      <DependentUpon>Pago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pago\Pago.resx">
+      <DependentUpon>Pago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -216,6 +225,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lapiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa chiquito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emblemunreadable_93487.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_icon-icons.com_55835.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savetheapplication_guardar_2958.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savetheapplication_guardar_2958%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_86054.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rounded-add-button_icon-icons.com_72592.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seo-social-web-network-internet_262_icon-icons.com_61518.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

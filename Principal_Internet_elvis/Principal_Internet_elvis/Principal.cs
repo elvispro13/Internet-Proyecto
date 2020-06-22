@@ -63,7 +63,8 @@ namespace Proyecto_dawelin
 
         private void bntPago_Click(object sender, EventArgs e)
         {
-            
+            Pago pago = new Pago();
+            pago.Show();
         }
 
         private void btnCliente_Click(object sender, EventArgs e)

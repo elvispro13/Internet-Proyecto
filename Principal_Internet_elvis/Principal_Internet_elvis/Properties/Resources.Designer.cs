@@ -19,7 +19,7 @@ namespace Principal_Internet_elvis.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -203,6 +203,16 @@ namespace Principal_Internet_elvis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel_86054 {
+            get {
+                object obj = ResourceManager.GetObject("cancel_86054", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check_circle_icon_143823 {
             get {
                 object obj = ResourceManager.GetObject("check_circle_icon_143823", resourceCulture);
@@ -216,6 +226,16 @@ namespace Principal_Internet_elvis.Properties {
         internal static System.Drawing.Bitmap config {
             get {
                 object obj = ResourceManager.GetObject("config", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emblemunreadable_93487 {
+            get {
+                object obj = ResourceManager.GetObject("emblemunreadable_93487", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +263,16 @@ namespace Principal_Internet_elvis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lupa_chiquito {
+            get {
+                object obj = ResourceManager.GetObject("lupa_chiquito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mas {
             get {
                 object obj = ResourceManager.GetObject("mas", resourceCulture);
@@ -256,6 +286,56 @@ namespace Principal_Internet_elvis.Properties {
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Print_icon_icons_com_55835 {
+            get {
+                object obj = ResourceManager.GetObject("Print_icon_icons_com_55835", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rounded_add_button_icon_icons_com_72592 {
+            get {
+                object obj = ResourceManager.GetObject("rounded_add_button_icon_icons_com_72592", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap savetheapplication_guardar_2958 {
+            get {
+                object obj = ResourceManager.GetObject("savetheapplication_guardar_2958", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap savetheapplication_guardar_2958_1_ {
+            get {
+                object obj = ResourceManager.GetObject("savetheapplication_guardar_2958_1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seo_social_web_network_internet_262_icon_icons_com_61518 {
+            get {
+                object obj = ResourceManager.GetObject("seo_social_web_network_internet_262_icon_icons_com_61518", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
