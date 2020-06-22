@@ -63,23 +63,31 @@
     <Compile Include="Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ElegirRoles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ElegirRoles.Designer.cs">
-      <DependentUpon>ElegirRoles.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Pago\Pago.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pago\Pago.Designer.cs">
       <DependentUpon>Pago.cs</DependentUpon>
+=======
+    <Compile Include="Paquetes\PaquetesAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paquetes\PaquetesAgregar.Designer.cs">
+      <DependentUpon>PaquetesAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paquetes\PaquetesTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paquetes\PaquetesTipo.Designer.cs">
+      <DependentUpon>PaquetesTipo.cs</DependentUpon>
+>>>>>>> 5b4a6b70299ee885c18e7b7fd3b290ab402a5df3
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -124,14 +132,19 @@
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ElegirRoles.resx">
-      <DependentUpon>ElegirRoles.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Pago\Pago.resx">
       <DependentUpon>Pago.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Paquetes\PaquetesAgregar.resx">
+      <DependentUpon>PaquetesAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paquetes\PaquetesTipo.resx">
+      <DependentUpon>PaquetesTipo.cs</DependentUpon>
+>>>>>>> 5b4a6b70299ee885c18e7b7fd3b290ab402a5df3
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -227,6 +240,7 @@
     <None Include="Resources\lapiz.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\lupa chiquito.png" />
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +263,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\seo-social-web-network-internet_262_icon-icons.com_61518.png" />
+=======
+    <Folder Include="Clientes\" />
+>>>>>>> 5b4a6b70299ee885c18e7b7fd3b290ab402a5df3
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

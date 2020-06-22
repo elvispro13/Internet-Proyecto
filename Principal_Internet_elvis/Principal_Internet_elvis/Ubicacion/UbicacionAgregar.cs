@@ -41,7 +41,7 @@ namespace Principal_Internet_elvis.Ubicacion
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("''");
+                campos.Add("' '");
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
@@ -55,7 +55,7 @@ namespace Principal_Internet_elvis.Ubicacion
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("''");
+                campos.Add("' '");
                 campos.Add("2");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
@@ -70,7 +70,7 @@ namespace Principal_Internet_elvis.Ubicacion
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("''");
+                campos.Add("' '");
                 campos.Add("3");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
@@ -98,14 +98,14 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void bt_codigo2_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("AGREGAR-BARRIO"))
+            if (this.Text.Equals("AGREGAR-BARRIO") || this.Text.Equals("MODIFICAR-BARRIO"))
             {
                 Program.ubicacionElegir = new UbicacionElegir();
                 Program.ubicacionElegir.Text = "ELEGIR-SECTOR";
                 Program.ubicacionElegir.Show();
                 Program.ubicacionElegir.Focus();
             }
-            else if (this.Text.Equals("AGREGAR-LUGAR"))
+            else if (this.Text.Equals("AGREGAR-LUGAR") || this.Text.Equals("MODIFICAR-LUGAR"))
             {
                 Program.ubicacionElegir = new UbicacionElegir();
                 Program.ubicacionElegir.Text = "ELEGIR-BARRIO";

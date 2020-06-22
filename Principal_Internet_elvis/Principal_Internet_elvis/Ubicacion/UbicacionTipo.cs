@@ -88,5 +88,49 @@ namespace Principal_Internet_elvis.Ubicacion
             Program.ubicacionAgregar.Focus();
             this.Close();
         }
+
+        private void UbicacionTipo_Load(object sender, EventArgs e)
+        {
+            ConexionDB conn = new ConexionDB();
+            conn.abrir();
+            List<string> campos = new List<string>();
+            campos.Add("' '");
+            campos.Add("4");
+            conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
+            conn.cerrar();
+            dgv_tabla.Columns[0].Visible = false;
+            dgv_tabla.Columns[1].Visible = false;
+            dgv_tabla.Columns[2].Visible = false;
+            dgv_tabla.Columns[6].Visible = false;
+            dgv_tabla.Columns[7].Visible = false;
+            dgv_tabla.Columns[8].Visible = false;
+        }
+
+        private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue.Equals(13))
+            {
+                ConexionDB conn = new ConexionDB();
+                conn.abrir();
+                List<string> campos = new List<string>();
+                if (txt_buscar.Text.Equals(""))
+                {
+                    campos.Add("' '");
+                }
+                else
+                {
+                    campos.Add("'" + txt_buscar.Text + "'");
+                }
+                campos.Add("4");
+                conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
+                conn.cerrar();
+                dgv_tabla.Columns[0].Visible = false;
+                dgv_tabla.Columns[1].Visible = false;
+                dgv_tabla.Columns[2].Visible = false;
+                dgv_tabla.Columns[6].Visible = false;
+                dgv_tabla.Columns[7].Visible = false;
+                dgv_tabla.Columns[8].Visible = false;
+            }
+        }
     }
 }

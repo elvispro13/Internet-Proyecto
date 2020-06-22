@@ -1,4 +1,5 @@
 ﻿using Principal_Internet_elvis.Cliente;
+using Principal_Internet_elvis.Paquetes;
 using Principal_Internet_elvis.Ubicacion;
 using Proyecto_dawelin;
 using Proyecto_Internet;
@@ -20,11 +21,13 @@ namespace Principal_Internet_elvis
         public static Usuarios usuarios;
         public static Opciones OpCliente;
         public static Configuracion configuracion;
-        public static ElegirRoles elegirRoles;
 
         public static UbicacionTipo ubicacionTipo;
         public static UbicacionAgregar ubicacionAgregar;
         public static UbicacionElegir ubicacionElegir;
+
+        public static PaquetesTipo paquetesTipo;
+        public static PaquetesAgregar paquetesAgregar;
 
         [STAThread]
         static void Main()
