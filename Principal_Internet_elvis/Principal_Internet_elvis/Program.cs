@@ -27,6 +27,7 @@ namespace Principal_Internet_elvis
         public static UbicacionElegir ubicacionElegir;
 
         public static PaquetesTipo paquetesTipo;
+        public static PaquetesAgregar paquetesAgregar;
 
         [STAThread]
         static void Main()

@@ -109,6 +109,7 @@
             this.btnPaquetes.TabIndex = 2;
             this.btnPaquetes.Text = "Paquetes";
             this.btnPaquetes.UseVisualStyleBackColor = false;
+            this.btnPaquetes.Click += new System.EventHandler(this.btnPaquetes_Click);
             // 
             // btnFactura
             // 

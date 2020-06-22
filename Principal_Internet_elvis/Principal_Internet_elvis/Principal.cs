@@ -90,5 +90,15 @@ namespace Proyecto_dawelin
             Program.OpCliente.BringToFront();
             Program.OpCliente.Text = "UBICACION";
         }
+
+        private void btnPaquetes_Click(object sender, EventArgs e)
+        {
+            Program.OpCliente = new Opciones();
+            Program.OpCliente.Show();
+            Program.OpCliente.TopMost = true;
+            Program.OpCliente.Focus();
+            Program.OpCliente.BringToFront();
+            Program.OpCliente.Text = "PAQUETES";
+        }
     }
 }

@@ -48,3 +48,4 @@ C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\P
 C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Ubicacion.UbicacionAgregar.resources
 C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Ubicacion.UbicacionElegir.resources
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Paquetes.PaquetesTipo.resources
+C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Paquetes.PaquetesAgregar.resources

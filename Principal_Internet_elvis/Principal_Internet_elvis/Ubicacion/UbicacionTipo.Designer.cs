@@ -94,7 +94,9 @@
             // 
             // txt_buscar
             // 
+            this.txt_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_buscar.Location = new System.Drawing.Point(6, 19);
+            this.txt_buscar.MaxLength = 255;
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(186, 20);
             this.txt_buscar.TabIndex = 2;

@@ -84,6 +84,7 @@
             // 
             // txt_codigo2
             // 
+            this.txt_codigo2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_codigo2.Location = new System.Drawing.Point(6, 19);
             this.txt_codigo2.Name = "txt_codigo2";
             this.txt_codigo2.Size = new System.Drawing.Size(133, 20);
@@ -101,7 +102,9 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombre.Location = new System.Drawing.Point(6, 19);
+            this.txt_nombre.MaxLength = 255;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(197, 20);
             this.txt_nombre.TabIndex = 1;
