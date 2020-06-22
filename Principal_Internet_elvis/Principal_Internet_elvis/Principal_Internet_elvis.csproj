@@ -237,6 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Clientes\" />
+    <Folder Include="Configuraciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
