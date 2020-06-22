@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capsula.cs" />
+    <Compile Include="ClientesCarpeta\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientesCarpeta\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGenerales\Opciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientesCarpeta\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGenerales\Opciones.resx">
       <DependentUpon>Opciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,8 +244,6 @@
   <ItemGroup>
     <None Include="Resources\lapiz.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clientes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

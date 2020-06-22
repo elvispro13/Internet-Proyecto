@@ -146,9 +146,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(22, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "DNI:";
+            this.label3.Text = "RTN:";
             // 
             // txtNombre
             // 
@@ -208,6 +208,7 @@
             // rbNombre
             // 
             this.rbNombre.AutoSize = true;
+            this.rbNombre.Checked = true;
             this.rbNombre.Location = new System.Drawing.Point(56, 20);
             this.rbNombre.Name = "rbNombre";
             this.rbNombre.Size = new System.Drawing.Size(62, 17);
@@ -223,7 +224,6 @@
             this.rbDni.Name = "rbDni";
             this.rbDni.Size = new System.Drawing.Size(44, 17);
             this.rbDni.TabIndex = 2;
-            this.rbDni.TabStop = true;
             this.rbDni.Text = "DNI";
             this.rbDni.UseVisualStyleBackColor = true;
             // 
@@ -300,7 +300,7 @@
             this.gDatosCon.Size = new System.Drawing.Size(485, 135);
             this.gDatosCon.TabIndex = 5;
             this.gDatosCon.TabStop = false;
-            this.gDatosCon.Text = "DATOS DEL CONCEPTO";
+            this.gDatosCon.Text = "DATOS ";
             // 
             // dtpMesPago
             // 
@@ -543,6 +543,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.gDatosCli);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAgregar);
@@ -552,7 +553,6 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.gDatosCon);
             this.Controls.Add(this.gBusConcep);
-            this.Controls.Add(this.gDatosCli);
             this.Controls.Add(this.gBusCliente);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

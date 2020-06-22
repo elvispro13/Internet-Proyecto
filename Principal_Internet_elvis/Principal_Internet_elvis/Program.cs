@@ -1,4 +1,5 @@
-﻿using Principal_Internet_elvis.Cliente;
+﻿using Principal_Internet_elvis.ClientesCarpeta;
+using Principal_Internet_elvis.FormmGenerales;
 using Principal_Internet_elvis.Pagos;
 using Principal_Internet_elvis.Paquetes;
 using Principal_Internet_elvis.Ubicacion;
@@ -31,6 +32,8 @@ namespace Principal_Internet_elvis
         public static PaquetesAgregar paquetesAgregar;
 
         public static Pago pago;
+
+        public static Clientes clientes;
 
         [STAThread]
         static void Main()

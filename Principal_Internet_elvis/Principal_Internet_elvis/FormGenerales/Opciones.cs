@@ -1,4 +1,5 @@
-﻿using Principal_Internet_elvis.Paquetes;
+﻿using Principal_Internet_elvis.ClientesCarpeta;
+using Principal_Internet_elvis.Paquetes;
 using Principal_Internet_elvis.Ubicacion;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Principal_Internet_elvis.Cliente
+namespace Principal_Internet_elvis.FormmGenerales
 {
     public partial class Opciones : Form
     {
@@ -51,6 +52,16 @@ namespace Principal_Internet_elvis.Cliente
                 Program.paquetesTipo.Text = "PAQUETES-AGREGAR";
                 this.Close();
             }
+            else if (this.Text.Equals("CLIENTES"))
+            {
+                Program.clientes = new Clientes();
+                Program.clientes.Show();
+                Program.clientes.TopMost = true;
+                Program.clientes.Focus();
+                Program.clientes.BringToFront();
+                Program.clientes.Text = "CLIENTE-AGREGAR";
+                this.Close();
+            }
         }
 
         private void bt_buscar_Click(object sender, EventArgs e)
@@ -73,6 +84,16 @@ namespace Principal_Internet_elvis.Cliente
                 Program.paquetesTipo.Focus();
                 Program.paquetesTipo.BringToFront();
                 Program.paquetesTipo.Text = "PAQUETES-BUSCAR";
+                this.Close();
+            }
+            else if (this.Text.Equals("CLIENTES"))
+            {
+                Program.clientes = new Clientes();
+                Program.clientes.Show();
+                Program.clientes.TopMost = true;
+                Program.clientes.Focus();
+                Program.clientes.BringToFront();
+                Program.clientes.Text = "CLIENTE-BUSCAR";
                 this.Close();
             }
         }
@@ -99,6 +120,16 @@ namespace Principal_Internet_elvis.Cliente
                 Program.paquetesTipo.Text = "PAQUETES-MODIFICAR";
                 this.Close();
             }
+            else if (this.Text.Equals("CLIENTES"))
+            {
+                Program.clientes = new Clientes();
+                Program.clientes.Show();
+                Program.clientes.TopMost = true;
+                Program.clientes.Focus();
+                Program.clientes.BringToFront();
+                Program.clientes.Text = "CLIENTE-MODIFICAR";
+                this.Close();
+            }
         }
 
         private void bt_estado_Click(object sender, EventArgs e)
@@ -121,6 +152,16 @@ namespace Principal_Internet_elvis.Cliente
                 Program.paquetesTipo.Focus();
                 Program.paquetesTipo.BringToFront();
                 Program.paquetesTipo.Text = "PAQUETES-ESTADO";
+                this.Close();
+            }
+            else if (this.Text.Equals("CLIENTES"))
+            {
+                Program.clientes = new Clientes();
+                Program.clientes.Show();
+                Program.clientes.TopMost = true;
+                Program.clientes.Focus();
+                Program.clientes.BringToFront();
+                Program.clientes.Text = "CLIENTE-ESTADO";
                 this.Close();
             }
         }

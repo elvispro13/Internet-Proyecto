@@ -1,5 +1,5 @@
 ﻿using Principal_Internet_elvis;
-using Principal_Internet_elvis.Cliente;
+using Principal_Internet_elvis.FormmGenerales;
 using Principal_Internet_elvis.Pagos;
 using Proyecto_Internet;
 using System;
