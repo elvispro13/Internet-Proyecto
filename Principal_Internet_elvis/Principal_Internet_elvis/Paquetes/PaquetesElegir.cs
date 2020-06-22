@@ -82,5 +82,17 @@ namespace Principal_Internet_elvis.Paquetes
         {
             Close();
         }
+
+        private void dgv_tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_tabla.Rows[e.RowIndex].Selected)
+            {
+                dgv_tabla.Rows[e.RowIndex].Selected = false;
+            }
+            else
+            {
+                dgv_tabla.Rows[e.RowIndex].Selected = true;
+            }
+        }
     }
 }
