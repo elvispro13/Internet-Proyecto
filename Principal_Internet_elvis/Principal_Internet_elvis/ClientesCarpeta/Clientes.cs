@@ -16,5 +16,10 @@ namespace Principal_Internet_elvis.ClientesCarpeta
         {
             InitializeComponent();
         }
+
+        private void Clientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
