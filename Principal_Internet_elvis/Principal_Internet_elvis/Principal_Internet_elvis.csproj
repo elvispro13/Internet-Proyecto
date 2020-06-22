@@ -133,6 +133,9 @@
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pagos\Pago.resx">
+      <DependentUpon>Pago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Paquetes\PaquetesAgregar.resx">
       <DependentUpon>PaquetesAgregar.cs</DependentUpon>
     </EmbeddedResource>

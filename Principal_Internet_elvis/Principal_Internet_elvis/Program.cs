@@ -1,4 +1,5 @@
 ﻿using Principal_Internet_elvis.Cliente;
+using Principal_Internet_elvis.Pagos;
 using Principal_Internet_elvis.Paquetes;
 using Principal_Internet_elvis.Ubicacion;
 using Proyecto_dawelin;
@@ -28,6 +29,8 @@ namespace Principal_Internet_elvis
 
         public static PaquetesTipo paquetesTipo;
         public static PaquetesAgregar paquetesAgregar;
+
+        public static Pago pago;
 
         [STAThread]
         static void Main()
