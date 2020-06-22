@@ -63,10 +63,10 @@
       <DependentUpon>Opciones.cs</DependentUpon>
     </Compile>
     <Compile Include="ConexionDB.cs" />
-    <Compile Include="Configuracion.cs">
+    <Compile Include="Configuraciones\Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configuracion.Designer.cs">
+    <Compile Include="Configuraciones\Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
@@ -136,7 +136,7 @@
     <EmbeddedResource Include="FormGenerales\Opciones.resx">
       <DependentUpon>Opciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Configuracion.resx">
+    <EmbeddedResource Include="Configuraciones\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
