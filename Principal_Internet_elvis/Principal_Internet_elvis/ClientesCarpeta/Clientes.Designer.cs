@@ -264,6 +264,7 @@
             this.bt_salir.TabIndex = 11;
             this.bt_salir.Text = "SALIR";
             this.bt_salir.UseVisualStyleBackColor = true;
+            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
             // 
             // bt_aceptar
             // 
@@ -273,6 +274,7 @@
             this.bt_aceptar.TabIndex = 12;
             this.bt_aceptar.Text = "ACEPTAR";
             this.bt_aceptar.UseVisualStyleBackColor = true;
+            this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
             // 
             // bt_paquetes
             // 

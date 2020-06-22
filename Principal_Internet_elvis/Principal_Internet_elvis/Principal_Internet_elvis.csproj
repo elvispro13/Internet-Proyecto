@@ -87,6 +87,12 @@
     <Compile Include="Paquetes\PaquetesAgregar.Designer.cs">
       <DependentUpon>PaquetesAgregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paquetes\PaquetesElegir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paquetes\PaquetesElegir.Designer.cs">
+      <DependentUpon>PaquetesElegir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Paquetes\PaquetesTipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paquetes\PaquetesAgregar.resx">
       <DependentUpon>PaquetesAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paquetes\PaquetesElegir.resx">
+      <DependentUpon>PaquetesElegir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paquetes\PaquetesTipo.resx">
       <DependentUpon>PaquetesTipo.cs</DependentUpon>

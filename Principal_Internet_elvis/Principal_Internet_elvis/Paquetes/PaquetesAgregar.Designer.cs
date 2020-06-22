@@ -39,6 +39,7 @@
             this.bt_aceptar = new System.Windows.Forms.Button();
             this.bt_salir = new System.Windows.Forms.Button();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
+            this.bt_servicios = new System.Windows.Forms.Button();
             this.gb_codigo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_c1.SuspendLayout();
@@ -71,7 +72,7 @@
             this.groupBox2.Size = new System.Drawing.Size(184, 51);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "DESCRIPCION";
+            this.groupBox2.Text = "DESCRIPCION/BUSCAR";
             // 
             // txt_descripcion
             // 
@@ -155,11 +156,22 @@
             this.dgv_tabla.TabIndex = 6;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellContentClick);
             // 
+            // bt_servicios
+            // 
+            this.bt_servicios.Location = new System.Drawing.Point(265, 188);
+            this.bt_servicios.Name = "bt_servicios";
+            this.bt_servicios.Size = new System.Drawing.Size(111, 39);
+            this.bt_servicios.TabIndex = 7;
+            this.bt_servicios.Text = "SERVICIOS";
+            this.bt_servicios.UseVisualStyleBackColor = true;
+            this.bt_servicios.Click += new System.EventHandler(this.bt_servicios_Click);
+            // 
             // PaquetesAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 239);
+            this.Controls.Add(this.bt_servicios);
             this.Controls.Add(this.dgv_tabla);
             this.Controls.Add(this.bt_salir);
             this.Controls.Add(this.bt_aceptar);
@@ -197,5 +209,6 @@
         private System.Windows.Forms.Button bt_aceptar;
         private System.Windows.Forms.Button bt_salir;
         private System.Windows.Forms.DataGridView dgv_tabla;
+        private System.Windows.Forms.Button bt_servicios;
     }
 }

@@ -21,5 +21,23 @@ namespace Principal_Internet_elvis.ClientesCarpeta
         {
 
         }
+
+        private void limpiar()
+        {
+            if (this.Text.Contains("CLIENTE"))
+            {
+
+            }
+        }
+
+        private void bt_aceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_salir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

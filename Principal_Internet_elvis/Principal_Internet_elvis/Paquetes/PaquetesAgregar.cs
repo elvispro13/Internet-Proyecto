@@ -41,6 +41,8 @@ namespace Principal_Internet_elvis.Paquetes
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
                 conn.cerrar();
+                bt_servicios.Enabled = false;
+                bt_servicios.Visible = false;
             }
             else if (this.Text.Contains("PAQUETE"))
             {
@@ -266,6 +268,22 @@ namespace Principal_Internet_elvis.Paquetes
                 txt_c1.Text = dgv_tabla.Rows[row].Cells[2].Value.ToString();
                 txt_c2.Text = dgv_tabla.Rows[row].Cells[3].Value.ToString();
                 estado = int.Parse(dgv_tabla.Rows[row].Cells[4].Value.ToString());
+            }
+        }
+
+        private void bt_servicios_Click(object sender, EventArgs e)
+        {
+            if (row != -1)
+            {
+                Program.paquetesElegir = new PaquetesElegir();
+                Program.paquetesElegir.id = int.Parse(txt_codigo.Text);
+                Program.paquetesElegir.Text = "ELEGIR-SERVICIOS";
+                Program.paquetesElegir.Show();
+                Program.paquetesElegir.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Debe elegir un paquete");
             }
         }
 
