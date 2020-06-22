@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pago));
             this.gDatosCli = new System.Windows.Forms.GroupBox();
+            this.btnbusCLI = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDirec = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
@@ -50,6 +50,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.gDatosCon = new System.Windows.Forms.GroupBox();
             this.dtpMesPago = new System.Windows.Forms.DateTimePicker();
+            this.btnBusCON = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,8 +73,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnBusCON = new System.Windows.Forms.Button();
-            this.btnbusCLI = new System.Windows.Forms.Button();
             this.gDatosCli.SuspendLayout();
             this.gBusCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -105,6 +104,19 @@
             this.gDatosCli.TabIndex = 0;
             this.gDatosCli.TabStop = false;
             this.gDatosCli.Text = "DATOS DEL CLIENTE";
+            // 
+            // btnbusCLI
+            // 
+            this.btnbusCLI.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
+            this.btnbusCLI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbusCLI.Location = new System.Drawing.Point(371, 14);
+            this.btnbusCLI.Name = "btnbusCLI";
+            this.btnbusCLI.Size = new System.Drawing.Size(108, 47);
+            this.btnbusCLI.TabIndex = 8;
+            this.btnbusCLI.Text = "Buscar";
+            this.btnbusCLI.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbusCLI.UseVisualStyleBackColor = true;
+            this.btnbusCLI.Click += new System.EventHandler(this.btnbusCLI_Click);
             // 
             // label4
             // 
@@ -297,6 +309,19 @@
             this.dtpMesPago.Size = new System.Drawing.Size(200, 20);
             this.dtpMesPago.TabIndex = 7;
             // 
+            // btnBusCON
+            // 
+            this.btnBusCON.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
+            this.btnBusCON.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBusCON.Location = new System.Drawing.Point(371, 14);
+            this.btnBusCON.Name = "btnBusCON";
+            this.btnBusCON.Size = new System.Drawing.Size(108, 47);
+            this.btnBusCON.TabIndex = 8;
+            this.btnBusCON.Text = "Buscar";
+            this.btnBusCON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusCON.UseVisualStyleBackColor = true;
+            this.btnBusCON.Click += new System.EventHandler(this.btnBusCON_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -451,7 +476,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.Location = new System.Drawing.Point(12, 410);
             this.btnGuardar.Name = "btnGuardar";
@@ -505,32 +530,6 @@
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnBusCON
-            // 
-            this.btnBusCON.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
-            this.btnBusCON.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusCON.Location = new System.Drawing.Point(371, 14);
-            this.btnBusCON.Name = "btnBusCON";
-            this.btnBusCON.Size = new System.Drawing.Size(108, 47);
-            this.btnBusCON.TabIndex = 8;
-            this.btnBusCON.Text = "Buscar";
-            this.btnBusCON.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBusCON.UseVisualStyleBackColor = true;
-            this.btnBusCON.Click += new System.EventHandler(this.btnBusCON_Click);
-            // 
-            // btnbusCLI
-            // 
-            this.btnbusCLI.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
-            this.btnbusCLI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbusCLI.Location = new System.Drawing.Point(371, 14);
-            this.btnbusCLI.Name = "btnbusCLI";
-            this.btnbusCLI.Size = new System.Drawing.Size(108, 47);
-            this.btnbusCLI.TabIndex = 8;
-            this.btnbusCLI.Text = "Buscar";
-            this.btnbusCLI.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbusCLI.UseVisualStyleBackColor = true;
-            this.btnbusCLI.Click += new System.EventHandler(this.btnbusCLI_Click);
             // 
             // Pago
             // 

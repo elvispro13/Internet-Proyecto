@@ -1,5 +1,6 @@
 ﻿using Principal_Internet_elvis;
 using Principal_Internet_elvis.Cliente;
+using Principal_Internet_elvis.Pagos;
 using Proyecto_Internet;
 using System;
 using System.Collections.Generic;
@@ -63,8 +64,8 @@ namespace Proyecto_dawelin
 
         private void bntPago_Click(object sender, EventArgs e)
         {
-            Pago pago = new Pago();
-            pago.Show();
+            Program.pago = new Pago();
+            Program.pago.Show();
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
