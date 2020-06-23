@@ -68,6 +68,29 @@ namespace Principal_Internet_elvis
             conectardb.Close();
         }
 
+        public DataTable empresa(string nombre, string slogan, Byte[] logo, int tipo)
+        {
+            try
+            {
+                cmd = new SqlCommand("sp_empresa", conectardb);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+                cmd.Parameters.Add("@eslogan", SqlDbType.NVarChar).Value = nombre;
+                cmd.Parameters.Add("@logo", SqlDbType.Image).Value = logo;
+                cmd.Parameters.Add("@tipo", SqlDbType.Int).Value = tipo;
+
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problema: Al conectar" + ex);
+            }
+            return dt;
+        }
+
         public List<Capsula> insertar(string proceso, List<string> p)
         {
             List<Capsula> rows = new List<Capsula>();
