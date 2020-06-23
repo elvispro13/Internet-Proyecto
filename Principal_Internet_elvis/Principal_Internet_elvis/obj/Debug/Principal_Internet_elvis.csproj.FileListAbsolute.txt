@@ -31,7 +31,6 @@ C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\P
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.exe
 C:\Users\hj\Source\Repos\elvispro13\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.pdb
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.csprojAssemblyReference.cache
-C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Cliente.Opciones.resources
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Configuracion.resources
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Proyecto_Internet.Inicio.resources
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Paquetes.PaquetesAgregar.resources
@@ -72,3 +71,6 @@ C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.pdb
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.csprojAssemblyReference.cache
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Paquetes.PaquetesElegir.resources
+C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.ClientesCarpeta.Clientes.resources
+C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.FormmGenerales.Opciones.resources
+C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Paquetes.PaquetesElegir.resources
