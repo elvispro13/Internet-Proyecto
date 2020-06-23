@@ -45,7 +45,35 @@ namespace Principal_Internet_elvis
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Dispose();
+        }
+
+        private void fontDialog1_Apply(object sender, EventArgs e)
+        {
+
+        }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Configuracion_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                lblServidor.Font = fontDialog1.Font;
+            }
+        }
+
+        private void txtServer_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

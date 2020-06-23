@@ -108,5 +108,11 @@ namespace Proyecto_dawelin
             Program.OpCliente.BringToFront();
             Program.OpCliente.Text = "PAQUETES";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Program.configuracion = new Configuracion();
+            Program.configuracion.Show();
+        }
     }
 }
