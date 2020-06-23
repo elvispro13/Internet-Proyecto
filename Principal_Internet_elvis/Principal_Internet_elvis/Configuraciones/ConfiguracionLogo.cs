@@ -62,6 +62,14 @@ namespace Principal_Internet_elvis.Configuraciones
             {
                 txt_nombre.Text = m.Rows[i]["nombre"].ToString();
                 txt_eslogan.Text = m.Rows[i]["eslogan"].ToString();
+                txt_rtn.Text = m.Rows[i]["rtn"].ToString();
+                txt_cai.Text = m.Rows[i]["cai"].ToString();
+                txt_correo.Text = m.Rows[i]["correo"].ToString();
+                dtp_fechalimite.Value = DateTime.Parse(m.Rows[i]["fechalimite"].ToString());
+                txt_desde.Text = m.Rows[i]["desde"].ToString();
+                txt_hasta.Text = m.Rows[i]["hasta"].ToString();
+                txt_moneda.Text = m.Rows[i]["moneda"].ToString();
+
                 byte[] logo = (byte[])m.Rows[i]["logo"];
                 MemoryStream ms = new MemoryStream(logo);
                 pb_logo.Image = Image.FromStream(ms);
