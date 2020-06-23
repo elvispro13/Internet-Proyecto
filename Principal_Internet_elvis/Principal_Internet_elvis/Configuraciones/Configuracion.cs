@@ -1,4 +1,5 @@
-﻿using Proyecto_Internet;
+﻿using Principal_Internet_elvis.Configuraciones;
+using Proyecto_Internet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,20 +63,59 @@ namespace Principal_Internet_elvis
 
         private void Configuracion_Load(object sender, EventArgs e)
         {
-            
+            addFuente(Program.principal.fuente);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            if (fd_fuente.ShowDialog() == DialogResult.OK)
             {
-                lblServidor.Font = fontDialog1.Font;
+                Capsula f = new Capsula();
+                f.setFuente(fd_fuente.Font);
+
+                MemoryStream memorystream = new MemoryStream();
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(memorystream, f);
+                byte[] fuente = memorystream.GetBuffer();
+
+                ConexionDB conn = new ConexionDB();
+                conn.abrir();
+                DataTable r = conn.fuente(Program.principal.idu,fuente,1);
+                conn.cerrar();
+
+                for(int i = 0; i < r.Rows.Count; i++)
+                {
+                    MessageBox.Show(r.Rows[i]["mensaje"].ToString());
+                }
+
+                Program.principal.fuente = f.getFuente();
+                Program.actualizarFuente();
+
+                addFuente(f.getFuente());
             }
         }
 
         private void txtServer_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bt_empresa_Click(object sender, EventArgs e)
+        {
+            Program.configuracionLogo = new ConfiguracionLogo();
+            Program.configuracionLogo.Text = "EMPRESA";
+            Program.configuracionLogo.Show();
+            Program.configuracionLogo.Focus();
+            Close();
+        }
+
+        private void addFuente(Font fuente)
+        {
+            gb_opciones.Font = fuente;
+            gb_servidor.Font = fuente;
+            bt_empresa.Font = fuente;
+            btnSelFue.Font = fuente;
+            btnAceptar.Font = fuente;
         }
     }
 }

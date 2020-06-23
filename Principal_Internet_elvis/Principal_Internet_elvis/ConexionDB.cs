@@ -68,7 +68,39 @@ namespace Principal_Internet_elvis
             conectardb.Close();
         }
 
-        public DataTable empresa(string nombre, string slogan, Byte[] logo, int tipo)
+        public DataTable fuente(int id ,byte[] fuente, int tipo)
+        {
+            try
+            {
+                cmd = new SqlCommand("sp_fuente", conectardb);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@fuente", SqlDbType.Image).Value = fuente;
+                cmd.Parameters.Add("@tipo", SqlDbType.Int).Value = tipo;
+
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problema: Al conectar" + ex);
+            }
+            return dt;
+        }
+
+        public DataTable empresa(string nombre, 
+            string eslogan, 
+            Byte[] logo, 
+            string rtn,
+            string cai,
+            string correo,
+            string fechalimite,
+            string desde,
+            string hasta,
+            string moneda,
+            int tipo)
         {
             try
             {
@@ -76,8 +108,16 @@ namespace Principal_Internet_elvis
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
-                cmd.Parameters.Add("@eslogan", SqlDbType.NVarChar).Value = nombre;
+                cmd.Parameters.Add("@eslogan", SqlDbType.NVarChar).Value = eslogan;
                 cmd.Parameters.Add("@logo", SqlDbType.Image).Value = logo;
+                cmd.Parameters.Add("@rtn", SqlDbType.NVarChar).Value = rtn;
+                cmd.Parameters.Add("@cai", SqlDbType.NVarChar).Value = cai;
+                cmd.Parameters.Add("@correo", SqlDbType.NVarChar).Value = correo;
+                cmd.Parameters.Add("@fechalimite", SqlDbType.SmallDateTime).Value = fechalimite;
+                cmd.Parameters.Add("@desde", SqlDbType.NVarChar).Value = desde;
+                cmd.Parameters.Add("@hasta", SqlDbType.NVarChar).Value = hasta;
+                cmd.Parameters.Add("@moneda", SqlDbType.NVarChar).Value = moneda;
+
                 cmd.Parameters.Add("@tipo", SqlDbType.Int).Value = tipo;
 
                 da = new SqlDataAdapter(cmd);

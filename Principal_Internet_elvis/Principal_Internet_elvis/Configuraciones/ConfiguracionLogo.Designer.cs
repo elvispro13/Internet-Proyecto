@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.txt_logo = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gb_logo = new System.Windows.Forms.GroupBox();
             this.pb_logo = new System.Windows.Forms.PictureBox();
             this.bt_logo = new System.Windows.Forms.Button();
             this.pfd_logo = new System.Windows.Forms.OpenFileDialog();
             this.bt_aceptar = new System.Windows.Forms.Button();
             this.bt_cancelar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gb_nombre = new System.Windows.Forms.GroupBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gb_eslogan = new System.Windows.Forms.GroupBox();
             this.txt_eslogan = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txt_rtn = new System.Windows.Forms.TextBox();
@@ -53,10 +53,10 @@
             this.txt_hasta = new System.Windows.Forms.TextBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txt_moneda = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.gb_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gb_nombre.SuspendLayout();
+            this.gb_eslogan.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -73,17 +73,17 @@
             this.txt_logo.Size = new System.Drawing.Size(188, 20);
             this.txt_logo.TabIndex = 0;
             // 
-            // groupBox1
+            // gb_logo
             // 
-            this.groupBox1.Controls.Add(this.pb_logo);
-            this.groupBox1.Controls.Add(this.bt_logo);
-            this.groupBox1.Controls.Add(this.txt_logo);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(242, 276);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "LOGO";
+            this.gb_logo.Controls.Add(this.pb_logo);
+            this.gb_logo.Controls.Add(this.bt_logo);
+            this.gb_logo.Controls.Add(this.txt_logo);
+            this.gb_logo.Location = new System.Drawing.Point(12, 12);
+            this.gb_logo.Name = "gb_logo";
+            this.gb_logo.Size = new System.Drawing.Size(242, 276);
+            this.gb_logo.TabIndex = 1;
+            this.gb_logo.TabStop = false;
+            this.gb_logo.Text = "LOGO";
             // 
             // pb_logo
             // 
@@ -128,35 +128,37 @@
             this.bt_cancelar.UseVisualStyleBackColor = true;
             this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
-            // groupBox2
+            // gb_nombre
             // 
-            this.groupBox2.Controls.Add(this.txt_nombre);
-            this.groupBox2.Location = new System.Drawing.Point(260, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(209, 50);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "NOMBRE";
+            this.gb_nombre.Controls.Add(this.txt_nombre);
+            this.gb_nombre.Location = new System.Drawing.Point(260, 12);
+            this.gb_nombre.Name = "gb_nombre";
+            this.gb_nombre.Size = new System.Drawing.Size(209, 50);
+            this.gb_nombre.TabIndex = 4;
+            this.gb_nombre.TabStop = false;
+            this.gb_nombre.Text = "NOMBRE";
             // 
             // txt_nombre
             // 
+            this.txt_nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombre.Location = new System.Drawing.Point(6, 19);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(197, 20);
             this.txt_nombre.TabIndex = 0;
             // 
-            // groupBox3
+            // gb_eslogan
             // 
-            this.groupBox3.Controls.Add(this.txt_eslogan);
-            this.groupBox3.Location = new System.Drawing.Point(260, 68);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(209, 50);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ESLOGAN";
+            this.gb_eslogan.Controls.Add(this.txt_eslogan);
+            this.gb_eslogan.Location = new System.Drawing.Point(260, 68);
+            this.gb_eslogan.Name = "gb_eslogan";
+            this.gb_eslogan.Size = new System.Drawing.Size(209, 50);
+            this.gb_eslogan.TabIndex = 5;
+            this.gb_eslogan.TabStop = false;
+            this.gb_eslogan.Text = "ESLOGAN";
             // 
             // txt_eslogan
             // 
+            this.txt_eslogan.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_eslogan.Location = new System.Drawing.Point(6, 19);
             this.txt_eslogan.Name = "txt_eslogan";
             this.txt_eslogan.Size = new System.Drawing.Size(197, 20);
@@ -174,6 +176,7 @@
             // 
             // txt_rtn
             // 
+            this.txt_rtn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_rtn.Location = new System.Drawing.Point(6, 19);
             this.txt_rtn.Name = "txt_rtn";
             this.txt_rtn.Size = new System.Drawing.Size(197, 20);
@@ -191,6 +194,7 @@
             // 
             // txt_cai
             // 
+            this.txt_cai.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_cai.Location = new System.Drawing.Point(6, 19);
             this.txt_cai.Name = "txt_cai";
             this.txt_cai.Size = new System.Drawing.Size(197, 20);
@@ -208,6 +212,7 @@
             // 
             // txt_correo
             // 
+            this.txt_correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_correo.Location = new System.Drawing.Point(6, 19);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(197, 20);
@@ -242,6 +247,7 @@
             // 
             // txt_desde
             // 
+            this.txt_desde.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_desde.Location = new System.Drawing.Point(6, 19);
             this.txt_desde.Name = "txt_desde";
             this.txt_desde.Size = new System.Drawing.Size(197, 20);
@@ -259,6 +265,7 @@
             // 
             // txt_hasta
             // 
+            this.txt_hasta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_hasta.Location = new System.Drawing.Point(6, 19);
             this.txt_hasta.Name = "txt_hasta";
             this.txt_hasta.Size = new System.Drawing.Size(197, 20);
@@ -276,6 +283,7 @@
             // 
             // txt_moneda
             // 
+            this.txt_moneda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_moneda.Location = new System.Drawing.Point(6, 19);
             this.txt_moneda.Name = "txt_moneda";
             this.txt_moneda.Size = new System.Drawing.Size(197, 20);
@@ -293,22 +301,22 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gb_eslogan);
+            this.Controls.Add(this.gb_nombre);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_aceptar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gb_logo);
             this.Name = "ConfiguracionLogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfiguracionLogo";
             this.Load += new System.EventHandler(this.ConfiguracionLogo_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gb_logo.ResumeLayout(false);
+            this.gb_logo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gb_nombre.ResumeLayout(false);
+            this.gb_nombre.PerformLayout();
+            this.gb_eslogan.ResumeLayout(false);
+            this.gb_eslogan.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -329,15 +337,15 @@
         #endregion
 
         private System.Windows.Forms.TextBox txt_logo;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gb_logo;
         private System.Windows.Forms.Button bt_logo;
         private System.Windows.Forms.OpenFileDialog pfd_logo;
         private System.Windows.Forms.PictureBox pb_logo;
         private System.Windows.Forms.Button bt_aceptar;
         private System.Windows.Forms.Button bt_cancelar;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gb_nombre;
         private System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gb_eslogan;
         private System.Windows.Forms.TextBox txt_eslogan;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txt_rtn;

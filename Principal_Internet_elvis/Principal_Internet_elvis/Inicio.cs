@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -71,7 +73,27 @@ namespace Proyecto_Internet
                     return;
                 }
 
-                MessageBox.Show("Decripcion del usuario: "+rows[0].getCampos()[3]);
+                Program.principal.idu = int.Parse(rows[0].getCampos()[0]);
+                Program.principal.user = rows[0].getCampos()[1];
+                Program.principal.clave = rows[0].getCampos()[2];
+                Program.principal.desc = rows[0].getCampos()[3];
+                Program.principal.nombre = rows[0].getCampos()[8];
+
+                ConexionDB conn2 = new ConexionDB();
+                conn2.abrir();
+                DataTable r = conn2.fuente(Program.principal.idu, null, 2);
+                conn2.cerrar();
+                for (int i = 0; i < r.Rows.Count; i++)
+                {
+                    byte[] fuente = (byte[])r.Rows[i]["fuente"];
+                    MemoryStream memorystreamd = new MemoryStream(fuente);
+                    BinaryFormatter bfd = new BinaryFormatter();
+                    Capsula f = bfd.Deserialize(memorystreamd) as Capsula;
+                    Program.principal.fuente = f.getFuente();
+                    Program.actualizarFuente();
+                }
+
+                MessageBox.Show("Bienvenido");
                 Program.principal.Focus();
                 Program.principal.BringToFront();
                 Program.principal.activarConUser();

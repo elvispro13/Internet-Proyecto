@@ -17,6 +17,11 @@ namespace Proyecto_dawelin
 {
     public partial class Principal : Form
     {
+
+        public int idu;
+        public string user, clave, desc, nombre;
+        public Font fuente;
+
         public Principal()
         {
             InitializeComponent();
@@ -41,12 +46,12 @@ namespace Proyecto_dawelin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Program.configuracionLogo = new ConfiguracionLogo();
-            Program.configuracionLogo.Show();
-            Program.configuracionLogo.TopMost = true;
-            Program.configuracionLogo.Focus();
-            Program.configuracionLogo.BringToFront();
-            Program.configuracionLogo.Text = "EMPRESA";
+            Program.configuracion = new Configuracion();
+            Program.configuracion.Show();
+            Program.configuracion.TopMost = true;
+            Program.configuracion.Focus();
+            Program.configuracion.BringToFront();
+            Program.configuracion.Text = "CONFIGURACION";
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -113,6 +118,14 @@ namespace Proyecto_dawelin
         {
             Program.configuracion = new Configuracion();
             Program.configuracion.Show();
+        }
+
+        public void addFuente(Font f)
+        {
+            foreach (Button boton in Program.GetAllChildren(this).OfType<Button>())
+            {
+                boton.Font = f;
+            }
         }
     }
 }
