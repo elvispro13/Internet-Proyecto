@@ -83,6 +83,7 @@ namespace Principal_Internet_elvis.Ubicacion
             txt_codigo2.Text = "";
             txt_nombre.Text = "";
             txt_codigo.Text = "";
+            addFuente(Program.principal.fuente);
         }
 
         public void agregarDatos(int id, string nombre)
@@ -341,6 +342,34 @@ namespace Principal_Internet_elvis.Ubicacion
                 txt_nombre.Text = dgv_tabla.Rows[row].Cells[2].Value.ToString();
                 id2 = int.Parse(dgv_tabla.Rows[row].Cells[1].Value.ToString());
                 estado = int.Parse(dgv_tabla.Rows[row].Cells[3].Value.ToString());
+            }
+        }
+
+        public void addFuente(Font f)
+        {
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (TextBox e in Program.GetAllChildren(this).OfType<TextBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DataGridView e in Program.GetAllChildren(this).OfType<DataGridView>())
+            {
+                e.Font = f;
             }
         }
     }

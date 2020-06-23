@@ -21,6 +21,7 @@ namespace Proyecto_dawelin
         public int idu;
         public string user, clave, desc, nombre;
         public Font fuente;
+        public Image logo;
 
         public Principal()
         {
@@ -37,6 +38,11 @@ namespace Proyecto_dawelin
             btnReportes.Enabled = true;
             btnConfiguracion.Enabled = true;
             btnSalir.Enabled = true;
+            if(logo != null)
+            {
+                img_logo.Image = logo;
+                img_logo.Visible = true;
+            }   
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)

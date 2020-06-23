@@ -109,13 +109,27 @@ namespace Principal_Internet_elvis
             Close();
         }
 
-        private void addFuente(Font fuente)
+        public void addFuente(Font f)
         {
-            gb_opciones.Font = fuente;
-            gb_servidor.Font = fuente;
-            bt_empresa.Font = fuente;
-            btnSelFue.Font = fuente;
-            btnAceptar.Font = fuente;
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (TextBox e in Program.GetAllChildren(this).OfType<TextBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
+            }
         }
     }
 }

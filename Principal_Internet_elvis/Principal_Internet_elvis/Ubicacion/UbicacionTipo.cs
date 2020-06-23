@@ -104,6 +104,8 @@ namespace Principal_Internet_elvis.Ubicacion
             dgv_tabla.Columns[6].Visible = false;
             dgv_tabla.Columns[7].Visible = false;
             dgv_tabla.Columns[8].Visible = false;
+
+            addFuente(Program.principal.fuente);
         }
 
         private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
@@ -130,6 +132,34 @@ namespace Principal_Internet_elvis.Ubicacion
                 dgv_tabla.Columns[6].Visible = false;
                 dgv_tabla.Columns[7].Visible = false;
                 dgv_tabla.Columns[8].Visible = false;
+            }
+        }
+
+        public void addFuente(Font f)
+        {
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (TextBox e in Program.GetAllChildren(this).OfType<TextBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DataGridView e in Program.GetAllChildren(this).OfType<DataGridView>())
+            {
+                e.Font = f;
             }
         }
     }

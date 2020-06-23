@@ -93,6 +93,17 @@ namespace Proyecto_Internet
                     Program.actualizarFuente();
                 }
 
+                ConexionDB conn3 = new ConexionDB();
+                conn3.abrir();
+                DataTable m = conn3.empresa(null, null, null, null, null, null, null, null, null, null, 2);
+                conn3.cerrar();
+                for (int i = 0; i < m.Rows.Count; i++)
+                {
+                    byte[] logo = (byte[])m.Rows[i]["logo"];
+                    MemoryStream ms = new MemoryStream(logo);
+                    Program.principal.logo = Image.FromStream(ms);
+                }
+
                 MessageBox.Show("Bienvenido");
                 Program.principal.Focus();
                 Program.principal.BringToFront();

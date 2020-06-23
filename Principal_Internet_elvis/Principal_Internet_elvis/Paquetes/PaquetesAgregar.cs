@@ -66,6 +66,7 @@ namespace Principal_Internet_elvis.Paquetes
             txt_c2.Text = "";
             row = -1;
             estado = -1;
+            addFuente(Program.principal.fuente);
         }
 
         private void aceptar()
@@ -292,6 +293,34 @@ namespace Principal_Internet_elvis.Paquetes
             if (e.KeyValue.Equals(13))
             {
                 aceptar();
+            }
+        }
+
+        public void addFuente(Font f)
+        {
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (TextBox e in Program.GetAllChildren(this).OfType<TextBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DataGridView e in Program.GetAllChildren(this).OfType<DataGridView>())
+            {
+                e.Font = f;
             }
         }
     }
