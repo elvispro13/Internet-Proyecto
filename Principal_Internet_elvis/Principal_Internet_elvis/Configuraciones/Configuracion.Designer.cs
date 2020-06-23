@@ -84,7 +84,7 @@
             // 
             // btnSelFue
             // 
-            this.btnSelFue.Location = new System.Drawing.Point(34, 12);
+            this.btnSelFue.Location = new System.Drawing.Point(34, 123);
             this.btnSelFue.Name = "btnSelFue";
             this.btnSelFue.Size = new System.Drawing.Size(125, 48);
             this.btnSelFue.TabIndex = 4;
