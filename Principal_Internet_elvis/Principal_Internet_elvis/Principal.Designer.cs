@@ -75,7 +75,7 @@
             this.btnPago.Name = "btnPago";
             this.btnPago.Size = new System.Drawing.Size(259, 60);
             this.btnPago.TabIndex = 0;
-            this.btnPago.Text = "Pagos";
+            this.btnPago.Text = "PAGOS";
             this.btnPago.UseVisualStyleBackColor = false;
             this.btnPago.Click += new System.EventHandler(this.bntPago_Click);
             // 
@@ -91,7 +91,7 @@
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(259, 60);
             this.btnCliente.TabIndex = 1;
-            this.btnCliente.Text = "Clientes";
+            this.btnCliente.Text = "CLIENTES";
             this.btnCliente.UseVisualStyleBackColor = false;
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
@@ -107,7 +107,7 @@
             this.btnPaquetes.Name = "btnPaquetes";
             this.btnPaquetes.Size = new System.Drawing.Size(259, 60);
             this.btnPaquetes.TabIndex = 2;
-            this.btnPaquetes.Text = "Paquetes";
+            this.btnPaquetes.Text = "PAQUETES";
             this.btnPaquetes.UseVisualStyleBackColor = false;
             this.btnPaquetes.Click += new System.EventHandler(this.btnPaquetes_Click);
             // 
@@ -123,7 +123,7 @@
             this.btnFactura.Name = "btnFactura";
             this.btnFactura.Size = new System.Drawing.Size(259, 60);
             this.btnFactura.TabIndex = 3;
-            this.btnFactura.Text = "Facturas";
+            this.btnFactura.Text = "FACTURAS";
             this.btnFactura.UseVisualStyleBackColor = false;
             // 
             // btnUbicacion
@@ -138,7 +138,7 @@
             this.btnUbicacion.Name = "btnUbicacion";
             this.btnUbicacion.Size = new System.Drawing.Size(259, 60);
             this.btnUbicacion.TabIndex = 4;
-            this.btnUbicacion.Text = "Ubicaion";
+            this.btnUbicacion.Text = "UBICACION";
             this.btnUbicacion.UseVisualStyleBackColor = false;
             this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
             // 
@@ -154,7 +154,7 @@
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(259, 60);
             this.btnReportes.TabIndex = 5;
-            this.btnReportes.Text = "Reportes";
+            this.btnReportes.Text = "REPORTES";
             this.btnReportes.UseVisualStyleBackColor = false;
             // 
             // btnConfiguracion
@@ -169,7 +169,7 @@
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(259, 60);
             this.btnConfiguracion.TabIndex = 6;
-            this.btnConfiguracion.Text = "Configuracion";
+            this.btnConfiguracion.Text = "CONFIGURACION";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
             this.btnConfiguracion.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -186,7 +186,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(259, 59);
             this.btnSalir.TabIndex = 7;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 

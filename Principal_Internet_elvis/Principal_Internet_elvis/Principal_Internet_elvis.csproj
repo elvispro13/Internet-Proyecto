@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capsula.cs" />
+    <Compile Include="ClientesCarpeta\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientesCarpeta\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGenerales\Opciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     </Compile>
     <Compile Include="Paquetes\PaquetesAgregar.Designer.cs">
       <DependentUpon>PaquetesAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paquetes\PaquetesElegir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paquetes\PaquetesElegir.Designer.cs">
+      <DependentUpon>PaquetesElegir.cs</DependentUpon>
     </Compile>
     <Compile Include="Paquetes\PaquetesTipo.cs">
       <SubType>Form</SubType>
@@ -124,6 +136,9 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientesCarpeta\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGenerales\Opciones.resx">
       <DependentUpon>Opciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paquetes\PaquetesAgregar.resx">
       <DependentUpon>PaquetesAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paquetes\PaquetesElegir.resx">
+      <DependentUpon>PaquetesElegir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paquetes\PaquetesTipo.resx">
       <DependentUpon>PaquetesTipo.cs</DependentUpon>
@@ -235,8 +253,6 @@
   <ItemGroup>
     <None Include="Resources\lapiz.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clientes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

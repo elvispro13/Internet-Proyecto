@@ -1,4 +1,4 @@
-﻿namespace Principal_Internet_elvis.Cliente
+﻿namespace Principal_Internet_elvis.FormmGenerales
 {
     partial class Opciones
     {
