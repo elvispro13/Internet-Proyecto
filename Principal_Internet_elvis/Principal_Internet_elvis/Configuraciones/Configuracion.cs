@@ -17,6 +17,7 @@ namespace Principal_Internet_elvis
         public Configuracion()
         {
             InitializeComponent();
+            cambiar_fuentes(this);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -75,5 +76,15 @@ namespace Principal_Internet_elvis
         {
 
         }
+
+        private void cambiar_fuentes(Control contenedor)
+        {
+            foreach (var c in contenedor.Controls.OfType<Button>())
+            {
+                c.Font = fontDialog1.Font;
+
+            }
+        }
+
     }
 }

@@ -74,3 +74,4 @@ C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.ClientesCarpeta.Clientes.resources
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.FormmGenerales.Opciones.resources
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Paquetes.PaquetesElegir.resources
+C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Configuraciones.ConfiguracionLogo.resources
