@@ -1,4 +1,5 @@
 ﻿using Principal_Internet_elvis;
+using Principal_Internet_elvis.Configuraciones;
 using Principal_Internet_elvis.FormmGenerales;
 using Principal_Internet_elvis.Pagos;
 using Proyecto_Internet;
@@ -40,7 +41,12 @@ namespace Proyecto_dawelin
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            Program.configuracionLogo = new ConfiguracionLogo();
+            Program.configuracionLogo.Show();
+            Program.configuracionLogo.TopMost = true;
+            Program.configuracionLogo.Focus();
+            Program.configuracionLogo.BringToFront();
+            Program.configuracionLogo.Text = "EMPRESA";
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

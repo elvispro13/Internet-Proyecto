@@ -1,4 +1,5 @@
 ﻿using Principal_Internet_elvis.ClientesCarpeta;
+using Principal_Internet_elvis.Configuraciones;
 using Principal_Internet_elvis.FormmGenerales;
 using Principal_Internet_elvis.Pagos;
 using Principal_Internet_elvis.Paquetes;
@@ -22,7 +23,9 @@ namespace Principal_Internet_elvis
         public static Inicio inicio;
         public static Usuarios usuarios;
         public static Opciones OpCliente;
+
         public static Configuracion configuracion;
+        public static ConfiguracionLogo configuracionLogo;
 
         public static UbicacionTipo ubicacionTipo;
         public static UbicacionAgregar ubicacionAgregar;
