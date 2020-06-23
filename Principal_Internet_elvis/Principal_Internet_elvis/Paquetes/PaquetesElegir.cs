@@ -13,6 +13,7 @@ namespace Principal_Internet_elvis.Paquetes
     public partial class PaquetesElegir : Form
     {
         public int id = -1;
+        List<int> In = new List<int>();
 
         public PaquetesElegir()
         {
@@ -37,14 +38,16 @@ namespace Principal_Internet_elvis.Paquetes
             List<Capsula> lista = conn2.consultar("sp_buscar_paquetes", campos2);
             conn2.cerrar();
 
+            dgv_tabla.ClearSelection();
+            In.Clear();
             for (int i = 0; i < dgv_tabla.Rows.Count; i++)
             {
-                dgv_tabla.Rows[i].Selected = false;
                 foreach (Capsula r in lista)
                 {
                     if (dgv_tabla.Rows[i].Cells[0].Value.ToString().Equals(r.getCampos()[0]))
                     {
                         dgv_tabla.Rows[i].Selected = true;
+                        In.Add(i);
                     }
                 }
             }
@@ -87,14 +90,7 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void dgv_tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv_tabla.Rows[e.RowIndex].Selected)
-            {
-                dgv_tabla.Rows[e.RowIndex].Selected = false;
-            }
-            else
-            {
-                dgv_tabla.Rows[e.RowIndex].Selected = true;
-            }
+
         }
 
         public void addFuente(Font f)
@@ -122,6 +118,29 @@ namespace Principal_Internet_elvis.Paquetes
             foreach (DataGridView e in Program.GetAllChildren(this).OfType<DataGridView>())
             {
                 e.Font = f;
+            }
+        }
+
+        private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int n = dgv_tabla.CurrentRow.Index;
+
+            dgv_tabla.Rows[n].Selected = false;
+
+            dgv_tabla.ClearSelection();
+
+            if (In.Contains(n))
+            {
+                In.Remove(n);
+            }
+            else
+            {
+                In.Add(n);
+            }
+
+            foreach (int i in In)
+            {
+                dgv_tabla.Rows[i].Selected = true;
             }
         }
     }
