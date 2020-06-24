@@ -37,6 +37,12 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             dgv_tabla.Columns[0].Visible = false;
             dgv_tabla.Columns[1].Visible = false;
 
+            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
+            {
+                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
+                dgv_tabla.Columns[i].HeaderText = t;
+            }
+
             dgv_tabla.ClearSelection();
 
             addFuente(Program.principal.fuente);
