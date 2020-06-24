@@ -130,6 +130,12 @@
     <Compile Include="Proveedor.Designer.cs">
       <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Socios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Socios.Designer.cs">
+      <DependentUpon>Socios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ubicacion\UbicacionAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Socios.resx">
+      <DependentUpon>Socios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ubicacion\UbicacionAgregar.resx">
       <DependentUpon>UbicacionAgregar.cs</DependentUpon>

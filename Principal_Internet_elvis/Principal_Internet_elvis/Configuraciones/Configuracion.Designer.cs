@@ -122,6 +122,7 @@
             this.bt_socios.TabIndex = 9;
             this.bt_socios.Text = "SOCIOS";
             this.bt_socios.UseVisualStyleBackColor = true;
+            this.bt_socios.Click += new System.EventHandler(this.bt_socios_Click);
             // 
             // bt_provedores
             // 

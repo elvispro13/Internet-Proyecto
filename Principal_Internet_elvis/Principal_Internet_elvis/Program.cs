@@ -35,7 +35,7 @@ namespace Principal_Internet_elvis
         public static PaquetesTipo paquetesTipo;
         public static PaquetesAgregar paquetesAgregar;
         public static PaquetesElegir paquetesElegir;
-
+        public static Socios socios;
         
 
         public static Pago pago;
