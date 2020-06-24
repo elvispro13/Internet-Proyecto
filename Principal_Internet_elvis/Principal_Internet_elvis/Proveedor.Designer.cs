@@ -30,28 +30,28 @@
         {
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_telecon = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_contacto = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_tel = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.txt_roles = new System.Windows.Forms.TextBox();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.bt_limpiar = new System.Windows.Forms.Button();
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.bt_modificar = new System.Windows.Forms.Button();
             this.bt_crear = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txt_descp = new System.Windows.Forms.TextBox();
+            this.txt_direccion = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txt_clave = new System.Windows.Forms.TextBox();
+            this.txt_rtn = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txt_usuario = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_id = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rb_activado = new System.Windows.Forms.RadioButton();
+            this.rb_desactivado = new System.Windows.Forms.RadioButton();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -73,8 +73,8 @@
             // groupBox10
             // 
             this.groupBox10.BackColor = System.Drawing.Color.White;
-            this.groupBox10.Controls.Add(this.radioButton2);
-            this.groupBox10.Controls.Add(this.radioButton1);
+            this.groupBox10.Controls.Add(this.rb_desactivado);
+            this.groupBox10.Controls.Add(this.rb_activado);
             this.groupBox10.Location = new System.Drawing.Point(11, 450);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(270, 76);
@@ -85,7 +85,7 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.White;
-            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.txt_telecon);
             this.groupBox7.Location = new System.Drawing.Point(11, 399);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(270, 45);
@@ -93,17 +93,18 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "TELECONTACTO";
             // 
-            // textBox1
+            // txt_telecon
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 20);
-            this.textBox1.TabIndex = 2;
+            this.txt_telecon.Location = new System.Drawing.Point(7, 19);
+            this.txt_telecon.Name = "txt_telecon";
+            this.txt_telecon.Size = new System.Drawing.Size(257, 20);
+            this.txt_telecon.TabIndex = 2;
+            this.txt_telecon.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.White;
-            this.groupBox8.Controls.Add(this.textBox2);
+            this.groupBox8.Controls.Add(this.txt_contacto);
             this.groupBox8.Location = new System.Drawing.Point(11, 348);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(270, 45);
@@ -111,17 +112,17 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "CONTACTO";
             // 
-            // textBox2
+            // txt_contacto
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(257, 20);
-            this.textBox2.TabIndex = 2;
+            this.txt_contacto.Location = new System.Drawing.Point(6, 19);
+            this.txt_contacto.Name = "txt_contacto";
+            this.txt_contacto.Size = new System.Drawing.Size(257, 20);
+            this.txt_contacto.TabIndex = 2;
             // 
             // groupBox9
             // 
             this.groupBox9.BackColor = System.Drawing.Color.White;
-            this.groupBox9.Controls.Add(this.textBox3);
+            this.groupBox9.Controls.Add(this.txt_tel);
             this.groupBox9.Location = new System.Drawing.Point(12, 297);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(270, 45);
@@ -129,17 +130,17 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "TELEFONO";
             // 
-            // textBox3
+            // txt_tel
             // 
-            this.textBox3.Location = new System.Drawing.Point(7, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(257, 20);
-            this.textBox3.TabIndex = 2;
+            this.txt_tel.Location = new System.Drawing.Point(7, 19);
+            this.txt_tel.Name = "txt_tel";
+            this.txt_tel.Size = new System.Drawing.Size(257, 20);
+            this.txt_tel.TabIndex = 2;
             // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.txt_roles);
+            this.groupBox6.Controls.Add(this.txt_descripcion);
             this.groupBox6.Location = new System.Drawing.Point(12, 246);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(270, 45);
@@ -147,12 +148,12 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "DESCRICION";
             // 
-            // txt_roles
+            // txt_descripcion
             // 
-            this.txt_roles.Location = new System.Drawing.Point(7, 19);
-            this.txt_roles.Name = "txt_roles";
-            this.txt_roles.Size = new System.Drawing.Size(257, 20);
-            this.txt_roles.TabIndex = 2;
+            this.txt_descripcion.Location = new System.Drawing.Point(7, 19);
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(257, 20);
+            this.txt_descripcion.TabIndex = 2;
             // 
             // groupBox5
             // 
@@ -180,6 +181,7 @@
             this.bt_limpiar.Text = "LIMPIAR";
             this.bt_limpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_limpiar.UseVisualStyleBackColor = false;
+            this.bt_limpiar.Click += new System.EventHandler(this.bt_limpiar_Click);
             // 
             // bt_eliminar
             // 
@@ -223,7 +225,7 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.Controls.Add(this.txt_descp);
+            this.groupBox4.Controls.Add(this.txt_direccion);
             this.groupBox4.Location = new System.Drawing.Point(12, 195);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(270, 45);
@@ -231,17 +233,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DIRECCION";
             // 
-            // txt_descp
+            // txt_direccion
             // 
-            this.txt_descp.Location = new System.Drawing.Point(6, 19);
-            this.txt_descp.Name = "txt_descp";
-            this.txt_descp.Size = new System.Drawing.Size(257, 20);
-            this.txt_descp.TabIndex = 2;
+            this.txt_direccion.Location = new System.Drawing.Point(6, 19);
+            this.txt_direccion.Name = "txt_direccion";
+            this.txt_direccion.Size = new System.Drawing.Size(257, 20);
+            this.txt_direccion.TabIndex = 2;
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.txt_clave);
+            this.groupBox3.Controls.Add(this.txt_rtn);
             this.groupBox3.Location = new System.Drawing.Point(12, 144);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(270, 45);
@@ -249,17 +251,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "RTN";
             // 
-            // txt_clave
+            // txt_rtn
             // 
-            this.txt_clave.Location = new System.Drawing.Point(6, 19);
-            this.txt_clave.Name = "txt_clave";
-            this.txt_clave.Size = new System.Drawing.Size(257, 20);
-            this.txt_clave.TabIndex = 2;
+            this.txt_rtn.Location = new System.Drawing.Point(6, 19);
+            this.txt_rtn.Name = "txt_rtn";
+            this.txt_rtn.Size = new System.Drawing.Size(257, 20);
+            this.txt_rtn.TabIndex = 2;
+            this.txt_rtn.TextChanged += new System.EventHandler(this.txt_clave_TextChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.txt_usuario);
+            this.groupBox2.Controls.Add(this.txt_nombre);
             this.groupBox2.Location = new System.Drawing.Point(12, 93);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(270, 45);
@@ -267,12 +270,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "NOMBRE";
             // 
-            // txt_usuario
+            // txt_nombre
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(6, 19);
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(257, 20);
-            this.txt_usuario.TabIndex = 2;
+            this.txt_nombre.Location = new System.Drawing.Point(6, 19);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(257, 20);
+            this.txt_nombre.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -292,28 +295,28 @@
             this.txt_id.Size = new System.Drawing.Size(257, 20);
             this.txt_id.TabIndex = 1;
             // 
-            // radioButton1
+            // rb_activado
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(20, 32);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 17);
-            this.radioButton1.TabIndex = 29;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Activado";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rb_activado.AutoSize = true;
+            this.rb_activado.Location = new System.Drawing.Point(20, 32);
+            this.rb_activado.Name = "rb_activado";
+            this.rb_activado.Size = new System.Drawing.Size(67, 17);
+            this.rb_activado.TabIndex = 29;
+            this.rb_activado.TabStop = true;
+            this.rb_activado.Text = "Activado";
+            this.rb_activado.UseVisualStyleBackColor = true;
+            this.rb_activado.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // rb_desactivado
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(165, 32);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 30;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Desactivado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rb_desactivado.AutoSize = true;
+            this.rb_desactivado.Location = new System.Drawing.Point(165, 32);
+            this.rb_desactivado.Name = "rb_desactivado";
+            this.rb_desactivado.Size = new System.Drawing.Size(85, 17);
+            this.rb_desactivado.TabIndex = 30;
+            this.rb_desactivado.TabStop = true;
+            this.rb_desactivado.Text = "Desactivado";
+            this.rb_desactivado.UseVisualStyleBackColor = true;
             // 
             // groupBox11
             // 
@@ -409,28 +412,28 @@
 
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_telecon;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_contacto;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_tel;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox txt_roles;
+        private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button bt_limpiar;
         private System.Windows.Forms.Button bt_eliminar;
         private System.Windows.Forms.Button bt_modificar;
         private System.Windows.Forms.Button bt_crear;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txt_descp;
+        private System.Windows.Forms.TextBox txt_direccion;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txt_clave;
+        private System.Windows.Forms.TextBox txt_rtn;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txt_usuario;
+        private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_id;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rb_desactivado;
+        private System.Windows.Forms.RadioButton rb_activado;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;

@@ -32,16 +32,31 @@ namespace Principal_Internet_elvis
 
         private void Proveedor_Load(object sender, EventArgs e)
         {
-            radioButton1.Checked = true;
+            rb_activado.Checked = true;
 
-            if (radioButton1.Checked == true)
+            if (rb_activado.Checked == true)
             {
-                radioButton2.Checked = false;
+                rb_desactivado.Checked = false;
             }
             else
             {
-                radioButton1.Checked = false;
+                rb_activado.Checked = false;
             }
+        }
+
+        private void bt_limpiar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txt_clave_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
