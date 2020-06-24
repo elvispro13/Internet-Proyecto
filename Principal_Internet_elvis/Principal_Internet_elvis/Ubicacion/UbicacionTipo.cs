@@ -105,6 +105,8 @@ namespace Principal_Internet_elvis.Ubicacion
             dgv_tabla.Columns[7].Visible = false;
             dgv_tabla.Columns[8].Visible = false;
 
+            dgv_tabla.ClearSelection();
+
             addFuente(Program.principal.fuente);
         }
 

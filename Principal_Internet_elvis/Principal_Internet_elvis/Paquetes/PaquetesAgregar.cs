@@ -59,6 +59,22 @@ namespace Principal_Internet_elvis.Paquetes
                 conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
                 conn.cerrar();
             }
+
+            dgv_tabla.ClearSelection();
+
+            for (int i = 0; i < dgv_tabla.Rows.Count; i++)
+            {
+                if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("1"))
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                }
+                else
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+            }
+
             txt_descripcion.Select();
             txt_descripcion.Text = "";
             txt_codigo.Text = "";
@@ -89,7 +105,7 @@ namespace Principal_Internet_elvis.Paquetes
                     }
                     limpiar();
                 }
-                else if (this.Text.Contains("BUSCAR") || this.Text.Contains("MODIFICAR"))
+                else if (this.Text.Contains("BUSCAR") || this.Text.Contains("MODIFICAR") || this.Text.Contains("ESTADO"))
                 {
                     ConexionDB conn = new ConexionDB();
                     conn.abrir();
@@ -100,32 +116,57 @@ namespace Principal_Internet_elvis.Paquetes
                     conn.cerrar();
                     if (row != -1)
                     {
-                        ConexionDB conn2 = new ConexionDB();
-                        conn2.abrir();
-                        List<string> campos2 = new List<string>();
-                        campos2.Add("" + txt_codigo.Text);
-                        campos2.Add("'" + txt_descripcion.Text + "'");
-                        if (txt_c1.Text.Equals(""))
+                        if (this.Text.Contains("ESTADO"))
                         {
-                            campos2.Add("-1");
+                            ConexionDB conn2 = new ConexionDB();
+                            conn2.abrir();
+                            List<string> campos2 = new List<string>();
+                            campos2.Add("" + txt_codigo.Text);
+                            campos2.Add("1");
+                            if(estado == 1)
+                            {
+                                campos2.Add("0");
+                            }
+                            else
+                            {
+                                campos2.Add("1");
+                            }
+                            List<Capsula> m = conn2.insertar("sp_estado_paquetes", campos2);
+                            conn2.cerrar();
+                            foreach (Capsula r in m)
+                            {
+                                MessageBox.Show(r.getCampos()[0]);
+                            }
                         }
                         else
                         {
-                            campos2.Add("" + txt_c1.Text);
-                        }
-                        if (txt_c2.Text.Equals(""))
-                        {
-                            campos2.Add("-1");
-                        }
-                        else
-                        {
-                            campos2.Add("" + txt_c2.Text);
-                        }
-                        List<Capsula> m = conn2.insertar("sp_modificar_servicio", campos2);
-                        conn2.cerrar();
-                        foreach (Capsula r in m)
-                        {
-                            MessageBox.Show(r.getCampos()[0]);
+                            ConexionDB conn2 = new ConexionDB();
+                            conn2.abrir();
+                            List<string> campos2 = new List<string>();
+                            campos2.Add("" + txt_codigo.Text);
+                            campos2.Add("'" + txt_descripcion.Text + "'");
+                            if (txt_c1.Text.Equals(""))
+                            {
+                                campos2.Add("-1");
+                            }
+                            else
+                            {
+                                campos2.Add("" + txt_c1.Text);
+                            }
+                            if (txt_c2.Text.Equals(""))
+                            {
+                                campos2.Add("-1");
+                            }
+                            else
+                            {
+                                campos2.Add("" + txt_c2.Text);
+                            }
+                            List<Capsula> m = conn2.insertar("sp_modificar_servicio", campos2);
+                            conn2.cerrar();
+                            foreach (Capsula r in m)
+                            {
+                                MessageBox.Show(r.getCampos()[0]);
+                            }
                         }
                         limpiar();
                     }
@@ -148,7 +189,7 @@ namespace Principal_Internet_elvis.Paquetes
                     }
                     limpiar();
                 }
-                else if (this.Text.Contains("BUSCAR") || this.Text.Contains("MODIFICAR"))
+                else if (this.Text.Contains("BUSCAR") || this.Text.Contains("MODIFICAR") || this.Text.Contains("ESTADO"))
                 {
                     ConexionDB conn = new ConexionDB();
                     conn.abrir();
@@ -159,24 +200,49 @@ namespace Principal_Internet_elvis.Paquetes
                     conn.cerrar();
                     if (row != -1)
                     {
-                        ConexionDB conn2 = new ConexionDB();
-                        conn2.abrir();
-                        List<string> campos2 = new List<string>();
-                        campos2.Add("" + txt_codigo.Text);
-                        campos2.Add("'" + txt_descripcion.Text + "'");
-                        if (txt_c1.Text.Equals(""))
+                        if (this.Text.Contains("ESTADO"))
                         {
-                            campos2.Add("-1");
+                            ConexionDB conn2 = new ConexionDB();
+                            conn2.abrir();
+                            List<string> campos2 = new List<string>();
+                            campos2.Add("" + txt_codigo.Text);
+                            campos2.Add("2");
+                            if (estado == 1)
+                            {
+                                campos2.Add("0");
+                            }
+                            else
+                            {
+                                campos2.Add("1");
+                            }
+                            List<Capsula> m = conn2.insertar("sp_estado_paquetes", campos2);
+                            conn2.cerrar();
+                            foreach (Capsula r in m)
+                            {
+                                MessageBox.Show(r.getCampos()[0]);
+                            }
                         }
                         else
                         {
-                            campos2.Add("" + txt_c1.Text);
-                        }
-                        List<Capsula> m = conn2.insertar("sp_modificar_paquete", campos2);
-                        conn2.cerrar();
-                        foreach (Capsula r in m)
-                        {
-                            MessageBox.Show(r.getCampos()[0]);
+                            ConexionDB conn2 = new ConexionDB();
+                            conn2.abrir();
+                            List<string> campos2 = new List<string>();
+                            campos2.Add("" + txt_codigo.Text);
+                            campos2.Add("'" + txt_descripcion.Text + "'");
+                            if (txt_c1.Text.Equals(""))
+                            {
+                                campos2.Add("-1");
+                            }
+                            else
+                            {
+                                campos2.Add("" + txt_c1.Text);
+                            }
+                            List<Capsula> m = conn2.insertar("sp_modificar_paquete", campos2);
+                            conn2.cerrar();
+                            foreach (Capsula r in m)
+                            {
+                                MessageBox.Show(r.getCampos()[0]);
+                            }
                         }
                         limpiar();
                     }

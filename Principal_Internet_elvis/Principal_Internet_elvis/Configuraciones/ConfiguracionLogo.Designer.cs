@@ -212,7 +212,6 @@
             // 
             // txt_correo
             // 
-            this.txt_correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_correo.Location = new System.Drawing.Point(6, 19);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(197, 20);

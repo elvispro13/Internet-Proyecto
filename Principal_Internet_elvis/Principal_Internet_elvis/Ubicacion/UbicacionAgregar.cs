@@ -77,6 +77,22 @@ namespace Principal_Internet_elvis.Ubicacion
                 dgv_tabla.Columns[0].Visible = false;
                 dgv_tabla.Columns[1].Visible = false;
             }
+
+            dgv_tabla.ClearSelection();
+
+            for (int i = 0; i < dgv_tabla.Rows.Count; i++)
+            {
+                if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("1"))
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                }
+                else
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+            }
+
             id2 = 0;
             row = -1;
             estado = -1;

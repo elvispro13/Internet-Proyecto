@@ -27,6 +27,7 @@ namespace Principal_Internet_elvis.Paquetes
             List<string> campos = new List<string>();
             campos.Add("' '");
             campos.Add("1");
+            campos.Add("1");
             conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
             conn.cerrar();
 
