@@ -31,10 +31,12 @@ namespace Principal_Internet_elvis
         public static UbicacionTipo ubicacionTipo;
         public static UbicacionAgregar ubicacionAgregar;
         public static UbicacionElegir ubicacionElegir;
-
+        public static Proveedor proveedor;
         public static PaquetesTipo paquetesTipo;
         public static PaquetesAgregar paquetesAgregar;
         public static PaquetesElegir paquetesElegir;
+
+        
 
         public static Pago pago;
 

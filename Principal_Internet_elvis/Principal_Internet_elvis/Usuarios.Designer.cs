@@ -39,12 +39,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.bt_limpiar = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.bt_elegir_roles = new System.Windows.Forms.Button();
-            this.txt_roles = new System.Windows.Forms.TextBox();
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.bt_modificar = new System.Windows.Forms.Button();
             this.bt_crear = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.bt_elegir_roles = new System.Windows.Forms.Button();
+            this.txt_roles = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -164,34 +164,6 @@
             this.bt_limpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_limpiar.UseVisualStyleBackColor = false;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.bt_elegir_roles);
-            this.groupBox6.Controls.Add(this.txt_roles);
-            this.groupBox6.Location = new System.Drawing.Point(12, 311);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(270, 69);
-            this.groupBox6.TabIndex = 6;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "ROLES";
-            // 
-            // bt_elegir_roles
-            // 
-            this.bt_elegir_roles.Location = new System.Drawing.Point(226, 19);
-            this.bt_elegir_roles.Name = "bt_elegir_roles";
-            this.bt_elegir_roles.Size = new System.Drawing.Size(37, 37);
-            this.bt_elegir_roles.TabIndex = 7;
-            this.bt_elegir_roles.Text = "...";
-            this.bt_elegir_roles.UseVisualStyleBackColor = true;
-            // 
-            // txt_roles
-            // 
-            this.txt_roles.Location = new System.Drawing.Point(6, 28);
-            this.txt_roles.Name = "txt_roles";
-            this.txt_roles.Size = new System.Drawing.Size(214, 20);
-            this.txt_roles.TabIndex = 2;
-            // 
             // bt_eliminar
             // 
             this.bt_eliminar.BackColor = System.Drawing.Color.White;
@@ -230,6 +202,34 @@
             this.bt_crear.Text = "CREAR";
             this.bt_crear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_crear.UseVisualStyleBackColor = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.bt_elegir_roles);
+            this.groupBox6.Controls.Add(this.txt_roles);
+            this.groupBox6.Location = new System.Drawing.Point(12, 311);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(270, 69);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "ROLES";
+            // 
+            // bt_elegir_roles
+            // 
+            this.bt_elegir_roles.Location = new System.Drawing.Point(226, 19);
+            this.bt_elegir_roles.Name = "bt_elegir_roles";
+            this.bt_elegir_roles.Size = new System.Drawing.Size(37, 37);
+            this.bt_elegir_roles.TabIndex = 7;
+            this.bt_elegir_roles.Text = "...";
+            this.bt_elegir_roles.UseVisualStyleBackColor = true;
+            // 
+            // txt_roles
+            // 
+            this.txt_roles.Location = new System.Drawing.Point(6, 28);
+            this.txt_roles.Name = "txt_roles";
+            this.txt_roles.Size = new System.Drawing.Size(214, 20);
+            this.txt_roles.TabIndex = 2;
             // 
             // Usuarios
             // 
