@@ -262,6 +262,11 @@
   <ItemGroup>
     <None Include="Resources\lapiz.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\iconfinder-broom-clean-service-labor-website-4622511_122412.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_bin_icon-icons.com_67981.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
