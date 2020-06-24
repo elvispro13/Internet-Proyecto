@@ -56,6 +56,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.groupBox10.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -158,13 +159,14 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.Controls.Add(this.btn_buscar);
             this.groupBox5.Controls.Add(this.bt_limpiar);
             this.groupBox5.Controls.Add(this.bt_eliminar);
             this.groupBox5.Controls.Add(this.bt_modificar);
             this.groupBox5.Controls.Add(this.bt_crear);
             this.groupBox5.Location = new System.Drawing.Point(288, 428);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(519, 98);
+            this.groupBox5.Size = new System.Drawing.Size(650, 98);
             this.groupBox5.TabIndex = 23;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "OPCIONES";
@@ -323,7 +325,7 @@
             this.groupBox11.Controls.Add(this.dataGridView1);
             this.groupBox11.Location = new System.Drawing.Point(288, 42);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(519, 380);
+            this.groupBox11.Size = new System.Drawing.Size(650, 380);
             this.groupBox11.TabIndex = 29;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "VISTA DE PROVEEDORES";
@@ -333,14 +335,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(500, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(634, 350);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(758, 3);
+            this.button1.Location = new System.Drawing.Point(890, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(48, 43);
             this.button1.TabIndex = 30;
@@ -357,13 +359,26 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "PROVEEDORES";
             // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackColor = System.Drawing.Color.White;
+            this.btn_buscar.Image = global::Principal_Internet_elvis.Properties.Resources._11;
+            this.btn_buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_buscar.Location = new System.Drawing.Point(518, 19);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(122, 73);
+            this.btn_buscar.TabIndex = 4;
+            this.btn_buscar.Text = "BUSCAR";
+            this.btn_buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_buscar.UseVisualStyleBackColor = false;
+            // 
             // Proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(818, 553);
+            this.ClientSize = new System.Drawing.Size(966, 553);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -438,5 +453,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_buscar;
     }
 }
