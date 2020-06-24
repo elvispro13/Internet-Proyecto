@@ -82,3 +82,4 @@ C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Socios.resources
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Proveedor.resources
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Socios.resources
+C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Configuraciones.Estado_cliente.resources

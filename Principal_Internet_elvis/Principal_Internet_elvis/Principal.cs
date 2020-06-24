@@ -32,6 +32,7 @@ namespace Proyecto_dawelin
         {
             btnPago.Enabled = true;
             btnCliente.Enabled = true;
+            btnEstado.Enabled = true;
             btnPaquetes.Enabled = true;
             btnFactura.Enabled = true;
             btnUbicacion.Enabled = true;
@@ -112,7 +113,12 @@ namespace Proyecto_dawelin
 
         private void bt_estado_Click(object sender, EventArgs e)
         {
-
+            Program.estado_Cliente = new Estado_cliente();
+            Program.estado_Cliente.Show();
+            Program.estado_Cliente.TopMost = true;
+            Program.estado_Cliente.Focus();
+            Program.estado_Cliente.BringToFront();
+            Program.estado_Cliente.Text = "ESTADO-CLIENTES";
         }
 
         private void btnPaquetes_Click(object sender, EventArgs e)

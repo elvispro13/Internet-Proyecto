@@ -32,6 +32,7 @@
             this.panel_botones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPago = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
+            this.btnEstado = new System.Windows.Forms.Button();
             this.btnPaquetes = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
             this.btnUbicacion = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.img_logo = new System.Windows.Forms.PictureBox();
-            this.bt_estado = new System.Windows.Forms.Button();
             this.panel_botones.SuspendLayout();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
@@ -51,7 +51,7 @@
             this.panel_botones.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel_botones.Controls.Add(this.btnPago);
             this.panel_botones.Controls.Add(this.btnCliente);
-            this.panel_botones.Controls.Add(this.bt_estado);
+            this.panel_botones.Controls.Add(this.btnEstado);
             this.panel_botones.Controls.Add(this.btnPaquetes);
             this.panel_botones.Controls.Add(this.btnFactura);
             this.panel_botones.Controls.Add(this.btnUbicacion);
@@ -96,6 +96,22 @@
             this.btnCliente.Text = "CLIENTES";
             this.btnCliente.UseVisualStyleBackColor = false;
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // btnEstado
+            // 
+            this.btnEstado.BackColor = System.Drawing.Color.White;
+            this.btnEstado.Enabled = false;
+            this.btnEstado.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstado.Image = global::Principal_Internet_elvis.Properties.Resources._9;
+            this.btnEstado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstado.Location = new System.Drawing.Point(4, 135);
+            this.btnEstado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.Size = new System.Drawing.Size(259, 60);
+            this.btnEstado.TabIndex = 3;
+            this.btnEstado.Text = "ESTADOS CLIENTES";
+            this.btnEstado.UseVisualStyleBackColor = false;
+            this.btnEstado.Click += new System.EventHandler(this.bt_estado_Click);
             // 
             // btnPaquetes
             // 
@@ -212,22 +228,6 @@
             this.img_logo.TabStop = false;
             this.img_logo.Visible = false;
             // 
-            // bt_estado
-            // 
-            this.bt_estado.BackColor = System.Drawing.Color.White;
-            this.bt_estado.Enabled = false;
-            this.bt_estado.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_estado.Image = global::Principal_Internet_elvis.Properties.Resources._9;
-            this.bt_estado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_estado.Location = new System.Drawing.Point(4, 135);
-            this.bt_estado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bt_estado.Name = "bt_estado";
-            this.bt_estado.Size = new System.Drawing.Size(259, 60);
-            this.bt_estado.TabIndex = 3;
-            this.bt_estado.Text = "ESTADOS CLIENTES";
-            this.bt_estado.UseVisualStyleBackColor = false;
-            this.bt_estado.Click += new System.EventHandler(this.bt_estado_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
@@ -264,7 +264,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox img_logo;
-        private System.Windows.Forms.Button bt_estado;
+        private System.Windows.Forms.Button btnEstado;
     }
 }
 

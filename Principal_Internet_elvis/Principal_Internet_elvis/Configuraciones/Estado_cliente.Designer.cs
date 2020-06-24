@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_estado = new System.Windows.Forms.ComboBox();
+            this.bt_buscar = new System.Windows.Forms.Button();
+            this.txt_buscar = new System.Windows.Forms.TextBox();
+            this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtBuscaCliente = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bt_estado = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.txtBuscaCliente);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.cb_estado);
+            this.groupBox1.Controls.Add(this.bt_buscar);
+            this.groupBox1.Controls.Add(this.txt_buscar);
+            this.groupBox1.Controls.Add(this.dgv_tabla);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -51,6 +52,56 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado del Cliente";
+            // 
+            // cb_estado
+            // 
+            this.cb_estado.FormattingEnabled = true;
+            this.cb_estado.Items.AddRange(new object[] {
+            "PENDIENTE INSTALACION",
+            "SERVICIO ACTIVO",
+            "CORTE DE SERVICIO"});
+            this.cb_estado.Location = new System.Drawing.Point(6, 28);
+            this.cb_estado.Name = "cb_estado";
+            this.cb_estado.Size = new System.Drawing.Size(208, 23);
+            this.cb_estado.TabIndex = 5;
+            // 
+            // bt_buscar
+            // 
+            this.bt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_buscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
+            this.bt_buscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.bt_buscar.Location = new System.Drawing.Point(527, 18);
+            this.bt_buscar.Name = "bt_buscar";
+            this.bt_buscar.Size = new System.Drawing.Size(96, 44);
+            this.bt_buscar.TabIndex = 4;
+            this.bt_buscar.Text = "Buscar";
+            this.bt_buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_buscar.UseVisualStyleBackColor = true;
+            this.bt_buscar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_buscar.Location = new System.Drawing.Point(220, 29);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Size = new System.Drawing.Size(301, 21);
+            this.txt_buscar.TabIndex = 3;
+            this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
+            // 
+            // dgv_tabla
+            // 
+            this.dgv_tabla.AllowUserToAddRows = false;
+            this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tabla.Location = new System.Drawing.Point(6, 68);
+            this.dgv_tabla.MultiSelect = false;
+            this.dgv_tabla.Name = "dgv_tabla";
+            this.dgv_tabla.ReadOnly = true;
+            this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_tabla.Size = new System.Drawing.Size(617, 260);
+            this.dgv_tabla.TabIndex = 2;
+            this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // btnSalir
             // 
@@ -66,43 +117,19 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridView1
+            // bt_estado
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(617, 260);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // txtBuscaCliente
-            // 
-            this.txtBuscaCliente.Location = new System.Drawing.Point(154, 29);
-            this.txtBuscaCliente.Name = "txtBuscaCliente";
-            this.txtBuscaCliente.Size = new System.Drawing.Size(367, 21);
-            this.txtBuscaCliente.TabIndex = 3;
-            this.txtBuscaCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(527, 18);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(96, 44);
-            this.btnBuscar.TabIndex = 4;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 23);
-            this.comboBox1.TabIndex = 5;
+            this.bt_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_estado.Image = global::Principal_Internet_elvis.Properties.Resources._9;
+            this.bt_estado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_estado.Location = new System.Drawing.Point(515, 352);
+            this.bt_estado.Name = "bt_estado";
+            this.bt_estado.Size = new System.Drawing.Size(120, 66);
+            this.bt_estado.TabIndex = 3;
+            this.bt_estado.Text = "ESTADO";
+            this.bt_estado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_estado.UseVisualStyleBackColor = true;
+            this.bt_estado.Click += new System.EventHandler(this.bt_estado_Click);
             // 
             // Estado_cliente
             // 
@@ -112,14 +139,16 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(653, 430);
             this.ControlBox = false;
+            this.Controls.Add(this.bt_estado);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "Estado_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Estado_cliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -127,10 +156,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtBuscaCliente;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button bt_buscar;
+        private System.Windows.Forms.TextBox txt_buscar;
+        private System.Windows.Forms.DataGridView dgv_tabla;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_estado;
+        private System.Windows.Forms.Button bt_estado;
     }
 }
