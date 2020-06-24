@@ -27,7 +27,7 @@ namespace Principal_Internet_elvis.FormmGenerales
 
         private void Opciones_Load(object sender, EventArgs e)
         {
-            
+            addFuente(Program.principal.fuente);
         }
 
         private void bt_agregar_Click(object sender, EventArgs e)
@@ -163,6 +163,29 @@ namespace Principal_Internet_elvis.FormmGenerales
                 Program.clientes.BringToFront();
                 Program.clientes.Text = "CLIENTE-ESTADO";
                 this.Close();
+            }
+        }
+
+        public void addFuente(Font f)
+        {
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (TextBox e in Program.GetAllChildren(this).OfType<TextBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
             }
         }
     }

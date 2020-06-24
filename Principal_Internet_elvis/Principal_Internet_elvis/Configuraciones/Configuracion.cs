@@ -1,4 +1,5 @@
-﻿using Proyecto_Internet;
+﻿using Principal_Internet_elvis.Configuraciones;
+using Proyecto_Internet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +20,6 @@ namespace Principal_Internet_elvis
         public Configuracion()
         {
             InitializeComponent();
-            cambiar_fuentes(this);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -61,14 +63,35 @@ namespace Principal_Internet_elvis
 
         private void Configuracion_Load(object sender, EventArgs e)
         {
-            
+            addFuente(Program.principal.fuente);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            if (fd_fuente.ShowDialog() == DialogResult.OK)
             {
-                lblServidor.Font = fontDialog1.Font;
+                Capsula f = new Capsula();
+                f.setFuente(fd_fuente.Font);
+
+                MemoryStream memorystream = new MemoryStream();
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(memorystream, f);
+                byte[] fuente = memorystream.GetBuffer();
+
+                ConexionDB conn = new ConexionDB();
+                conn.abrir();
+                DataTable r = conn.fuente(Program.principal.idu,fuente,1);
+                conn.cerrar();
+
+                for(int i = 0; i < r.Rows.Count; i++)
+                {
+                    MessageBox.Show(r.Rows[i]["mensaje"].ToString());
+                }
+
+                Program.principal.fuente = f.getFuente();
+                Program.actualizarFuente();
+
+                addFuente(f.getFuente());
             }
         }
 
@@ -77,14 +100,36 @@ namespace Principal_Internet_elvis
 
         }
 
-        private void cambiar_fuentes(Control contenedor)
+        private void bt_empresa_Click(object sender, EventArgs e)
         {
-            foreach (var c in contenedor.Controls.OfType<Button>())
-            {
-                c.Font = fontDialog1.Font;
-
-            }
+            Program.configuracionLogo = new ConfiguracionLogo();
+            Program.configuracionLogo.Text = "EMPRESA";
+            Program.configuracionLogo.Show();
+            Program.configuracionLogo.Focus();
+            Close();
         }
 
+        public void addFuente(Font f)
+        {
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (TextBox e in Program.GetAllChildren(this).OfType<TextBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
+            }
+        }
     }
 }

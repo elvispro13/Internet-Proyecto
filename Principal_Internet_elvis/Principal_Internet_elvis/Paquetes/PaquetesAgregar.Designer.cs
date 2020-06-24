@@ -52,7 +52,7 @@
             this.gb_codigo.Controls.Add(this.txt_codigo);
             this.gb_codigo.Location = new System.Drawing.Point(12, 12);
             this.gb_codigo.Name = "gb_codigo";
-            this.gb_codigo.Size = new System.Drawing.Size(184, 51);
+            this.gb_codigo.Size = new System.Drawing.Size(363, 51);
             this.gb_codigo.TabIndex = 0;
             this.gb_codigo.TabStop = false;
             this.gb_codigo.Text = "CODIGO";
@@ -61,7 +61,7 @@
             // 
             this.txt_codigo.Location = new System.Drawing.Point(6, 19);
             this.txt_codigo.Name = "txt_codigo";
-            this.txt_codigo.Size = new System.Drawing.Size(172, 20);
+            this.txt_codigo.Size = new System.Drawing.Size(351, 20);
             this.txt_codigo.TabIndex = 1;
             // 
             // groupBox2
@@ -69,7 +69,7 @@
             this.groupBox2.Controls.Add(this.txt_descripcion);
             this.groupBox2.Location = new System.Drawing.Point(12, 69);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(184, 51);
+            this.groupBox2.Size = new System.Drawing.Size(363, 51);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DESCRIPCION/BUSCAR";
@@ -80,7 +80,7 @@
             this.txt_descripcion.Location = new System.Drawing.Point(6, 19);
             this.txt_descripcion.MaxLength = 255;
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(172, 20);
+            this.txt_descripcion.Size = new System.Drawing.Size(351, 20);
             this.txt_descripcion.TabIndex = 1;
             this.txt_descripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_descripcion_KeyDown);
             // 
@@ -89,7 +89,7 @@
             this.gb_c1.Controls.Add(this.txt_c1);
             this.gb_c1.Location = new System.Drawing.Point(12, 126);
             this.gb_c1.Name = "gb_c1";
-            this.gb_c1.Size = new System.Drawing.Size(184, 51);
+            this.gb_c1.Size = new System.Drawing.Size(363, 51);
             this.gb_c1.TabIndex = 2;
             this.gb_c1.TabStop = false;
             this.gb_c1.Text = "CAMPO1";
@@ -99,7 +99,7 @@
             this.txt_c1.Location = new System.Drawing.Point(6, 19);
             this.txt_c1.MaxLength = 20;
             this.txt_c1.Name = "txt_c1";
-            this.txt_c1.Size = new System.Drawing.Size(172, 20);
+            this.txt_c1.Size = new System.Drawing.Size(351, 20);
             this.txt_c1.TabIndex = 1;
             this.txt_c1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_c1_KeyPress);
             // 
@@ -108,7 +108,7 @@
             this.gb_c2.Controls.Add(this.txt_c2);
             this.gb_c2.Location = new System.Drawing.Point(12, 183);
             this.gb_c2.Name = "gb_c2";
-            this.gb_c2.Size = new System.Drawing.Size(184, 51);
+            this.gb_c2.Size = new System.Drawing.Size(363, 51);
             this.gb_c2.TabIndex = 3;
             this.gb_c2.TabStop = false;
             this.gb_c2.Text = "CAMPO2";
@@ -118,13 +118,13 @@
             this.txt_c2.Location = new System.Drawing.Point(6, 19);
             this.txt_c2.MaxLength = 20;
             this.txt_c2.Name = "txt_c2";
-            this.txt_c2.Size = new System.Drawing.Size(172, 20);
+            this.txt_c2.Size = new System.Drawing.Size(351, 20);
             this.txt_c2.TabIndex = 1;
             this.txt_c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_c2_KeyPress);
             // 
             // bt_aceptar
             // 
-            this.bt_aceptar.Location = new System.Drawing.Point(382, 188);
+            this.bt_aceptar.Location = new System.Drawing.Point(561, 192);
             this.bt_aceptar.Name = "bt_aceptar";
             this.bt_aceptar.Size = new System.Drawing.Size(111, 39);
             this.bt_aceptar.TabIndex = 4;
@@ -134,7 +134,7 @@
             // 
             // bt_salir
             // 
-            this.bt_salir.Location = new System.Drawing.Point(499, 188);
+            this.bt_salir.Location = new System.Drawing.Point(678, 192);
             this.bt_salir.Name = "bt_salir";
             this.bt_salir.Size = new System.Drawing.Size(111, 39);
             this.bt_salir.TabIndex = 5;
@@ -146,19 +146,20 @@
             // 
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(202, 12);
+            this.dgv_tabla.Location = new System.Drawing.Point(381, 12);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(408, 165);
+            this.dgv_tabla.Size = new System.Drawing.Size(481, 165);
             this.dgv_tabla.TabIndex = 6;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellContentClick);
             // 
             // bt_servicios
             // 
-            this.bt_servicios.Location = new System.Drawing.Point(265, 188);
+            this.bt_servicios.Location = new System.Drawing.Point(444, 192);
             this.bt_servicios.Name = "bt_servicios";
             this.bt_servicios.Size = new System.Drawing.Size(111, 39);
             this.bt_servicios.TabIndex = 7;
@@ -170,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 239);
+            this.ClientSize = new System.Drawing.Size(874, 239);
             this.Controls.Add(this.bt_servicios);
             this.Controls.Add(this.dgv_tabla);
             this.Controls.Add(this.bt_salir);

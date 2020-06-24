@@ -95,6 +95,38 @@ namespace Principal_Internet_elvis.Paquetes
             campos.Add("3");
             conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
             conn.cerrar();
+
+            dgv_tabla.ClearSelection();
+
+            addFuente(Program.principal.fuente);
+        }
+
+        public void addFuente(Font f)
+        {
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (TextBox e in Program.GetAllChildren(this).OfType<TextBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DataGridView e in Program.GetAllChildren(this).OfType<DataGridView>())
+            {
+                e.Font = f;
+            }
         }
     }
 }

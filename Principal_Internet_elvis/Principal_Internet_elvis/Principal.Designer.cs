@@ -208,6 +208,7 @@
             this.img_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img_logo.TabIndex = 0;
             this.img_logo.TabStop = false;
+            this.img_logo.Visible = false;
             // 
             // Principal
             // 

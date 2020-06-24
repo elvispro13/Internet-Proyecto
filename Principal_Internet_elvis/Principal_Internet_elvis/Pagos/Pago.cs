@@ -32,7 +32,7 @@ namespace Principal_Internet_elvis.Pagos
 
         private void Pago_Load(object sender, EventArgs e)
         {
-
+            addFuente(Program.principal.fuente);
         }
 
         private void btnbusCLI_Click(object sender, EventArgs e)
@@ -73,6 +73,44 @@ namespace Principal_Internet_elvis.Pagos
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        public void addFuente(Font f)
+        {
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (TextBox e in Program.GetAllChildren(this).OfType<TextBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DataGridView e in Program.GetAllChildren(this).OfType<DataGridView>())
+            {
+                e.Font = f;
+            }
+
+            foreach (Label e in Program.GetAllChildren(this).OfType<Label>())
+            {
+                e.Font = f;
+            }
+
+            foreach (RadioButton e in Program.GetAllChildren(this).OfType<RadioButton>())
+            {
+                e.Font = f;
+            }
         }
     }
 }

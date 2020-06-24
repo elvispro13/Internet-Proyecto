@@ -39,12 +39,23 @@ namespace Principal_Internet_elvis.Configuraciones
             pb_logo.Image.Save(ms,System.Drawing.Imaging.ImageFormat.Jpeg);
             ConexionDB conn = new ConexionDB();
             conn.abrir();
-            DataTable m = conn.empresa(txt_nombre.Text, txt_eslogan.Text, ms.GetBuffer(),1);
+            DataTable m = conn.empresa(txt_nombre.Text, 
+                                        txt_eslogan.Text, 
+                                        ms.GetBuffer(),
+                                        txt_rtn.Text,
+                                        txt_cai.Text,
+                                        txt_correo.Text,
+                                        dtp_fechalimite.Value.ToString(),
+                                        txt_desde.Text,
+                                        txt_hasta.Text,
+                                        txt_moneda.Text,
+                                        1);
             conn.cerrar();
             for (int i = 0; i < m.Rows.Count; i++)
             {
                 MessageBox.Show(m.Rows[i]["mensaje"].ToString());
             }
+            Close();
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
@@ -56,7 +67,7 @@ namespace Principal_Internet_elvis.Configuraciones
         {
             ConexionDB conn = new ConexionDB();
             conn.abrir();
-            DataTable m = conn.empresa(null, null, null, 2);
+            DataTable m = conn.empresa(null, null, null, null, null, null, null, null, null, null, 2);
             conn.cerrar();
             for (int i = 0; i < m.Rows.Count; i++)
             {
@@ -73,6 +84,24 @@ namespace Principal_Internet_elvis.Configuraciones
                 byte[] logo = (byte[])m.Rows[i]["logo"];
                 MemoryStream ms = new MemoryStream(logo);
                 pb_logo.Image = Image.FromStream(ms);
+            }
+            addFuente(Program.principal.fuente);
+        }
+        public void addFuente(Font f)
+        {
+            foreach (Button e in Program.GetAllChildren(this).OfType<Button>())
+            {
+                e.Font = f;
+            }
+
+            foreach (GroupBox e in Program.GetAllChildren(this).OfType<GroupBox>())
+            {
+                e.Font = f;
+            }
+
+            foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
+            {
+                e.Font = f;
             }
         }
     }

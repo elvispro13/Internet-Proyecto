@@ -8,6 +8,7 @@ using Proyecto_dawelin;
 using Proyecto_Internet;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,6 +47,25 @@ namespace Principal_Internet_elvis
             Application.SetCompatibleTextRenderingDefault(false);
             principal = new Principal();
             Application.Run(principal);
+        }
+
+        public static void actualizarFuente()
+        {
+            principal.addFuente(principal.fuente);
+        }
+
+        public static IEnumerable<Control> GetAllChildren(this Control root) //recorrer un tipo de elemento en el formularuo
+        {
+            var stack = new Stack<Control>();
+            stack.Push(root);
+
+            while (stack.Any())
+            {
+                var next = stack.Pop();
+                foreach (Control child in next.Controls)
+                    stack.Push(child);
+                yield return next;
+            }
         }
     }
 }
