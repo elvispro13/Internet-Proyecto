@@ -39,6 +39,7 @@ namespace Principal_Internet_elvis
         public static Pago pago;
 
         public static Clientes clientes;
+        public static ClientesPaquetes clientesPaquetes;
 
         [STAThread]
         static void Main()

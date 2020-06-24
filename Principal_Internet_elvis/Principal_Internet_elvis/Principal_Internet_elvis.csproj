@@ -56,6 +56,12 @@
     <Compile Include="ClientesCarpeta\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientesCarpeta\ClientesPaquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientesCarpeta\ClientesPaquetes.Designer.cs">
+      <DependentUpon>ClientesPaquetes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Configuraciones\ConfiguracionLogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="ClientesCarpeta\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientesCarpeta\ClientesPaquetes.resx">
+      <DependentUpon>ClientesPaquetes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuraciones\ConfiguracionLogo.resx">
       <DependentUpon>ConfiguracionLogo.cs</DependentUpon>
