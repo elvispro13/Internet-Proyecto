@@ -68,10 +68,10 @@
     <Compile Include="Configuraciones\ConfiguracionLogo.Designer.cs">
       <DependentUpon>ConfiguracionLogo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Configuraciones\Estado_cliente.cs">
+    <Compile Include="Pagos\Estado_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configuraciones\Estado_cliente.Designer.cs">
+    <Compile Include="Pagos\Estado_cliente.Designer.cs">
       <DependentUpon>Estado_cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGenerales\Opciones.cs">
@@ -175,7 +175,7 @@
     <EmbeddedResource Include="Configuraciones\ConfiguracionLogo.resx">
       <DependentUpon>ConfiguracionLogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Configuraciones\Estado_cliente.resx">
+    <EmbeddedResource Include="Pagos\Estado_cliente.resx">
       <DependentUpon>Estado_cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGenerales\Opciones.resx">
