@@ -37,6 +37,25 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             dgv_tabla.Columns[0].Visible = false;
             dgv_tabla.Columns[1].Visible = false;
 
+            for (int i = 0; i < dgv_tabla.Rows.Count; i++)
+            {
+                if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("PENDIENTE INSTALACION"))
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                    dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("SERVICIO ACTIVO"))
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                    dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                }
+                else if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("CORTE DE SERVICIO"))
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                }
+            }
+
             for (int i = 0; i < dgv_tabla.Columns.Count; i++)
             {
                 string t = dgv_tabla.Columns[i].HeaderText.ToUpper();

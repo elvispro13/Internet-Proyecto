@@ -40,6 +40,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.img_logo = new System.Windows.Forms.PictureBox();
+            this.bt_estado = new System.Windows.Forms.Button();
             this.panel_botones.SuspendLayout();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
@@ -50,6 +51,7 @@
             this.panel_botones.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel_botones.Controls.Add(this.btnPago);
             this.panel_botones.Controls.Add(this.btnCliente);
+            this.panel_botones.Controls.Add(this.bt_estado);
             this.panel_botones.Controls.Add(this.btnPaquetes);
             this.panel_botones.Controls.Add(this.btnFactura);
             this.panel_botones.Controls.Add(this.btnUbicacion);
@@ -59,7 +61,7 @@
             this.panel_botones.Location = new System.Drawing.Point(12, 16);
             this.panel_botones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel_botones.Name = "panel_botones";
-            this.panel_botones.Size = new System.Drawing.Size(267, 528);
+            this.panel_botones.Size = new System.Drawing.Size(267, 596);
             this.panel_botones.TabIndex = 1;
             // 
             // btnPago
@@ -102,7 +104,7 @@
             this.btnPaquetes.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaquetes.Image = global::Principal_Internet_elvis.Properties.Resources._6;
             this.btnPaquetes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPaquetes.Location = new System.Drawing.Point(4, 135);
+            this.btnPaquetes.Location = new System.Drawing.Point(4, 201);
             this.btnPaquetes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPaquetes.Name = "btnPaquetes";
             this.btnPaquetes.Size = new System.Drawing.Size(259, 60);
@@ -118,7 +120,7 @@
             this.btnFactura.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFactura.Image = global::Principal_Internet_elvis.Properties.Resources._7;
             this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFactura.Location = new System.Drawing.Point(4, 201);
+            this.btnFactura.Location = new System.Drawing.Point(4, 267);
             this.btnFactura.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFactura.Name = "btnFactura";
             this.btnFactura.Size = new System.Drawing.Size(259, 60);
@@ -133,7 +135,7 @@
             this.btnUbicacion.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUbicacion.Image = global::Principal_Internet_elvis.Properties.Resources._3;
             this.btnUbicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUbicacion.Location = new System.Drawing.Point(4, 267);
+            this.btnUbicacion.Location = new System.Drawing.Point(4, 333);
             this.btnUbicacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUbicacion.Name = "btnUbicacion";
             this.btnUbicacion.Size = new System.Drawing.Size(259, 60);
@@ -149,7 +151,7 @@
             this.btnReportes.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.Image = global::Principal_Internet_elvis.Properties.Resources._5;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(4, 333);
+            this.btnReportes.Location = new System.Drawing.Point(4, 399);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(259, 60);
@@ -164,7 +166,7 @@
             this.btnConfiguracion.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracion.Image = global::Principal_Internet_elvis.Properties.Resources._2;
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(4, 399);
+            this.btnConfiguracion.Location = new System.Drawing.Point(4, 465);
             this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(259, 60);
@@ -181,7 +183,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(4, 465);
+            this.btnSalir.Location = new System.Drawing.Point(4, 531);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(259, 59);
@@ -210,12 +212,28 @@
             this.img_logo.TabStop = false;
             this.img_logo.Visible = false;
             // 
+            // bt_estado
+            // 
+            this.bt_estado.BackColor = System.Drawing.Color.White;
+            this.bt_estado.Enabled = false;
+            this.bt_estado.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_estado.Image = global::Principal_Internet_elvis.Properties.Resources._9;
+            this.bt_estado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_estado.Location = new System.Drawing.Point(4, 135);
+            this.bt_estado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bt_estado.Name = "bt_estado";
+            this.bt_estado.Size = new System.Drawing.Size(259, 60);
+            this.bt_estado.TabIndex = 3;
+            this.bt_estado.Text = "ESTADOS CLIENTES";
+            this.bt_estado.UseVisualStyleBackColor = false;
+            this.bt_estado.Click += new System.EventHandler(this.bt_estado_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(740, 563);
+            this.ClientSize = new System.Drawing.Size(740, 624);
             this.Controls.Add(this.panel_logo);
             this.Controls.Add(this.panel_botones);
             this.Font = new System.Drawing.Font("Vivaldi", 8.25F);
@@ -246,6 +264,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox img_logo;
+        private System.Windows.Forms.Button bt_estado;
     }
 }
 
