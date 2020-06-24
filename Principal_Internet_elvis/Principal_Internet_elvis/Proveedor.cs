@@ -16,5 +16,32 @@ namespace Principal_Internet_elvis
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Program.configuracion = new Configuracion();
+            Program.configuracion.Show();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void Proveedor_Load(object sender, EventArgs e)
+        {
+            radioButton1.Checked = true;
+
+            if (radioButton1.Checked == true)
+            {
+                radioButton2.Checked = false;
+            }
+            else
+            {
+                radioButton1.Checked = false;
+            }
+        }
     }
 }

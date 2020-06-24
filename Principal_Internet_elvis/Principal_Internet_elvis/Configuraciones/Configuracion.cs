@@ -131,5 +131,13 @@ namespace Principal_Internet_elvis
                 e.Font = f;
             }
         }
+
+        private void bt_provedores_Click(object sender, EventArgs e)
+        {
+            Program.proveedor = new Proveedor();
+            Program.proveedor.Show();
+            Program.proveedor.Focus();
+            this.Dispose();
+        }
     }
 }

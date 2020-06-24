@@ -35,10 +35,10 @@
             this.btnSelFue = new System.Windows.Forms.Button();
             this.gb_servidor = new System.Windows.Forms.GroupBox();
             this.gb_opciones = new System.Windows.Forms.GroupBox();
+            this.bt_socios = new System.Windows.Forms.Button();
             this.bt_provedores = new System.Windows.Forms.Button();
             this.bt_usuarios = new System.Windows.Forms.Button();
             this.bt_empresa = new System.Windows.Forms.Button();
-            this.bt_socios = new System.Windows.Forms.Button();
             this.gb_servidor.SuspendLayout();
             this.gb_opciones.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +114,15 @@
             this.gb_opciones.TabStop = false;
             this.gb_opciones.Text = "OPCIONES";
             // 
+            // bt_socios
+            // 
+            this.bt_socios.Location = new System.Drawing.Point(6, 306);
+            this.bt_socios.Name = "bt_socios";
+            this.bt_socios.Size = new System.Drawing.Size(235, 56);
+            this.bt_socios.TabIndex = 9;
+            this.bt_socios.Text = "SOCIOS";
+            this.bt_socios.UseVisualStyleBackColor = true;
+            // 
             // bt_provedores
             // 
             this.bt_provedores.Location = new System.Drawing.Point(6, 235);
@@ -122,6 +131,7 @@
             this.bt_provedores.TabIndex = 8;
             this.bt_provedores.Text = "PROVEEDORES";
             this.bt_provedores.UseVisualStyleBackColor = true;
+            this.bt_provedores.Click += new System.EventHandler(this.bt_provedores_Click);
             // 
             // bt_usuarios
             // 
@@ -141,15 +151,6 @@
             this.bt_empresa.Text = "EMPRESA";
             this.bt_empresa.UseVisualStyleBackColor = true;
             this.bt_empresa.Click += new System.EventHandler(this.bt_empresa_Click);
-            // 
-            // bt_socios
-            // 
-            this.bt_socios.Location = new System.Drawing.Point(6, 306);
-            this.bt_socios.Name = "bt_socios";
-            this.bt_socios.Size = new System.Drawing.Size(235, 56);
-            this.bt_socios.TabIndex = 9;
-            this.bt_socios.Text = "SOCIOS";
-            this.bt_socios.UseVisualStyleBackColor = true;
             // 
             // Configuracion
             // 
