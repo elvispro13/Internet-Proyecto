@@ -32,14 +32,20 @@ namespace Principal_Internet_elvis.Ubicacion
             {
                 id = Int32.Parse(dgv_tabla.Rows[row].Cells[0].Value.ToString());
                 nombre = dgv_tabla.Rows[row].Cells[1].Value.ToString();
+                Program.ubicacionAgregar.agregarDatos(id, nombre);
             }
             else if (this.Text.Equals("ELEGIR-BARRIO"))
             {
                 id = Int32.Parse(dgv_tabla.Rows[row].Cells[0].Value.ToString());
                 nombre = dgv_tabla.Rows[row].Cells[2].Value.ToString();
+                Program.ubicacionAgregar.agregarDatos(id, nombre);
             }
-
-            Program.ubicacionAgregar.agregarDatos(id,nombre);
+            else if (this.Text.Equals("ELEGIR-LUGAR"))
+            {
+                id = Int32.Parse(dgv_tabla.Rows[row].Cells["idlugar"].Value.ToString());
+                nombre = dgv_tabla.Rows[row].Cells["lugar"].Value.ToString();
+                Program.clientes.agregarDatos(id, nombre);
+            }
             this.Close();
         }
 
@@ -70,7 +76,29 @@ namespace Principal_Internet_elvis.Ubicacion
                 dgv_tabla.Columns[0].Visible = false;
                 dgv_tabla.Columns[1].Visible = false;
             }
+            else if (this.Text.Equals("ELEGIR-LUGAR"))
+            {
+                ConexionDB conn = new ConexionDB();
+                conn.abrir();
+                List<string> campos = new List<string>();
+                campos.Add("' '");
+                campos.Add("4");
+                conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
+                conn.cerrar();
+                dgv_tabla.Columns["idlugar"].Visible = false;
+                dgv_tabla.Columns["idbarrio"].Visible = false;
+                dgv_tabla.Columns["idsector"].Visible = false;
+                dgv_tabla.Columns["estado1"].Visible = false;
+                dgv_tabla.Columns["estado2"].Visible = false;
+                dgv_tabla.Columns["estado3"].Visible = false;
+            }
             dgv_tabla.ClearSelection();
+
+            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
+            {
+                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
+                dgv_tabla.Columns[i].HeaderText = t;
+            }
 
             addFuente(Program.principal.fuente);
         }

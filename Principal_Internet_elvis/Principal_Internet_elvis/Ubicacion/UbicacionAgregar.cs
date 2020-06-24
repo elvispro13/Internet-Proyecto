@@ -93,6 +93,12 @@ namespace Principal_Internet_elvis.Ubicacion
                 dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
             }
 
+            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
+            {
+                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
+                dgv_tabla.Columns[i].HeaderText = t;
+            }
+
             id2 = 0;
             row = -1;
             estado = -1;
