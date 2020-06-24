@@ -103,6 +103,7 @@
             this.txtContra.Size = new System.Drawing.Size(344, 35);
             this.txtContra.TabIndex = 12;
             this.txtContra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
             this.txtContra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.saber_KeyUp);
             // 
             // label7

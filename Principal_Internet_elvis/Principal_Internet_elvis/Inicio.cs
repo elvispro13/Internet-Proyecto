@@ -36,11 +36,12 @@ namespace Proyecto_Internet
                     txtContra.Select();
 
                 }
-            }else if (sender.Equals(txtContra))
+            }
+            else if (sender.Equals(txtContra))
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    btnEntrar_Click(null,null);
+                    btnEntrar_Click(null, null);
                 }
             }
         }
@@ -141,6 +142,11 @@ namespace Proyecto_Internet
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContra_TextChanged(object sender, EventArgs e)
         {
 
         }
