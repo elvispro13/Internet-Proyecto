@@ -106,6 +106,7 @@ namespace Principal_Internet_elvis
             Program.configuracionLogo.Text = "EMPRESA";
             Program.configuracionLogo.Show();
             Program.configuracionLogo.Focus();
+            this.Close();
         }
 
         public void addFuente(Font f)
@@ -137,6 +138,7 @@ namespace Principal_Internet_elvis
             Program.proveedor.Text = "PROVEEDORES";
             Program.proveedor.Show();
             Program.proveedor.Focus();
+            this.Close();
         }
 
         private void bt_socios_Click(object sender, EventArgs e)
@@ -145,6 +147,7 @@ namespace Principal_Internet_elvis
             Program.socios.Text = "PROVEEDORES";
             Program.socios.Show();
             Program.socios.Focus();
+            this.Close();
         }
 
         private void bt_usuarios_Click(object sender, EventArgs e)
@@ -153,6 +156,7 @@ namespace Principal_Internet_elvis
             Program.usuarios.Text = "USUARIOS";
             Program.usuarios.Show();
             Program.usuarios.Focus();
+            this.Close();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Principal_Internet_elvis.Configuraciones
         private void bt_logo_Click(object sender, EventArgs e)
         {
             pfd_logo.InitialDirectory = "c:\\";
-            pfd_logo.Filter = "Archivos jpg (*.jpg)|*.jpg|Archivos png (*.png)|*.png|Archivos jpeg (*.jpg)|*.jpeg";
+            pfd_logo.Filter = "Archivos jpg (*.jpg)|*.jpg|Archivos png (*.png)|*.png|Archivos jpeg (*.jpeg)|*.jpeg";
             pfd_logo.FilterIndex = 1;
             pfd_logo.RestoreDirectory = true;
             if(pfd_logo.ShowDialog() == DialogResult.OK)
