@@ -35,9 +35,7 @@ namespace Principal_Internet_elvis
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            Program.configuracion = new Configuracion();
-            Program.configuracion.Show();
+            Close();
         }
 
         

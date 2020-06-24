@@ -246,6 +246,14 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             }
         }
 
+        private void txt_nombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue.Equals(13))
+            {
+                aceptar();
+            }
+        }
+
         private void bt_salir_Click(object sender, EventArgs e)
         {
             Close();

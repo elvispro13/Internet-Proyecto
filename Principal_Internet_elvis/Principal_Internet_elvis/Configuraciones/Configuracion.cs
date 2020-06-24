@@ -48,7 +48,7 @@ namespace Principal_Internet_elvis
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Close();
         }
 
         private void fontDialog1_Apply(object sender, EventArgs e)
@@ -106,7 +106,6 @@ namespace Principal_Internet_elvis
             Program.configuracionLogo.Text = "EMPRESA";
             Program.configuracionLogo.Show();
             Program.configuracionLogo.Focus();
-            Close();
         }
 
         public void addFuente(Font f)
@@ -135,17 +134,25 @@ namespace Principal_Internet_elvis
         private void bt_provedores_Click(object sender, EventArgs e)
         {
             Program.proveedor = new Proveedor();
+            Program.proveedor.Text = "PROVEEDORES";
             Program.proveedor.Show();
             Program.proveedor.Focus();
-            this.Dispose();
         }
 
         private void bt_socios_Click(object sender, EventArgs e)
         {
             Program.socios = new Socios();
+            Program.socios.Text = "PROVEEDORES";
             Program.socios.Show();
             Program.socios.Focus();
-            this.Dispose();
+        }
+
+        private void bt_usuarios_Click(object sender, EventArgs e)
+        {
+            Program.usuarios = new Usuarios();
+            Program.usuarios.Text = "USUARIOS";
+            Program.usuarios.Show();
+            Program.usuarios.Focus();
         }
     }
 }

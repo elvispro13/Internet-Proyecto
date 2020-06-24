@@ -142,6 +142,7 @@
             this.bt_usuarios.TabIndex = 7;
             this.bt_usuarios.Text = "USUARIOS";
             this.bt_usuarios.UseVisualStyleBackColor = true;
+            this.bt_usuarios.Click += new System.EventHandler(this.bt_usuarios_Click);
             // 
             // bt_empresa
             // 

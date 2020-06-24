@@ -65,6 +65,8 @@ namespace Principal_Internet_elvis.Paquetes
                 conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
                 conn.cerrar();
                 dgv_tabla.ClearSelection();
+
+                dgv_tabla.Columns["idpaquete"].Visible = false;
             }
             
 

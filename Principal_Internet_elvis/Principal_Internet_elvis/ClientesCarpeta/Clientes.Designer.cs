@@ -99,6 +99,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(276, 20);
             this.txt_nombre.TabIndex = 1;
+            this.txt_nombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nombre_KeyDown);
             // 
             // groupBox3
             // 

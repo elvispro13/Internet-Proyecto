@@ -110,6 +110,11 @@ namespace Proyecto_dawelin
             Program.OpCliente.Text = "UBICACION";
         }
 
+        private void bt_estado_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnPaquetes_Click(object sender, EventArgs e)
         {
             Program.OpCliente = new Opciones();
