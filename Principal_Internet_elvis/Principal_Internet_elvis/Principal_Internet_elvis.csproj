@@ -304,8 +304,6 @@
   <ItemGroup>
     <None Include="Resources\trash_bin_icon-icons.com_67981.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Proveedores\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

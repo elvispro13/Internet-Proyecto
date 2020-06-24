@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtServer = new System.Windows.Forms.TextBox();
+            this.txt_server = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.fd_fuente = new System.Windows.Forms.FontDialog();
@@ -43,14 +43,14 @@
             this.gb_opciones.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtServer
+            // txt_server
             // 
-            this.txtServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServer.Location = new System.Drawing.Point(6, 19);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(226, 31);
-            this.txtServer.TabIndex = 0;
-            this.txtServer.TextChanged += new System.EventHandler(this.txtServer_TextChanged);
+            this.txt_server.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_server.Location = new System.Drawing.Point(6, 19);
+            this.txt_server.Name = "txt_server";
+            this.txt_server.Size = new System.Drawing.Size(226, 31);
+            this.txt_server.TabIndex = 0;
+            this.txt_server.TextChanged += new System.EventHandler(this.txtServer_TextChanged);
             // 
             // btnAceptar
             // 
@@ -91,7 +91,7 @@
             // 
             // gb_servidor
             // 
-            this.gb_servidor.Controls.Add(this.txtServer);
+            this.gb_servidor.Controls.Add(this.txt_server);
             this.gb_servidor.Controls.Add(this.btnAceptar);
             this.gb_servidor.Location = new System.Drawing.Point(12, 414);
             this.gb_servidor.Name = "gb_servidor";
@@ -176,7 +176,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtServer;
+        private System.Windows.Forms.TextBox txt_server;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.FontDialog fd_fuente;

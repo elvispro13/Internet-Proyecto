@@ -24,7 +24,7 @@ namespace Principal_Internet_elvis
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(txtServer.Text == "")
+            if(txt_server.Text == "")
             {
                 MessageBox.Show("Llene los campos.");
                 return;
@@ -34,7 +34,7 @@ namespace Principal_Internet_elvis
             {
                 string ruta = Application.StartupPath + "\\config.txt";
                 StreamWriter streamWriter = new StreamWriter(ruta);
-                streamWriter.WriteLine(txtServer.Text);
+                streamWriter.WriteLine(txt_server.Text);
                 streamWriter.Close();
                 Inicio f = new Inicio();
                 f.Show();
@@ -63,6 +63,8 @@ namespace Principal_Internet_elvis
 
         private void Configuracion_Load(object sender, EventArgs e)
         {
+            ConexionDB conn = new ConexionDB();
+            txt_server.Text = conn.servar;
             addFuente(Program.principal.fuente);
         }
 
