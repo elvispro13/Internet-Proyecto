@@ -44,7 +44,8 @@
             this.bt_crear = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.bt_elegir_roles = new System.Windows.Forms.Button();
-            this.txt_roles = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -134,7 +136,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(288, 11);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(519, 265);
+            this.dataGridView1.Size = new System.Drawing.Size(519, 335);
             this.dataGridView1.TabIndex = 4;
             // 
             // groupBox5
@@ -144,7 +146,7 @@
             this.groupBox5.Controls.Add(this.bt_eliminar);
             this.groupBox5.Controls.Add(this.bt_modificar);
             this.groupBox5.Controls.Add(this.bt_crear);
-            this.groupBox5.Location = new System.Drawing.Point(288, 282);
+            this.groupBox5.Location = new System.Drawing.Point(289, 352);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(519, 98);
             this.groupBox5.TabIndex = 5;
@@ -207,37 +209,48 @@
             // 
             this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.bt_elegir_roles);
-            this.groupBox6.Controls.Add(this.txt_roles);
             this.groupBox6.Location = new System.Drawing.Point(12, 311);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(270, 69);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "ROLES";
+            this.groupBox6.Text = "PERMISOS";
             // 
             // bt_elegir_roles
             // 
-            this.bt_elegir_roles.Location = new System.Drawing.Point(226, 19);
+            this.bt_elegir_roles.Location = new System.Drawing.Point(6, 19);
             this.bt_elegir_roles.Name = "bt_elegir_roles";
-            this.bt_elegir_roles.Size = new System.Drawing.Size(37, 37);
+            this.bt_elegir_roles.Size = new System.Drawing.Size(64, 37);
             this.bt_elegir_roles.TabIndex = 7;
             this.bt_elegir_roles.Text = "...";
             this.bt_elegir_roles.UseVisualStyleBackColor = true;
             // 
-            // txt_roles
+            // groupBox7
             // 
-            this.txt_roles.Location = new System.Drawing.Point(6, 28);
-            this.txt_roles.Name = "txt_roles";
-            this.txt_roles.Size = new System.Drawing.Size(214, 20);
-            this.txt_roles.TabIndex = 2;
+            this.groupBox7.BackColor = System.Drawing.Color.White;
+            this.groupBox7.Controls.Add(this.txt_nombre);
+            this.groupBox7.Location = new System.Drawing.Point(12, 386);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(270, 69);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "NOMBRES/APELLIDOS";
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Location = new System.Drawing.Point(6, 28);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(257, 20);
+            this.txt_nombre.TabIndex = 2;
             // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(820, 389);
+            this.ClientSize = new System.Drawing.Size(820, 462);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.dataGridView1);
@@ -260,7 +273,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -282,7 +296,8 @@
         private System.Windows.Forms.Button bt_modificar;
         private System.Windows.Forms.Button bt_crear;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox txt_roles;
         private System.Windows.Forms.Button bt_elegir_roles;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox txt_nombre;
     }
 }

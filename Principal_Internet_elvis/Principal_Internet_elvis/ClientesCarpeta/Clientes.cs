@@ -1,4 +1,5 @@
-﻿using Principal_Internet_elvis.Ubicacion;
+﻿using Principal_Internet_elvis.Paquetes;
+using Principal_Internet_elvis.Ubicacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -224,6 +225,24 @@ namespace Principal_Internet_elvis.ClientesCarpeta
                 {
                     rb_masculino.Checked = true;
                 }
+            }
+        }
+
+        private void bt_paquetes_Click(object sender, EventArgs e)
+        {
+            if (row != -1)
+            {
+                Program.clientesPaquetes = new ClientesPaquetes();
+                Program.clientesPaquetes.TopMost = true;
+                Program.clientesPaquetes.BringToFront();
+                Program.clientesPaquetes.Text = "CLIENTE-PAQUETES";
+                Program.clientesPaquetes.id = int.Parse(txt_codigo.Text);
+                Program.clientesPaquetes.Show();
+                Program.clientesPaquetes.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Debe elegir un cliente");
             }
         }
 

@@ -97,6 +97,15 @@ namespace Principal_Internet_elvis.Paquetes
             {
                 if (this.Text.Contains("AGREGAR"))
                 {
+                    if (txt_c2.Text.Equals("") || txt_c1.Text.Equals(""))
+                    {
+                        MessageBox.Show("Escriba el porcentaje de impuestos.");
+                        return;
+                    }
+                    float p = float.Parse(txt_c1.Text);
+                    float isv = float.Parse(txt_c2.Text);
+                    isv = (isv * p) / 100;
+                    txt_c2.Text = "" + isv;
                     ConexionDB conn = new ConexionDB();
                     conn.abrir();
                     List<string> campos = new List<string>();
@@ -146,6 +155,15 @@ namespace Principal_Internet_elvis.Paquetes
                         }
                         else
                         {
+                            if (txt_c2.Text.Equals("") || txt_c1.Text.Equals(""))
+                            {
+                                MessageBox.Show("Escriba el porcentaje de impuestos.");
+                                return;
+                            }
+                            float p = float.Parse(txt_c1.Text);
+                            float isv = float.Parse(txt_c2.Text);
+                            isv = (isv * p) / 100;
+                            txt_c2.Text = "" + isv;
                             ConexionDB conn2 = new ConexionDB();
                             conn2.abrir();
                             List<string> campos2 = new List<string>();
@@ -367,6 +385,7 @@ namespace Principal_Internet_elvis.Paquetes
                 aceptar();
             }
         }
+
 
         public void addFuente(Font f)
         {

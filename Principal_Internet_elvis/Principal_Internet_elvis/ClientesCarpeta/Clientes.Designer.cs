@@ -273,6 +273,7 @@
             this.bt_paquetes.TabIndex = 13;
             this.bt_paquetes.Text = "PAQUETES-CONTRATADOS";
             this.bt_paquetes.UseVisualStyleBackColor = true;
+            this.bt_paquetes.Click += new System.EventHandler(this.bt_paquetes_Click);
             // 
             // bt_aceptar
             // 
