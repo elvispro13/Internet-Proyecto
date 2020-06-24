@@ -53,6 +53,12 @@ namespace Principal_Internet_elvis.Paquetes
                 }
             }
 
+            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
+            {
+                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
+                dgv_tabla.Columns[i].HeaderText = t;
+            }
+
             addFuente(Program.principal.fuente);
         }
 

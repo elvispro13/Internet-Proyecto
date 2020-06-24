@@ -83,6 +83,12 @@ namespace Principal_Internet_elvis.Paquetes
                 campos.Add("3");
                 conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
                 conn.cerrar();
+
+                for (int i = 0; i < dgv_tabla.Columns.Count; i++)
+                {
+                    string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
+                    dgv_tabla.Columns[i].HeaderText = t;
+                }
             }
         }
 
@@ -97,6 +103,12 @@ namespace Principal_Internet_elvis.Paquetes
             conn.cerrar();
 
             dgv_tabla.ClearSelection();
+
+            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
+            {
+                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
+                dgv_tabla.Columns[i].HeaderText = t;
+            }
 
             addFuente(Program.principal.fuente);
         }

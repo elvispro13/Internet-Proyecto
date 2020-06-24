@@ -125,7 +125,7 @@
             this.bt_salir.Name = "bt_salir";
             this.bt_salir.Size = new System.Drawing.Size(133, 71);
             this.bt_salir.TabIndex = 20;
-            this.bt_salir.Text = "Salir";
+            this.bt_salir.Text = "SALIR";
             this.bt_salir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_salir.UseVisualStyleBackColor = false;
             this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);

@@ -35,31 +35,31 @@ namespace Principal_Internet_elvis.FormmGenerales
             if (this.Text.Equals("UBICACION"))
             {
                 Program.ubicacionTipo = new UbicacionTipo();
-                Program.ubicacionTipo.Show();
                 Program.ubicacionTipo.TopMost = true;
                 Program.ubicacionTipo.Focus();
                 Program.ubicacionTipo.BringToFront();
                 Program.ubicacionTipo.Text = "UBICACION-AGREGAR";
+                Program.ubicacionTipo.Show();
                 this.Close();
             }
             else if (this.Text.Equals("PAQUETES"))
             {
                 Program.paquetesTipo = new PaquetesTipo();
-                Program.paquetesTipo.Show();
                 Program.paquetesTipo.TopMost = true;
                 Program.paquetesTipo.Focus();
                 Program.paquetesTipo.BringToFront();
                 Program.paquetesTipo.Text = "PAQUETES-AGREGAR";
+                Program.paquetesTipo.Show();
                 this.Close();
             }
             else if (this.Text.Equals("CLIENTES"))
             {
                 Program.clientes = new Clientes();
-                Program.clientes.Show();
                 Program.clientes.TopMost = true;
                 Program.clientes.Focus();
                 Program.clientes.BringToFront();
                 Program.clientes.Text = "CLIENTE-AGREGAR";
+                Program.clientes.Show();
                 this.Close();
             }
         }
@@ -69,31 +69,31 @@ namespace Principal_Internet_elvis.FormmGenerales
             if (this.Text.Equals("UBICACION"))
             {
                 Program.ubicacionTipo = new UbicacionTipo();
-                Program.ubicacionTipo.Show();
                 Program.ubicacionTipo.TopMost = true;
                 Program.ubicacionTipo.Focus();
                 Program.ubicacionTipo.BringToFront();
                 Program.ubicacionTipo.Text = "UBICACION-BUSCAR";
+                Program.ubicacionTipo.Show();
                 this.Close();
             }
             else if (this.Text.Equals("PAQUETES"))
             {
                 Program.paquetesTipo = new PaquetesTipo();
-                Program.paquetesTipo.Show();
                 Program.paquetesTipo.TopMost = true;
                 Program.paquetesTipo.Focus();
                 Program.paquetesTipo.BringToFront();
                 Program.paquetesTipo.Text = "PAQUETES-BUSCAR";
+                Program.paquetesTipo.Show();
                 this.Close();
             }
             else if (this.Text.Equals("CLIENTES"))
             {
                 Program.clientes = new Clientes();
-                Program.clientes.Show();
                 Program.clientes.TopMost = true;
                 Program.clientes.Focus();
                 Program.clientes.BringToFront();
                 Program.clientes.Text = "CLIENTE-BUSCAR";
+                Program.clientes.Show();
                 this.Close();
             }
         }
@@ -103,31 +103,31 @@ namespace Principal_Internet_elvis.FormmGenerales
             if (this.Text.Equals("UBICACION"))
             {
                 Program.ubicacionTipo = new UbicacionTipo();
-                Program.ubicacionTipo.Show();
                 Program.ubicacionTipo.TopMost = true;
                 Program.ubicacionTipo.Focus();
                 Program.ubicacionTipo.BringToFront();
                 Program.ubicacionTipo.Text = "UBICACION-MODIFICAR";
+                Program.ubicacionTipo.Show();
                 this.Close();
             }
             else if (this.Text.Equals("PAQUETES"))
             {
                 Program.paquetesTipo = new PaquetesTipo();
-                Program.paquetesTipo.Show();
                 Program.paquetesTipo.TopMost = true;
                 Program.paquetesTipo.Focus();
                 Program.paquetesTipo.BringToFront();
                 Program.paquetesTipo.Text = "PAQUETES-MODIFICAR";
+                Program.paquetesTipo.Show();
                 this.Close();
             }
             else if (this.Text.Equals("CLIENTES"))
             {
                 Program.clientes = new Clientes();
-                Program.clientes.Show();
                 Program.clientes.TopMost = true;
                 Program.clientes.Focus();
                 Program.clientes.BringToFront();
                 Program.clientes.Text = "CLIENTE-MODIFICAR";
+                Program.clientes.Show();
                 this.Close();
             }
         }
@@ -137,31 +137,31 @@ namespace Principal_Internet_elvis.FormmGenerales
             if (this.Text.Equals("UBICACION"))
             {
                 Program.ubicacionTipo = new UbicacionTipo();
-                Program.ubicacionTipo.Show();
                 Program.ubicacionTipo.TopMost = true;
                 Program.ubicacionTipo.Focus();
                 Program.ubicacionTipo.BringToFront();
                 Program.ubicacionTipo.Text = "UBICACION-ESTADO";
+                Program.ubicacionTipo.Show();
                 this.Close();
             }
             else if (this.Text.Equals("PAQUETES"))
             {
                 Program.paquetesTipo = new PaquetesTipo();
-                Program.paquetesTipo.Show();
                 Program.paquetesTipo.TopMost = true;
                 Program.paquetesTipo.Focus();
                 Program.paquetesTipo.BringToFront();
                 Program.paquetesTipo.Text = "PAQUETES-ESTADO";
+                Program.paquetesTipo.Show();
                 this.Close();
             }
             else if (this.Text.Equals("CLIENTES"))
             {
                 Program.clientes = new Clientes();
-                Program.clientes.Show();
                 Program.clientes.TopMost = true;
                 Program.clientes.Focus();
                 Program.clientes.BringToFront();
                 Program.clientes.Text = "CLIENTE-ESTADO";
+                Program.clientes.Show();
                 this.Close();
             }
         }

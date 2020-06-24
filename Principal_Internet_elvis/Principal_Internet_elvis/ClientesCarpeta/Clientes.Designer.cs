@@ -44,14 +44,14 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.txt_descripcion = new System.Windows.Forms.TextBox();
+            this.txt_direccion = new System.Windows.Forms.TextBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.bt_lugar = new System.Windows.Forms.Button();
             this.txt_lugar = new System.Windows.Forms.TextBox();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
-            this.bt_salir = new System.Windows.Forms.Button();
-            this.bt_aceptar = new System.Windows.Forms.Button();
             this.bt_paquetes = new System.Windows.Forms.Button();
+            this.bt_aceptar = new System.Windows.Forms.Button();
+            this.bt_salir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,9 +67,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txt_codigo);
+            this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 50);
+            this.groupBox1.Size = new System.Drawing.Size(288, 50);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CODIGO";
@@ -78,7 +79,7 @@
             // 
             this.txt_codigo.Location = new System.Drawing.Point(6, 19);
             this.txt_codigo.Name = "txt_codigo";
-            this.txt_codigo.Size = new System.Drawing.Size(200, 20);
+            this.txt_codigo.Size = new System.Drawing.Size(276, 20);
             this.txt_codigo.TabIndex = 1;
             // 
             // groupBox2
@@ -86,16 +87,17 @@
             this.groupBox2.Controls.Add(this.txt_nombre);
             this.groupBox2.Location = new System.Drawing.Point(12, 68);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 50);
+            this.groupBox2.Size = new System.Drawing.Size(288, 50);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "NOMBRES-APELLIDOS/BUSCAR";
             // 
             // txt_nombre
             // 
+            this.txt_nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombre.Location = new System.Drawing.Point(6, 19);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(200, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(276, 20);
             this.txt_nombre.TabIndex = 1;
             // 
             // groupBox3
@@ -103,16 +105,17 @@
             this.groupBox3.Controls.Add(this.txt_rtn);
             this.groupBox3.Location = new System.Drawing.Point(12, 124);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(213, 50);
+            this.groupBox3.Size = new System.Drawing.Size(288, 50);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "RTN";
             // 
             // txt_rtn
             // 
+            this.txt_rtn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_rtn.Location = new System.Drawing.Point(6, 19);
             this.txt_rtn.Name = "txt_rtn";
-            this.txt_rtn.Size = new System.Drawing.Size(200, 20);
+            this.txt_rtn.Size = new System.Drawing.Size(276, 20);
             this.txt_rtn.TabIndex = 1;
             // 
             // groupBox5
@@ -120,16 +123,17 @@
             this.groupBox5.Controls.Add(this.txt_telefono);
             this.groupBox5.Location = new System.Drawing.Point(12, 180);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(213, 50);
+            this.groupBox5.Size = new System.Drawing.Size(288, 50);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "TELEFONO";
             // 
             // txt_telefono
             // 
+            this.txt_telefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_telefono.Location = new System.Drawing.Point(6, 19);
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(200, 20);
+            this.txt_telefono.Size = new System.Drawing.Size(276, 20);
             this.txt_telefono.TabIndex = 1;
             // 
             // groupBox6
@@ -138,7 +142,7 @@
             this.groupBox6.Controls.Add(this.rb_femenino);
             this.groupBox6.Location = new System.Drawing.Point(12, 236);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(213, 63);
+            this.groupBox6.Size = new System.Drawing.Size(288, 63);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "GENERO";
@@ -170,7 +174,7 @@
             this.groupBox7.Controls.Add(this.txt_correo);
             this.groupBox7.Location = new System.Drawing.Point(12, 305);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(213, 50);
+            this.groupBox7.Size = new System.Drawing.Size(288, 50);
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "CORREO";
@@ -179,7 +183,7 @@
             // 
             this.txt_correo.Location = new System.Drawing.Point(6, 19);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(200, 20);
+            this.txt_correo.Size = new System.Drawing.Size(276, 20);
             this.txt_correo.TabIndex = 1;
             // 
             // groupBox8
@@ -187,7 +191,7 @@
             this.groupBox8.Controls.Add(this.dtp_fecha);
             this.groupBox8.Location = new System.Drawing.Point(12, 361);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(213, 50);
+            this.groupBox8.Size = new System.Drawing.Size(288, 50);
             this.groupBox8.TabIndex = 7;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "FECHA INGRESO";
@@ -196,25 +200,26 @@
             // 
             this.dtp_fecha.Location = new System.Drawing.Point(6, 19);
             this.dtp_fecha.Name = "dtp_fecha";
-            this.dtp_fecha.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fecha.Size = new System.Drawing.Size(276, 20);
             this.dtp_fecha.TabIndex = 8;
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.txt_descripcion);
+            this.groupBox9.Controls.Add(this.txt_direccion);
             this.groupBox9.Location = new System.Drawing.Point(12, 417);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(213, 50);
+            this.groupBox9.Size = new System.Drawing.Size(288, 50);
             this.groupBox9.TabIndex = 8;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "DESCRIPCION";
+            this.groupBox9.Text = "DETALLE DIRECCION";
             // 
-            // txt_descripcion
+            // txt_direccion
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(6, 19);
-            this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(200, 20);
-            this.txt_descripcion.TabIndex = 1;
+            this.txt_direccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_direccion.Location = new System.Drawing.Point(6, 19);
+            this.txt_direccion.Name = "txt_direccion";
+            this.txt_direccion.Size = new System.Drawing.Size(276, 20);
+            this.txt_direccion.TabIndex = 1;
             // 
             // groupBox10
             // 
@@ -222,59 +227,43 @@
             this.groupBox10.Controls.Add(this.txt_lugar);
             this.groupBox10.Location = new System.Drawing.Point(12, 473);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(213, 50);
+            this.groupBox10.Size = new System.Drawing.Size(288, 50);
             this.groupBox10.TabIndex = 9;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "LUGAR";
             // 
             // bt_lugar
             // 
-            this.bt_lugar.Location = new System.Drawing.Point(179, 17);
+            this.bt_lugar.Location = new System.Drawing.Point(255, 17);
             this.bt_lugar.Name = "bt_lugar";
             this.bt_lugar.Size = new System.Drawing.Size(27, 23);
             this.bt_lugar.TabIndex = 10;
             this.bt_lugar.Text = "...";
             this.bt_lugar.UseVisualStyleBackColor = true;
+            this.bt_lugar.Click += new System.EventHandler(this.bt_lugar_Click);
             // 
             // txt_lugar
             // 
+            this.txt_lugar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_lugar.Location = new System.Drawing.Point(6, 19);
             this.txt_lugar.Name = "txt_lugar";
-            this.txt_lugar.Size = new System.Drawing.Size(167, 20);
+            this.txt_lugar.Size = new System.Drawing.Size(243, 20);
             this.txt_lugar.TabIndex = 1;
             // 
             // dgv_tabla
             // 
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(231, 13);
+            this.dgv_tabla.Location = new System.Drawing.Point(306, 13);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(621, 443);
+            this.dgv_tabla.Size = new System.Drawing.Size(546, 443);
             this.dgv_tabla.TabIndex = 10;
-            // 
-            // bt_salir
-            // 
-            this.bt_salir.Location = new System.Drawing.Point(719, 470);
-            this.bt_salir.Name = "bt_salir";
-            this.bt_salir.Size = new System.Drawing.Size(133, 53);
-            this.bt_salir.TabIndex = 11;
-            this.bt_salir.Text = "SALIR";
-            this.bt_salir.UseVisualStyleBackColor = true;
-            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
-            // 
-            // bt_aceptar
-            // 
-            this.bt_aceptar.Location = new System.Drawing.Point(580, 470);
-            this.bt_aceptar.Name = "bt_aceptar";
-            this.bt_aceptar.Size = new System.Drawing.Size(133, 53);
-            this.bt_aceptar.TabIndex = 12;
-            this.bt_aceptar.Text = "ACEPTAR";
-            this.bt_aceptar.UseVisualStyleBackColor = true;
-            this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
+            this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // bt_paquetes
             // 
@@ -284,6 +273,26 @@
             this.bt_paquetes.TabIndex = 13;
             this.bt_paquetes.Text = "PAQUETES-CONTRATADOS";
             this.bt_paquetes.UseVisualStyleBackColor = true;
+            // 
+            // bt_aceptar
+            // 
+            this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
+            this.bt_aceptar.Location = new System.Drawing.Point(580, 470);
+            this.bt_aceptar.Name = "bt_aceptar";
+            this.bt_aceptar.Size = new System.Drawing.Size(133, 53);
+            this.bt_aceptar.TabIndex = 12;
+            this.bt_aceptar.UseVisualStyleBackColor = true;
+            this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
+            // 
+            // bt_salir
+            // 
+            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
+            this.bt_salir.Location = new System.Drawing.Point(719, 470);
+            this.bt_salir.Name = "bt_salir";
+            this.bt_salir.Size = new System.Drawing.Size(133, 53);
+            this.bt_salir.TabIndex = 11;
+            this.bt_salir.UseVisualStyleBackColor = true;
+            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
             // 
             // Clientes
             // 
@@ -347,7 +356,7 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.DateTimePicker dtp_fecha;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox txt_descripcion;
+        private System.Windows.Forms.TextBox txt_direccion;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TextBox txt_lugar;
         private System.Windows.Forms.Button bt_lugar;

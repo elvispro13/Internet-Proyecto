@@ -22,7 +22,7 @@ namespace Principal_Internet_elvis.Configuraciones
         private void bt_logo_Click(object sender, EventArgs e)
         {
             pfd_logo.InitialDirectory = "c:\\";
-            pfd_logo.Filter = "Archivos jpg (*.jpg)|*.jpg|Archivos png (*.png)|*.png";
+            pfd_logo.Filter = "Archivos jpg (*.jpg)|*.jpg|Archivos png (*.png)|*.png|Archivos jpeg (*.jpg)|*.jpeg";
             pfd_logo.FilterIndex = 1;
             pfd_logo.RestoreDirectory = true;
             if(pfd_logo.ShowDialog() == DialogResult.OK)
@@ -55,6 +55,8 @@ namespace Principal_Internet_elvis.Configuraciones
             {
                 MessageBox.Show(m.Rows[i]["mensaje"].ToString());
             }
+            Program.principal.logo = pb_logo.Image;
+            Program.principal.activarConUser();
             Close();
         }
 
