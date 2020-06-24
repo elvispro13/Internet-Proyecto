@@ -124,6 +124,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ubicacion\UbicacionAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ubicacion\UbicacionAgregar.resx">
       <DependentUpon>UbicacionAgregar.cs</DependentUpon>
@@ -276,6 +285,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash_bin_icon-icons.com_67981.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Proveedores\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
