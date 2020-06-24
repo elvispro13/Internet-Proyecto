@@ -23,7 +23,7 @@ namespace Principal_Internet_elvis
         public static Principal principal;
         public static Inicio inicio;
         public static Usuarios usuarios;
-        public static Opciones OpCliente;
+        public static Opciones OpCliente; 
 
         public static Configuracion configuracion;
         public static ConfiguracionLogo configuracionLogo;
@@ -35,7 +35,7 @@ namespace Principal_Internet_elvis
         public static PaquetesTipo paquetesTipo;
         public static PaquetesAgregar paquetesAgregar;
         public static PaquetesElegir paquetesElegir;
-
+        public static Socios socios;
         
 
         public static Pago pago;

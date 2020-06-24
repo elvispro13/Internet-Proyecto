@@ -77,4 +77,6 @@ C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis
 C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Configuraciones.ConfiguracionLogo.resources
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Configuraciones.ConfiguracionLogo.resources
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.ClientesCarpeta.ClientesPaquetes.resources
-C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Proveedor.resources
+C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.ClientesCarpeta.ClientesPaquetes.resources
+C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Proveedor.resources
+C:\Users\hj\source\repos\elvispro13\r\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Socios.resources
