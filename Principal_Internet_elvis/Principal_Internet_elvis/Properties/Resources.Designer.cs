@@ -243,6 +243,16 @@ namespace Principal_Internet_elvis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_broom_clean_service_labor_website_4622511_122412 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_broom_clean_service_labor_website_4622511_122412", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lapiz {
             get {
                 object obj = ResourceManager.GetObject("lapiz", resourceCulture);
@@ -336,6 +346,16 @@ namespace Principal_Internet_elvis.Properties {
         internal static System.Drawing.Bitmap seo_social_web_network_internet_262_icon_icons_com_61518 {
             get {
                 object obj = ResourceManager.GetObject("seo_social_web_network_internet_262_icon_icons_com_61518", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_bin_icon_icons_com_67981 {
+            get {
+                object obj = ResourceManager.GetObject("trash_bin_icon_icons_com_67981", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
