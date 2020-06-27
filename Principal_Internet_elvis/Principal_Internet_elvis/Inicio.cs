@@ -103,6 +103,10 @@ namespace Proyecto_Internet
                     byte[] logo = (byte[])m.Rows[i]["logo"];
                     MemoryStream ms = new MemoryStream(logo);
                     Program.principal.logo = Image.FromStream(ms);
+
+                    Program.principal.desde_e = int.Parse(m.Rows[i]["desde"].ToString());
+                    Program.principal.hasta_e = int.Parse(m.Rows[i]["hasta"].ToString());
+                    Program.principal.ide = int.Parse(m.Rows[i]["idempresa"].ToString());
                 }
 
                 MessageBox.Show("Bienvenido");
