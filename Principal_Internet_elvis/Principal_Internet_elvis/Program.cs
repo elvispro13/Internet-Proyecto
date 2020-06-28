@@ -37,6 +37,7 @@ namespace Principal_Internet_elvis
         public static PaquetesElegir paquetesElegir;
         public static Estado_cliente estado_Cliente;
         public static Socios socios;
+        public static Bus_factura bus_Factura;
         
 
         public static Pago pago;
