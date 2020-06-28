@@ -23,6 +23,10 @@ namespace Proyecto_dawelin
         public Font fuente;
         public Image logo;
 
+        //empresa
+        public string nombre_e, eslogan_e, rtn_e, cai_e, correo_e, fechalimite_e;
+        public int desde_e, hasta_e, ide;
+
         public Principal()
         {
             InitializeComponent();

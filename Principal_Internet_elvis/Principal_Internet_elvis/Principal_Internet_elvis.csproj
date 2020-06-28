@@ -36,8 +36,15 @@
     <StartupObject>Principal_Internet_elvis.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +75,8 @@
     <Compile Include="Configuraciones\ConfiguracionLogo.Designer.cs">
       <DependentUpon>ConfiguracionLogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conv.cs" />
+    <Compile Include="ModuloConexion.cs" />
     <Compile Include="Pagos\Estado_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +144,18 @@
     </Compile>
     <Compile Include="Proveedor.Designer.cs">
       <DependentUpon>Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\factura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>factura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesViwer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesViwer.Designer.cs">
+      <DependentUpon>ReportesViwer.cs</DependentUpon>
     </Compile>
     <Compile Include="Socios.cs">
       <SubType>Form</SubType>
@@ -209,6 +230,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\factura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>factura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesViwer.resx">
+      <DependentUpon>ReportesViwer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Socios.resx">
       <DependentUpon>Socios.cs</DependentUpon>
@@ -304,6 +332,8 @@
   <ItemGroup>
     <None Include="Resources\trash_bin_icon-icons.com_67981.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

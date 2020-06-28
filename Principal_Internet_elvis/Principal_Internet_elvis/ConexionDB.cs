@@ -107,18 +107,21 @@ namespace Principal_Internet_elvis
                 cmd = new SqlCommand("sp_empresa", conectardb);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
-                cmd.Parameters.Add("@eslogan", SqlDbType.NVarChar).Value = eslogan;
-                cmd.Parameters.Add("@logo", SqlDbType.Image).Value = logo;
-                cmd.Parameters.Add("@rtn", SqlDbType.NVarChar).Value = rtn;
-                cmd.Parameters.Add("@cai", SqlDbType.NVarChar).Value = cai;
-                cmd.Parameters.Add("@correo", SqlDbType.NVarChar).Value = correo;
-                cmd.Parameters.Add("@fechalimite", SqlDbType.SmallDateTime).Value = fechalimite;
-                cmd.Parameters.Add("@desde", SqlDbType.NVarChar).Value = desde;
-                cmd.Parameters.Add("@hasta", SqlDbType.NVarChar).Value = hasta;
-                cmd.Parameters.Add("@moneda", SqlDbType.NVarChar).Value = moneda;
-
                 cmd.Parameters.Add("@tipo", SqlDbType.Int).Value = tipo;
+
+                if (tipo == 1)
+                {
+                    cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+                    cmd.Parameters.Add("@eslogan", SqlDbType.NVarChar).Value = eslogan;
+                    cmd.Parameters.Add("@logo", SqlDbType.Image).Value = logo;
+                    cmd.Parameters.Add("@rtn", SqlDbType.NVarChar).Value = rtn;
+                    cmd.Parameters.Add("@cai", SqlDbType.NVarChar).Value = cai;
+                    cmd.Parameters.Add("@correo", SqlDbType.NVarChar).Value = correo;
+                    cmd.Parameters.Add("@fechalimite", SqlDbType.SmallDateTime).Value = fechalimite;
+                    cmd.Parameters.Add("@desde", SqlDbType.Int).Value = int.Parse(desde);
+                    cmd.Parameters.Add("@hasta", SqlDbType.Int).Value = int.Parse(hasta);
+                    cmd.Parameters.Add("@moneda", SqlDbType.NVarChar).Value = moneda;
+                }
 
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
