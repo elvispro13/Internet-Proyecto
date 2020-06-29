@@ -3,6 +3,7 @@ using Principal_Internet_elvis.Configuraciones;
 using Principal_Internet_elvis.FormmGenerales;
 using Principal_Internet_elvis.Pagos;
 using Principal_Internet_elvis.Paquetes;
+using Principal_Internet_elvis.Reportes;
 using Principal_Internet_elvis.Ubicacion;
 using Proyecto_dawelin;
 using Proyecto_Internet;
@@ -43,6 +44,7 @@ namespace Principal_Internet_elvis
 
         public static Clientes clientes;
         public static ClientesPaquetes clientesPaquetes;
+        public static ReportesTipo reportesTipo;
 
         [STAThread]
         static void Main()

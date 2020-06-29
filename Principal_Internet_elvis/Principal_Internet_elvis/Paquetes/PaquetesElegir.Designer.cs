@@ -44,13 +44,13 @@
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(421, 118);
+            this.dgv_tabla.Size = new System.Drawing.Size(710, 205);
             this.dgv_tabla.TabIndex = 0;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // bt_aceptar
             // 
-            this.bt_aceptar.Location = new System.Drawing.Point(12, 136);
+            this.bt_aceptar.Location = new System.Drawing.Point(12, 223);
             this.bt_aceptar.Name = "bt_aceptar";
             this.bt_aceptar.Size = new System.Drawing.Size(106, 42);
             this.bt_aceptar.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Location = new System.Drawing.Point(124, 136);
+            this.bt_cancelar.Location = new System.Drawing.Point(124, 223);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(106, 42);
             this.bt_cancelar.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 181);
+            this.ClientSize = new System.Drawing.Size(734, 277);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_aceptar);
             this.Controls.Add(this.dgv_tabla);

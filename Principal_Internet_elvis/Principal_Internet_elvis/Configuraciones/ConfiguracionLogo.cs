@@ -36,7 +36,7 @@ namespace Principal_Internet_elvis.Configuraciones
         private void bt_aceptar_Click(object sender, EventArgs e)
         {
             MemoryStream ms = new MemoryStream();
-            pb_logo.Image.Save(ms,System.Drawing.Imaging.ImageFormat.Jpeg);
+            pb_logo.Image.Save(ms,System.Drawing.Imaging.ImageFormat.Png);
             ConexionDB conn = new ConexionDB();
             conn.abrir();
             DataTable m = conn.empresa(txt_nombre.Text, 

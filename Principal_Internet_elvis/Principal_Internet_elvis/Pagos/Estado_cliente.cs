@@ -19,7 +19,22 @@ namespace Principal_Internet_elvis.Configuraciones
             InitializeComponent();
         }
 
-        public void Buscara()
+        private void button3_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Estado_cliente_Load(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void limpiar()
         {
             ConexionDB conn = new ConexionDB();
             conn.abrir();
@@ -49,58 +64,10 @@ namespace Principal_Internet_elvis.Configuraciones
                 }
             }
 
-            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
-            {
-                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
-                dgv_tabla.Columns[i].HeaderText = t;
-            }
-
-            dgv_tabla.ClearSelection();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Buscara();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void Estado_cliente_Load(object sender, EventArgs e)
-        {
-            limpiar();
-        }
-
-        private void limpiar()
-        {
-            ConexionDB conn = new ConexionDB();
-            conn.abrir();
-            List<string> campos = new List<string>();
-            campos.Add("0");
-            campos.Add("1");
-            conn.llenarTabla("sp_buscar_clientepaquete", campos, dgv_tabla);
-            conn.cerrar();
-
-            for (int i = 0; i < dgv_tabla.Rows.Count; i++)
-            {
-                if (dgv_tabla.Rows[i].Cells["estadoservicio"].Value.ToString().Equals("PENDIENTE INSTALACION"))
-                {
-                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
-                    dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
-                }
-                else if (dgv_tabla.Rows[i].Cells["estadoservicio"].Value.ToString().Equals("SERVICIO ACTIVO"))
-                {
-                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
-                    dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                }
-                else if (dgv_tabla.Rows[i].Cells["estadoservicio"].Value.ToString().Equals("CORTE DE SERVICIO"))
-                {
-                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
-                }
-            }
+            dgv_tabla.Columns["idcliente"].Visible = false;
+            dgv_tabla.Columns["idlugar"].Visible = false;
+            dgv_tabla.Columns["idclientepa"].Visible = false;
+            dgv_tabla.Columns["estado"].Visible = false;
 
             for (int i = 0; i < dgv_tabla.Columns.Count; i++)
             {
@@ -111,6 +78,8 @@ namespace Principal_Internet_elvis.Configuraciones
             dgv_tabla.ClearSelection();
 
             row = -1;
+            txt_descripcion.Text = "";
+            cb_estado.Text = "";
 
             addFuente(Program.principal.fuente);
         }
@@ -147,7 +116,7 @@ namespace Principal_Internet_elvis.Configuraciones
         {
             if (e.KeyValue.Equals(13))
             {
-                Buscara();
+                limpiar();
             }       
         }
 
@@ -165,6 +134,11 @@ namespace Principal_Internet_elvis.Configuraciones
 
         private void bt_estado_Click(object sender, EventArgs e)
         {
+            if(txt_descripcion.Text == "")
+            {
+                MessageBox.Show("Escriba una descripcion");
+                return;
+            }
             ConexionDB conn2 = new ConexionDB();
             conn2.abrir();
             List<string> campos2 = new List<string>();
@@ -172,6 +146,7 @@ namespace Principal_Internet_elvis.Configuraciones
             campos2.Add("2");
             campos2.Add("0");
             campos2.Add("'" + cb_estado.Text + "'");
+            campos2.Add("'" + txt_descripcion.Text + "'");
             List<Capsula> m = conn2.insertar("sp_estado_cliente", campos2);
             conn2.cerrar();
             foreach (Capsula r in m)

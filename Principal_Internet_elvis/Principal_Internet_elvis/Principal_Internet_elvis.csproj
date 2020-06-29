@@ -151,6 +151,18 @@
       <DependentUpon>factura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\mora.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mora.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesTipo.Designer.cs">
+      <DependentUpon>ReportesTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReportesViwer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +246,13 @@
     <EmbeddedResource Include="Reportes\factura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>factura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\mora.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>mora.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesTipo.resx">
+      <DependentUpon>ReportesTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportesViwer.resx">
       <DependentUpon>ReportesViwer.cs</DependentUpon>

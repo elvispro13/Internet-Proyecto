@@ -206,6 +206,7 @@
             // 
             // txt_buscar_c
             // 
+            this.txt_buscar_c.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_buscar_c.Location = new System.Drawing.Point(9, 14);
             this.txt_buscar_c.Name = "txt_buscar_c";
             this.txt_buscar_c.Size = new System.Drawing.Size(411, 20);

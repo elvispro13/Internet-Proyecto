@@ -2,6 +2,7 @@
 using Principal_Internet_elvis.Configuraciones;
 using Principal_Internet_elvis.FormmGenerales;
 using Principal_Internet_elvis.Pagos;
+using Principal_Internet_elvis.Reportes;
 using Proyecto_Internet;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace Proyecto_dawelin
         public string nombre_e, eslogan_e, rtn_e, cai_e, correo_e, fechalimite_e;
         public int desde_e, hasta_e, ide;
 
+
         public Principal()
         {
             InitializeComponent();
@@ -46,8 +48,34 @@ namespace Proyecto_dawelin
             if(logo != null)
             {
                 img_logo.Image = logo;
-                img_logo.Visible = true;
-            }   
+                img_logo.BackColor = Color.SlateGray;
+            }
+
+            ConexionDB conn = new ConexionDB();
+            conn.abrir();
+            List<string> campos = new List<string>();
+            campos.Add("0");
+            campos.Add("2");
+            campos.Add("''");
+            conn.llenarTabla("sp_buscar_clientepaquete", campos, dgv_pendientes);
+            conn.cerrar();
+
+            for (int i = 0; i < dgv_pendientes.Rows.Count; i++)
+            {
+                if (dgv_pendientes.Rows[i].Cells["estadoservicio"].Value.ToString().Equals("PENDIENTE INSTALACION"))
+                {
+                    dgv_pendientes.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                    dgv_pendientes.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                }
+            }
+
+            for (int i = 0; i < dgv_pendientes.Columns.Count; i++)
+            {
+                string t = dgv_pendientes.Columns[i].HeaderText.ToUpper();
+                dgv_pendientes.Columns[i].HeaderText = t;
+            }
+
+            dgv_pendientes.ClearSelection();
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -68,6 +96,15 @@ namespace Proyecto_dawelin
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            Program.reportesTipo = new ReportesTipo();
+            Program.reportesTipo.Show();
+            Program.reportesTipo.Focus();
+            Program.reportesTipo.BringToFront();
+            Program.reportesTipo.Text = "REPORTES";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -102,7 +139,10 @@ namespace Proyecto_dawelin
 
         private void Principal_Resize(object sender, EventArgs e)
         {
-            panel_logo.Left = this.Width - (panel_logo.Width + 25);
+            img_logo.Left = this.Width - (img_logo.Width + 25);
+            lb_pendiente.Left = this.Width - (lb_pendiente.Width + 25);
+            dgv_pendientes.Left = this.Width - (dgv_pendientes.Width + 25);
+            dgv_pendientes.Top = this.Height - (dgv_pendientes.Height + 50);
         }
 
         private void btnUbicacion_Click(object sender, EventArgs e)
@@ -144,6 +184,11 @@ namespace Proyecto_dawelin
         public void addFuente(Font f)
         {
             foreach (Button boton in Program.GetAllChildren(this).OfType<Button>())
+            {
+                boton.Font = f;
+            }
+
+            foreach (Label boton in Program.GetAllChildren(this).OfType<Label>())
             {
                 boton.Font = f;
             }

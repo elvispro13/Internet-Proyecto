@@ -104,3 +104,4 @@ C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\bin\Debug\stdole.dll
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Elvis\Source\Repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.csproj.CopyComplete
+C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Reportes.ReportesTipo.resources
