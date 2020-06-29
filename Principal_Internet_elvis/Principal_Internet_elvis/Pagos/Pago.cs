@@ -65,6 +65,11 @@ namespace Principal_Internet_elvis.Pagos
 
         private void btnBusCON_Click(object sender, EventArgs e)
         {
+            if (txt_codigo_c.Text.Equals(""))
+            {
+                MessageBox.Show("Seleccione un cliente.");
+                return;
+            }
             gBusConcep.Visible = true;
             gb_paquete.Visible = false;
 
@@ -240,6 +245,7 @@ namespace Principal_Internet_elvis.Pagos
                     total = float.Parse(dgv_tabla_p.Rows[row].Cells["total"].Value.ToString());
                     desc = float.Parse(dgv_tabla_p.Rows[row].Cells["descuento"].Value.ToString());
                     isv = float.Parse(dgv_tabla_p.Rows[row].Cells["isv"].Value.ToString());
+                    txt_monto_p.Text = total.ToString("L0.00");
 
                     ConexionDB conn = new ConexionDB();
                     conn.abrir();
@@ -264,7 +270,6 @@ namespace Principal_Internet_elvis.Pagos
                 {
                     dtp_mes_p.Value = DateTime.Parse(dgv_tabla_p.Rows[row].Cells["fecha"].Value.ToString());
                     mensualidad = dgv_tabla_p.Rows[row].Cells["mensualidad"].Value.ToString();
-                    txt_monto_p.Text = total.ToString("L0.00");
                     dgv_tabla_p.DataSource = null;
                     gBusConcep.Visible = false;
                     gb_paquete.Visible = true;
@@ -318,7 +323,7 @@ namespace Principal_Internet_elvis.Pagos
 
         private void bt_agregar_Click(object sender, EventArgs e)
         {
-            if(total == -1 || idclientepa == -1 || mensualidad == "")
+            if(cb_adelantado.Checked == false && (total == -1 || idclientepa == -1 || mensualidad == ""))
             {
                 MessageBox.Show("Seleccione un mes a pagar.");
                 return;
@@ -376,6 +381,17 @@ namespace Principal_Internet_elvis.Pagos
                 return;
             }
             mostrarFactura(idfactura);
+        }
+
+        private void cb_adelantado_CheckedChanged(object sender, EventArgs e)
+        {
+            dtp_mes_p.Enabled = cb_adelantado.Checked;
+            mensualidad = dtp_mes_p.Value.ToString("MMMM");
+        }
+
+        private void dtp_mes_p_ValueChanged(object sender, EventArgs e)
+        {
+            mensualidad = dtp_mes_p.Value.ToString("MMMM");
         }
 
         private void limpiarTodo()

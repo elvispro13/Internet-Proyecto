@@ -50,7 +50,11 @@ namespace Proyecto_dawelin
                 img_logo.Image = logo;
                 img_logo.BackColor = Color.SlateGray;
             }
+            actualizar();
+        }
 
+        private void actualizar()
+        {
             ConexionDB conn = new ConexionDB();
             conn.abrir();
             List<string> campos = new List<string>();
@@ -107,6 +111,36 @@ namespace Proyecto_dawelin
             Program.reportesTipo.Text = "REPORTES";
         }
 
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            Program.bus_Factura = new Bus_factura();
+            Program.bus_Factura.Show();
+            Program.bus_Factura.Focus();
+            Program.bus_Factura.BringToFront();
+            Program.bus_Factura.Text = "BUSQUEDA-FACTURAS";
+        }
+
+        private void dgv_pendientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Int32 selectedRowCount = dgv_pendientes.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
+            {
+                int row = dgv_pendientes.CurrentRow.Index;
+
+                Program.estado_Cliente = new Estado_cliente();
+                Program.estado_Cliente.accesoRapido(dgv_pendientes.Rows[row].Cells["nombre"].Value.ToString());
+                Program.estado_Cliente.Show();
+                Program.estado_Cliente.Focus();
+                Program.estado_Cliente.BringToFront();
+                Program.estado_Cliente.Text = "ESTADO-CLIENTES";
+            }
+        }
+
+        private void bt_actualizar_Click(object sender, EventArgs e)
+        {
+            actualizar();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Program.inicio = new Inicio();
@@ -131,7 +165,6 @@ namespace Proyecto_dawelin
         {
             Program.OpCliente = new Opciones();
             Program.OpCliente.Show();
-            Program.OpCliente.TopMost = true;
             Program.OpCliente.Focus();
             Program.OpCliente.BringToFront();
             Program.OpCliente.Text = "CLIENTES";
@@ -141,6 +174,7 @@ namespace Proyecto_dawelin
         {
             img_logo.Left = this.Width - (img_logo.Width + 25);
             lb_pendiente.Left = this.Width - (lb_pendiente.Width + 25);
+            bt_actualizar.Left = this.Width - (bt_actualizar.Width + 25);
             dgv_pendientes.Left = this.Width - (dgv_pendientes.Width + 25);
             dgv_pendientes.Top = this.Height - (dgv_pendientes.Height + 50);
         }
@@ -149,7 +183,6 @@ namespace Proyecto_dawelin
         {
             Program.OpCliente = new Opciones();
             Program.OpCliente.Show();
-            Program.OpCliente.TopMost = true;
             Program.OpCliente.Focus();
             Program.OpCliente.BringToFront();
             Program.OpCliente.Text = "UBICACION";
@@ -159,7 +192,6 @@ namespace Proyecto_dawelin
         {
             Program.estado_Cliente = new Estado_cliente();
             Program.estado_Cliente.Show();
-            Program.estado_Cliente.TopMost = true;
             Program.estado_Cliente.Focus();
             Program.estado_Cliente.BringToFront();
             Program.estado_Cliente.Text = "ESTADO-CLIENTES";
@@ -169,7 +201,6 @@ namespace Proyecto_dawelin
         {
             Program.OpCliente = new Opciones();
             Program.OpCliente.Show();
-            Program.OpCliente.TopMost = true;
             Program.OpCliente.Focus();
             Program.OpCliente.BringToFront();
             Program.OpCliente.Text = "PAQUETES";
@@ -179,6 +210,8 @@ namespace Proyecto_dawelin
         {
             Program.configuracion = new Configuracion();
             Program.configuracion.Show();
+            Program.OpCliente.Focus();
+            Program.OpCliente.BringToFront();
         }
 
         public void addFuente(Font f)

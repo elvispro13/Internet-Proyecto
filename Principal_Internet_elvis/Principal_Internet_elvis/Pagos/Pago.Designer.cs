@@ -75,6 +75,7 @@
             this.txt_efectivo = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_cambio = new System.Windows.Forms.TextBox();
+            this.cb_adelantado = new System.Windows.Forms.CheckBox();
             this.gb_cliente.SuspendLayout();
             this.gBusCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla_c)).BeginInit();
@@ -276,6 +277,7 @@
             // gb_paquete
             // 
             this.gb_paquete.BackColor = System.Drawing.Color.White;
+            this.gb_paquete.Controls.Add(this.cb_adelantado);
             this.gb_paquete.Controls.Add(this.dtp_mes_p);
             this.gb_paquete.Controls.Add(this.btnBusCON);
             this.gb_paquete.Controls.Add(this.label5);
@@ -300,8 +302,10 @@
             this.dtp_mes_p.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dtp_mes_p.Location = new System.Drawing.Point(375, 99);
             this.dtp_mes_p.Name = "dtp_mes_p";
+            this.dtp_mes_p.ShowUpDown = true;
             this.dtp_mes_p.Size = new System.Drawing.Size(126, 20);
             this.dtp_mes_p.TabIndex = 7;
+            this.dtp_mes_p.ValueChanged += new System.EventHandler(this.dtp_mes_p_ValueChanged);
             // 
             // btnBusCON
             // 
@@ -329,6 +333,7 @@
             // 
             this.txt_monto_p.Location = new System.Drawing.Point(94, 99);
             this.txt_monto_p.Name = "txt_monto_p";
+            this.txt_monto_p.ReadOnly = true;
             this.txt_monto_p.Size = new System.Drawing.Size(143, 20);
             this.txt_monto_p.TabIndex = 5;
             // 
@@ -594,6 +599,17 @@
             this.txt_cambio.Size = new System.Drawing.Size(102, 20);
             this.txt_cambio.TabIndex = 0;
             // 
+            // cb_adelantado
+            // 
+            this.cb_adelantado.AutoSize = true;
+            this.cb_adelantado.Location = new System.Drawing.Point(15, 143);
+            this.cb_adelantado.Name = "cb_adelantado";
+            this.cb_adelantado.Size = new System.Drawing.Size(125, 17);
+            this.cb_adelantado.TabIndex = 9;
+            this.cb_adelantado.Text = "MES ADELANTADO";
+            this.cb_adelantado.UseVisualStyleBackColor = true;
+            this.cb_adelantado.CheckedChanged += new System.EventHandler(this.cb_adelantado_CheckedChanged);
+            // 
             // Pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -696,5 +712,6 @@
         private System.Windows.Forms.TextBox txt_efectivo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txt_cambio;
+        private System.Windows.Forms.CheckBox cb_adelantado;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_botones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPago = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.img_logo = new System.Windows.Forms.PictureBox();
             this.dgv_pendientes = new System.Windows.Forms.DataGridView();
             this.lb_pendiente = new System.Windows.Forms.Label();
+            this.bt_actualizar = new System.Windows.Forms.Button();
             this.panel_botones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pendientes)).BeginInit();
@@ -145,6 +146,7 @@
             this.btnFactura.TabIndex = 3;
             this.btnFactura.Text = "FACTURAS";
             this.btnFactura.UseVisualStyleBackColor = false;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // btnUbicacion
             // 
@@ -228,14 +230,14 @@
             this.dgv_pendientes.AllowUserToDeleteRows = false;
             this.dgv_pendientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_pendientes.BackgroundColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_pendientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_pendientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_pendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pendientes.Location = new System.Drawing.Point(281, 449);
             this.dgv_pendientes.Name = "dgv_pendientes";
@@ -243,15 +245,26 @@
             this.dgv_pendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_pendientes.Size = new System.Drawing.Size(492, 258);
             this.dgv_pendientes.TabIndex = 3;
+            this.dgv_pendientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pendientes_CellDoubleClick);
             // 
             // lb_pendiente
             // 
             this.lb_pendiente.AutoSize = true;
-            this.lb_pendiente.Location = new System.Drawing.Point(591, 422);
+            this.lb_pendiente.Location = new System.Drawing.Point(591, 395);
             this.lb_pendiente.Name = "lb_pendiente";
             this.lb_pendiente.Size = new System.Drawing.Size(180, 15);
             this.lb_pendiente.TabIndex = 4;
             this.lb_pendiente.Text = "PENDIENTE DE INSTALACION";
+            // 
+            // bt_actualizar
+            // 
+            this.bt_actualizar.Location = new System.Drawing.Point(629, 413);
+            this.bt_actualizar.Name = "bt_actualizar";
+            this.bt_actualizar.Size = new System.Drawing.Size(144, 33);
+            this.bt_actualizar.TabIndex = 5;
+            this.bt_actualizar.Text = "ACTUALIZAR";
+            this.bt_actualizar.UseVisualStyleBackColor = true;
+            this.bt_actualizar.Click += new System.EventHandler(this.bt_actualizar_Click);
             // 
             // Principal
             // 
@@ -259,6 +272,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(783, 720);
+            this.Controls.Add(this.bt_actualizar);
             this.Controls.Add(this.lb_pendiente);
             this.Controls.Add(this.img_logo);
             this.Controls.Add(this.dgv_pendientes);
@@ -294,6 +308,7 @@
         private System.Windows.Forms.Button btnEstado;
         private System.Windows.Forms.DataGridView dgv_pendientes;
         private System.Windows.Forms.Label lb_pendiente;
+        private System.Windows.Forms.Button bt_actualizar;
     }
 }
 

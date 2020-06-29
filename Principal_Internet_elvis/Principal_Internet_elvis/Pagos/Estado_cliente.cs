@@ -34,6 +34,11 @@ namespace Principal_Internet_elvis.Configuraciones
             limpiar();
         }
 
+        public void accesoRapido(string n)
+        {
+            txt_buscar.Text = n;
+        }
+
         private void limpiar()
         {
             ConexionDB conn = new ConexionDB();
