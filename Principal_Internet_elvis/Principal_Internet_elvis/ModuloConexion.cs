@@ -18,7 +18,7 @@ namespace Principal_Internet_elvis
 
         public string usuario;
 
-        public string linea = "DSN=proyectofacturas;Uid=sa;pwd=Elvispro1999;";
+        public string linea = "DSN=proyecto;Uid=;pwd=;";
 
         public void conectar()
         {
