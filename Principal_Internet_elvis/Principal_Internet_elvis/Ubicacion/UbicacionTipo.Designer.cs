@@ -47,16 +47,16 @@
             this.groupBox1.Controls.Add(this.bt_lugar);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(439, 80);
+            this.groupBox1.Size = new System.Drawing.Size(593, 137);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TIPO";
             // 
             // bt_sector
             // 
-            this.bt_sector.Location = new System.Drawing.Point(296, 19);
+            this.bt_sector.Location = new System.Drawing.Point(415, 19);
             this.bt_sector.Name = "bt_sector";
-            this.bt_sector.Size = new System.Drawing.Size(139, 51);
+            this.bt_sector.Size = new System.Drawing.Size(168, 88);
             this.bt_sector.TabIndex = 3;
             this.bt_sector.Text = "SECTOR";
             this.bt_sector.UseVisualStyleBackColor = true;
@@ -64,9 +64,9 @@
             // 
             // bt_barrio
             // 
-            this.bt_barrio.Location = new System.Drawing.Point(151, 19);
+            this.bt_barrio.Location = new System.Drawing.Point(211, 19);
             this.bt_barrio.Name = "bt_barrio";
-            this.bt_barrio.Size = new System.Drawing.Size(139, 51);
+            this.bt_barrio.Size = new System.Drawing.Size(177, 88);
             this.bt_barrio.TabIndex = 2;
             this.bt_barrio.Text = "BARRIO";
             this.bt_barrio.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             this.bt_lugar.Location = new System.Drawing.Point(6, 19);
             this.bt_lugar.Name = "bt_lugar";
-            this.bt_lugar.Size = new System.Drawing.Size(139, 51);
+            this.bt_lugar.Size = new System.Drawing.Size(178, 88);
             this.bt_lugar.TabIndex = 1;
             this.bt_lugar.Text = "LUGAR";
             this.bt_lugar.UseVisualStyleBackColor = true;
@@ -85,9 +85,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_buscar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 98);
+            this.groupBox2.Location = new System.Drawing.Point(12, 155);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(202, 46);
+            this.groupBox2.Size = new System.Drawing.Size(306, 46);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BUSCAR UBICACIONES";
@@ -98,7 +98,7 @@
             this.txt_buscar.Location = new System.Drawing.Point(6, 19);
             this.txt_buscar.MaxLength = 255;
             this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(186, 20);
+            this.txt_buscar.Size = new System.Drawing.Size(294, 20);
             this.txt_buscar.TabIndex = 2;
             this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
             // 
@@ -108,19 +108,19 @@
             this.dgv_tabla.AllowUserToDeleteRows = false;
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(12, 150);
+            this.dgv_tabla.Location = new System.Drawing.Point(12, 207);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(435, 150);
+            this.dgv_tabla.Size = new System.Drawing.Size(593, 150);
             this.dgv_tabla.TabIndex = 2;
             // 
             // UbicacionTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 317);
+            this.ClientSize = new System.Drawing.Size(619, 373);
             this.Controls.Add(this.dgv_tabla);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
