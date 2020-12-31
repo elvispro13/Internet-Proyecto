@@ -85,7 +85,7 @@
             // 
             this.btnAjustes.Enabled = false;
             this.btnAjustes.Image = global::Principal_Internet_elvis.Properties.Resources.config;
-            this.btnAjustes.Location = new System.Drawing.Point(224, 143);
+            this.btnAjustes.Location = new System.Drawing.Point(203, 143);
             this.btnAjustes.Name = "btnAjustes";
             this.btnAjustes.Size = new System.Drawing.Size(100, 99);
             this.btnAjustes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
