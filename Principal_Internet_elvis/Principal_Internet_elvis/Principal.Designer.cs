@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_botones = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPago = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
@@ -112,7 +112,7 @@
             this.btnEstado.Name = "btnEstado";
             this.btnEstado.Size = new System.Drawing.Size(260, 69);
             this.btnEstado.TabIndex = 3;
-            this.btnEstado.Text = "ESTADOS CLIENTES";
+            this.btnEstado.Text = "ESTADOS CONTRATOS";
             this.btnEstado.UseVisualStyleBackColor = false;
             this.btnEstado.Click += new System.EventHandler(this.bt_estado_Click);
             // 
@@ -216,7 +216,6 @@
             // img_logo
             // 
             this.img_logo.BackColor = System.Drawing.Color.SlateGray;
-            this.img_logo.Image = global::Principal_Internet_elvis.Properties.Resources.logo;
             this.img_logo.Location = new System.Drawing.Point(542, 21);
             this.img_logo.Name = "img_logo";
             this.img_logo.Size = new System.Drawing.Size(229, 219);
@@ -230,14 +229,14 @@
             this.dgv_pendientes.AllowUserToDeleteRows = false;
             this.dgv_pendientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_pendientes.BackgroundColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_pendientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_pendientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_pendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pendientes.Location = new System.Drawing.Point(281, 449);
             this.dgv_pendientes.Name = "dgv_pendientes";

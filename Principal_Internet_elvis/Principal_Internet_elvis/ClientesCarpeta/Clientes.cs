@@ -52,7 +52,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
                 }
                 dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
             }
-            for(int i = 0; i < dgv_tabla.Columns.Count; i++)
+            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
             {
                 string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
                 dgv_tabla.Columns[i].HeaderText = t;
@@ -62,110 +62,14 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             {
                 e.Text = "";
             }
+
+            bt_eliminar.Enabled = false;
+
             txt_nombre.Select();
             rb_femenino.Checked = true;
             row = -1;
             estado = -1;
             addFuente(Program.principal.fuente);
-        }
-
-        private void aceptar()
-        {
-            if (this.Text.Contains("CLIENTE"))
-            {
-                if (this.Text.Contains("AGREGAR"))
-                {
-                    ConexionDB conn = new ConexionDB();
-                    conn.abrir();
-                    List<string> campos = new List<string>();
-                    campos.Add("'" + txt_nombre.Text + "'");
-                    campos.Add("'" + txt_rtn.Text + "'");
-                    campos.Add("'" + txt_telefono.Text + "'");
-                    if (rb_femenino.Checked)
-                    {
-                        campos.Add("0");
-                    }
-                    else
-                    {
-                        campos.Add("1");
-                    }
-                    campos.Add("'" + txt_correo.Text + "'");
-                    campos.Add("'" + dtp_fecha.Value.ToString("yyyy/MM/dd") + "'");
-                    campos.Add("'" + txt_direccion.Text + "'");
-                    campos.Add("" + idl);
-                    List<Capsula> m = conn.insertar("sp_insertar_cliente", campos);
-                    conn.cerrar();
-                    foreach (Capsula r in m)
-                    {
-                        MessageBox.Show(r.getCampos()[0]);
-                    }
-                    limpiar();
-                }
-                else if (this.Text.Contains("BUSCAR") || this.Text.Contains("MODIFICAR") || this.Text.Contains("ESTADO"))
-                {
-                    ConexionDB conn = new ConexionDB();
-                    conn.abrir();
-                    List<string> campos = new List<string>();
-                    campos.Add("'" + txt_nombre.Text + "'");
-                    //campos.Add("1");
-                    conn.llenarTabla("sp_buscar_clientes", campos, dgv_tabla);
-                    conn.cerrar();
-                    if (row != -1)
-                    {
-                        if (this.Text.Contains("ESTADO"))
-                        {
-                            ConexionDB conn2 = new ConexionDB();
-                            conn2.abrir();
-                            List<string> campos2 = new List<string>();
-                            campos2.Add("" + txt_codigo.Text);
-                            campos2.Add("1");
-                            if (estado == 1)
-                            {
-                                campos2.Add("0");
-                            }
-                            else
-                            {
-                                campos2.Add("1");
-                            }
-                            List<Capsula> m = conn2.insertar("sp_estado_cliente", campos2);
-                            conn2.cerrar();
-                            foreach (Capsula r in m)
-                            {
-                                MessageBox.Show(r.getCampos()[0]);
-                            }
-                        }
-                        else
-                        {
-                            ConexionDB conn2 = new ConexionDB();
-                            conn2.abrir();
-                            List<string> campos2 = new List<string>();
-                            campos2.Add("" + txt_codigo.Text);
-                            campos2.Add("'" + txt_nombre.Text + "'");
-                            campos2.Add("'" + txt_rtn.Text + "'");
-                            campos2.Add("'" + txt_telefono.Text + "'");
-                            if (rb_femenino.Checked)
-                            {
-                                campos2.Add("0");
-                            }
-                            else
-                            {
-                                campos2.Add("1");
-                            }
-                            campos2.Add("'" + txt_correo.Text + "'");
-                            campos2.Add("'" + dtp_fecha.Value.ToString("yyyy/MM/dd") + "'");
-                            campos2.Add("'" + txt_direccion.Text + "'");
-                            campos2.Add("" + idl);
-                            List<Capsula> m = conn2.insertar("sp_modificar_cliente", campos2);
-                            conn2.cerrar();
-                            foreach (Capsula r in m)
-                            {
-                                MessageBox.Show(r.getCampos()[0]);
-                            }
-                        }
-                        limpiar();
-                    }
-                } 
-            }
         }
 
         public void agregarDatos(int id, string nombre)
@@ -174,29 +78,20 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             idl = id;
         }
 
-        private void bt_aceptar_Click(object sender, EventArgs e)
-        {
-            aceptar();
-        }
-
         private void bt_lugar_Click(object sender, EventArgs e)
         {
-            if (this.Text.Contains("AGREGAR") || this.Text.Contains("MODIFICAR"))
-            {
-                Program.ubicacionElegir = new UbicacionElegir();
-                Program.ubicacionElegir.TopMost = true;
-                Program.ubicacionElegir.BringToFront();
-                Program.ubicacionElegir.Text = "ELEGIR-LUGAR";
-                Program.ubicacionElegir.Show();
-                Program.ubicacionElegir.Focus();
-            }
+            Program.ubicacionElegir = new UbicacionElegir();
+            Program.ubicacionElegir.TopMost = true;
+            Program.ubicacionElegir.BringToFront();
+            Program.ubicacionElegir.Text = "ELEGIR-LUGAR";
+            Program.ubicacionElegir.Show();
+            Program.ubicacionElegir.Focus();
         }
 
         private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Int32 selectedRowCount = dgv_tabla.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0 && Text.Contains("MODIFICAR") ||
-                selectedRowCount > 0 && Text.Contains("ESTADO"))
+            if (selectedRowCount > 0)
             {
                 row = dgv_tabla.CurrentRow.Index;
                 seleccionar();
@@ -205,27 +100,26 @@ namespace Principal_Internet_elvis.ClientesCarpeta
 
         private void seleccionar()
         {
-            if (this.Text.Contains("CLIENTE"))
+            txt_codigo.Text = dgv_tabla.Rows[row].Cells["idcliente"].Value.ToString();
+            txt_nombre.Text = dgv_tabla.Rows[row].Cells["nombre"].Value.ToString();
+            txt_rtn.Text = dgv_tabla.Rows[row].Cells["rtn"].Value.ToString();
+            txt_telefono.Text = dgv_tabla.Rows[row].Cells["telefono"].Value.ToString();
+            txt_correo.Text = dgv_tabla.Rows[row].Cells["correo"].Value.ToString();
+            txt_direccion.Text = dgv_tabla.Rows[row].Cells["direccion"].Value.ToString();
+            txt_lugar.Text = dgv_tabla.Rows[row].Cells["idlugar"].Value.ToString();
+            estado = int.Parse(dgv_tabla.Rows[row].Cells["estado"].Value.ToString());
+            idl = int.Parse(dgv_tabla.Rows[row].Cells["idlugar"].Value.ToString());
+            dtp_fecha.Value = DateTime.Parse(dgv_tabla.Rows[row].Cells["fecha"].Value.ToString());
+            if (int.Parse(dgv_tabla.Rows[row].Cells["genero"].Value.ToString()) == 0)
             {
-                txt_codigo.Text = dgv_tabla.Rows[row].Cells["idcliente"].Value.ToString();
-                txt_nombre.Text = dgv_tabla.Rows[row].Cells["nombre"].Value.ToString();
-                txt_rtn.Text = dgv_tabla.Rows[row].Cells["rtn"].Value.ToString();
-                txt_telefono.Text = dgv_tabla.Rows[row].Cells["telefono"].Value.ToString();
-                txt_correo.Text = dgv_tabla.Rows[row].Cells["correo"].Value.ToString();
-                txt_direccion.Text = dgv_tabla.Rows[row].Cells["direccion"].Value.ToString();
-                txt_lugar.Text = dgv_tabla.Rows[row].Cells["idlugar"].Value.ToString();
-                estado = int.Parse(dgv_tabla.Rows[row].Cells["estado"].Value.ToString());
-                idl = int.Parse(dgv_tabla.Rows[row].Cells["idlugar"].Value.ToString());
-                dtp_fecha.Value = DateTime.Parse(dgv_tabla.Rows[row].Cells["fecha"].Value.ToString());
-                if(int.Parse(dgv_tabla.Rows[row].Cells["genero"].Value.ToString()) == 0)
-                {
-                    rb_femenino.Checked = true;
-                }
-                else
-                {
-                    rb_masculino.Checked = true;
-                }
+                rb_femenino.Checked = true;
             }
+            else
+            {
+                rb_masculino.Checked = true;
+            }
+
+            bt_eliminar.Enabled = true;
         }
 
         private void bt_paquetes_Click(object sender, EventArgs e)
@@ -250,8 +144,113 @@ namespace Principal_Internet_elvis.ClientesCarpeta
         {
             if (e.KeyValue.Equals(13))
             {
-                aceptar();
+                buscar();
             }
+        }
+
+        private void buscar()
+        {
+            ConexionDB conn = new ConexionDB();
+            conn.abrir();
+            List<string> campos = new List<string>();
+            campos.Add("'" + txt_nombre.Text + "'");
+            //campos.Add("1");
+            conn.llenarTabla("sp_buscar_clientes", campos, dgv_tabla);
+            conn.cerrar();
+        }
+
+        private void bt_nuevo_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void bt_aceptar_Click(object sender, EventArgs e)
+        {
+            if (row == -1)
+            {
+                ConexionDB conn = new ConexionDB();
+                conn.abrir();
+                List<string> campos = new List<string>();
+                campos.Add("'" + txt_nombre.Text + "'");
+                campos.Add("'" + txt_rtn.Text + "'");
+                campos.Add("'" + txt_telefono.Text + "'");
+                if (rb_femenino.Checked)
+                {
+                    campos.Add("0");
+                }
+                else
+                {
+                    campos.Add("1");
+                }
+                campos.Add("'" + txt_correo.Text + "'");
+                campos.Add("'" + dtp_fecha.Value.ToString("yyyy/MM/dd") + "'");
+                campos.Add("'" + txt_direccion.Text + "'");
+                campos.Add("" + idl);
+                List<Capsula> m = conn.insertar("sp_insertar_cliente", campos);
+                conn.cerrar();
+                foreach (Capsula r in m)
+                {
+                    MessageBox.Show(r.getCampos()[0]);
+                }
+            }
+            else
+            {
+                ConexionDB conn2 = new ConexionDB();
+                conn2.abrir();
+                List<string> campos2 = new List<string>();
+                campos2.Add("" + txt_codigo.Text);
+                campos2.Add("'" + txt_nombre.Text + "'");
+                campos2.Add("'" + txt_rtn.Text + "'");
+                campos2.Add("'" + txt_telefono.Text + "'");
+                if (rb_femenino.Checked)
+                {
+                    campos2.Add("0");
+                }
+                else
+                {
+                    campos2.Add("1");
+                }
+                campos2.Add("'" + txt_correo.Text + "'");
+                campos2.Add("'" + dtp_fecha.Value.ToString("yyyy/MM/dd") + "'");
+                campos2.Add("'" + txt_direccion.Text + "'");
+                campos2.Add("" + idl);
+                List<Capsula> m = conn2.insertar("sp_modificar_cliente", campos2);
+                conn2.cerrar();
+                foreach (Capsula r in m)
+                {
+                    MessageBox.Show(r.getCampos()[0]);
+                }
+            }
+            limpiar();
+        }
+
+        private void bt_buscar_Click(object sender, EventArgs e)
+        {
+            buscar();
+        }
+
+        private void bt_eliminar_Click(object sender, EventArgs e)
+        {
+            ConexionDB conn2 = new ConexionDB();
+            conn2.abrir();
+            List<string> campos2 = new List<string>();
+            campos2.Add("" + txt_codigo.Text);
+            campos2.Add("1");
+            if (estado == 1)
+            {
+                campos2.Add("0");
+            }
+            else
+            {
+                campos2.Add("1");
+            }
+            List<Capsula> m = conn2.insertar("sp_estado_cliente", campos2);
+            conn2.cerrar();
+            foreach (Capsula r in m)
+            {
+                MessageBox.Show(r.getCampos()[0]);
+            }
+            limpiar();
         }
 
         private void bt_salir_Click(object sender, EventArgs e)

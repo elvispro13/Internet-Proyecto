@@ -51,12 +51,24 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void UbicacionElegir_Load(object sender, EventArgs e)
         {
+            buscar();
+        }
+
+        private void buscar()
+        {
             if (this.Text.Equals("ELEGIR-SECTOR"))
             {
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("' '");
+                if (txt_buscar.Text.Equals(""))
+                {
+                    campos.Add("' '");
+                }
+                else
+                {
+                    campos.Add("'" + txt_buscar.Text + "'");
+                }
                 campos.Add("1");
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
@@ -68,7 +80,14 @@ namespace Principal_Internet_elvis.Ubicacion
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("' '");
+                if (txt_buscar.Text.Equals(""))
+                {
+                    campos.Add("' '");
+                }
+                else
+                {
+                    campos.Add("'" + txt_buscar.Text + "'");
+                }
                 campos.Add("2");
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
@@ -81,7 +100,14 @@ namespace Principal_Internet_elvis.Ubicacion
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("' '");
+                if (txt_buscar.Text.Equals(""))
+                {
+                    campos.Add("' '");
+                }
+                else
+                {
+                    campos.Add("'" + txt_buscar.Text + "'");
+                }
                 campos.Add("4");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
@@ -92,13 +118,14 @@ namespace Principal_Internet_elvis.Ubicacion
                 dgv_tabla.Columns["estado2"].Visible = false;
                 dgv_tabla.Columns["estado3"].Visible = false;
             }
-            dgv_tabla.ClearSelection();
 
             for (int i = 0; i < dgv_tabla.Columns.Count; i++)
             {
                 string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
                 dgv_tabla.Columns[i].HeaderText = t;
             }
+
+            dgv_tabla.ClearSelection();
 
             addFuente(Program.principal.fuente);
         }

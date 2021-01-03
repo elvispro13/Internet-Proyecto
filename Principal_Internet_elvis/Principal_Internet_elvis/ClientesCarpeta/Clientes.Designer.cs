@@ -52,6 +52,9 @@
             this.bt_paquetes = new System.Windows.Forms.Button();
             this.bt_aceptar = new System.Windows.Forms.Button();
             this.bt_salir = new System.Windows.Forms.Button();
+            this.bt_nuevo = new System.Windows.Forms.Button();
+            this.bt_buscar = new System.Windows.Forms.Button();
+            this.bt_eliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -256,21 +259,22 @@
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tabla.Location = new System.Drawing.Point(306, 13);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(546, 443);
+            this.dgv_tabla.Size = new System.Drawing.Size(619, 499);
             this.dgv_tabla.TabIndex = 10;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // bt_paquetes
             // 
-            this.bt_paquetes.Location = new System.Drawing.Point(338, 470);
+            this.bt_paquetes.Location = new System.Drawing.Point(12, 529);
             this.bt_paquetes.Name = "bt_paquetes";
-            this.bt_paquetes.Size = new System.Drawing.Size(236, 53);
+            this.bt_paquetes.Size = new System.Drawing.Size(288, 53);
             this.bt_paquetes.TabIndex = 13;
             this.bt_paquetes.Text = "PAQUETES-CONTRATADOS";
             this.bt_paquetes.UseVisualStyleBackColor = true;
@@ -279,9 +283,9 @@
             // bt_aceptar
             // 
             this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
-            this.bt_aceptar.Location = new System.Drawing.Point(580, 470);
+            this.bt_aceptar.Location = new System.Drawing.Point(578, 530);
             this.bt_aceptar.Name = "bt_aceptar";
-            this.bt_aceptar.Size = new System.Drawing.Size(133, 53);
+            this.bt_aceptar.Size = new System.Drawing.Size(76, 52);
             this.bt_aceptar.TabIndex = 12;
             this.bt_aceptar.UseVisualStyleBackColor = true;
             this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
@@ -289,18 +293,51 @@
             // bt_salir
             // 
             this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_salir.Location = new System.Drawing.Point(719, 470);
+            this.bt_salir.Location = new System.Drawing.Point(857, 529);
             this.bt_salir.Name = "bt_salir";
-            this.bt_salir.Size = new System.Drawing.Size(133, 53);
+            this.bt_salir.Size = new System.Drawing.Size(68, 52);
             this.bt_salir.TabIndex = 11;
             this.bt_salir.UseVisualStyleBackColor = true;
             this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
+            // 
+            // bt_nuevo
+            // 
+            this.bt_nuevo.Image = global::Principal_Internet_elvis.Properties.Resources.rounded_add_button_icon_icons_com_72592;
+            this.bt_nuevo.Location = new System.Drawing.Point(480, 530);
+            this.bt_nuevo.Name = "bt_nuevo";
+            this.bt_nuevo.Size = new System.Drawing.Size(79, 52);
+            this.bt_nuevo.TabIndex = 16;
+            this.bt_nuevo.UseVisualStyleBackColor = true;
+            this.bt_nuevo.Click += new System.EventHandler(this.bt_nuevo_Click);
+            // 
+            // bt_buscar
+            // 
+            this.bt_buscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
+            this.bt_buscar.Location = new System.Drawing.Point(676, 530);
+            this.bt_buscar.Name = "bt_buscar";
+            this.bt_buscar.Size = new System.Drawing.Size(69, 51);
+            this.bt_buscar.TabIndex = 15;
+            this.bt_buscar.UseVisualStyleBackColor = true;
+            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
+            // 
+            // bt_eliminar
+            // 
+            this.bt_eliminar.Image = global::Principal_Internet_elvis.Properties.Resources._9;
+            this.bt_eliminar.Location = new System.Drawing.Point(766, 529);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(72, 52);
+            this.bt_eliminar.TabIndex = 14;
+            this.bt_eliminar.UseVisualStyleBackColor = true;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 537);
+            this.ClientSize = new System.Drawing.Size(937, 593);
+            this.Controls.Add(this.bt_nuevo);
+            this.Controls.Add(this.bt_buscar);
+            this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.bt_paquetes);
             this.Controls.Add(this.bt_aceptar);
             this.Controls.Add(this.bt_salir);
@@ -366,5 +403,8 @@
         private System.Windows.Forms.Button bt_salir;
         private System.Windows.Forms.Button bt_aceptar;
         private System.Windows.Forms.Button bt_paquetes;
+        private System.Windows.Forms.Button bt_nuevo;
+        private System.Windows.Forms.Button bt_buscar;
+        private System.Windows.Forms.Button bt_eliminar;
     }
 }

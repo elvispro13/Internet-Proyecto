@@ -46,6 +46,7 @@
             this.btnAtrasConcepto = new System.Windows.Forms.Button();
             this.dgv_tabla_p = new System.Windows.Forms.DataGridView();
             this.gb_paquete = new System.Windows.Forms.GroupBox();
+            this.cb_adelantado = new System.Windows.Forms.CheckBox();
             this.dtp_mes_p = new System.Windows.Forms.DateTimePicker();
             this.btnBusCON = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.txt_efectivo = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_cambio = new System.Windows.Forms.TextBox();
-            this.cb_adelantado = new System.Windows.Forms.CheckBox();
             this.gb_cliente.SuspendLayout();
             this.gBusCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla_c)).BeginInit();
@@ -287,12 +287,23 @@
             this.gb_paquete.Controls.Add(this.label7);
             this.gb_paquete.Controls.Add(this.txt_codigo_p);
             this.gb_paquete.Controls.Add(this.label8);
-            this.gb_paquete.Location = new System.Drawing.Point(201, 206);
+            this.gb_paquete.Location = new System.Drawing.Point(201, 208);
             this.gb_paquete.Name = "gb_paquete";
             this.gb_paquete.Size = new System.Drawing.Size(509, 179);
             this.gb_paquete.TabIndex = 5;
             this.gb_paquete.TabStop = false;
-            this.gb_paquete.Text = "DATOS ";
+            this.gb_paquete.Text = "PAGO";
+            // 
+            // cb_adelantado
+            // 
+            this.cb_adelantado.AutoSize = true;
+            this.cb_adelantado.Location = new System.Drawing.Point(15, 143);
+            this.cb_adelantado.Name = "cb_adelantado";
+            this.cb_adelantado.Size = new System.Drawing.Size(125, 17);
+            this.cb_adelantado.TabIndex = 9;
+            this.cb_adelantado.Text = "MES ADELANTADO";
+            this.cb_adelantado.UseVisualStyleBackColor = true;
+            this.cb_adelantado.CheckedChanged += new System.EventHandler(this.cb_adelantado_CheckedChanged);
             // 
             // dtp_mes_p
             // 
@@ -443,7 +454,7 @@
             // 
             this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(328, 514);
+            this.btnSalir.Location = new System.Drawing.Point(170, 513);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(152, 55);
             this.btnSalir.TabIndex = 15;
@@ -454,15 +465,18 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnImprimir.Enabled = false;
             this.btnImprimir.Image = global::Principal_Internet_elvis.Properties.Resources.Print_icon_icons_com_55835;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(170, 514);
+            this.btnImprimir.Location = new System.Drawing.Point(328, 513);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(152, 55);
             this.btnImprimir.TabIndex = 14;
             this.btnImprimir.Text = "IMPRIMIR";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Visible = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnGuardar
@@ -480,7 +494,6 @@
             // 
             // img_logo
             // 
-            this.img_logo.Image = global::Principal_Internet_elvis.Properties.Resources.logo;
             this.img_logo.Location = new System.Drawing.Point(18, 101);
             this.img_logo.Name = "img_logo";
             this.img_logo.Size = new System.Drawing.Size(167, 135);
@@ -598,17 +611,6 @@
             this.txt_cambio.ReadOnly = true;
             this.txt_cambio.Size = new System.Drawing.Size(102, 20);
             this.txt_cambio.TabIndex = 0;
-            // 
-            // cb_adelantado
-            // 
-            this.cb_adelantado.AutoSize = true;
-            this.cb_adelantado.Location = new System.Drawing.Point(15, 143);
-            this.cb_adelantado.Name = "cb_adelantado";
-            this.cb_adelantado.Size = new System.Drawing.Size(125, 17);
-            this.cb_adelantado.TabIndex = 9;
-            this.cb_adelantado.Text = "MES ADELANTADO";
-            this.cb_adelantado.UseVisualStyleBackColor = true;
-            this.cb_adelantado.CheckedChanged += new System.EventHandler(this.cb_adelantado_CheckedChanged);
             // 
             // Pago
             // 

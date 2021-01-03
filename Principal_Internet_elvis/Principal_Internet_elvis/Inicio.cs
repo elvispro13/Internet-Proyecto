@@ -42,6 +42,7 @@ namespace Proyecto_Internet
                 if (e.KeyCode == Keys.Enter)
                 {
                     btnEntrar_Click(null, null);
+                    txtUsuario.Select();
                 }
             }
         }

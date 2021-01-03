@@ -58,7 +58,7 @@
             this.groupBox1.Size = new System.Drawing.Size(859, 439);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ESTADO DEL CLIENTE";
+            this.groupBox1.Text = "ESTADO DEL CONTRATO";
             // 
             // groupBox4
             // 
@@ -102,7 +102,7 @@
             this.groupBox3.Size = new System.Drawing.Size(336, 53);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ESTADO PAQUETE DEL CLIENTE";
+            this.groupBox3.Text = "ESTADO DEL PAQUETE DEL CLIENTE";
             // 
             // cb_estado
             // 
@@ -124,7 +124,7 @@
             this.groupBox2.Size = new System.Drawing.Size(515, 49);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "DESCRIPCION";
+            this.groupBox2.Text = "NOTA DE CAMBIO DE ESTADO";
             // 
             // txt_descripcion
             // 
@@ -139,6 +139,7 @@
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tabla.Location = new System.Drawing.Point(6, 131);
             this.dgv_tabla.MultiSelect = false;

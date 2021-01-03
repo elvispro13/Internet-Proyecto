@@ -487,6 +487,8 @@ namespace Principal_Internet_elvis.Pagos
             }
 
             MessageBox.Show("Su factura ya ha sido generada.");
+            btnImprimir.Enabled = true;
+            btnGuardar.Enabled = false;
 
             limpiarTodo();
         }

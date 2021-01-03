@@ -31,7 +31,10 @@
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.bt_aceptar = new System.Windows.Forms.Button();
             this.bt_cancelar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_buscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_tabla
@@ -39,18 +42,19 @@
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tabla.Location = new System.Drawing.Point(12, 12);
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(710, 205);
+            this.dgv_tabla.Size = new System.Drawing.Size(710, 358);
             this.dgv_tabla.TabIndex = 0;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // bt_aceptar
             // 
-            this.bt_aceptar.Location = new System.Drawing.Point(12, 223);
+            this.bt_aceptar.Location = new System.Drawing.Point(12, 376);
             this.bt_aceptar.Name = "bt_aceptar";
             this.bt_aceptar.Size = new System.Drawing.Size(106, 42);
             this.bt_aceptar.TabIndex = 1;
@@ -60,7 +64,7 @@
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Location = new System.Drawing.Point(124, 223);
+            this.bt_cancelar.Location = new System.Drawing.Point(124, 376);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(106, 42);
             this.bt_cancelar.TabIndex = 2;
@@ -68,11 +72,31 @@
             this.bt_cancelar.UseVisualStyleBackColor = true;
             this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_buscar);
+            this.groupBox1.Location = new System.Drawing.Point(236, 376);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(357, 47);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "BUSCAR";
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_buscar.Location = new System.Drawing.Point(6, 19);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Size = new System.Drawing.Size(345, 20);
+            this.txt_buscar.TabIndex = 0;
+            this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
+            // 
             // PaquetesElegir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 277);
+            this.ClientSize = new System.Drawing.Size(734, 430);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_aceptar);
             this.Controls.Add(this.dgv_tabla);
@@ -81,6 +105,8 @@
             this.Text = "PaquetesElegir";
             this.Load += new System.EventHandler(this.PaquetesElegir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -90,5 +116,7 @@
         private System.Windows.Forms.DataGridView dgv_tabla;
         private System.Windows.Forms.Button bt_aceptar;
         private System.Windows.Forms.Button bt_cancelar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txt_buscar;
     }
 }

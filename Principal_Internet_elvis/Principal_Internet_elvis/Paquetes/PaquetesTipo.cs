@@ -20,49 +20,17 @@ namespace Principal_Internet_elvis.Paquetes
         private void bt_paquete_Click(object sender, EventArgs e)
         {
             Program.paquetesAgregar = new PaquetesAgregar();
-            if (this.Text.Equals("PAQUETES-AGREGAR"))
-            {
-                Program.paquetesAgregar.Text = "AGREGAR-PAQUETE";
-            }
-            else if (this.Text.Equals("PAQUETES-BUSCAR"))
-            {
-                Program.paquetesAgregar.Text = "BUSCAR-PAQUETE";
-            }
-            else if (this.Text.Equals("PAQUETES-MODIFICAR"))
-            {
-                Program.paquetesAgregar.Text = "MODIFICAR-PAQUETE";
-            }
-            else if (this.Text.Equals("PAQUETES-ESTADO"))
-            {
-                Program.paquetesAgregar.Text = "ESTADO-PAQUETE";
-            }
+            Program.paquetesAgregar.Text = "PAQUETE";
             Program.paquetesAgregar.Show();
             Program.paquetesAgregar.Focus();
-            this.Close();
         }
 
         private void bt_servicio_Click(object sender, EventArgs e)
         {
             Program.paquetesAgregar = new PaquetesAgregar();
-            if (this.Text.Equals("PAQUETES-AGREGAR"))
-            {
-                Program.paquetesAgregar.Text = "AGREGAR-SERVICIO";
-            }
-            else if (this.Text.Equals("PAQUETES-BUSCAR"))
-            {
-                Program.paquetesAgregar.Text = "BUSCAR-SERVICIO";
-            }
-            else if (this.Text.Equals("PAQUETES-MODIFICAR"))
-            {
-                Program.paquetesAgregar.Text = "MODIFICAR-SERVICIO";
-            }
-            else if (this.Text.Equals("PAQUETES-ESTADO"))
-            {
-                Program.paquetesAgregar.Text = "ESTADO-SERVICIO";
-            }
+            Program.paquetesAgregar.Text = "SERVICIO";
             Program.paquetesAgregar.Show();
             Program.paquetesAgregar.Focus();
-            this.Close();
         }
 
         private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
@@ -139,6 +107,11 @@ namespace Principal_Internet_elvis.Paquetes
             {
                 e.Font = f;
             }
+        }
+
+        private void bt_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

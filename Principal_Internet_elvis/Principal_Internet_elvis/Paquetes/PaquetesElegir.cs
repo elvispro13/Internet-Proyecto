@@ -22,12 +22,24 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void PaquetesElegir_Load(object sender, EventArgs e)
         {
+            buscar();
+        }
+
+        private void buscar()
+        {
             if (this.Text.Contains("SERVICIOS"))
             {
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("' '");
+                if (txt_buscar.Text.Equals(""))
+                {
+                    campos.Add("' '");
+                }
+                else
+                {
+                    campos.Add("'" + txt_buscar.Text + "'");
+                }
                 campos.Add("1");
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
@@ -60,15 +72,24 @@ namespace Principal_Internet_elvis.Paquetes
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("' '");
+                if (txt_buscar.Text.Equals(""))
+                {
+                    campos.Add("' '");
+                }
+                else
+                {
+                    campos.Add("'" + txt_buscar.Text + "'");
+                }
                 campos.Add("2");
                 conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
                 conn.cerrar();
-                dgv_tabla.ClearSelection();
 
                 dgv_tabla.Columns["idpaquete"].Visible = false;
+
+                dgv_tabla.ClearSelection();
+                dgv_tabla.TabIndex = 1;
             }
-            
+
 
             for (int i = 0; i < dgv_tabla.Columns.Count; i++)
             {
@@ -139,7 +160,7 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void dgv_tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         public void addFuente(Font f)
@@ -167,6 +188,14 @@ namespace Principal_Internet_elvis.Paquetes
             foreach (DataGridView e in Program.GetAllChildren(this).OfType<DataGridView>())
             {
                 e.Font = f;
+            }
+        }
+
+        private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue.Equals(13))
+            {
+                buscar();
             }
         }
 

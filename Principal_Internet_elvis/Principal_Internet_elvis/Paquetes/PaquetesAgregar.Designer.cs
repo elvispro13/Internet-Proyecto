@@ -36,10 +36,13 @@
             this.txt_c1 = new System.Windows.Forms.TextBox();
             this.gb_c2 = new System.Windows.Forms.GroupBox();
             this.txt_c2 = new System.Windows.Forms.TextBox();
-            this.bt_aceptar = new System.Windows.Forms.Button();
+            this.bt_guardar = new System.Windows.Forms.Button();
             this.bt_salir = new System.Windows.Forms.Button();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.bt_servicios = new System.Windows.Forms.Button();
+            this.bt_eliminar = new System.Windows.Forms.Button();
+            this.bt_buscar = new System.Windows.Forms.Button();
+            this.bt_nuevo = new System.Windows.Forms.Button();
             this.gb_codigo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_c1.SuspendLayout();
@@ -122,19 +125,19 @@
             this.txt_c2.TabIndex = 1;
             this.txt_c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_c2_KeyPress);
             // 
-            // bt_aceptar
+            // bt_guardar
             // 
-            this.bt_aceptar.Location = new System.Drawing.Point(561, 192);
-            this.bt_aceptar.Name = "bt_aceptar";
-            this.bt_aceptar.Size = new System.Drawing.Size(111, 39);
-            this.bt_aceptar.TabIndex = 4;
-            this.bt_aceptar.Text = "ACEPTAR";
-            this.bt_aceptar.UseVisualStyleBackColor = true;
-            this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
+            this.bt_guardar.Location = new System.Drawing.Point(129, 329);
+            this.bt_guardar.Name = "bt_guardar";
+            this.bt_guardar.Size = new System.Drawing.Size(111, 39);
+            this.bt_guardar.TabIndex = 4;
+            this.bt_guardar.Text = "GUARDAR";
+            this.bt_guardar.UseVisualStyleBackColor = true;
+            this.bt_guardar.Click += new System.EventHandler(this.bt_aceptar_Click);
             // 
             // bt_salir
             // 
-            this.bt_salir.Location = new System.Drawing.Point(678, 192);
+            this.bt_salir.Location = new System.Drawing.Point(480, 329);
             this.bt_salir.Name = "bt_salir";
             this.bt_salir.Size = new System.Drawing.Size(111, 39);
             this.bt_salir.TabIndex = 5;
@@ -147,35 +150,69 @@
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tabla.Location = new System.Drawing.Point(381, 12);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(481, 165);
+            this.dgv_tabla.Size = new System.Drawing.Size(577, 293);
             this.dgv_tabla.TabIndex = 6;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellContentClick);
             // 
             // bt_servicios
             // 
-            this.bt_servicios.Location = new System.Drawing.Point(444, 192);
+            this.bt_servicios.Location = new System.Drawing.Point(12, 240);
             this.bt_servicios.Name = "bt_servicios";
-            this.bt_servicios.Size = new System.Drawing.Size(111, 39);
+            this.bt_servicios.Size = new System.Drawing.Size(363, 65);
             this.bt_servicios.TabIndex = 7;
             this.bt_servicios.Text = "SERVICIOS";
             this.bt_servicios.UseVisualStyleBackColor = true;
             this.bt_servicios.Click += new System.EventHandler(this.bt_servicios_Click);
             // 
+            // bt_eliminar
+            // 
+            this.bt_eliminar.Location = new System.Drawing.Point(363, 329);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(111, 39);
+            this.bt_eliminar.TabIndex = 8;
+            this.bt_eliminar.Text = "ESTADO";
+            this.bt_eliminar.UseVisualStyleBackColor = true;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
+            // 
+            // bt_buscar
+            // 
+            this.bt_buscar.Location = new System.Drawing.Point(246, 329);
+            this.bt_buscar.Name = "bt_buscar";
+            this.bt_buscar.Size = new System.Drawing.Size(111, 39);
+            this.bt_buscar.TabIndex = 9;
+            this.bt_buscar.Text = "BUSCAR";
+            this.bt_buscar.UseVisualStyleBackColor = true;
+            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
+            // 
+            // bt_nuevo
+            // 
+            this.bt_nuevo.Location = new System.Drawing.Point(12, 329);
+            this.bt_nuevo.Name = "bt_nuevo";
+            this.bt_nuevo.Size = new System.Drawing.Size(111, 39);
+            this.bt_nuevo.TabIndex = 10;
+            this.bt_nuevo.Text = "NUEVO";
+            this.bt_nuevo.UseVisualStyleBackColor = true;
+            this.bt_nuevo.Click += new System.EventHandler(this.bt_nuevo_Click);
+            // 
             // PaquetesAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 239);
+            this.ClientSize = new System.Drawing.Size(970, 376);
+            this.Controls.Add(this.bt_nuevo);
+            this.Controls.Add(this.bt_buscar);
+            this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.bt_servicios);
             this.Controls.Add(this.dgv_tabla);
             this.Controls.Add(this.bt_salir);
-            this.Controls.Add(this.bt_aceptar);
+            this.Controls.Add(this.bt_guardar);
             this.Controls.Add(this.gb_c2);
             this.Controls.Add(this.gb_c1);
             this.Controls.Add(this.groupBox2);
@@ -207,9 +244,12 @@
         private System.Windows.Forms.TextBox txt_c1;
         private System.Windows.Forms.GroupBox gb_c2;
         private System.Windows.Forms.TextBox txt_c2;
-        private System.Windows.Forms.Button bt_aceptar;
+        private System.Windows.Forms.Button bt_guardar;
         private System.Windows.Forms.Button bt_salir;
         private System.Windows.Forms.DataGridView dgv_tabla;
         private System.Windows.Forms.Button bt_servicios;
+        private System.Windows.Forms.Button bt_eliminar;
+        private System.Windows.Forms.Button bt_buscar;
+        private System.Windows.Forms.Button bt_nuevo;
     }
 }

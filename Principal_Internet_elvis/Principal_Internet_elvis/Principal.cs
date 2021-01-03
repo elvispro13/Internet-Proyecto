@@ -1,7 +1,9 @@
 ﻿using Principal_Internet_elvis;
+using Principal_Internet_elvis.ClientesCarpeta;
 using Principal_Internet_elvis.Configuraciones;
 using Principal_Internet_elvis.FormmGenerales;
 using Principal_Internet_elvis.Pagos;
+using Principal_Internet_elvis.Paquetes;
 using Principal_Internet_elvis.Reportes;
 using Proyecto_Internet;
 using System;
@@ -163,11 +165,12 @@ namespace Proyecto_dawelin
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            Program.OpCliente = new Opciones();
-            Program.OpCliente.Show();
-            Program.OpCliente.Focus();
-            Program.OpCliente.BringToFront();
-            Program.OpCliente.Text = "CLIENTES";
+            Program.clientes = new Clientes();
+            //Program.clientes.TopMost = true;
+            Program.clientes.Focus();
+            Program.clientes.BringToFront();
+            Program.clientes.Text = "CLIENTES";
+            Program.clientes.Show();
         }
 
         private void Principal_Resize(object sender, EventArgs e)
@@ -194,16 +197,17 @@ namespace Proyecto_dawelin
             Program.estado_Cliente.Show();
             Program.estado_Cliente.Focus();
             Program.estado_Cliente.BringToFront();
-            Program.estado_Cliente.Text = "ESTADO-CLIENTES";
+            Program.estado_Cliente.Text = "ESTADO-CONTRATOS";
         }
 
         private void btnPaquetes_Click(object sender, EventArgs e)
         {
-            Program.OpCliente = new Opciones();
-            Program.OpCliente.Show();
-            Program.OpCliente.Focus();
-            Program.OpCliente.BringToFront();
-            Program.OpCliente.Text = "PAQUETES";
+            Program.paquetesTipo = new PaquetesTipo();
+            //Program.paquetesTipo.TopMost = true;
+            Program.paquetesTipo.Focus();
+            Program.paquetesTipo.BringToFront();
+            Program.paquetesTipo.Text = "PAQUETES";
+            Program.paquetesTipo.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
