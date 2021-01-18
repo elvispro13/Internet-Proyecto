@@ -147,7 +147,7 @@
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tabla.Size = new System.Drawing.Size(847, 302);
-            this.dgv_tabla.TabIndex = 2;
+            this.dgv_tabla.TabIndex = 1;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // btnSalir

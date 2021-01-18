@@ -20,73 +20,25 @@ namespace Principal_Internet_elvis.Ubicacion
         private void bt_sector_Click(object sender, EventArgs e)
         {
             Program.ubicacionAgregar = new UbicacionAgregar();
-            if (this.Text.Equals("UBICACION-AGREGAR"))
-            {
-                Program.ubicacionAgregar.Text = "AGREGAR-SECTOR";
-            }
-            else if (this.Text.Equals("UBICACION-BUSCAR"))
-            {
-                Program.ubicacionAgregar.Text = "BUSCAR-SECTOR";
-            }
-            else if (this.Text.Equals("UBICACION-MODIFICAR"))
-            {
-                Program.ubicacionAgregar.Text = "MODIFICAR-SECTOR";
-            }
-            else if (this.Text.Equals("UBICACION-ESTADO"))
-            {
-                Program.ubicacionAgregar.Text = "ESTADO-SECTOR";
-            }
+            Program.ubicacionAgregar.Text = "SECTORES";
             Program.ubicacionAgregar.Show();
             Program.ubicacionAgregar.Focus();
-            this.Close();
         }
 
         private void bt_barrio_Click(object sender, EventArgs e)
         {
             Program.ubicacionAgregar = new UbicacionAgregar();
-            if (this.Text.Equals("UBICACION-AGREGAR"))
-            {
-                Program.ubicacionAgregar.Text = "AGREGAR-BARRIO";
-            }
-            else if (this.Text.Equals("UBICACION-BUSCAR"))
-            {
-                Program.ubicacionAgregar.Text = "BUSCAR-BARRIO";
-            }
-            else if (this.Text.Equals("UBICACION-MODIFICAR"))
-            {
-                Program.ubicacionAgregar.Text = "MODIFICAR-BARRIO";
-            }
-            else if (this.Text.Equals("UBICACION-ESTADO"))
-            {
-                Program.ubicacionAgregar.Text = "ESTADO-BARRIO";
-            }
+            Program.ubicacionAgregar.Text = "BARRIOS";
             Program.ubicacionAgregar.Show();
             Program.ubicacionAgregar.Focus();
-            this.Close();
         }
 
         private void bt_lugar_Click(object sender, EventArgs e)
         {
             Program.ubicacionAgregar = new UbicacionAgregar();
-            if (this.Text.Equals("UBICACION-AGREGAR"))
-            {
-                Program.ubicacionAgregar.Text = "AGREGAR-LUGAR";
-            }
-            else if (this.Text.Equals("UBICACION-BUSCAR"))
-            {
-                Program.ubicacionAgregar.Text = "BUSCAR-LUGAR";
-            }
-            else if (this.Text.Equals("UBICACION-MODIFICAR"))
-            {
-                Program.ubicacionAgregar.Text = "MODIFICAR-LUGAR";
-            }
-            else if (this.Text.Equals("UBICACION-ESTADO"))
-            {
-                Program.ubicacionAgregar.Text = "ESTADO-LUGAR";
-            }
+            Program.ubicacionAgregar.Text = "LUGARES";
             Program.ubicacionAgregar.Show();
             Program.ubicacionAgregar.Focus();
-            this.Close();
         }
 
         private void UbicacionTipo_Load(object sender, EventArgs e)
@@ -104,6 +56,8 @@ namespace Principal_Internet_elvis.Ubicacion
             dgv_tabla.Columns[6].Visible = false;
             dgv_tabla.Columns[7].Visible = false;
             dgv_tabla.Columns[8].Visible = false;
+            dgv_tabla.Columns[9].Visible = false;
+            dgv_tabla.Columns[10].Visible = false;
 
             for (int i = 0; i < dgv_tabla.Columns.Count; i++)
             {
@@ -175,6 +129,11 @@ namespace Principal_Internet_elvis.Ubicacion
             {
                 e.Font = f;
             }
+        }
+
+        private void bt_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

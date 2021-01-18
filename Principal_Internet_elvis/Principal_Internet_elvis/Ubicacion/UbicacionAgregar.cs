@@ -41,7 +41,14 @@ namespace Principal_Internet_elvis.Ubicacion
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                campos.Add("' '");
+                if (txt_nombre.Text.Equals(""))
+                {
+                    campos.Add("' '");
+                }
+                else
+                {
+                    campos.Add("'" + txt_nombre.Text + "'");
+                }
                 campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
@@ -99,6 +106,10 @@ namespace Principal_Internet_elvis.Ubicacion
                 dgv_tabla.Columns[i].HeaderText = t;
             }
 
+            bt_eliminar.Enabled = false;
+
+            txt_nombre.Select();
+
             id2 = 0;
             row = -1;
             estado = -1;
@@ -114,21 +125,16 @@ namespace Principal_Internet_elvis.Ubicacion
             txt_codigo2.Text = nombre;
         }
 
-        private void bt_agregar_Click(object sender, EventArgs e)
-        {
-            botonAceptar();
-        }
-
         private void bt_codigo2_Click(object sender, EventArgs e)
         {
-            if (this.Text.Equals("AGREGAR-BARRIO") || this.Text.Equals("MODIFICAR-BARRIO"))
+            if (this.Text.Contains("BARRIO"))
             {
                 Program.ubicacionElegir = new UbicacionElegir();
                 Program.ubicacionElegir.Text = "ELEGIR-SECTOR";
                 Program.ubicacionElegir.Show();
                 Program.ubicacionElegir.Focus();
             }
-            else if (this.Text.Equals("AGREGAR-LUGAR") || this.Text.Equals("MODIFICAR-LUGAR"))
+            else if (this.Text.Contains("LUGAR"))
             {
                 Program.ubicacionElegir = new UbicacionElegir();
                 Program.ubicacionElegir.Text = "ELEGIR-BARRIO";
@@ -141,200 +147,15 @@ namespace Principal_Internet_elvis.Ubicacion
         {
             if (e.KeyValue.Equals(13))
             {
-                botonAceptar();
+                buscar();
             }
         }
 
-        private void botonAceptar()
-        {
-            if (this.Text.Equals("AGREGAR-SECTOR"))
-            {
-                ConexionDB conn = new ConexionDB();
-                conn.abrir();
-                List<string> campos = new List<string>();
-                campos.Add("'" + txt_nombre.Text + "'");
-                List<Capsula> m = conn.insertar("sp_insertar_sector", campos);
-                conn.cerrar();
-                foreach (Capsula r in m)
-                {
-                    MessageBox.Show(r.getCampos()[0]);
-                }
-                limpiar();
-            }
-            else if (this.Text.Equals("AGREGAR-BARRIO"))
-            {
-                ConexionDB conn = new ConexionDB();
-                conn.abrir();
-                List<string> campos = new List<string>();
-                campos.Add("" + id2 + "");
-                campos.Add("'" + txt_nombre.Text + "'");
-                List<Capsula> m = conn.insertar("sp_insertar_barrio", campos);
-                conn.cerrar();
-                foreach (Capsula r in m)
-                {
-                    MessageBox.Show(r.getCampos()[0]);
-                }
-                limpiar();
-            }
-            else if (this.Text.Equals("AGREGAR-LUGAR"))
-            {
-                ConexionDB conn = new ConexionDB();
-                conn.abrir();
-                List<string> campos = new List<string>();
-                campos.Add("" + id2 + "");
-                campos.Add("'" + txt_nombre.Text + "'");
-                List<Capsula> m = conn.insertar("sp_insertar_lugar", campos);
-                conn.cerrar();
-                foreach (Capsula r in m)
-                {
-                    MessageBox.Show(r.getCampos()[0]);
-                }
-                limpiar();
-            }
-            else if (this.Text.Equals("BUSCAR-SECTOR") || this.Text.Equals("MODIFICAR-SECTOR"))
-            {
-                ConexionDB conn = new ConexionDB();
-                conn.abrir();
-                List<string> campos = new List<string>();
-                campos.Add("'"+txt_nombre.Text+"'");
-                campos.Add("1");
-                conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
-                conn.cerrar();
-                if(row != -1)
-                {
-                    ConexionDB conn2 = new ConexionDB();
-                    conn2.abrir();
-                    List<string> campos2 = new List<string>();
-                    campos2.Add(""+txt_codigo.Text);
-                    campos2.Add("'" + txt_nombre.Text + "'");
-                    List<Capsula> m = conn2.insertar("sp_modificar_sector", campos2);
-                    conn2.cerrar();
-                    foreach (Capsula r in m)
-                    {
-                        MessageBox.Show(r.getCampos()[0]);
-                    }
-                    limpiar();
-                }
-            }
-            else if (this.Text.Equals("BUSCAR-BARRIO") || this.Text.Equals("MODIFICAR-BARRIO"))
-            {
-                ConexionDB conn = new ConexionDB();
-                conn.abrir();
-                List<string> campos = new List<string>();
-                campos.Add("'" + txt_nombre.Text + "'");
-                campos.Add("2");
-                conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
-                conn.cerrar();
-                if (row != -1)
-                {
-                    ConexionDB conn2 = new ConexionDB();
-                    conn2.abrir();
-                    List<string> campos2 = new List<string>();
-                    campos2.Add("" + txt_codigo.Text);
-                    campos2.Add("" + id2 + "");
-                    campos2.Add("'" + txt_nombre.Text + "'");
-                    List<Capsula> m = conn2.insertar("sp_modificar_barrio", campos2);
-                    conn2.cerrar();
-                    foreach (Capsula r in m)
-                    {
-                        MessageBox.Show(r.getCampos()[0]);
-                    }
-                    limpiar();
-                }
-            }
-            else if (this.Text.Equals("BUSCAR-LUGAR") || this.Text.Equals("MODIFICAR-LUGAR"))
-            {
-                ConexionDB conn = new ConexionDB();
-                conn.abrir();
-                List<string> campos = new List<string>();
-                campos.Add("'" + txt_nombre.Text + "'");
-                campos.Add("3");
-                conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
-                conn.cerrar();
-                if (row != -1)
-                {
-                    ConexionDB conn2 = new ConexionDB();
-                    conn2.abrir();
-                    List<string> campos2 = new List<string>();
-                    campos2.Add("" + txt_codigo.Text);
-                    campos2.Add("" + id2 + "");
-                    campos2.Add("'" + txt_nombre.Text + "'");
-                    List<Capsula> m = conn2.insertar("sp_modificar_lugar", campos2);
-                    conn2.cerrar();
-                    foreach (Capsula r in m)
-                    {
-                        MessageBox.Show(r.getCampos()[0]);
-                    }
-                    limpiar();
-                }
-            }
-            else if (this.Text.Contains("ESTADO"))
-            {
-                if(row == -1)
-                {
-                    ConexionDB conn = new ConexionDB();
-                    conn.abrir();
-                    List<string> campos = new List<string>();
-                    campos.Add("'" + txt_nombre.Text + "'");
-                    if (this.Text.Contains("SECTOR"))
-                    {
-                        campos.Add("1");
-                    }
-                    else if (this.Text.Contains("BARRIO"))
-                    {
-                        campos.Add("2");
-                    }
-                    else if (this.Text.Contains("LUGAR"))
-                    {
-                        campos.Add("3");
-                    }
-                    conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
-                    conn.cerrar();
-                }
-                else
-                {
-                    ConexionDB conn2 = new ConexionDB();
-                    conn2.abrir();
-                    List<string> campos2 = new List<string>();
-                    campos2.Add("" + txt_codigo.Text);
-                    if (this.Text.Contains("SECTOR"))
-                    {
-                        campos2.Add("1");
-                    }
-                    else if (this.Text.Contains("BARRIO"))
-                    {
-                        campos2.Add("2");
-                    }
-                    else if (this.Text.Contains("LUGAR"))
-                    {
-                        campos2.Add("3");
-                    }
-
-                    if (estado == 1)
-                    {
-                        estado = 0;
-                    }
-                    else if (estado == 0)
-                    {
-                        estado = 1;
-                    }
-                    campos2.Add("" + estado);
-                    List<Capsula> m = conn2.insertar("sp_estado_ubicacion", campos2);
-                    conn2.cerrar();
-                    foreach (Capsula r in m)
-                    {
-                        MessageBox.Show(r.getCampos()[0]);
-                    }
-                    limpiar();
-                }
-            }
-        }
 
         private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Int32 selectedRowCount = dgv_tabla.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (selectedRowCount > 0 && Text.Contains("MODIFICAR") || 
-                selectedRowCount > 0 && Text.Contains("ESTADO"))
+            if (selectedRowCount > 0)
             {
                 row = dgv_tabla.CurrentRow.Index;
                 seleccionar();
@@ -363,8 +184,191 @@ namespace Principal_Internet_elvis.Ubicacion
                 txt_codigo2.Text = dgv_tabla.Rows[row].Cells[1].Value.ToString();
                 txt_nombre.Text = dgv_tabla.Rows[row].Cells[2].Value.ToString();
                 id2 = int.Parse(dgv_tabla.Rows[row].Cells[1].Value.ToString());
-                estado = int.Parse(dgv_tabla.Rows[row].Cells[3].Value.ToString());
+                estado = int.Parse(dgv_tabla.Rows[row].Cells[5].Value.ToString());
             }
+
+            bt_eliminar.Enabled = true;
+        }
+
+        private void buscar()
+        {
+            ConexionDB conn = new ConexionDB();
+            conn.abrir();
+            List<string> campos = new List<string>();
+            if (txt_nombre.Text.Equals(""))
+            {
+                campos.Add("' '");
+            }
+            else
+            {
+                campos.Add("'" + txt_nombre.Text + "'");
+            }
+            if (this.Text.Contains("SECTOR"))
+            {
+                campos.Add("1");
+            }
+            else if (this.Text.Contains("BARRIO"))
+            {
+                campos.Add("2");
+            }
+            else if (this.Text.Contains("LUGAR"))
+            {
+                campos.Add("3");
+            }
+            conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
+            conn.cerrar();
+        }
+
+        private void bt_nuevo_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void bt_guardar_Click(object sender, EventArgs e)
+        {
+            if (row == -1)
+            {
+                if (this.Text.Contains("SECTOR"))
+                {
+                    ConexionDB conn = new ConexionDB();
+                    conn.abrir();
+                    List<string> campos = new List<string>();
+                    campos.Add("'" + txt_nombre.Text + "'");
+                    List<Capsula> m = conn.insertar("sp_insertar_sector", campos);
+                    conn.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                }
+                else if (this.Text.Contains("BARRIO"))
+                {
+                    ConexionDB conn = new ConexionDB();
+                    conn.abrir();
+                    List<string> campos = new List<string>();
+                    campos.Add("" + id2 + "");
+                    campos.Add("'" + txt_nombre.Text + "'");
+                    List<Capsula> m = conn.insertar("sp_insertar_barrio", campos);
+                    conn.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                }
+                else if (this.Text.Contains("LUGAR"))
+                {
+                    ConexionDB conn = new ConexionDB();
+                    conn.abrir();
+                    List<string> campos = new List<string>();
+                    campos.Add("" + id2 + "");
+                    campos.Add("'" + txt_nombre.Text + "'");
+                    campos.Add("'-1'");
+                    campos.Add("'-1'");
+                    List<Capsula> m = conn.insertar("sp_insertar_lugar", campos);
+                    conn.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                }
+            }
+            else
+            {
+                if (this.Text.Contains("SECTOR"))
+                {
+                    ConexionDB conn2 = new ConexionDB();
+                    conn2.abrir();
+                    List<string> campos2 = new List<string>();
+                    campos2.Add("" + txt_codigo.Text);
+                    campos2.Add("'" + txt_nombre.Text + "'");
+                    List<Capsula> m = conn2.insertar("sp_modificar_sector", campos2);
+                    conn2.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                }
+                else if (this.Text.Contains("BARRIO"))
+                {
+                    ConexionDB conn2 = new ConexionDB();
+                    conn2.abrir();
+                    List<string> campos2 = new List<string>();
+                    campos2.Add("" + txt_codigo.Text);
+                    campos2.Add("" + id2 + "");
+                    campos2.Add("'" + txt_nombre.Text + "'");
+                    List<Capsula> m = conn2.insertar("sp_modificar_barrio", campos2);
+                    conn2.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                }
+                else if (this.Text.Contains("LUGAR"))
+                {
+                    ConexionDB conn2 = new ConexionDB();
+                    conn2.abrir();
+                    List<string> campos2 = new List<string>();
+                    campos2.Add("" + txt_codigo.Text);
+                    campos2.Add("" + id2 + "");
+                    campos2.Add("'" + txt_nombre.Text + "'");
+                    campos2.Add("'-1'");
+                    campos2.Add("'-1'");
+                    List<Capsula> m = conn2.insertar("sp_modificar_lugar", campos2);
+                    conn2.cerrar();
+                    foreach (Capsula r in m)
+                    {
+                        MessageBox.Show(r.getCampos()[0]);
+                    }
+                }
+            }
+            limpiar();
+        }
+
+        private void bt_buscar_Click(object sender, EventArgs e)
+        {
+            buscar();
+        }
+
+        private void bt_eliminar_Click(object sender, EventArgs e)
+        {
+            ConexionDB conn2 = new ConexionDB();
+            conn2.abrir();
+            List<string> campos2 = new List<string>();
+            campos2.Add("" + txt_codigo.Text);
+            if (this.Text.Contains("SECTOR"))
+            {
+                campos2.Add("1");
+            }
+            else if (this.Text.Contains("BARRIO"))
+            {
+                campos2.Add("2");
+            }
+            else if (this.Text.Contains("LUGAR"))
+            {
+                campos2.Add("3");
+            }
+
+            if (estado == 1)
+            {
+                estado = 0;
+            }
+            else if (estado == 0)
+            {
+                estado = 1;
+            }
+            campos2.Add("" + estado);
+            List<Capsula> m = conn2.insertar("sp_estado_ubicacion", campos2);
+            conn2.cerrar();
+            foreach (Capsula r in m)
+            {
+                MessageBox.Show(r.getCampos()[0]);
+            }
+            limpiar();
+        }
+
+        private void bt_salir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         public void addFuente(Font f)

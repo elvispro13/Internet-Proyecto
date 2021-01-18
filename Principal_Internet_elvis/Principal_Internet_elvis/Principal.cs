@@ -5,6 +5,7 @@ using Principal_Internet_elvis.FormmGenerales;
 using Principal_Internet_elvis.Pagos;
 using Principal_Internet_elvis.Paquetes;
 using Principal_Internet_elvis.Reportes;
+using Principal_Internet_elvis.Ubicacion;
 using Proyecto_Internet;
 using System;
 using System.Collections.Generic;
@@ -93,7 +94,7 @@ namespace Proyecto_dawelin
         {
             Program.configuracion = new Configuracion();
             Program.configuracion.Show();
-            Program.configuracion.TopMost = true;
+            //Program.configuracion.TopMost = true;
             Program.configuracion.Focus();
             Program.configuracion.BringToFront();
             Program.configuracion.Text = "CONFIGURACION";
@@ -184,11 +185,12 @@ namespace Proyecto_dawelin
 
         private void btnUbicacion_Click(object sender, EventArgs e)
         {
-            Program.OpCliente = new Opciones();
-            Program.OpCliente.Show();
-            Program.OpCliente.Focus();
-            Program.OpCliente.BringToFront();
-            Program.OpCliente.Text = "UBICACION";
+            Program.ubicacionTipo = new UbicacionTipo();
+            //Program.ubicacionTipo.TopMost = true;
+            Program.ubicacionTipo.Focus();
+            Program.ubicacionTipo.BringToFront();
+            Program.ubicacionTipo.Text = "UBICACION-BUSCAR";
+            Program.ubicacionTipo.Show();
         }
 
         private void bt_estado_Click(object sender, EventArgs e)

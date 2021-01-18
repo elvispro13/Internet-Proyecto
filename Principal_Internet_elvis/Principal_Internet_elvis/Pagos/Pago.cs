@@ -15,7 +15,7 @@ namespace Principal_Internet_elvis.Pagos
     public partial class Pago : Form
     {
         private int idclientepa = -1;
-        private float total = -1, desc = -1, isv = -1, totalpagar = 0, subtotal = 0, descuento = 0, impuesto = 0;
+        private float total = -1, desc = -1, isv = -1, totalpagar = 0, subtotal = 0, descuento = 0, impuesto = 0, instalacion = 0;
         private string mensualidad = "";
 
         private int idfactura;
@@ -47,13 +47,16 @@ namespace Principal_Internet_elvis.Pagos
             dt.Columns.Add("PAQUETE");
             dt.Columns.Add("CANTIDAD");
             dt.Columns.Add("MONTO");
+            dt.Columns.Add("%_DESCUENTO");
 
             dgv_detalles.DataSource = dt;
-            dgv_detalles.Columns[0].Visible = false;
+            //dgv_detalles.Columns[0].Visible = false;
             dgv_detalles.Columns[1].Visible = false;
             dgv_detalles.Columns[2].Visible = false;
             dgv_detalles.Columns[3].Visible = false;
             dgv_detalles.Columns[4].Visible = false;
+            cb_desc_insta.Enabled = false;
+            cb_desc_insta.Visible = false;
         }
 
         private void btnbusCLI_Click(object sender, EventArgs e)
@@ -121,6 +124,7 @@ namespace Principal_Internet_elvis.Pagos
         {
             gBusConcep.Visible = false;
             gb_paquete.Visible = true;
+            limpiarPaquete();
         }
 
         private void btnAtrasCliente_Click(object sender, EventArgs e)
@@ -242,10 +246,11 @@ namespace Principal_Internet_elvis.Pagos
                     txt_codigo_p.Text = idclientepa.ToString("D10");
                     txt_descripcion_p.Text = dgv_tabla_p.Rows[row].Cells["descripcion"].Value.ToString();
                     dtp_mes_p.Value = DateTime.Parse(dgv_tabla_p.Rows[row].Cells["fechapago"].Value.ToString());
-                    total = float.Parse(dgv_tabla_p.Rows[row].Cells["total"].Value.ToString());
+                    total = float.Parse(dgv_tabla_p.Rows[row].Cells["subtotal"].Value.ToString());
                     desc = float.Parse(dgv_tabla_p.Rows[row].Cells["descuento"].Value.ToString());
                     isv = float.Parse(dgv_tabla_p.Rows[row].Cells["isv"].Value.ToString());
                     txt_monto_p.Text = total.ToString("L0.00");
+                    instalacion = float.Parse(dgv_tabla_p.Rows[row].Cells["instalacion"].Value.ToString());
 
                     ConexionDB conn = new ConexionDB();
                     conn.abrir();
@@ -254,6 +259,7 @@ namespace Principal_Internet_elvis.Pagos
                     campos.Add("" + idclientepa);
                     campos.Add("" + int.Parse(txt_codigo_c.Text));
                     campos.Add("'" + dtp_mes_p.Value.ToString("yyyy/MM/dd") + "'");
+                    campos.Add("" + dgv_tabla_p.Rows[row].Cells["instalacion"].Value.ToString());
                     conn.llenarTabla("sp_buscar_meses", campos, dgv_tabla_p);
                     conn.cerrar();
                     dgv_tabla_p.Columns["fecha"].Visible = false;
@@ -268,6 +274,17 @@ namespace Principal_Internet_elvis.Pagos
                 }
                 else
                 {
+                    if(dgv_tabla_p.Rows[row].Cells["mensualidad"].Value.ToString().Equals("INSTALACION"))
+                    {
+                        txt_monto_p.Text = instalacion.ToString("L0.00");
+                        txt_descripcion_p.Text += " INSTALACION";
+                        if(desc != 0)
+                        {
+                            cb_desc_insta.Visible = true;
+                            cb_desc_insta.Enabled = true;
+                            cb_desc_insta.Checked = true;
+                        }
+                    }
                     dtp_mes_p.Value = DateTime.Parse(dgv_tabla_p.Rows[row].Cells["fecha"].Value.ToString());
                     mensualidad = dgv_tabla_p.Rows[row].Cells["mensualidad"].Value.ToString();
                     dgv_tabla_p.DataSource = null;
@@ -325,7 +342,7 @@ namespace Principal_Internet_elvis.Pagos
         {
             if(cb_adelantado.Checked == false && (total == -1 || idclientepa == -1 || mensualidad == ""))
             {
-                MessageBox.Show("Seleccione un mes a pagar.");
+                MessageBox.Show("Seleccione un mes a pagar o instalacion.");
                 return;
             }
 
@@ -334,10 +351,32 @@ namespace Principal_Internet_elvis.Pagos
             DataRow dr = dt.NewRow();
             dr["ID"] = "" + int.Parse(txt_codigo_p.Text);
             dr["FECHA"] = dtp_mes_p.Value.ToString("yyyy/MM/dd");
-            dr["TOTAL"] = "" + total;
-            dr["DESCUENTO"] = desc;
-            dr["ISV"] = "" + isv;
-            dr["PAQUETE"] = txt_descripcion_p.Text+" - Mes: "+ mensualidad.ToUpper();
+
+            if (txt_descripcion_p.Text.Contains("INSTALACION"))
+            {
+                float in_descuento = ((desc / total) * instalacion);
+                float por = ((desc / total) * 100);
+                if (!cb_desc_insta.Checked)
+                {
+                    in_descuento = 0;
+                    por = 0;
+                }
+                float in_isv = ((isv / total) * instalacion);
+                dr["PAQUETE"] = txt_descripcion_p.Text;
+                dr["DESCUENTO"] = "" + in_descuento;
+                dr["ISV"] = "" + in_isv;
+                dr["TOTAL"] = "" + instalacion;
+                dr["%_DESCUENTO"] = "% " + por;
+            }
+            else
+            {
+                dr["PAQUETE"] = txt_descripcion_p.Text + " - Mes: " + mensualidad.ToUpper();
+                dr["DESCUENTO"] = desc;
+                dr["ISV"] = "" + isv;
+                dr["TOTAL"] = "" + total;
+                dr["%_DESCUENTO"] = "% " + ((desc / total) * 100);
+            }
+
             dr["CANTIDAD"] = 1;
             dr["MONTO"] = txt_monto_p.Text;
 
@@ -354,17 +393,22 @@ namespace Principal_Internet_elvis.Pagos
                 e.Text = "";
             }
 
+            cb_desc_insta.Enabled = false;
+            cb_desc_insta.Visible = false;
+
             idclientepa = -1;
             total = -1;
             mensualidad = "";
             filadetalles = -1;
 
             totalpagar = 0;
+            subtotal = 0;
+            descuento = 0;
             for(int i = 0; i < dt.Rows.Count; i++)
             {
-                subtotal = float.Parse(dt.Rows[i]["TOTAL"].ToString()) + subtotal;
-                descuento = float.Parse(dt.Rows[i]["DESCUENTO"].ToString()) + descuento;
-                impuesto = float.Parse(dt.Rows[i]["ISV"].ToString()) + impuesto;
+                subtotal += float.Parse(dt.Rows[i]["TOTAL"].ToString());
+                descuento += float.Parse(dt.Rows[i]["DESCUENTO"].ToString());
+                impuesto += float.Parse(dt.Rows[i]["ISV"].ToString());
             }
             totalpagar = subtotal - descuento;
 
@@ -423,19 +467,24 @@ namespace Principal_Internet_elvis.Pagos
                 MessageBox.Show("Debe agregar por lo menos un detalle.");
                 return;
             }
-            DialogResult r = MessageBox.Show("¿Esta seguro de generar la factura?", "Confirmacion",MessageBoxButtons.YesNo);
-            if (r.ToString().Equals("No"))
-            {
-                return;
-            }
-            if(cb_tipopago.Text == "")
+            if (cb_tipopago.Text == "")
             {
                 MessageBox.Show("Seleccione el tipo de pago.");
+                return;
+            }
+            if(txt_efectivo.Text == "")
+            {
+                MessageBox.Show("El efectivo debe ser mayor al total a pagar.");
                 return;
             }
             if (float.Parse(txt_efectivo.Text) < totalpagar)
             {
                 MessageBox.Show("El efectivo debe ser mayor al total a pagar.");
+                return;
+            }
+            DialogResult r = MessageBox.Show("¿Esta seguro de generar la factura?", "Confirmacion",MessageBoxButtons.YesNo);
+            if (r.ToString().Equals("No"))
+            {
                 return;
             }
 
@@ -476,18 +525,33 @@ namespace Principal_Internet_elvis.Pagos
             {
                 DataRow mm = dt.Rows[i];
 
+                if (mm["PAQUETE"].ToString().Contains("INSTALACION"))
+                {
+                    ConexionDB conn2 = new ConexionDB();
+                    conn2.abrir();
+                    List<string> campos2 = new List<string>();
+                    campos2.Add("" + mm["ID"].ToString());
+                    campos2.Add("3");
+                    campos2.Add("0");
+                    campos2.Add("''");
+                    campos2.Add("''");
+                    campos2.Add("0");
+                    conn2.insertar("sp_estado_cliente", campos2);
+                    conn2.cerrar();
+                }
                 insertarCuota(int.Parse(mm["ID"].ToString()),
                                 mm["PAQUETE"].ToString(),
                                 dtp_fechaemision.Value.ToString("yyyy/MM/dd"),
                                 mm["FECHA"].ToString(),
-                                float.Parse(mm["MONTO"].ToString().Replace("L","")),
-                                float.Parse(mm["DESCUENTO"].ToString().Replace("L","")),
-                                float.Parse(mm["ISV"].ToString().Replace("L","")),
+                                float.Parse(mm["MONTO"].ToString().Replace("L", "")),
+                                float.Parse(mm["DESCUENTO"].ToString().Replace("L", "")),
+                                float.Parse(mm["ISV"].ToString().Replace("L", "")),
                                 1);
             }
 
             MessageBox.Show("Su factura ya ha sido generada.");
             btnImprimir.Enabled = true;
+            btnImprimir.Visible = true;
             btnGuardar.Enabled = false;
 
             limpiarTodo();

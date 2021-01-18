@@ -63,6 +63,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             }
 
             dgv_tabla.ClearSelection();
+            dgv_tabla.TabIndex = 1;
 
             addFuente(Program.principal.fuente);
         }

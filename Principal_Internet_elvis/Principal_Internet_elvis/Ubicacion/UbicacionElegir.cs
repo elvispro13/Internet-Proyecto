@@ -157,5 +157,13 @@ namespace Principal_Internet_elvis.Ubicacion
                 e.Font = f;
             }
         }
+
+        private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue.Equals(13))
+            {
+                buscar();
+            }
+        }
     }
 }

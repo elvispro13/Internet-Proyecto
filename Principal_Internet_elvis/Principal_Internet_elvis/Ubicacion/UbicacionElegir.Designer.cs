@@ -89,6 +89,7 @@
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(345, 20);
             this.txt_buscar.TabIndex = 0;
+            this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
             // 
             // UbicacionElegir
             // 

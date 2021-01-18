@@ -12,6 +12,7 @@ namespace Principal_Internet_elvis.Paquetes
 {
     public partial class PaquetesElegir : Form
     {
+        private int row = -1;
         public int id = -1, id_cliente = -1;
         List<int> In = new List<int>();
 
@@ -54,6 +55,7 @@ namespace Principal_Internet_elvis.Paquetes
                 conn2.cerrar();
 
                 dgv_tabla.ClearSelection();
+                dgv_tabla.TabIndex = 1;
                 In.Clear();
                 for (int i = 0; i < dgv_tabla.Rows.Count; i++)
                 {
@@ -130,6 +132,11 @@ namespace Principal_Internet_elvis.Paquetes
             }
             else if (this.Text.Contains("PAQUETES"))
             {
+                if(txt_ip.Text.Equals("") || txt_ip.Text.Equals(""))
+                {
+                    MessageBox.Show("Llene los campos.");
+                    return;
+                }
                 Int32 selectedRowCount = dgv_tabla.Rows.GetRowCount(DataGridViewElementStates.Selected);
                 if (selectedRowCount > 0)
                 {
@@ -143,10 +150,16 @@ namespace Principal_Internet_elvis.Paquetes
                         campos2.Add("" + id_cliente);
                         campos2.Add("'" + dgv_tabla.SelectedRows[i].Cells["descripcion"].Value.ToString() + "'");
                         campos2.Add("" + dgv_tabla.SelectedRows[i].Cells["descuento"].Value.ToString());
+                        campos2.Add("'" + txt_ip.Text + "'");
+                        campos2.Add("" + txt_intalacion.Text);
                         conn2.insertar("sp_insertar_clientepaquete", campos2);
                         conn2.cerrar();
                     }
                     MessageBox.Show("Todo listo.");
+                }
+                else
+                {
+                    MessageBox.Show("Elija un paquete");
                 }
                 Program.clientesPaquetes.limpiar();
             }
@@ -199,26 +212,37 @@ namespace Principal_Internet_elvis.Paquetes
             }
         }
 
-        private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void txt_intalacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int n = dgv_tabla.CurrentRow.Index;
-
-            dgv_tabla.Rows[n].Selected = false;
-
-            dgv_tabla.ClearSelection();
-
-            if (In.Contains(n))
+            if (Char.IsDigit(e.KeyChar))
             {
-                In.Remove(n);
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
             }
             else
             {
-                In.Add(n);
+                e.Handled = true;
             }
+        }
 
-            foreach (int i in In)
+        private void txt_intalacion_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Int32 selectedRowCount = dgv_tabla.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
             {
-                dgv_tabla.Rows[i].Selected = true;
+                row = dgv_tabla.CurrentRow.Index;
             }
         }
     }

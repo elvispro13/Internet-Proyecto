@@ -50,6 +50,9 @@ namespace Principal_Internet_elvis.Configuraciones
             conn.llenarTabla("sp_buscar_clientepaquete", campos, dgv_tabla);
             conn.cerrar();
 
+            dgv_tabla.ClearSelection();
+            dgv_tabla.TabIndex = 1;
+
             for (int i = 0; i < dgv_tabla.Rows.Count; i++)
             {
                 if (dgv_tabla.Rows[i].Cells["estadoservicio"].Value.ToString().Equals("PENDIENTE INSTALACION"))
@@ -80,11 +83,11 @@ namespace Principal_Internet_elvis.Configuraciones
                 dgv_tabla.Columns[i].HeaderText = t;
             }
 
-            dgv_tabla.ClearSelection();
 
             row = -1;
             txt_descripcion.Text = "";
             cb_estado.Text = "";
+            txt_buscar.Select();
 
             addFuente(Program.principal.fuente);
         }
@@ -134,6 +137,7 @@ namespace Principal_Internet_elvis.Configuraciones
 
                 cb_estado.Text = dgv_tabla.Rows[row].Cells["estadoservicio"].Value.ToString();
                 idcleintepa = int.Parse(dgv_tabla.Rows[row].Cells["idclientepa"].Value.ToString());
+                txt_descripcion.Select();
             }
         }
 
@@ -141,7 +145,7 @@ namespace Principal_Internet_elvis.Configuraciones
         {
             if(txt_descripcion.Text == "")
             {
-                MessageBox.Show("Escriba una descripcion");
+                MessageBox.Show("Escriba una nota");
                 return;
             }
             ConexionDB conn2 = new ConexionDB();
