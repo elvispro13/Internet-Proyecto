@@ -21,6 +21,7 @@ namespace Principal_Internet_elvis
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        public static Menu menu;
         public static Principal principal;
         public static Inicio inicio;
         public static Usuarios usuarios;
@@ -52,13 +53,13 @@ namespace Principal_Internet_elvis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            principal = new Principal();
-            Application.Run(principal);
+            menu = new Menu();
+            Application.Run(menu);
         }
 
         public static void actualizarFuente()
         {
-            principal.addFuente(principal.fuente);
+            menu.addFuente(menu.fuente);
         }
 
         public static IEnumerable<Control> GetAllChildren(this Control root) //recorrer un tipo de elemento en el formularuo

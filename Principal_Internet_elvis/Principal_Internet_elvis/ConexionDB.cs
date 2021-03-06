@@ -46,7 +46,8 @@ namespace Principal_Internet_elvis
 
             }
 
-            conexion = "Data Source=" + servar + ";Initial Catalog="+ db + ";Integrated Security=true";
+            //conexion = "Data Source=" + servar + ";Initial Catalog="+ db + ";Integrated Security=true";
+            conexion = "Data Source=" + servar + ";Initial Catalog="+ db + ";Uid=elvis;pwd=adoni123;";
             conectardb.ConnectionString = conexion;
         }
 

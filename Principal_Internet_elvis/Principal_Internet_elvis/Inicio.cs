@@ -75,15 +75,15 @@ namespace Proyecto_Internet
                     return;
                 }
 
-                Program.principal.idu = int.Parse(rows[0].getCampos()[0]);
-                Program.principal.user = rows[0].getCampos()[1];
-                Program.principal.clave = rows[0].getCampos()[2];
-                Program.principal.desc = rows[0].getCampos()[3];
-                Program.principal.nombre = rows[0].getCampos()[8];
+                Program.menu.idu = int.Parse(rows[0].getCampos()[0]);
+                Program.menu.user = rows[0].getCampos()[1];
+                Program.menu.clave = rows[0].getCampos()[2];
+                Program.menu.desc = rows[0].getCampos()[3];
+                Program.menu.nombre = rows[0].getCampos()[8];
 
                 ConexionDB conn2 = new ConexionDB();
                 conn2.abrir();
-                DataTable r = conn2.fuente(Program.principal.idu, null, 2);
+                DataTable r = conn2.fuente(Program.menu.idu, null, 2);
                 conn2.cerrar();
                 for (int i = 0; i < r.Rows.Count; i++)
                 {
@@ -91,7 +91,7 @@ namespace Proyecto_Internet
                     MemoryStream memorystreamd = new MemoryStream(fuente);
                     BinaryFormatter bfd = new BinaryFormatter();
                     Capsula f = bfd.Deserialize(memorystreamd) as Capsula;
-                    Program.principal.fuente = f.getFuente();
+                    Program.menu.fuente = f.getFuente();
                     Program.actualizarFuente();
                 }
 
@@ -103,17 +103,17 @@ namespace Proyecto_Internet
                 {
                     byte[] logo = (byte[])m.Rows[i]["logo"];
                     MemoryStream ms = new MemoryStream(logo);
-                    Program.principal.logo = Image.FromStream(ms);
+                    Program.menu.logo = Image.FromStream(ms);
 
-                    Program.principal.desde_e = int.Parse(m.Rows[i]["desde"].ToString());
-                    Program.principal.hasta_e = int.Parse(m.Rows[i]["hasta"].ToString());
-                    Program.principal.ide = int.Parse(m.Rows[i]["idempresa"].ToString());
+                    Program.menu.desde_e = int.Parse(m.Rows[i]["desde"].ToString());
+                    Program.menu.hasta_e = int.Parse(m.Rows[i]["hasta"].ToString());
+                    Program.menu.ide = int.Parse(m.Rows[i]["idempresa"].ToString());
                 }
 
                 MessageBox.Show("Bienvenido");
-                Program.principal.Focus();
-                Program.principal.BringToFront();
-                Program.principal.activarConUser();
+                Program.menu.Focus();
+                Program.menu.BringToFront();
+                Program.menu.activarConUser();
                 this.Close();
             }
         }

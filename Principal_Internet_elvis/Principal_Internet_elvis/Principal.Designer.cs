@@ -44,6 +44,7 @@
             this.dgv_pendientes = new System.Windows.Forms.DataGridView();
             this.lb_pendiente = new System.Windows.Forms.Label();
             this.bt_actualizar = new System.Windows.Forms.Button();
+            this.p_ventana = new System.Windows.Forms.Panel();
             this.panel_botones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pendientes)).BeginInit();
@@ -216,7 +217,7 @@
             // img_logo
             // 
             this.img_logo.BackColor = System.Drawing.Color.SlateGray;
-            this.img_logo.Location = new System.Drawing.Point(542, 21);
+            this.img_logo.Location = new System.Drawing.Point(994, 12);
             this.img_logo.Name = "img_logo";
             this.img_logo.Size = new System.Drawing.Size(229, 219);
             this.img_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -238,7 +239,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_pendientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_pendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_pendientes.Location = new System.Drawing.Point(281, 449);
+            this.dgv_pendientes.Location = new System.Drawing.Point(731, 452);
             this.dgv_pendientes.Name = "dgv_pendientes";
             this.dgv_pendientes.ReadOnly = true;
             this.dgv_pendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -249,7 +250,7 @@
             // lb_pendiente
             // 
             this.lb_pendiente.AutoSize = true;
-            this.lb_pendiente.Location = new System.Drawing.Point(591, 395);
+            this.lb_pendiente.Location = new System.Drawing.Point(1043, 385);
             this.lb_pendiente.Name = "lb_pendiente";
             this.lb_pendiente.Size = new System.Drawing.Size(180, 15);
             this.lb_pendiente.TabIndex = 4;
@@ -257,7 +258,7 @@
             // 
             // bt_actualizar
             // 
-            this.bt_actualizar.Location = new System.Drawing.Point(629, 413);
+            this.bt_actualizar.Location = new System.Drawing.Point(1079, 413);
             this.bt_actualizar.Name = "bt_actualizar";
             this.bt_actualizar.Size = new System.Drawing.Size(144, 33);
             this.bt_actualizar.TabIndex = 5;
@@ -265,12 +266,21 @@
             this.bt_actualizar.UseVisualStyleBackColor = true;
             this.bt_actualizar.Click += new System.EventHandler(this.bt_actualizar_Click);
             // 
+            // p_ventana
+            // 
+            this.p_ventana.BackColor = System.Drawing.Color.Azure;
+            this.p_ventana.Location = new System.Drawing.Point(281, 21);
+            this.p_ventana.Name = "p_ventana";
+            this.p_ventana.Size = new System.Drawing.Size(707, 415);
+            this.p_ventana.TabIndex = 6;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(783, 720);
+            this.ClientSize = new System.Drawing.Size(1235, 720);
+            this.Controls.Add(this.p_ventana);
             this.Controls.Add(this.bt_actualizar);
             this.Controls.Add(this.lb_pendiente);
             this.Controls.Add(this.img_logo);
@@ -308,6 +318,7 @@
         private System.Windows.Forms.DataGridView dgv_pendientes;
         private System.Windows.Forms.Label lb_pendiente;
         private System.Windows.Forms.Button bt_actualizar;
+        private System.Windows.Forms.Panel p_ventana;
     }
 }
 

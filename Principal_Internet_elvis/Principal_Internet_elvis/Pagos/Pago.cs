@@ -32,10 +32,10 @@ namespace Principal_Internet_elvis.Pagos
 
         private void Pago_Load(object sender, EventArgs e)
         {
-            addFuente(Program.principal.fuente);
-            if (Program.principal.logo != null)
+            addFuente(Program.menu.fuente);
+            if (Program.menu.logo != null)
             {
-                img_logo.Image = Program.principal.logo;
+                img_logo.Image = Program.menu.logo;
                 img_logo.Visible = true;
             }
 
@@ -332,9 +332,26 @@ namespace Principal_Internet_elvis.Pagos
 
         private void txt_efectivo_KeyUp(object sender, KeyEventArgs e)
         {
-            if (float.Parse(txt_efectivo.Text) >= totalpagar)
+            try
             {
-                txt_cambio.Text = "" + (float.Parse(txt_efectivo.Text) - totalpagar);
+                if (float.Parse(txt_efectivo.Text) >= totalpagar)
+                {
+                    txt_cambio.Text = "" + (float.Parse(txt_efectivo.Text) - totalpagar);
+                    txt_efectivo.BackColor = Color.White;
+                    txt_efectivo.ForeColor = Color.Black;
+                }
+                else
+                {
+                    txt_cambio.Text = "0";
+                    txt_efectivo.BackColor = Color.Red;
+                    txt_efectivo.ForeColor = Color.White;
+                }
+            }
+            catch (Exception)
+            {
+                txt_cambio.Text = "0";
+                txt_efectivo.BackColor = Color.Red;
+                txt_efectivo.ForeColor = Color.White;
             }
         }
 
@@ -449,6 +466,9 @@ namespace Principal_Internet_elvis.Pagos
             gb_cliente.Visible = true;
 
             cb_tipopago.Text = "";
+
+            txt_cambio.Text = "";
+            txt_efectivo.Text = "";
 
             dt.Rows.Clear();
 

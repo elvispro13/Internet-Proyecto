@@ -161,6 +161,10 @@ namespace Proyecto_dawelin
         private void bntPago_Click(object sender, EventArgs e)
         {
             Program.pago = new Pago();
+            Program.pago.TopLevel = false;
+            Program.pago.Dock = DockStyle.Fill;
+            panel_botones.Controls.Add(Program.pago);
+            panel_botones.Tag = Program.pago;
             Program.pago.Show();
         }
 

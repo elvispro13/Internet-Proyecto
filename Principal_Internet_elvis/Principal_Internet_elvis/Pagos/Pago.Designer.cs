@@ -46,6 +46,7 @@
             this.btnAtrasConcepto = new System.Windows.Forms.Button();
             this.dgv_tabla_p = new System.Windows.Forms.DataGridView();
             this.gb_paquete = new System.Windows.Forms.GroupBox();
+            this.cb_desc_insta = new System.Windows.Forms.CheckBox();
             this.cb_adelantado = new System.Windows.Forms.CheckBox();
             this.dtp_mes_p = new System.Windows.Forms.DateTimePicker();
             this.btnBusCON = new System.Windows.Forms.Button();
@@ -76,7 +77,6 @@
             this.txt_efectivo = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_cambio = new System.Windows.Forms.TextBox();
-            this.cb_desc_insta = new System.Windows.Forms.CheckBox();
             this.gb_cliente.SuspendLayout();
             this.gBusCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla_c)).BeginInit();
@@ -295,6 +295,18 @@
             this.gb_paquete.TabIndex = 5;
             this.gb_paquete.TabStop = false;
             this.gb_paquete.Text = "PAGO";
+            // 
+            // cb_desc_insta
+            // 
+            this.cb_desc_insta.AutoSize = true;
+            this.cb_desc_insta.Checked = true;
+            this.cb_desc_insta.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_desc_insta.Location = new System.Drawing.Point(215, 143);
+            this.cb_desc_insta.Name = "cb_desc_insta";
+            this.cb_desc_insta.Size = new System.Drawing.Size(177, 17);
+            this.cb_desc_insta.TabIndex = 10;
+            this.cb_desc_insta.Text = "DESCUENTO A INSTALACION";
+            this.cb_desc_insta.UseVisualStyleBackColor = true;
             // 
             // cb_adelantado
             // 
@@ -588,6 +600,7 @@
             // 
             // txt_efectivo
             // 
+            this.txt_efectivo.BackColor = System.Drawing.Color.White;
             this.txt_efectivo.Enabled = false;
             this.txt_efectivo.Location = new System.Drawing.Point(6, 16);
             this.txt_efectivo.Name = "txt_efectivo";
@@ -614,23 +627,11 @@
             this.txt_cambio.Size = new System.Drawing.Size(102, 20);
             this.txt_cambio.TabIndex = 0;
             // 
-            // cb_desc_insta
-            // 
-            this.cb_desc_insta.AutoSize = true;
-            this.cb_desc_insta.Checked = true;
-            this.cb_desc_insta.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_desc_insta.Location = new System.Drawing.Point(215, 143);
-            this.cb_desc_insta.Name = "cb_desc_insta";
-            this.cb_desc_insta.Size = new System.Drawing.Size(177, 17);
-            this.cb_desc_insta.TabIndex = 10;
-            this.cb_desc_insta.Text = "DESCUENTO A INSTALACION";
-            this.cb_desc_insta.UseVisualStyleBackColor = true;
-            // 
             // Pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(947, 580);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
@@ -649,6 +650,7 @@
             this.Controls.Add(this.gBusConcep);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.gBusCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Pago";
