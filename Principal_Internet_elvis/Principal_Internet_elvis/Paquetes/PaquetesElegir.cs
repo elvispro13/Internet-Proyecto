@@ -26,6 +26,18 @@ namespace Principal_Internet_elvis.Paquetes
         private void PaquetesElegir_Load(object sender, EventArgs e)
         {
             buscar();
+
+            ConexionDB conn = new ConexionDB();
+            conn.abrir();
+            List<string> campos = new List<string>();
+            campos.Add("1");
+            List<Capsula> rows = conn.consultar("sp_obtener_ip", campos);
+            conn.cerrar();
+            if(rows.Count == 0 || rows[0].getCampos()[0].Equals(""))
+            {
+                return;
+            }
+            txt_ip.Text = Program.menu.getIP(rows[0].getCampos()[0]);
         }
 
         private void buscar()
@@ -135,7 +147,7 @@ namespace Principal_Internet_elvis.Paquetes
             }
             else if (this.Text.Contains("PAQUETES"))
             {
-                if(txt_ip.Text.Equals("") || txt_ip.Text.Equals(""))
+                if(txt_ip.Text.Equals("") || txt_intalacion.Text.Equals(""))
                 {
                     MessageBox.Show("Llene los campos.");
                     return;

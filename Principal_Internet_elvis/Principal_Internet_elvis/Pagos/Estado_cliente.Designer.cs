@@ -39,6 +39,8 @@
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.bt_estado = new System.Windows.Forms.Button();
+            this.bt_ping = new System.Windows.Forms.Button();
+            this.bt_antena = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -178,6 +180,26 @@
             this.bt_estado.UseVisualStyleBackColor = true;
             this.bt_estado.Click += new System.EventHandler(this.bt_estado_Click);
             // 
+            // bt_ping
+            // 
+            this.bt_ping.Location = new System.Drawing.Point(446, 457);
+            this.bt_ping.Name = "bt_ping";
+            this.bt_ping.Size = new System.Drawing.Size(163, 66);
+            this.bt_ping.TabIndex = 4;
+            this.bt_ping.Text = "Hacer ping";
+            this.bt_ping.UseVisualStyleBackColor = true;
+            this.bt_ping.Click += new System.EventHandler(this.bt_ping_Click);
+            // 
+            // bt_antena
+            // 
+            this.bt_antena.Location = new System.Drawing.Point(277, 457);
+            this.bt_antena.Name = "bt_antena";
+            this.bt_antena.Size = new System.Drawing.Size(163, 66);
+            this.bt_antena.TabIndex = 5;
+            this.bt_antena.Text = "Abrir antena";
+            this.bt_antena.UseVisualStyleBackColor = true;
+            this.bt_antena.Click += new System.EventHandler(this.bt_antena_Click);
+            // 
             // Estado_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +208,8 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1064, 596);
             this.ControlBox = false;
+            this.Controls.Add(this.bt_antena);
+            this.Controls.Add(this.bt_ping);
             this.Controls.Add(this.bt_estado);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
@@ -218,5 +242,7 @@
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button bt_ping;
+        private System.Windows.Forms.Button bt_antena;
     }
 }

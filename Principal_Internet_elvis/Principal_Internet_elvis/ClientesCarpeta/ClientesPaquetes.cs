@@ -23,6 +23,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
 
         private void ClientesPaquetes_Load(object sender, EventArgs e)
         {
+            Program.menu.addRuta("Paquetes contratados por: " + cliente + "/");
             limpiar();
         }
 
@@ -67,7 +68,6 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             dgv_tabla.TabIndex = 1;
 
             addFuente(Program.menu.fuente);
-            Program.menu.addRuta("Paquetes contratados por: " + cliente + "/");
         }
 
         private void bt_agregar_Click(object sender, EventArgs e)

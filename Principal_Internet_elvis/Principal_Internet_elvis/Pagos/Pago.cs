@@ -286,6 +286,10 @@ namespace Principal_Internet_elvis.Pagos
                             cb_desc_insta.Checked = true;
                         }
                     }
+                    if (dgv_tabla_p.Rows[row].Cells["mensualidad"].Value.ToString().Equals("ADELANTADO"))
+                    {
+                        cb_adelantado.Checked = true;
+                    }
                     dtp_mes_p.Value = DateTime.Parse(dgv_tabla_p.Rows[row].Cells["fecha"].Value.ToString());
                     mensualidad = dgv_tabla_p.Rows[row].Cells["mensualidad"].Value.ToString();
                     dgv_tabla_p.DataSource = null;

@@ -32,7 +32,7 @@ namespace Principal_Internet_elvis.Configuraciones
 
         private void Estado_cliente_Load(object sender, EventArgs e)
         {
-            limpiar();
+            //limpiar();
         }
 
         public void accesoRapido(string n)
@@ -142,8 +142,38 @@ namespace Principal_Internet_elvis.Configuraciones
             }
         }
 
+        private void bt_ping_Click(object sender, EventArgs e)
+        {
+            if (idcleintepa == -1)
+            {
+                MessageBox.Show("Elija un contrato");
+                return;
+            }
+            Program.hacerPing = new HacerPing();
+            Program.hacerPing.TopMost = true;
+            Program.hacerPing.BringToFront();
+            Program.hacerPing.ip = dgv_tabla.Rows[row].Cells["ip"].Value.ToString();
+            Program.hacerPing.cliente = "Cliente: " + dgv_tabla.Rows[row].Cells["nombre"].Value.ToString(); ;
+            Program.hacerPing.Show();
+        }
+
+        private void bt_antena_Click(object sender, EventArgs e)
+        {
+            if (idcleintepa == -1)
+            {
+                MessageBox.Show("Elija un contrato");
+                return;
+            }
+            System.Diagnostics.Process.Start("chrome.exe", dgv_tabla.Rows[row].Cells["ip"].Value.ToString());
+        }
+
         private void bt_estado_Click(object sender, EventArgs e)
         {
+            if(idcleintepa == -1)
+            {
+                MessageBox.Show("Elija un contrato");
+                return;
+            }
             if(txt_descripcion.Text == "")
             {
                 MessageBox.Show("Escriba una nota");

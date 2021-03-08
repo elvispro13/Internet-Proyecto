@@ -140,3 +140,4 @@ C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal
 C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.exe
 C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.pdb
 C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.Dashboard.resources
+C:\Users\Elvis\source\repos\Internet-Proyecto\Principal_Internet_elvis\Principal_Internet_elvis\obj\Debug\Principal_Internet_elvis.HacerPing.resources

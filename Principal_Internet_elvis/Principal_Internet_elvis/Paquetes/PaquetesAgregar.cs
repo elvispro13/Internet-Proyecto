@@ -24,6 +24,7 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void PaquetesAgregar_Load(object sender, EventArgs e)
         {
+            Program.menu.addRuta(ruta);
             limpiar();
         }
 
@@ -93,8 +94,6 @@ namespace Principal_Internet_elvis.Paquetes
             row = -1;
             estado = -1;
             addFuente(Program.menu.fuente);
-
-            Program.menu.addRuta(ruta);
         }
 
         private void txt_c1_KeyPress(object sender, KeyPressEventArgs e)
@@ -238,13 +237,13 @@ namespace Principal_Internet_elvis.Paquetes
                     }
                     float p = float.Parse(txt_c1.Text);
                     float isv = float.Parse(txt_c2.Text);
-                    isv = (isv * p) / 100;
-                    txt_c2.Text = "" + isv;
+                    isv = (isv / 100) + 1;
+                    isv = p - (p / isv);
+                    txt_c2.Text = "" + isv.ToString("0.00").Replace(",",".");
                     campos.Add("'" + txt_descripcion.Text + "'");
                     campos.Add("" + txt_c1.Text);
                     campos.Add("" + txt_c2.Text);
                     m = conn.insertar("sp_insertar_servicio", campos);
-
                 }
                 else if (this.Text.Contains("PAQUETE"))
                 {

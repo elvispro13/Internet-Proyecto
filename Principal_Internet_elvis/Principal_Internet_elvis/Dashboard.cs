@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,7 +30,7 @@ namespace Principal_Internet_elvis
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            actualizar();
+            //actualizar();
         }
 
         private void actualizar()
@@ -74,7 +75,7 @@ namespace Principal_Internet_elvis
                 int row = dgv_pendientes.CurrentRow.Index;
 
                 Program.estado_Cliente = new Estado_cliente();
-                Program.estado_Cliente.accesoRapido(dgv_pendientes.Rows[row].Cells["nombre"].Value.ToString());
+                Program.estado_Cliente.accesoRapido(dgv_pendientes.Rows[row].Cells["rtn"].Value.ToString());
                 Program.estado_Cliente.Text = "ESTADO-CLIENTES";
                 Program.menu.setRuta("CONTRATOS/");
                 Program.menu.AbrirFormEnPanel(Program.estado_Cliente);

@@ -23,6 +23,7 @@ namespace Principal_Internet_elvis
         /// </summary>
         public static Dashboard dashboard;
         public static Menu menu;
+        public static HacerPing hacerPing;
         public static Principal principal;
         public static Inicio inicio;
         public static Usuarios usuarios;

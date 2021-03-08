@@ -145,6 +145,41 @@ namespace Principal_Internet_elvis
 
         }
 
+        public String getIP(String ip)
+        {
+            String[] c = ip.Split('.');
+            int[] n = {Convert.ToInt32(c[0]),
+                Convert.ToInt32(c[1]) ,
+                Convert.ToInt32(c[2]) ,
+                Convert.ToInt32(c[3]) };
+
+            n[3] += 1;
+            if (n[3] > 254)
+            {
+                n[3] = 2;
+                n[2] += 1;
+                if (n[2] > 254)
+                {
+                    n[2] = 1;
+                    n[1] += 1;
+                    if (n[1] > 254)
+                    {
+                        n[1] = 1;
+                        n[0] += 1;
+                        if (n[0] > 254)
+                        {
+                            n[0] = 0;
+                            n[1] = 0;
+                            n[2] = 0;
+                            n[3] = 0;
+                        }
+                    }
+                }
+            }
+
+            return n[0] + "." + n[1] + "." + n[2] + "." + n[3];
+        }
+
         public void bt_inicio_Click(object sender, EventArgs e)
         {
             Program.dashboard = new Dashboard();
