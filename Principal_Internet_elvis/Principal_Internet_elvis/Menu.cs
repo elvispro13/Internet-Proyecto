@@ -60,6 +60,7 @@ namespace Principal_Internet_elvis
             {
                 img_logo.Image = logo;
             }
+            bt_inicio_Click(null,null);
         }
 
         public void addFuente(Font f)
@@ -100,6 +101,7 @@ namespace Principal_Internet_elvis
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
+
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -115,7 +117,22 @@ namespace Principal_Internet_elvis
             Application.Exit();
         }
 
-        private void AbrirFormEnPanel(object formhija)
+        public void setRuta(String ruta)
+        {
+            this.lb_ruta.Text = ruta;
+        }
+
+        public void addRuta(String ruta)
+        {
+            this.lb_ruta.Text += ruta;
+        }
+
+        public void removeRuta(String ruta)
+        {
+            this.lb_ruta.Text = this.lb_ruta.Text.Replace(ruta,"");
+        }
+
+        public void AbrirFormEnPanel(object formhija)
         {
             if (this.panel_contenedor.Controls.Count > 0)
                 this.panel_contenedor.Controls.RemoveAt(0);
@@ -128,10 +145,71 @@ namespace Principal_Internet_elvis
 
         }
 
+        public void bt_inicio_Click(object sender, EventArgs e)
+        {
+            Program.dashboard = new Dashboard();
+            AbrirFormEnPanel(Program.dashboard);
+            lb_ruta.Text = "INICIO/";
+        }
+
         private void bt_pagos_Click(object sender, EventArgs e)
         {
             Program.pago = new Pago();
             AbrirFormEnPanel(Program.pago);
+            lb_ruta.Text = "PAGOS/";
+        }
+
+        private void bt_clientes_Click(object sender, EventArgs e)
+        {
+            Program.clientes = new Clientes();
+            AbrirFormEnPanel(Program.clientes);
+            lb_ruta.Text = "CLIENTES/";
+        }
+
+        private void bt_contratos_Click(object sender, EventArgs e)
+        {
+            Program.estado_Cliente = new Estado_cliente();
+            AbrirFormEnPanel(Program.estado_Cliente);
+            lb_ruta.Text = "CONTRATOS/";
+        }
+
+        private void bt_paquetes_Click(object sender, EventArgs e)
+        {
+            Program.paquetesTipo = new PaquetesTipo();
+            AbrirFormEnPanel(Program.paquetesTipo);
+            lb_ruta.Text = "PAQUETES/";
+        }
+
+        private void bt_facturas_Click(object sender, EventArgs e)
+        {
+            Program.bus_Factura = new Bus_factura();
+            Program.bus_Factura.Text = "BUSQUEDA-FACTURAS";
+            AbrirFormEnPanel(Program.bus_Factura);
+            lb_ruta.Text = "FACTURAS/";
+        }
+
+        private void bt_ubicacion_Click(object sender, EventArgs e)
+        {
+            Program.ubicacionTipo = new UbicacionTipo();
+            Program.ubicacionTipo.Text = "UBICACION-BUSCAR";
+            AbrirFormEnPanel(Program.ubicacionTipo);
+            lb_ruta.Text = "UBICACION/";
+        }
+
+        private void bt_reportes_Click(object sender, EventArgs e)
+        {
+            Program.reportesTipo = new ReportesTipo();
+            Program.reportesTipo.Text = "REPORTES";
+            AbrirFormEnPanel(Program.reportesTipo);
+            lb_ruta.Text = "REPORTES/";
+        }
+
+        private void bt_configuracion_Click(object sender, EventArgs e)
+        {
+            Program.configuracion = new Configuracion();
+            Program.configuracion.Text = "CONFIGURACION";
+            AbrirFormEnPanel(Program.configuracion);
+            lb_ruta.Text = "AJUSTES/";
         }
     }
 }

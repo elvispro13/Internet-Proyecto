@@ -21,6 +21,7 @@ namespace Principal_Internet_elvis
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        public static Dashboard dashboard;
         public static Menu menu;
         public static Principal principal;
         public static Inicio inicio;

@@ -132,7 +132,7 @@ namespace Principal_Internet_elvis.Reportes
         {
             gb_estado_buscar.Visible = false;
             gb_estado.Visible = true;
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
         }
 
         private void bt_estado_atras_Click(object sender, EventArgs e)
@@ -196,6 +196,12 @@ namespace Principal_Internet_elvis.Reportes
                     dgv_estado_tabla.Columns[i].HeaderText = t;
                 }
             }
+        }
+
+        private void bt_salir_Click(object sender, EventArgs e)
+        {
+            Program.menu.bt_inicio_Click(null,null);
+            this.Close();
         }
     }
 }

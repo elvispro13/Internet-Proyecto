@@ -12,6 +12,9 @@ namespace Principal_Internet_elvis.Ubicacion
 {
     public partial class UbicacionElegir : Form
     {
+        public String ruta = "";
+        public Form retorno;
+
         public UbicacionElegir()
         {
             InitializeComponent();
@@ -19,6 +22,8 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
+            Program.menu.removeRuta(ruta);
+            Program.menu.AbrirFormEnPanel(retorno);
             this.Close();
         }
 
@@ -46,6 +51,8 @@ namespace Principal_Internet_elvis.Ubicacion
                 nombre = dgv_tabla.Rows[row].Cells["lugar"].Value.ToString();
                 Program.clientes.agregarDatos(id, nombre);
             }
+            Program.menu.removeRuta(ruta);
+            Program.menu.AbrirFormEnPanel(retorno);
             this.Close();
         }
 
@@ -127,7 +134,10 @@ namespace Principal_Internet_elvis.Ubicacion
 
             dgv_tabla.ClearSelection();
 
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
+            Program.menu.addRuta(ruta);
+
+            Program.menu.addRuta(ruta);
         }
 
         public void addFuente(Font f)

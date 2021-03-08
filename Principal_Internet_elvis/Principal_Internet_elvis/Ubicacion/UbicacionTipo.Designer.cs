@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_salir = new System.Windows.Forms.Button();
             this.bt_sector = new System.Windows.Forms.Button();
             this.bt_barrio = new System.Windows.Forms.Button();
             this.bt_lugar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
-            this.bt_salir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
@@ -47,12 +47,26 @@
             this.groupBox1.Controls.Add(this.bt_sector);
             this.groupBox1.Controls.Add(this.bt_barrio);
             this.groupBox1.Controls.Add(this.bt_lugar);
-            this.groupBox1.Location = new System.Drawing.Point(12, 293);
+            this.groupBox1.Location = new System.Drawing.Point(102, 327);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(543, 90);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SELECCIONAR";
+            // 
+            // bt_salir
+            // 
+            this.bt_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
+            this.bt_salir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_salir.Location = new System.Drawing.Point(404, 19);
+            this.bt_salir.Name = "bt_salir";
+            this.bt_salir.Size = new System.Drawing.Size(129, 63);
+            this.bt_salir.TabIndex = 6;
+            this.bt_salir.Text = "SALIR";
+            this.bt_salir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_salir.UseVisualStyleBackColor = true;
+            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
             // 
             // bt_sector
             // 
@@ -87,7 +101,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_buscar);
-            this.groupBox2.Location = new System.Drawing.Point(561, 312);
+            this.groupBox2.Location = new System.Drawing.Point(651, 346);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(306, 46);
             this.groupBox2.TabIndex = 1;
@@ -111,7 +125,7 @@
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(12, 12);
+            this.dgv_tabla.Location = new System.Drawing.Point(102, 46);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
@@ -119,28 +133,16 @@
             this.dgv_tabla.Size = new System.Drawing.Size(870, 275);
             this.dgv_tabla.TabIndex = 2;
             // 
-            // bt_salir
-            // 
-            this.bt_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
-            this.bt_salir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_salir.Location = new System.Drawing.Point(404, 19);
-            this.bt_salir.Name = "bt_salir";
-            this.bt_salir.Size = new System.Drawing.Size(129, 63);
-            this.bt_salir.TabIndex = 6;
-            this.bt_salir.Text = "SALIR";
-            this.bt_salir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bt_salir.UseVisualStyleBackColor = true;
-            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
-            // 
             // UbicacionTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 387);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1080, 612);
             this.Controls.Add(this.dgv_tabla);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UbicacionTipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ubicacion Tipo";

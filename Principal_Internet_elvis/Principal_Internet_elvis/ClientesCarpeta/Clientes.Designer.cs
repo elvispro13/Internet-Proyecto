@@ -71,7 +71,7 @@
             // 
             this.groupBox1.Controls.Add(this.txt_codigo);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(72, 16);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(288, 50);
             this.groupBox1.TabIndex = 0;
@@ -88,7 +88,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_nombre);
-            this.groupBox2.Location = new System.Drawing.Point(12, 68);
+            this.groupBox2.Location = new System.Drawing.Point(72, 72);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(288, 50);
             this.groupBox2.TabIndex = 1;
@@ -107,7 +107,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txt_rtn);
-            this.groupBox3.Location = new System.Drawing.Point(12, 124);
+            this.groupBox3.Location = new System.Drawing.Point(72, 128);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(288, 50);
             this.groupBox3.TabIndex = 2;
@@ -125,7 +125,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.txt_telefono);
-            this.groupBox5.Location = new System.Drawing.Point(12, 180);
+            this.groupBox5.Location = new System.Drawing.Point(72, 184);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(288, 50);
             this.groupBox5.TabIndex = 4;
@@ -144,7 +144,7 @@
             // 
             this.groupBox6.Controls.Add(this.rb_masculino);
             this.groupBox6.Controls.Add(this.rb_femenino);
-            this.groupBox6.Location = new System.Drawing.Point(12, 236);
+            this.groupBox6.Location = new System.Drawing.Point(72, 240);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(288, 63);
             this.groupBox6.TabIndex = 5;
@@ -176,7 +176,7 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.txt_correo);
-            this.groupBox7.Location = new System.Drawing.Point(12, 305);
+            this.groupBox7.Location = new System.Drawing.Point(72, 309);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(288, 50);
             this.groupBox7.TabIndex = 6;
@@ -193,7 +193,7 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.dtp_fecha);
-            this.groupBox8.Location = new System.Drawing.Point(12, 361);
+            this.groupBox8.Location = new System.Drawing.Point(72, 365);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(288, 50);
             this.groupBox8.TabIndex = 7;
@@ -210,7 +210,7 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.txt_direccion);
-            this.groupBox9.Location = new System.Drawing.Point(12, 417);
+            this.groupBox9.Location = new System.Drawing.Point(72, 421);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(288, 50);
             this.groupBox9.TabIndex = 8;
@@ -229,7 +229,7 @@
             // 
             this.groupBox10.Controls.Add(this.bt_lugar);
             this.groupBox10.Controls.Add(this.txt_lugar);
-            this.groupBox10.Location = new System.Drawing.Point(12, 473);
+            this.groupBox10.Location = new System.Drawing.Point(72, 477);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(288, 50);
             this.groupBox10.TabIndex = 9;
@@ -261,7 +261,7 @@
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(306, 13);
+            this.dgv_tabla.Location = new System.Drawing.Point(366, 17);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
@@ -272,7 +272,7 @@
             // 
             // bt_paquetes
             // 
-            this.bt_paquetes.Location = new System.Drawing.Point(12, 529);
+            this.bt_paquetes.Location = new System.Drawing.Point(72, 533);
             this.bt_paquetes.Name = "bt_paquetes";
             this.bt_paquetes.Size = new System.Drawing.Size(288, 53);
             this.bt_paquetes.TabIndex = 13;
@@ -283,7 +283,7 @@
             // bt_aceptar
             // 
             this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
-            this.bt_aceptar.Location = new System.Drawing.Point(578, 530);
+            this.bt_aceptar.Location = new System.Drawing.Point(638, 534);
             this.bt_aceptar.Name = "bt_aceptar";
             this.bt_aceptar.Size = new System.Drawing.Size(76, 52);
             this.bt_aceptar.TabIndex = 12;
@@ -293,7 +293,7 @@
             // bt_salir
             // 
             this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_salir.Location = new System.Drawing.Point(857, 529);
+            this.bt_salir.Location = new System.Drawing.Point(917, 533);
             this.bt_salir.Name = "bt_salir";
             this.bt_salir.Size = new System.Drawing.Size(68, 52);
             this.bt_salir.TabIndex = 11;
@@ -303,7 +303,7 @@
             // bt_nuevo
             // 
             this.bt_nuevo.Image = global::Principal_Internet_elvis.Properties.Resources.rounded_add_button_icon_icons_com_72592;
-            this.bt_nuevo.Location = new System.Drawing.Point(480, 530);
+            this.bt_nuevo.Location = new System.Drawing.Point(540, 534);
             this.bt_nuevo.Name = "bt_nuevo";
             this.bt_nuevo.Size = new System.Drawing.Size(79, 52);
             this.bt_nuevo.TabIndex = 16;
@@ -313,7 +313,7 @@
             // bt_buscar
             // 
             this.bt_buscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
-            this.bt_buscar.Location = new System.Drawing.Point(676, 530);
+            this.bt_buscar.Location = new System.Drawing.Point(736, 534);
             this.bt_buscar.Name = "bt_buscar";
             this.bt_buscar.Size = new System.Drawing.Size(69, 51);
             this.bt_buscar.TabIndex = 15;
@@ -323,7 +323,7 @@
             // bt_eliminar
             // 
             this.bt_eliminar.Image = global::Principal_Internet_elvis.Properties.Resources._9;
-            this.bt_eliminar.Location = new System.Drawing.Point(766, 529);
+            this.bt_eliminar.Location = new System.Drawing.Point(826, 533);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(72, 52);
             this.bt_eliminar.TabIndex = 14;
@@ -334,7 +334,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 593);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1080, 612);
             this.Controls.Add(this.bt_nuevo);
             this.Controls.Add(this.bt_buscar);
             this.Controls.Add(this.bt_eliminar);
@@ -351,6 +352,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";

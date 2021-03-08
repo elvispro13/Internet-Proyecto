@@ -36,21 +36,22 @@
             this.dtp_mora_desde = new System.Windows.Forms.DateTimePicker();
             this.bt_mora_buscar = new System.Windows.Forms.Button();
             this.gb_estado = new System.Windows.Forms.GroupBox();
+            this.txt_estado_nombre = new System.Windows.Forms.TextBox();
+            this.txt_estado_codigo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bt_estado_buscar = new System.Windows.Forms.Button();
             this.cb_estado_rango = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dtp_estado_hasta = new System.Windows.Forms.DateTimePicker();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dtp_estado_desde = new System.Windows.Forms.DateTimePicker();
             this.bt_estado_imprimir = new System.Windows.Forms.Button();
-            this.bt_estado_buscar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_estado_codigo = new System.Windows.Forms.TextBox();
-            this.txt_estado_nombre = new System.Windows.Forms.TextBox();
             this.gb_estado_buscar = new System.Windows.Forms.GroupBox();
-            this.txt_estado_buscar = new System.Windows.Forms.TextBox();
-            this.bt_estado_atras = new System.Windows.Forms.Button();
             this.dgv_estado_tabla = new System.Windows.Forms.DataGridView();
+            this.bt_estado_atras = new System.Windows.Forms.Button();
+            this.txt_estado_buscar = new System.Windows.Forms.TextBox();
+            this.bt_salir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -67,7 +68,7 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.bt_mora_buscar);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(303, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(459, 129);
             this.groupBox1.TabIndex = 0;
@@ -139,12 +140,56 @@
             this.gb_estado.Controls.Add(this.groupBox5);
             this.gb_estado.Controls.Add(this.groupBox6);
             this.gb_estado.Controls.Add(this.bt_estado_imprimir);
-            this.gb_estado.Location = new System.Drawing.Point(12, 147);
+            this.gb_estado.Location = new System.Drawing.Point(303, 185);
             this.gb_estado.Name = "gb_estado";
             this.gb_estado.Size = new System.Drawing.Size(459, 187);
             this.gb_estado.TabIndex = 1;
             this.gb_estado.TabStop = false;
             this.gb_estado.Text = "ESTADO DE CUENTA";
+            // 
+            // txt_estado_nombre
+            // 
+            this.txt_estado_nombre.Location = new System.Drawing.Point(74, 153);
+            this.txt_estado_nombre.Name = "txt_estado_nombre";
+            this.txt_estado_nombre.ReadOnly = true;
+            this.txt_estado_nombre.Size = new System.Drawing.Size(361, 20);
+            this.txt_estado_nombre.TabIndex = 8;
+            // 
+            // txt_estado_codigo
+            // 
+            this.txt_estado_codigo.Location = new System.Drawing.Point(74, 127);
+            this.txt_estado_codigo.Name = "txt_estado_codigo";
+            this.txt_estado_codigo.ReadOnly = true;
+            this.txt_estado_codigo.Size = new System.Drawing.Size(118, 20);
+            this.txt_estado_codigo.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "NOMBRE";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "CODIGO";
+            // 
+            // bt_estado_buscar
+            // 
+            this.bt_estado_buscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
+            this.bt_estado_buscar.Location = new System.Drawing.Point(117, 79);
+            this.bt_estado_buscar.Name = "bt_estado_buscar";
+            this.bt_estado_buscar.Size = new System.Drawing.Size(103, 42);
+            this.bt_estado_buscar.TabIndex = 4;
+            this.bt_estado_buscar.UseVisualStyleBackColor = true;
+            this.bt_estado_buscar.Click += new System.EventHandler(this.bt_estado_buscar_Click);
             // 
             // cb_estado_rango
             // 
@@ -200,80 +245,17 @@
             this.bt_estado_imprimir.UseVisualStyleBackColor = true;
             this.bt_estado_imprimir.Click += new System.EventHandler(this.bt_estado_imprimir_Click);
             // 
-            // bt_estado_buscar
-            // 
-            this.bt_estado_buscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
-            this.bt_estado_buscar.Location = new System.Drawing.Point(117, 79);
-            this.bt_estado_buscar.Name = "bt_estado_buscar";
-            this.bt_estado_buscar.Size = new System.Drawing.Size(103, 42);
-            this.bt_estado_buscar.TabIndex = 4;
-            this.bt_estado_buscar.UseVisualStyleBackColor = true;
-            this.bt_estado_buscar.Click += new System.EventHandler(this.bt_estado_buscar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 130);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "CODIGO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "NOMBRE";
-            // 
-            // txt_estado_codigo
-            // 
-            this.txt_estado_codigo.Location = new System.Drawing.Point(74, 127);
-            this.txt_estado_codigo.Name = "txt_estado_codigo";
-            this.txt_estado_codigo.ReadOnly = true;
-            this.txt_estado_codigo.Size = new System.Drawing.Size(118, 20);
-            this.txt_estado_codigo.TabIndex = 7;
-            // 
-            // txt_estado_nombre
-            // 
-            this.txt_estado_nombre.Location = new System.Drawing.Point(74, 153);
-            this.txt_estado_nombre.Name = "txt_estado_nombre";
-            this.txt_estado_nombre.ReadOnly = true;
-            this.txt_estado_nombre.Size = new System.Drawing.Size(361, 20);
-            this.txt_estado_nombre.TabIndex = 8;
-            // 
             // gb_estado_buscar
             // 
             this.gb_estado_buscar.Controls.Add(this.dgv_estado_tabla);
             this.gb_estado_buscar.Controls.Add(this.bt_estado_atras);
             this.gb_estado_buscar.Controls.Add(this.txt_estado_buscar);
-            this.gb_estado_buscar.Location = new System.Drawing.Point(7, 139);
+            this.gb_estado_buscar.Location = new System.Drawing.Point(298, 177);
             this.gb_estado_buscar.Name = "gb_estado_buscar";
             this.gb_estado_buscar.Size = new System.Drawing.Size(458, 197);
             this.gb_estado_buscar.TabIndex = 2;
             this.gb_estado_buscar.TabStop = false;
             this.gb_estado_buscar.Text = "BUSCAR CLIENTE";
-            // 
-            // txt_estado_buscar
-            // 
-            this.txt_estado_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_estado_buscar.Location = new System.Drawing.Point(6, 19);
-            this.txt_estado_buscar.Name = "txt_estado_buscar";
-            this.txt_estado_buscar.Size = new System.Drawing.Size(350, 20);
-            this.txt_estado_buscar.TabIndex = 0;
-            this.txt_estado_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_estado_buscar_KeyDown);
-            // 
-            // bt_estado_atras
-            // 
-            this.bt_estado_atras.Location = new System.Drawing.Point(362, 19);
-            this.bt_estado_atras.Name = "bt_estado_atras";
-            this.bt_estado_atras.Size = new System.Drawing.Size(90, 23);
-            this.bt_estado_atras.TabIndex = 1;
-            this.bt_estado_atras.Text = "ATRAS";
-            this.bt_estado_atras.UseVisualStyleBackColor = true;
-            this.bt_estado_atras.Click += new System.EventHandler(this.bt_estado_atras_Click);
             // 
             // dgv_estado_tabla
             // 
@@ -289,14 +271,46 @@
             this.dgv_estado_tabla.TabIndex = 2;
             this.dgv_estado_tabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_estado_tabla_CellDoubleClick);
             // 
+            // bt_estado_atras
+            // 
+            this.bt_estado_atras.Location = new System.Drawing.Point(362, 19);
+            this.bt_estado_atras.Name = "bt_estado_atras";
+            this.bt_estado_atras.Size = new System.Drawing.Size(90, 23);
+            this.bt_estado_atras.TabIndex = 1;
+            this.bt_estado_atras.Text = "ATRAS";
+            this.bt_estado_atras.UseVisualStyleBackColor = true;
+            this.bt_estado_atras.Click += new System.EventHandler(this.bt_estado_atras_Click);
+            // 
+            // txt_estado_buscar
+            // 
+            this.txt_estado_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_estado_buscar.Location = new System.Drawing.Point(6, 19);
+            this.txt_estado_buscar.Name = "txt_estado_buscar";
+            this.txt_estado_buscar.Size = new System.Drawing.Size(350, 20);
+            this.txt_estado_buscar.TabIndex = 0;
+            this.txt_estado_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_estado_buscar_KeyDown);
+            // 
+            // bt_salir
+            // 
+            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
+            this.bt_salir.Location = new System.Drawing.Point(469, 380);
+            this.bt_salir.Name = "bt_salir";
+            this.bt_salir.Size = new System.Drawing.Size(115, 57);
+            this.bt_salir.TabIndex = 3;
+            this.bt_salir.UseVisualStyleBackColor = true;
+            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
+            // 
             // ReportesTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 519);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1064, 573);
+            this.Controls.Add(this.bt_salir);
             this.Controls.Add(this.gb_estado_buscar);
             this.Controls.Add(this.gb_estado);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportesTipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportesTipo";
@@ -341,5 +355,6 @@
         private System.Windows.Forms.TextBox txt_estado_buscar;
         private System.Windows.Forms.Button bt_estado_atras;
         private System.Windows.Forms.DataGridView dgv_estado_tabla;
+        private System.Windows.Forms.Button bt_salir;
     }
 }

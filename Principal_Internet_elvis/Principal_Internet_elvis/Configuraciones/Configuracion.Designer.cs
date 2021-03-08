@@ -64,10 +64,11 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.Color.Red;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(410, 12);
+            this.btnSalir.Location = new System.Drawing.Point(1007, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(45, 45);
             this.btnSalir.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             this.gb_servidor.Controls.Add(this.txt_server);
             this.gb_servidor.Controls.Add(this.btnAceptar);
-            this.gb_servidor.Location = new System.Drawing.Point(12, 414);
+            this.gb_servidor.Location = new System.Drawing.Point(391, 420);
             this.gb_servidor.Name = "gb_servidor";
             this.gb_servidor.Size = new System.Drawing.Size(364, 60);
             this.gb_servidor.TabIndex = 5;
@@ -107,7 +108,7 @@
             this.gb_opciones.Controls.Add(this.bt_usuarios);
             this.gb_opciones.Controls.Add(this.bt_empresa);
             this.gb_opciones.Controls.Add(this.btnSelFue);
-            this.gb_opciones.Location = new System.Drawing.Point(12, 12);
+            this.gb_opciones.Location = new System.Drawing.Point(391, 18);
             this.gb_opciones.Name = "gb_opciones";
             this.gb_opciones.Size = new System.Drawing.Size(247, 385);
             this.gb_opciones.TabIndex = 6;
@@ -158,11 +159,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 486);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1064, 596);
             this.ControlBox = false;
             this.Controls.Add(this.gb_opciones);
             this.Controls.Add(this.gb_servidor);
             this.Controls.Add(this.btnSalir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Name = "Configuracion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

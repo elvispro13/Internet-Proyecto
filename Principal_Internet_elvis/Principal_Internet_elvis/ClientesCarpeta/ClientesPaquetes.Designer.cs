@@ -42,7 +42,7 @@
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(12, 12);
+            this.dgv_tabla.Location = new System.Drawing.Point(131, 12);
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -53,7 +53,7 @@
             // bt_agregar
             // 
             this.bt_agregar.Image = global::Principal_Internet_elvis.Properties.Resources.rounded_add_button_icon_icons_com_72592;
-            this.bt_agregar.Location = new System.Drawing.Point(12, 326);
+            this.bt_agregar.Location = new System.Drawing.Point(131, 326);
             this.bt_agregar.Name = "bt_agregar";
             this.bt_agregar.Size = new System.Drawing.Size(114, 62);
             this.bt_agregar.TabIndex = 1;
@@ -63,7 +63,7 @@
             // bt_quitar
             // 
             this.bt_quitar.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_quitar.Location = new System.Drawing.Point(132, 326);
+            this.bt_quitar.Location = new System.Drawing.Point(251, 326);
             this.bt_quitar.Name = "bt_quitar";
             this.bt_quitar.Size = new System.Drawing.Size(114, 62);
             this.bt_quitar.TabIndex = 2;
@@ -73,7 +73,7 @@
             // bt_salir
             // 
             this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
-            this.bt_salir.Location = new System.Drawing.Point(695, 326);
+            this.bt_salir.Location = new System.Drawing.Point(814, 326);
             this.bt_salir.Name = "bt_salir";
             this.bt_salir.Size = new System.Drawing.Size(114, 62);
             this.bt_salir.TabIndex = 3;
@@ -84,11 +84,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 400);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1080, 612);
             this.Controls.Add(this.bt_salir);
             this.Controls.Add(this.bt_quitar);
             this.Controls.Add(this.bt_agregar);
             this.Controls.Add(this.dgv_tabla);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientesPaquetes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientesPaquetes";

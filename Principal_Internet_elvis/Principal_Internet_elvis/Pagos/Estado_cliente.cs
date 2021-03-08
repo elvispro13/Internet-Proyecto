@@ -26,6 +26,7 @@ namespace Principal_Internet_elvis.Configuraciones
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            Program.menu.bt_inicio_Click(null, null);
             Close();
         }
 
@@ -89,7 +90,7 @@ namespace Principal_Internet_elvis.Configuraciones
             cb_estado.Text = "";
             txt_buscar.Select();
 
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
         }
 
         public void addFuente(Font f)

@@ -146,6 +146,7 @@ namespace Principal_Internet_elvis.Pagos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            Program.menu.bt_inicio_Click(null, null);
             this.Close();
         }
 

@@ -53,7 +53,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dgv_tabla);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(88, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(859, 439);
             this.groupBox1.TabIndex = 0;
@@ -155,7 +155,7 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(745, 457);
+            this.btnSalir.Location = new System.Drawing.Point(821, 457);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(120, 66);
             this.btnSalir.TabIndex = 2;
@@ -169,7 +169,7 @@
             this.bt_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_estado.Image = global::Principal_Internet_elvis.Properties.Resources._9;
             this.bt_estado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_estado.Location = new System.Drawing.Point(541, 457);
+            this.bt_estado.Location = new System.Drawing.Point(617, 457);
             this.bt_estado.Name = "bt_estado";
             this.bt_estado.Size = new System.Drawing.Size(198, 66);
             this.bt_estado.TabIndex = 3;
@@ -183,12 +183,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(883, 535);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1064, 596);
             this.ControlBox = false;
             this.Controls.Add(this.bt_estado);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Estado_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

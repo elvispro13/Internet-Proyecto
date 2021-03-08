@@ -53,7 +53,7 @@
             // gb_codigo
             // 
             this.gb_codigo.Controls.Add(this.txt_codigo);
-            this.gb_codigo.Location = new System.Drawing.Point(12, 12);
+            this.gb_codigo.Location = new System.Drawing.Point(60, 36);
             this.gb_codigo.Name = "gb_codigo";
             this.gb_codigo.Size = new System.Drawing.Size(363, 51);
             this.gb_codigo.TabIndex = 0;
@@ -70,7 +70,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_descripcion);
-            this.groupBox2.Location = new System.Drawing.Point(12, 69);
+            this.groupBox2.Location = new System.Drawing.Point(60, 93);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(363, 51);
             this.groupBox2.TabIndex = 1;
@@ -90,7 +90,7 @@
             // gb_c1
             // 
             this.gb_c1.Controls.Add(this.txt_c1);
-            this.gb_c1.Location = new System.Drawing.Point(12, 126);
+            this.gb_c1.Location = new System.Drawing.Point(60, 150);
             this.gb_c1.Name = "gb_c1";
             this.gb_c1.Size = new System.Drawing.Size(363, 51);
             this.gb_c1.TabIndex = 2;
@@ -109,7 +109,7 @@
             // gb_c2
             // 
             this.gb_c2.Controls.Add(this.txt_c2);
-            this.gb_c2.Location = new System.Drawing.Point(12, 183);
+            this.gb_c2.Location = new System.Drawing.Point(60, 207);
             this.gb_c2.Name = "gb_c2";
             this.gb_c2.Size = new System.Drawing.Size(363, 51);
             this.gb_c2.TabIndex = 3;
@@ -127,7 +127,7 @@
             // 
             // bt_guardar
             // 
-            this.bt_guardar.Location = new System.Drawing.Point(129, 329);
+            this.bt_guardar.Location = new System.Drawing.Point(177, 353);
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(111, 39);
             this.bt_guardar.TabIndex = 4;
@@ -137,7 +137,7 @@
             // 
             // bt_salir
             // 
-            this.bt_salir.Location = new System.Drawing.Point(480, 329);
+            this.bt_salir.Location = new System.Drawing.Point(528, 353);
             this.bt_salir.Name = "bt_salir";
             this.bt_salir.Size = new System.Drawing.Size(111, 39);
             this.bt_salir.TabIndex = 5;
@@ -152,7 +152,7 @@
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(381, 12);
+            this.dgv_tabla.Location = new System.Drawing.Point(429, 36);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
@@ -163,7 +163,7 @@
             // 
             // bt_servicios
             // 
-            this.bt_servicios.Location = new System.Drawing.Point(12, 240);
+            this.bt_servicios.Location = new System.Drawing.Point(60, 264);
             this.bt_servicios.Name = "bt_servicios";
             this.bt_servicios.Size = new System.Drawing.Size(363, 65);
             this.bt_servicios.TabIndex = 7;
@@ -173,7 +173,7 @@
             // 
             // bt_eliminar
             // 
-            this.bt_eliminar.Location = new System.Drawing.Point(363, 329);
+            this.bt_eliminar.Location = new System.Drawing.Point(411, 353);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(111, 39);
             this.bt_eliminar.TabIndex = 8;
@@ -183,7 +183,7 @@
             // 
             // bt_buscar
             // 
-            this.bt_buscar.Location = new System.Drawing.Point(246, 329);
+            this.bt_buscar.Location = new System.Drawing.Point(294, 353);
             this.bt_buscar.Name = "bt_buscar";
             this.bt_buscar.Size = new System.Drawing.Size(111, 39);
             this.bt_buscar.TabIndex = 9;
@@ -193,7 +193,7 @@
             // 
             // bt_nuevo
             // 
-            this.bt_nuevo.Location = new System.Drawing.Point(12, 329);
+            this.bt_nuevo.Location = new System.Drawing.Point(60, 353);
             this.bt_nuevo.Name = "bt_nuevo";
             this.bt_nuevo.Size = new System.Drawing.Size(111, 39);
             this.bt_nuevo.TabIndex = 10;
@@ -205,7 +205,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 376);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1080, 612);
             this.Controls.Add(this.bt_nuevo);
             this.Controls.Add(this.bt_buscar);
             this.Controls.Add(this.bt_eliminar);
@@ -217,6 +218,7 @@
             this.Controls.Add(this.gb_c1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gb_codigo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PaquetesAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaquetesAgregar";

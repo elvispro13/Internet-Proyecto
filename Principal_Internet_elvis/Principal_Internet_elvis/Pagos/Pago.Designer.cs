@@ -105,7 +105,7 @@
             this.gb_cliente.Controls.Add(this.label2);
             this.gb_cliente.Controls.Add(this.txt_codigo_c);
             this.gb_cliente.Controls.Add(this.label1);
-            this.gb_cliente.Location = new System.Drawing.Point(201, 12);
+            this.gb_cliente.Location = new System.Drawing.Point(255, 12);
             this.gb_cliente.Name = "gb_cliente";
             this.gb_cliente.Size = new System.Drawing.Size(509, 188);
             this.gb_cliente.TabIndex = 0;
@@ -199,7 +199,7 @@
             this.gBusCliente.Controls.Add(this.txt_buscar_c);
             this.gBusCliente.Controls.Add(this.btnAtrasCliente);
             this.gBusCliente.Controls.Add(this.dgv_tabla_c);
-            this.gBusCliente.Location = new System.Drawing.Point(207, 12);
+            this.gBusCliente.Location = new System.Drawing.Point(261, 12);
             this.gBusCliente.Name = "gBusCliente";
             this.gBusCliente.Size = new System.Drawing.Size(509, 188);
             this.gBusCliente.TabIndex = 1;
@@ -244,7 +244,7 @@
             this.gBusConcep.BackColor = System.Drawing.Color.White;
             this.gBusConcep.Controls.Add(this.btnAtrasConcepto);
             this.gBusConcep.Controls.Add(this.dgv_tabla_p);
-            this.gBusConcep.Location = new System.Drawing.Point(207, 206);
+            this.gBusConcep.Location = new System.Drawing.Point(261, 206);
             this.gBusConcep.Name = "gBusConcep";
             this.gBusConcep.Size = new System.Drawing.Size(509, 185);
             this.gBusConcep.TabIndex = 6;
@@ -289,7 +289,7 @@
             this.gb_paquete.Controls.Add(this.label7);
             this.gb_paquete.Controls.Add(this.txt_codigo_p);
             this.gb_paquete.Controls.Add(this.label8);
-            this.gb_paquete.Location = new System.Drawing.Point(201, 208);
+            this.gb_paquete.Location = new System.Drawing.Point(255, 208);
             this.gb_paquete.Name = "gb_paquete";
             this.gb_paquete.Size = new System.Drawing.Size(509, 179);
             this.gb_paquete.TabIndex = 5;
@@ -407,7 +407,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.dtp_fechaemision);
-            this.groupBox6.Location = new System.Drawing.Point(717, 66);
+            this.groupBox6.Location = new System.Drawing.Point(771, 66);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(213, 65);
             this.groupBox6.TabIndex = 8;
@@ -424,7 +424,7 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.dgv_detalles);
-            this.groupBox7.Location = new System.Drawing.Point(12, 397);
+            this.groupBox7.Location = new System.Drawing.Point(66, 397);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(923, 114);
             this.groupBox7.TabIndex = 13;
@@ -448,7 +448,7 @@
             // txt_totalpagar
             // 
             this.txt_totalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_totalpagar.Location = new System.Drawing.Point(788, 530);
+            this.txt_totalpagar.Location = new System.Drawing.Point(842, 530);
             this.txt_totalpagar.Name = "txt_totalpagar";
             this.txt_totalpagar.ReadOnly = true;
             this.txt_totalpagar.Size = new System.Drawing.Size(142, 20);
@@ -458,7 +458,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(629, 530);
+            this.label9.Location = new System.Drawing.Point(683, 530);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(153, 20);
             this.label9.TabIndex = 9;
@@ -468,7 +468,7 @@
             // 
             this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(170, 513);
+            this.btnSalir.Location = new System.Drawing.Point(224, 513);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(152, 55);
             this.btnSalir.TabIndex = 15;
@@ -483,7 +483,7 @@
             this.btnImprimir.Enabled = false;
             this.btnImprimir.Image = global::Principal_Internet_elvis.Properties.Resources.Print_icon_icons_com_55835;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(328, 513);
+            this.btnImprimir.Location = new System.Drawing.Point(382, 513);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(152, 55);
             this.btnImprimir.TabIndex = 14;
@@ -497,7 +497,7 @@
             // 
             this.btnGuardar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(12, 513);
+            this.btnGuardar.Location = new System.Drawing.Point(64, 513);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(152, 55);
             this.btnGuardar.TabIndex = 9;
@@ -508,7 +508,7 @@
             // 
             // img_logo
             // 
-            this.img_logo.Location = new System.Drawing.Point(18, 101);
+            this.img_logo.Location = new System.Drawing.Point(72, 101);
             this.img_logo.Name = "img_logo";
             this.img_logo.Size = new System.Drawing.Size(167, 135);
             this.img_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -556,7 +556,7 @@
             this.gb_acciones.Controls.Add(this.bt_agregar);
             this.gb_acciones.Controls.Add(this.bt_borrar);
             this.gb_acciones.Controls.Add(this.bt_cancelar);
-            this.gb_acciones.Location = new System.Drawing.Point(717, 137);
+            this.gb_acciones.Location = new System.Drawing.Point(771, 137);
             this.gb_acciones.Name = "gb_acciones";
             this.gb_acciones.Size = new System.Drawing.Size(213, 152);
             this.gb_acciones.TabIndex = 16;
@@ -581,7 +581,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cb_tipopago);
-            this.groupBox1.Location = new System.Drawing.Point(723, 295);
+            this.groupBox1.Location = new System.Drawing.Point(777, 295);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(207, 48);
             this.groupBox1.TabIndex = 18;
@@ -591,7 +591,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_efectivo);
-            this.groupBox2.Location = new System.Drawing.Point(723, 349);
+            this.groupBox2.Location = new System.Drawing.Point(777, 349);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(97, 48);
             this.groupBox2.TabIndex = 19;
@@ -612,7 +612,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txt_cambio);
-            this.groupBox3.Location = new System.Drawing.Point(826, 349);
+            this.groupBox3.Location = new System.Drawing.Point(880, 349);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(104, 48);
             this.groupBox3.TabIndex = 20;
@@ -632,7 +632,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(947, 580);
+            this.ClientSize = new System.Drawing.Size(1080, 612);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

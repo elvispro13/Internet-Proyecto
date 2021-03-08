@@ -50,7 +50,7 @@
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(12, 12);
+            this.dgv_tabla.Location = new System.Drawing.Point(166, 12);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
@@ -61,7 +61,7 @@
             // 
             // bt_aceptar
             // 
-            this.bt_aceptar.Location = new System.Drawing.Point(508, 477);
+            this.bt_aceptar.Location = new System.Drawing.Point(662, 477);
             this.bt_aceptar.Name = "bt_aceptar";
             this.bt_aceptar.Size = new System.Drawing.Size(106, 42);
             this.bt_aceptar.TabIndex = 1;
@@ -71,7 +71,7 @@
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Location = new System.Drawing.Point(620, 477);
+            this.bt_cancelar.Location = new System.Drawing.Point(774, 477);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(106, 42);
             this.bt_cancelar.TabIndex = 2;
@@ -82,7 +82,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txt_buscar);
-            this.groupBox1.Location = new System.Drawing.Point(12, 376);
+            this.groupBox1.Location = new System.Drawing.Point(166, 376);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(357, 47);
             this.groupBox1.TabIndex = 6;
@@ -101,7 +101,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_ip);
-            this.groupBox2.Location = new System.Drawing.Point(12, 429);
+            this.groupBox2.Location = new System.Drawing.Point(166, 429);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(239, 42);
             this.groupBox2.TabIndex = 7;
@@ -118,7 +118,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txt_intalacion);
-            this.groupBox3.Location = new System.Drawing.Point(12, 477);
+            this.groupBox3.Location = new System.Drawing.Point(166, 477);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(239, 42);
             this.groupBox3.TabIndex = 9;
@@ -138,13 +138,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 527);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1064, 573);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_aceptar);
             this.Controls.Add(this.dgv_tabla);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PaquetesElegir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaquetesElegir";

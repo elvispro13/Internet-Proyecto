@@ -14,6 +14,8 @@ namespace Principal_Internet_elvis.Paquetes
     {
 
         private int row = -1, estado = -1;
+        public String ruta = "";
+        public Form retorno;
 
         public PaquetesAgregar()
         {
@@ -90,7 +92,9 @@ namespace Principal_Internet_elvis.Paquetes
             txt_c2.Text = "";
             row = -1;
             estado = -1;
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
+
+            Program.menu.addRuta(ruta);
         }
 
         private void txt_c1_KeyPress(object sender, KeyPressEventArgs e)
@@ -178,8 +182,9 @@ namespace Principal_Internet_elvis.Paquetes
                 Program.paquetesElegir = new PaquetesElegir();
                 Program.paquetesElegir.id = int.Parse(txt_codigo.Text);
                 Program.paquetesElegir.Text = "ELEGIR-SERVICIOS";
-                Program.paquetesElegir.Show();
-                Program.paquetesElegir.Focus();
+                Program.paquetesElegir.ruta = "Elegir servicios";
+                Program.paquetesElegir.retorno = Program.paquetesAgregar;
+                Program.menu.AbrirFormEnPanel(Program.paquetesElegir);
             }
             else
             {
@@ -323,8 +328,9 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void bt_salir_Click(object sender, EventArgs e)
         {
+            Program.menu.removeRuta(ruta);
+            Program.menu.AbrirFormEnPanel(retorno);
             Close();
-            Program.paquetesTipo.BringToFront();
         }
 
         private void bt_nuevo_Click(object sender, EventArgs e)

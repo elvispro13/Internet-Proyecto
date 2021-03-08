@@ -13,6 +13,10 @@ namespace Principal_Internet_elvis.Ubicacion
 {
     public partial class UbicacionAgregar : Form
     {
+
+        public Form retorno;
+        public String ruta = "";
+
         private int id2;
         private int row = -1, estado = -1;
 
@@ -116,7 +120,9 @@ namespace Principal_Internet_elvis.Ubicacion
             txt_codigo2.Text = "";
             txt_nombre.Text = "";
             txt_codigo.Text = "";
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
+
+            Program.menu.addRuta(ruta);
         }
 
         public void agregarDatos(int id, string nombre)
@@ -131,15 +137,17 @@ namespace Principal_Internet_elvis.Ubicacion
             {
                 Program.ubicacionElegir = new UbicacionElegir();
                 Program.ubicacionElegir.Text = "ELEGIR-SECTOR";
-                Program.ubicacionElegir.Show();
-                Program.ubicacionElegir.Focus();
+                Program.ubicacionElegir.retorno = this;
+                Program.ubicacionElegir.ruta = "Elegir sector/";
+                Program.menu.AbrirFormEnPanel(Program.ubicacionElegir);
             }
             else if (this.Text.Contains("LUGAR"))
             {
                 Program.ubicacionElegir = new UbicacionElegir();
                 Program.ubicacionElegir.Text = "ELEGIR-BARRIO";
-                Program.ubicacionElegir.Show();
-                Program.ubicacionElegir.Focus();
+                Program.ubicacionElegir.retorno = this;
+                Program.ubicacionElegir.ruta = "Elegir barrio/";
+                Program.menu.AbrirFormEnPanel(Program.ubicacionElegir);
             }
         }
 
@@ -368,6 +376,8 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void bt_salir_Click_1(object sender, EventArgs e)
         {
+            Program.menu.removeRuta(ruta);
+            Program.menu.AbrirFormEnPanel(retorno);
             this.Close();
         }
 

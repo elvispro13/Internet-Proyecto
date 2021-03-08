@@ -78,7 +78,7 @@
             this.gb_logo.Controls.Add(this.pb_logo);
             this.gb_logo.Controls.Add(this.bt_logo);
             this.gb_logo.Controls.Add(this.txt_logo);
-            this.gb_logo.Location = new System.Drawing.Point(12, 12);
+            this.gb_logo.Location = new System.Drawing.Point(144, 37);
             this.gb_logo.Name = "gb_logo";
             this.gb_logo.Size = new System.Drawing.Size(242, 276);
             this.gb_logo.TabIndex = 1;
@@ -111,7 +111,7 @@
             // bt_aceptar
             // 
             this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958;
-            this.bt_aceptar.Location = new System.Drawing.Point(12, 294);
+            this.bt_aceptar.Location = new System.Drawing.Point(144, 319);
             this.bt_aceptar.Name = "bt_aceptar";
             this.bt_aceptar.Size = new System.Drawing.Size(123, 55);
             this.bt_aceptar.TabIndex = 2;
@@ -121,7 +121,7 @@
             // bt_cancelar
             // 
             this.bt_cancelar.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_cancelar.Location = new System.Drawing.Point(141, 294);
+            this.bt_cancelar.Location = new System.Drawing.Point(273, 319);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(123, 55);
             this.bt_cancelar.TabIndex = 3;
@@ -131,7 +131,7 @@
             // gb_nombre
             // 
             this.gb_nombre.Controls.Add(this.txt_nombre);
-            this.gb_nombre.Location = new System.Drawing.Point(260, 12);
+            this.gb_nombre.Location = new System.Drawing.Point(392, 37);
             this.gb_nombre.Name = "gb_nombre";
             this.gb_nombre.Size = new System.Drawing.Size(209, 50);
             this.gb_nombre.TabIndex = 4;
@@ -149,7 +149,7 @@
             // gb_eslogan
             // 
             this.gb_eslogan.Controls.Add(this.txt_eslogan);
-            this.gb_eslogan.Location = new System.Drawing.Point(260, 68);
+            this.gb_eslogan.Location = new System.Drawing.Point(392, 93);
             this.gb_eslogan.Name = "gb_eslogan";
             this.gb_eslogan.Size = new System.Drawing.Size(209, 50);
             this.gb_eslogan.TabIndex = 5;
@@ -167,7 +167,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txt_rtn);
-            this.groupBox4.Location = new System.Drawing.Point(260, 124);
+            this.groupBox4.Location = new System.Drawing.Point(392, 149);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(209, 50);
             this.groupBox4.TabIndex = 6;
@@ -185,7 +185,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.txt_cai);
-            this.groupBox5.Location = new System.Drawing.Point(260, 180);
+            this.groupBox5.Location = new System.Drawing.Point(392, 205);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(209, 50);
             this.groupBox5.TabIndex = 7;
@@ -203,7 +203,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.txt_correo);
-            this.groupBox6.Location = new System.Drawing.Point(260, 236);
+            this.groupBox6.Location = new System.Drawing.Point(392, 261);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(209, 50);
             this.groupBox6.TabIndex = 8;
@@ -220,7 +220,7 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.dtp_fechalimite);
-            this.groupBox7.Location = new System.Drawing.Point(545, 12);
+            this.groupBox7.Location = new System.Drawing.Point(677, 37);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(208, 50);
             this.groupBox7.TabIndex = 9;
@@ -237,7 +237,7 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.txt_desde);
-            this.groupBox8.Location = new System.Drawing.Point(545, 68);
+            this.groupBox8.Location = new System.Drawing.Point(677, 93);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(209, 50);
             this.groupBox8.TabIndex = 10;
@@ -255,7 +255,7 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.txt_hasta);
-            this.groupBox9.Location = new System.Drawing.Point(545, 124);
+            this.groupBox9.Location = new System.Drawing.Point(677, 149);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(209, 50);
             this.groupBox9.TabIndex = 11;
@@ -273,7 +273,7 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.txt_moneda);
-            this.groupBox10.Location = new System.Drawing.Point(545, 180);
+            this.groupBox10.Location = new System.Drawing.Point(677, 205);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(209, 50);
             this.groupBox10.TabIndex = 12;
@@ -292,7 +292,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 354);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1048, 557);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
@@ -305,6 +306,7 @@
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_aceptar);
             this.Controls.Add(this.gb_logo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConfiguracionLogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfiguracionLogo";

@@ -28,7 +28,7 @@ namespace Principal_Internet_elvis
 
         private void Bus_factura_Load(object sender, EventArgs e)
         {
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
         }
 
         private void buscar()

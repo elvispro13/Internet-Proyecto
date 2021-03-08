@@ -12,8 +12,10 @@ namespace Principal_Internet_elvis.Paquetes
 {
     public partial class PaquetesElegir : Form
     {
+        public Form retorno;
         private int row = -1;
         public int id = -1, id_cliente = -1;
+        public String ruta;
         List<int> In = new List<int>();
 
         public PaquetesElegir()
@@ -99,7 +101,8 @@ namespace Principal_Internet_elvis.Paquetes
                 dgv_tabla.Columns[i].HeaderText = t;
             }
 
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
+            Program.menu.addRuta(ruta);
         }
 
         private void bt_aceptar_Click(object sender, EventArgs e)
@@ -164,10 +167,14 @@ namespace Principal_Internet_elvis.Paquetes
                 Program.clientesPaquetes.limpiar();
             }
             Close();
+            Program.menu.removeRuta(ruta);
+            Program.menu.AbrirFormEnPanel(retorno);
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
+            Program.menu.removeRuta(ruta);
+            Program.menu.AbrirFormEnPanel(retorno);
             Close();
         }
 

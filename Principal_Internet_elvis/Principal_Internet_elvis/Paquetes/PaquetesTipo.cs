@@ -21,16 +21,18 @@ namespace Principal_Internet_elvis.Paquetes
         {
             Program.paquetesAgregar = new PaquetesAgregar();
             Program.paquetesAgregar.Text = "PAQUETE";
-            Program.paquetesAgregar.Show();
-            Program.paquetesAgregar.Focus();
+            Program.paquetesAgregar.ruta = "Paquetes/";
+            Program.paquetesAgregar.retorno = Program.paquetesTipo;
+            Program.menu.AbrirFormEnPanel(Program.paquetesAgregar);
         }
 
         private void bt_servicio_Click(object sender, EventArgs e)
         {
             Program.paquetesAgregar = new PaquetesAgregar();
             Program.paquetesAgregar.Text = "SERVICIO";
-            Program.paquetesAgregar.Show();
-            Program.paquetesAgregar.Focus();
+            Program.paquetesAgregar.ruta = "Servicios/";
+            Program.paquetesAgregar.retorno = Program.paquetesTipo;
+            Program.menu.AbrirFormEnPanel(Program.paquetesAgregar);
         }
 
         private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
@@ -70,15 +72,15 @@ namespace Principal_Internet_elvis.Paquetes
             conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
             conn.cerrar();
 
-            dgv_tabla.ClearSelection();
-
             for (int i = 0; i < dgv_tabla.Columns.Count; i++)
             {
                 string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
                 dgv_tabla.Columns[i].HeaderText = t;
             }
 
-            addFuente(Program.principal.fuente);
+            dgv_tabla.ClearSelection();
+
+            addFuente(Program.menu.fuente);
         }
 
         public void addFuente(Font f)
@@ -111,6 +113,7 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void bt_salir_Click(object sender, EventArgs e)
         {
+            Program.menu.bt_inicio_Click(null, null);
             this.Close();
         }
     }

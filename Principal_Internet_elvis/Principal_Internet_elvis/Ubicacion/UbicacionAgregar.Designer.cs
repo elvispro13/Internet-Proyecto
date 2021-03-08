@@ -50,7 +50,7 @@
             // gb_codigo
             // 
             this.gb_codigo.Controls.Add(this.txt_codigo);
-            this.gb_codigo.Location = new System.Drawing.Point(12, 12);
+            this.gb_codigo.Location = new System.Drawing.Point(186, 34);
             this.gb_codigo.Name = "gb_codigo";
             this.gb_codigo.Size = new System.Drawing.Size(113, 52);
             this.gb_codigo.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             this.gb_codigo2.Controls.Add(this.bt_codigo2);
             this.gb_codigo2.Controls.Add(this.txt_codigo2);
-            this.gb_codigo2.Location = new System.Drawing.Point(508, 12);
+            this.gb_codigo2.Location = new System.Drawing.Point(682, 34);
             this.gb_codigo2.Name = "gb_codigo2";
             this.gb_codigo2.Size = new System.Drawing.Size(172, 52);
             this.gb_codigo2.TabIndex = 1;
@@ -96,7 +96,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txt_nombre);
-            this.groupBox3.Location = new System.Drawing.Point(131, 12);
+            this.groupBox3.Location = new System.Drawing.Point(305, 34);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(369, 52);
             this.groupBox3.TabIndex = 2;
@@ -120,7 +120,7 @@
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(12, 70);
+            this.dgv_tabla.Location = new System.Drawing.Point(186, 92);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
@@ -132,7 +132,7 @@
             // bt_nuevo
             // 
             this.bt_nuevo.Image = global::Principal_Internet_elvis.Properties.Resources.rounded_add_button_icon_icons_com_72592;
-            this.bt_nuevo.Location = new System.Drawing.Point(235, 340);
+            this.bt_nuevo.Location = new System.Drawing.Point(409, 362);
             this.bt_nuevo.Name = "bt_nuevo";
             this.bt_nuevo.Size = new System.Drawing.Size(79, 52);
             this.bt_nuevo.TabIndex = 21;
@@ -142,7 +142,7 @@
             // bt_buscar
             // 
             this.bt_buscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
-            this.bt_buscar.Location = new System.Drawing.Point(431, 340);
+            this.bt_buscar.Location = new System.Drawing.Point(605, 362);
             this.bt_buscar.Name = "bt_buscar";
             this.bt_buscar.Size = new System.Drawing.Size(69, 51);
             this.bt_buscar.TabIndex = 20;
@@ -152,7 +152,7 @@
             // bt_eliminar
             // 
             this.bt_eliminar.Image = global::Principal_Internet_elvis.Properties.Resources._9;
-            this.bt_eliminar.Location = new System.Drawing.Point(521, 339);
+            this.bt_eliminar.Location = new System.Drawing.Point(695, 361);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(72, 52);
             this.bt_eliminar.TabIndex = 19;
@@ -162,7 +162,7 @@
             // bt_guardar
             // 
             this.bt_guardar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
-            this.bt_guardar.Location = new System.Drawing.Point(333, 340);
+            this.bt_guardar.Location = new System.Drawing.Point(507, 362);
             this.bt_guardar.Name = "bt_guardar";
             this.bt_guardar.Size = new System.Drawing.Size(76, 52);
             this.bt_guardar.TabIndex = 18;
@@ -172,7 +172,7 @@
             // bt_salir
             // 
             this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_salir.Location = new System.Drawing.Point(612, 339);
+            this.bt_salir.Location = new System.Drawing.Point(786, 361);
             this.bt_salir.Name = "bt_salir";
             this.bt_salir.Size = new System.Drawing.Size(68, 52);
             this.bt_salir.TabIndex = 17;
@@ -183,7 +183,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 400);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(1064, 573);
             this.Controls.Add(this.bt_nuevo);
             this.Controls.Add(this.bt_buscar);
             this.Controls.Add(this.bt_eliminar);
@@ -193,6 +194,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.gb_codigo2);
             this.Controls.Add(this.gb_codigo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UbicacionAgregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UbicacionAgregar";

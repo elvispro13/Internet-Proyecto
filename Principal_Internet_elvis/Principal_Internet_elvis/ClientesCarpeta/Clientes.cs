@@ -69,7 +69,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             rb_femenino.Checked = true;
             row = -1;
             estado = -1;
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
         }
 
         public void agregarDatos(int id, string nombre)
@@ -81,11 +81,9 @@ namespace Principal_Internet_elvis.ClientesCarpeta
         private void bt_lugar_Click(object sender, EventArgs e)
         {
             Program.ubicacionElegir = new UbicacionElegir();
-            Program.ubicacionElegir.TopMost = true;
-            Program.ubicacionElegir.BringToFront();
             Program.ubicacionElegir.Text = "ELEGIR-LUGAR";
-            Program.ubicacionElegir.Show();
-            Program.ubicacionElegir.Focus();
+            Program.ubicacionElegir.ruta = "Elegir lugar";
+            Program.menu.AbrirFormEnPanel(Program.ubicacionElegir);
         }
 
         private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -106,7 +104,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             txt_telefono.Text = dgv_tabla.Rows[row].Cells["telefono"].Value.ToString();
             txt_correo.Text = dgv_tabla.Rows[row].Cells["correo"].Value.ToString();
             txt_direccion.Text = dgv_tabla.Rows[row].Cells["direccion"].Value.ToString();
-            txt_lugar.Text = dgv_tabla.Rows[row].Cells["idlugar"].Value.ToString();
+            txt_lugar.Text = dgv_tabla.Rows[row].Cells["lugar"].Value.ToString();
             estado = int.Parse(dgv_tabla.Rows[row].Cells["estado"].Value.ToString());
             idl = int.Parse(dgv_tabla.Rows[row].Cells["idlugar"].Value.ToString());
             dtp_fecha.Value = DateTime.Parse(dgv_tabla.Rows[row].Cells["fecha"].Value.ToString());
@@ -127,12 +125,9 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             if (row != -1)
             {
                 Program.clientesPaquetes = new ClientesPaquetes();
-                Program.clientesPaquetes.TopMost = true;
-                Program.clientesPaquetes.BringToFront();
-                Program.clientesPaquetes.Text = "CLIENTE-PAQUETES";
                 Program.clientesPaquetes.id = int.Parse(txt_codigo.Text);
-                Program.clientesPaquetes.Show();
-                Program.clientesPaquetes.Focus();
+                Program.clientesPaquetes.cliente = txt_nombre.Text + " - " + txt_rtn.Text;
+                Program.menu.AbrirFormEnPanel(Program.clientesPaquetes);
             }
             else
             {
@@ -255,6 +250,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
 
         private void bt_salir_Click(object sender, EventArgs e)
         {
+            Program.menu.bt_inicio_Click(null, null);
             Close();
         }
 

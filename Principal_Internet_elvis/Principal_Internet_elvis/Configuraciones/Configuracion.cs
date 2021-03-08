@@ -48,6 +48,7 @@ namespace Principal_Internet_elvis
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            Program.menu.bt_inicio_Click(null,null);
             Close();
         }
 
@@ -65,7 +66,7 @@ namespace Principal_Internet_elvis
         {
             ConexionDB conn = new ConexionDB();
             txt_server.Text = conn.servar;
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -106,8 +107,9 @@ namespace Principal_Internet_elvis
         {
             Program.configuracionLogo = new ConfiguracionLogo();
             Program.configuracionLogo.Text = "EMPRESA";
-            Program.configuracionLogo.Show();
-            Program.configuracionLogo.Focus();
+            Program.configuracionLogo.retorno = this;
+            Program.configuracionLogo.ruta = "Empresa/";
+            Program.menu.AbrirFormEnPanel(Program.configuracionLogo);
         }
 
         public void addFuente(Font f)

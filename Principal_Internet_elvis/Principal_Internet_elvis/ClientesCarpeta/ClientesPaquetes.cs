@@ -14,6 +14,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
     public partial class ClientesPaquetes : Form
     {
         public int row = -1, id;
+        public String cliente = "";
 
         public ClientesPaquetes()
         {
@@ -65,18 +66,18 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             dgv_tabla.ClearSelection();
             dgv_tabla.TabIndex = 1;
 
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
+            Program.menu.addRuta("Paquetes contratados por: " + cliente + "/");
         }
 
         private void bt_agregar_Click(object sender, EventArgs e)
         {
             Program.paquetesElegir = new PaquetesElegir();
-            Program.paquetesElegir.TopMost = true;
-            Program.paquetesElegir.BringToFront();
             Program.paquetesElegir.Text = "ELEGIR-PAQUETES";
+            Program.paquetesElegir.ruta = "Elgir paquete/";
+            Program.paquetesElegir.retorno = Program.clientesPaquetes;
             Program.paquetesElegir.id_cliente = id;
-            Program.paquetesElegir.Show();
-            Program.paquetesElegir.Focus();
+            Program.menu.AbrirFormEnPanel(Program.paquetesElegir);
         }
 
         private void bt_quitar_Click(object sender, EventArgs e)
@@ -103,6 +104,8 @@ namespace Principal_Internet_elvis.ClientesCarpeta
 
         private void bt_salir_Click(object sender, EventArgs e)
         {
+            Program.menu.removeRuta("Paquetes contratados por: " + cliente + "/");
+            Program.menu.AbrirFormEnPanel(Program.clientes);
             Close();
         }
 

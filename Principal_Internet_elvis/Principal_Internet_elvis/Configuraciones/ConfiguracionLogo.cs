@@ -13,6 +13,9 @@ namespace Principal_Internet_elvis.Configuraciones
 {
     public partial class ConfiguracionLogo : Form
     {
+        public Form retorno;
+        public String ruta = "";
+
         private Byte[] file = null;
         public ConfiguracionLogo()
         {
@@ -57,11 +60,15 @@ namespace Principal_Internet_elvis.Configuraciones
             }
             Program.principal.logo = pb_logo.Image;
             Program.principal.activarConUser();
+            Program.menu.removeRuta(ruta);
+            Program.menu.AbrirFormEnPanel(retorno);
             Close();
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
+            Program.menu.removeRuta(ruta);
+            Program.menu.AbrirFormEnPanel(retorno);
             Close();
         }
 
@@ -87,7 +94,8 @@ namespace Principal_Internet_elvis.Configuraciones
                 MemoryStream ms = new MemoryStream(logo);
                 pb_logo.Image = Image.FromStream(ms);
             }
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
+            Program.menu.addRuta(ruta);
         }
         public void addFuente(Font f)
         {

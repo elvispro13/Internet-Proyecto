@@ -21,24 +21,27 @@ namespace Principal_Internet_elvis.Ubicacion
         {
             Program.ubicacionAgregar = new UbicacionAgregar();
             Program.ubicacionAgregar.Text = "SECTORES";
-            Program.ubicacionAgregar.Show();
-            Program.ubicacionAgregar.Focus();
+            Program.ubicacionAgregar.retorno = this;
+            Program.ubicacionAgregar.ruta = "Sertores/";
+            Program.menu.AbrirFormEnPanel(Program.ubicacionAgregar);
         }
 
         private void bt_barrio_Click(object sender, EventArgs e)
         {
             Program.ubicacionAgregar = new UbicacionAgregar();
             Program.ubicacionAgregar.Text = "BARRIOS";
-            Program.ubicacionAgregar.Show();
-            Program.ubicacionAgregar.Focus();
+            Program.ubicacionAgregar.retorno = this;
+            Program.ubicacionAgregar.ruta = "Barrios/";
+            Program.menu.AbrirFormEnPanel(Program.ubicacionAgregar);
         }
 
         private void bt_lugar_Click(object sender, EventArgs e)
         {
             Program.ubicacionAgregar = new UbicacionAgregar();
             Program.ubicacionAgregar.Text = "LUGARES";
-            Program.ubicacionAgregar.Show();
-            Program.ubicacionAgregar.Focus();
+            Program.ubicacionAgregar.retorno = this;
+            Program.ubicacionAgregar.ruta = "Lugares/";
+            Program.menu.AbrirFormEnPanel(Program.ubicacionAgregar);
         }
 
         private void UbicacionTipo_Load(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace Principal_Internet_elvis.Ubicacion
 
             dgv_tabla.ClearSelection();
 
-            addFuente(Program.principal.fuente);
+            addFuente(Program.menu.fuente);
         }
 
         private void txt_buscar_KeyDown(object sender, KeyEventArgs e)
@@ -133,6 +136,7 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void bt_salir_Click(object sender, EventArgs e)
         {
+            Program.menu.bt_inicio_Click(null,null);
             this.Close();
         }
     }
