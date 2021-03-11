@@ -55,6 +55,7 @@
             this.bt_nuevo = new System.Windows.Forms.Button();
             this.bt_buscar = new System.Windows.Forms.Button();
             this.bt_eliminar = new System.Windows.Forms.Button();
+            this.cb_inactivos = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -330,12 +331,24 @@
             this.bt_eliminar.UseVisualStyleBackColor = true;
             this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
+            // cb_inactivos
+            // 
+            this.cb_inactivos.AutoSize = true;
+            this.cb_inactivos.Location = new System.Drawing.Point(410, 552);
+            this.cb_inactivos.Name = "cb_inactivos";
+            this.cb_inactivos.Size = new System.Drawing.Size(87, 17);
+            this.cb_inactivos.TabIndex = 17;
+            this.cb_inactivos.Text = "Ver inactivos";
+            this.cb_inactivos.UseVisualStyleBackColor = true;
+            this.cb_inactivos.CheckedChanged += new System.EventHandler(this.cb_inactivos_CheckedChanged);
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1080, 612);
+            this.Controls.Add(this.cb_inactivos);
             this.Controls.Add(this.bt_nuevo);
             this.Controls.Add(this.bt_buscar);
             this.Controls.Add(this.bt_eliminar);
@@ -376,6 +389,7 @@
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -408,5 +422,6 @@
         private System.Windows.Forms.Button bt_nuevo;
         private System.Windows.Forms.Button bt_buscar;
         private System.Windows.Forms.Button bt_eliminar;
+        private System.Windows.Forms.CheckBox cb_inactivos;
     }
 }

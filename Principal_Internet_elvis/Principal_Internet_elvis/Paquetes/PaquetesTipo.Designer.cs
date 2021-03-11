@@ -35,6 +35,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
@@ -121,12 +122,22 @@
             this.dgv_tabla.Size = new System.Drawing.Size(711, 263);
             this.dgv_tabla.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(162, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "VISTA PREVIA DE PAQUETES";
+            // 
             // PaquetesTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1080, 612);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv_tabla);
             this.Controls.Add(this.groupBox1);
@@ -140,6 +151,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,5 +164,6 @@
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.DataGridView dgv_tabla;
         private System.Windows.Forms.Button bt_salir;
+        private System.Windows.Forms.Label label1;
     }
 }

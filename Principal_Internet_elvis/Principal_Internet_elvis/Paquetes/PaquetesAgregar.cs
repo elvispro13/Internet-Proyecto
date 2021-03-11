@@ -25,11 +25,6 @@ namespace Principal_Internet_elvis.Paquetes
         private void PaquetesAgregar_Load(object sender, EventArgs e)
         {
             Program.menu.addRuta(ruta);
-            limpiar();
-        }
-
-        private void limpiar()
-        {
             if (this.Text.Contains("SERVICIO"))
             {
                 gb_codigo.Enabled = false;
@@ -37,13 +32,6 @@ namespace Principal_Internet_elvis.Paquetes
                 gb_c2.Enabled = true;
                 gb_c1.Text = "PRECIO";
                 gb_c2.Text = "ISV";
-                ConexionDB conn = new ConexionDB();
-                conn.abrir();
-                List<string> campos = new List<string>();
-                campos.Add("' '");
-                campos.Add("1");
-                conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
-                conn.cerrar();
                 bt_servicios.Enabled = false;
                 bt_servicios.Visible = false;
             }
@@ -54,11 +42,46 @@ namespace Principal_Internet_elvis.Paquetes
                 gb_c2.Enabled = false;
                 gb_c1.Text = "DESCUENTO";
                 gb_c2.Text = "";
+
+            }
+            //limpiar();
+        }
+
+        private void limpiar()
+        {
+            if (this.Text.Contains("SERVICIO"))
+            {
+                ConexionDB conn = new ConexionDB();
+                conn.abrir();
+                List<string> campos = new List<string>();
+                campos.Add("' '");
+                campos.Add("1");
+                if (cb_inactivos.Checked == false)
+                {
+                    campos.Add("1");
+                }
+                else
+                {
+                    campos.Add("0");
+                }
+                conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
+                conn.cerrar();
+            }
+            else if (this.Text.Contains("PAQUETE"))
+            {
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
                 campos.Add("' '");
                 campos.Add("2");
+                if (cb_inactivos.Checked == false)
+                {
+                    campos.Add("1");
+                }
+                else
+                {
+                    campos.Add("0");
+                }
                 conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
                 conn.cerrar();
             }
@@ -204,7 +227,15 @@ namespace Principal_Internet_elvis.Paquetes
             ConexionDB conn = new ConexionDB();
             conn.abrir();
             List<string> campos = new List<string>();
-            campos.Add("'" + txt_descripcion.Text + "'");
+            if(txt_descripcion.Text == "")
+            {
+                campos.Add("' '");
+            }
+            else
+            {
+                campos.Add("'" + txt_descripcion.Text + "'");
+            }
+            
 
             if (this.Text.Contains("PAQUETE"))
             {
@@ -214,9 +245,33 @@ namespace Principal_Internet_elvis.Paquetes
             {
                 campos.Add("1");
             }
+
+            if(cb_inactivos.Checked == false)
+            {
+                campos.Add("1");
+            }
+            else
+            {
+                campos.Add("0");
+            }
             
             conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
             conn.cerrar();
+
+            dgv_tabla.ClearSelection();
+
+            for (int i = 0; i < dgv_tabla.Rows.Count; i++)
+            {
+                if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("1"))
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                }
+                else
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+            }
         }
 
         private void bt_aceptar_Click(object sender, EventArgs e)
@@ -388,6 +443,11 @@ namespace Principal_Internet_elvis.Paquetes
                     MessageBox.Show(r.getCampos()[0]);
                 }
             }
+            limpiar();
+        }
+
+        private void cb_inactivos_CheckedChanged(object sender, EventArgs e)
+        {
             limpiar();
         }
 

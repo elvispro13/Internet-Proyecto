@@ -19,6 +19,11 @@ using Principal_Internet_elvis.Reportes;
 using Principal_Internet_elvis.Ubicacion;
 using Proyecto_Internet;
 
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using RestSharp;
+
 namespace Principal_Internet_elvis
 {
     public partial class Menu : Form
@@ -44,6 +49,42 @@ namespace Principal_Internet_elvis
             Program.inicio.BringToFront();
             Program.inicio.Show();
             Program.inicio.Focus();
+
+            //insertarFB();
+            //obtenerUnRegustro();
+        }
+
+        private async void insertarFB()
+        {
+            FirebaseConexion conexion = new FirebaseConexion();
+            var data = new Data
+            {
+                id = "hola",
+                nombre = "nnnn"
+            };
+
+            SetResponse response = await conexion.client.SetTaskAsync("prueba", data);
+            Data result = response.ResultAs<Data>();
+
+            MessageBox.Show("Resultado "+result.id);
+        }
+
+        private async void obtenerUnRegustro()
+        {
+            FirebaseConexion conexion = new FirebaseConexion();
+            FirebaseResponse response = await conexion.client.GetTaskAsync("prueba/");
+            Dictionary<String, Data> res = response.ResultAs<Dictionary<String, Data>>();
+
+            foreach(var get in res)
+            {
+                MessageBox.Show(get.Value.nombre);
+            }
+        }
+
+        private async void borrar()
+        {
+            FirebaseConexion conexion = new FirebaseConexion();
+            FirebaseResponse response = await conexion.client.DeleteTaskAsync("prueba");
         }
 
         public void activarConUser()

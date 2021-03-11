@@ -33,14 +33,15 @@
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gb_ip = new System.Windows.Forms.GroupBox();
             this.txt_ip = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gb_instalacion = new System.Windows.Forms.GroupBox();
             this.txt_intalacion = new System.Windows.Forms.TextBox();
+            this.bt_actualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gb_ip.SuspendLayout();
+            this.gb_instalacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_tabla
@@ -51,7 +52,6 @@
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tabla.Location = new System.Drawing.Point(166, 12);
-            this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -61,21 +61,21 @@
             // 
             // bt_aceptar
             // 
-            this.bt_aceptar.Location = new System.Drawing.Point(662, 477);
+            this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958;
+            this.bt_aceptar.Location = new System.Drawing.Point(694, 459);
             this.bt_aceptar.Name = "bt_aceptar";
-            this.bt_aceptar.Size = new System.Drawing.Size(106, 42);
+            this.bt_aceptar.Size = new System.Drawing.Size(74, 60);
             this.bt_aceptar.TabIndex = 1;
-            this.bt_aceptar.Text = "ACEPTAR";
             this.bt_aceptar.UseVisualStyleBackColor = true;
             this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Location = new System.Drawing.Point(774, 477);
+            this.bt_cancelar.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
+            this.bt_cancelar.Location = new System.Drawing.Point(774, 459);
             this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(106, 42);
+            this.bt_cancelar.Size = new System.Drawing.Size(69, 60);
             this.bt_cancelar.TabIndex = 2;
-            this.bt_cancelar.Text = "CANCELAR";
             this.bt_cancelar.UseVisualStyleBackColor = true;
             this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
@@ -98,15 +98,15 @@
             this.txt_buscar.TabIndex = 0;
             this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
             // 
-            // groupBox2
+            // gb_ip
             // 
-            this.groupBox2.Controls.Add(this.txt_ip);
-            this.groupBox2.Location = new System.Drawing.Point(166, 429);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(239, 42);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "IP";
+            this.gb_ip.Controls.Add(this.txt_ip);
+            this.gb_ip.Location = new System.Drawing.Point(166, 429);
+            this.gb_ip.Name = "gb_ip";
+            this.gb_ip.Size = new System.Drawing.Size(239, 42);
+            this.gb_ip.TabIndex = 7;
+            this.gb_ip.TabStop = false;
+            this.gb_ip.Text = "IP";
             // 
             // txt_ip
             // 
@@ -115,15 +115,15 @@
             this.txt_ip.Size = new System.Drawing.Size(227, 20);
             this.txt_ip.TabIndex = 8;
             // 
-            // groupBox3
+            // gb_instalacion
             // 
-            this.groupBox3.Controls.Add(this.txt_intalacion);
-            this.groupBox3.Location = new System.Drawing.Point(166, 477);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(239, 42);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "INTALACION";
+            this.gb_instalacion.Controls.Add(this.txt_intalacion);
+            this.gb_instalacion.Location = new System.Drawing.Point(166, 477);
+            this.gb_instalacion.Name = "gb_instalacion";
+            this.gb_instalacion.Size = new System.Drawing.Size(239, 42);
+            this.gb_instalacion.TabIndex = 9;
+            this.gb_instalacion.TabStop = false;
+            this.gb_instalacion.Text = "INTALACION";
             // 
             // txt_intalacion
             // 
@@ -134,14 +134,25 @@
             this.txt_intalacion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_intalacion_KeyDown);
             this.txt_intalacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_intalacion_KeyPress);
             // 
+            // bt_actualizar
+            // 
+            this.bt_actualizar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
+            this.bt_actualizar.Location = new System.Drawing.Point(611, 459);
+            this.bt_actualizar.Name = "bt_actualizar";
+            this.bt_actualizar.Size = new System.Drawing.Size(77, 60);
+            this.bt_actualizar.TabIndex = 10;
+            this.bt_actualizar.UseVisualStyleBackColor = true;
+            this.bt_actualizar.Click += new System.EventHandler(this.bt_actualizar_Click);
+            // 
             // PaquetesElegir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1064, 573);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.bt_actualizar);
+            this.Controls.Add(this.gb_instalacion);
+            this.Controls.Add(this.gb_ip);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_aceptar);
@@ -154,10 +165,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gb_ip.ResumeLayout(false);
+            this.gb_ip.PerformLayout();
+            this.gb_instalacion.ResumeLayout(false);
+            this.gb_instalacion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -169,9 +180,10 @@
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_buscar;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gb_ip;
         private System.Windows.Forms.TextBox txt_ip;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gb_instalacion;
         private System.Windows.Forms.TextBox txt_intalacion;
+        private System.Windows.Forms.Button bt_actualizar;
     }
 }

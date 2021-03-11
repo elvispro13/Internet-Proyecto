@@ -16,7 +16,7 @@ namespace Principal_Internet_elvis.Paquetes
         private int row = -1;
         public int id = -1, id_cliente = -1;
         public String ruta;
-        List<int> In = new List<int>();
+        List<bool> In = new List<bool>();
 
         public PaquetesElegir()
         {
@@ -25,19 +25,14 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void PaquetesElegir_Load(object sender, EventArgs e)
         {
-            buscar();
-
-            ConexionDB conn = new ConexionDB();
-            conn.abrir();
-            List<string> campos = new List<string>();
-            campos.Add("1");
-            List<Capsula> rows = conn.consultar("sp_obtener_ip", campos);
-            conn.cerrar();
-            if(rows.Count == 0 || rows[0].getCampos()[0].Equals(""))
+            if (this.Text.Contains("SERVICIOS"))
             {
-                return;
+                gb_instalacion.Enabled = false;
+                gb_instalacion.Visible = false;
+                gb_ip.Enabled = false;
+                gb_ip.Visible = false;
             }
-            txt_ip.Text = Program.menu.getIP(rows[0].getCampos()[0]);
+            Program.menu.addRuta(ruta);
         }
 
         private void buscar()
@@ -68,19 +63,24 @@ namespace Principal_Internet_elvis.Paquetes
                 List<Capsula> lista = conn2.consultar("sp_buscar_paquetes", campos2);
                 conn2.cerrar();
 
+                dgv_tabla.MultiSelect = true;
+
                 dgv_tabla.ClearSelection();
                 dgv_tabla.TabIndex = 1;
                 In.Clear();
                 for (int i = 0; i < dgv_tabla.Rows.Count; i++)
                 {
+                    bool re = false;
                     foreach (Capsula r in lista)
                     {
                         if (dgv_tabla.Rows[i].Cells[0].Value.ToString().Equals(r.getCampos()[0]))
                         {
                             dgv_tabla.Rows[i].Selected = true;
-                            In.Add(i);
+                            re = true;
+                            break;
                         }
                     }
+                    In.Add(re);
                 }
             }
             else if (this.Text.Contains("PAQUETES"))
@@ -104,6 +104,19 @@ namespace Principal_Internet_elvis.Paquetes
 
                 dgv_tabla.ClearSelection();
                 dgv_tabla.TabIndex = 1;
+                dgv_tabla.MultiSelect = false;
+
+                ConexionDB conn2 = new ConexionDB();
+                conn2.abrir();
+                List<string> campos2 = new List<string>();
+                campos2.Add("1");
+                List<Capsula> rows2 = conn2.consultar("sp_obtener_ip", campos2);
+                conn2.cerrar();
+                if (rows2.Count == 0 || rows2[0].getCampos()[0].Equals(""))
+                {
+                    return;
+                }
+                txt_ip.Text = Program.menu.getIP(rows2[0].getCampos()[0]);
             }
 
 
@@ -114,7 +127,6 @@ namespace Principal_Internet_elvis.Paquetes
             }
 
             addFuente(Program.menu.fuente);
-            Program.menu.addRuta(ruta);
         }
 
         private void bt_aceptar_Click(object sender, EventArgs e)
@@ -256,12 +268,35 @@ namespace Principal_Internet_elvis.Paquetes
 
         }
 
+        private void bt_actualizar_Click(object sender, EventArgs e)
+        {
+            buscar();
+        }
+
         private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Int32 selectedRowCount = dgv_tabla.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount > 0)
             {
                 row = dgv_tabla.CurrentRow.Index;
+                if(dgv_tabla.MultiSelect == true)
+                {
+                    dgv_tabla.ClearSelection();
+                    if (In[row] == true)
+                    {
+                        In[row] = false;
+                    }
+                    else
+                    {
+                        In[row] = true;
+                    }
+                    int con = 0;
+                    foreach(bool i in In)
+                    {
+                        dgv_tabla.Rows[con].Selected = i;
+                        con++;
+                    }
+                }
             }
         }
     }

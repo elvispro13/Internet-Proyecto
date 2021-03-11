@@ -43,6 +43,7 @@
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.bt_buscar = new System.Windows.Forms.Button();
             this.bt_nuevo = new System.Windows.Forms.Button();
+            this.cb_inactivos = new System.Windows.Forms.CheckBox();
             this.gb_codigo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_c1.SuspendLayout();
@@ -127,21 +128,21 @@
             // 
             // bt_guardar
             // 
-            this.bt_guardar.Location = new System.Drawing.Point(177, 353);
+            this.bt_guardar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
+            this.bt_guardar.Location = new System.Drawing.Point(164, 353);
             this.bt_guardar.Name = "bt_guardar";
-            this.bt_guardar.Size = new System.Drawing.Size(111, 39);
+            this.bt_guardar.Size = new System.Drawing.Size(98, 63);
             this.bt_guardar.TabIndex = 4;
-            this.bt_guardar.Text = "GUARDAR";
             this.bt_guardar.UseVisualStyleBackColor = true;
             this.bt_guardar.Click += new System.EventHandler(this.bt_aceptar_Click);
             // 
             // bt_salir
             // 
-            this.bt_salir.Location = new System.Drawing.Point(528, 353);
+            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
+            this.bt_salir.Location = new System.Drawing.Point(476, 353);
             this.bt_salir.Name = "bt_salir";
-            this.bt_salir.Size = new System.Drawing.Size(111, 39);
+            this.bt_salir.Size = new System.Drawing.Size(98, 63);
             this.bt_salir.TabIndex = 5;
-            this.bt_salir.Text = "SALIR";
             this.bt_salir.UseVisualStyleBackColor = true;
             this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
             // 
@@ -173,33 +174,44 @@
             // 
             // bt_eliminar
             // 
-            this.bt_eliminar.Location = new System.Drawing.Point(411, 353);
+            this.bt_eliminar.Image = global::Principal_Internet_elvis.Properties.Resources._9;
+            this.bt_eliminar.Location = new System.Drawing.Point(372, 353);
             this.bt_eliminar.Name = "bt_eliminar";
-            this.bt_eliminar.Size = new System.Drawing.Size(111, 39);
+            this.bt_eliminar.Size = new System.Drawing.Size(98, 63);
             this.bt_eliminar.TabIndex = 8;
-            this.bt_eliminar.Text = "ESTADO";
             this.bt_eliminar.UseVisualStyleBackColor = true;
             this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
             // bt_buscar
             // 
-            this.bt_buscar.Location = new System.Drawing.Point(294, 353);
+            this.bt_buscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
+            this.bt_buscar.Location = new System.Drawing.Point(268, 353);
             this.bt_buscar.Name = "bt_buscar";
-            this.bt_buscar.Size = new System.Drawing.Size(111, 39);
+            this.bt_buscar.Size = new System.Drawing.Size(98, 63);
             this.bt_buscar.TabIndex = 9;
-            this.bt_buscar.Text = "BUSCAR";
             this.bt_buscar.UseVisualStyleBackColor = true;
             this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
             // 
             // bt_nuevo
             // 
+            this.bt_nuevo.Image = global::Principal_Internet_elvis.Properties.Resources.rounded_add_button_icon_icons_com_72592;
             this.bt_nuevo.Location = new System.Drawing.Point(60, 353);
             this.bt_nuevo.Name = "bt_nuevo";
-            this.bt_nuevo.Size = new System.Drawing.Size(111, 39);
+            this.bt_nuevo.Size = new System.Drawing.Size(98, 63);
             this.bt_nuevo.TabIndex = 10;
-            this.bt_nuevo.Text = "NUEVO";
             this.bt_nuevo.UseVisualStyleBackColor = true;
             this.bt_nuevo.Click += new System.EventHandler(this.bt_nuevo_Click);
+            // 
+            // cb_inactivos
+            // 
+            this.cb_inactivos.AutoSize = true;
+            this.cb_inactivos.Location = new System.Drawing.Point(591, 377);
+            this.cb_inactivos.Name = "cb_inactivos";
+            this.cb_inactivos.Size = new System.Drawing.Size(87, 17);
+            this.cb_inactivos.TabIndex = 18;
+            this.cb_inactivos.Text = "Ver inactivos";
+            this.cb_inactivos.UseVisualStyleBackColor = true;
+            this.cb_inactivos.CheckedChanged += new System.EventHandler(this.cb_inactivos_CheckedChanged);
             // 
             // PaquetesAgregar
             // 
@@ -207,6 +219,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1080, 612);
+            this.Controls.Add(this.cb_inactivos);
             this.Controls.Add(this.bt_nuevo);
             this.Controls.Add(this.bt_buscar);
             this.Controls.Add(this.bt_eliminar);
@@ -233,6 +246,7 @@
             this.gb_c2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -253,5 +267,6 @@
         private System.Windows.Forms.Button bt_eliminar;
         private System.Windows.Forms.Button bt_buscar;
         private System.Windows.Forms.Button bt_nuevo;
+        private System.Windows.Forms.CheckBox cb_inactivos;
     }
 }

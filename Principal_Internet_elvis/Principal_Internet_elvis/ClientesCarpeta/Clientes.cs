@@ -23,20 +23,25 @@ namespace Principal_Internet_elvis.ClientesCarpeta
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            limpiar();
+            //limpiar();
         }
 
         private void limpiar()
         {
-            if (this.Text.Contains("CLIENTE"))
+            ConexionDB conn = new ConexionDB();
+            conn.abrir();
+            List<string> campos = new List<string>();
+            campos.Add("' '");
+            if (cb_inactivos.Checked == false)
             {
-                ConexionDB conn = new ConexionDB();
-                conn.abrir();
-                List<string> campos = new List<string>();
-                campos.Add("' '");
-                conn.llenarTabla("sp_buscar_clientes", campos, dgv_tabla);
-                conn.cerrar();
+                campos.Add("1");
             }
+            else
+            {
+                campos.Add("0");
+            }
+            conn.llenarTabla("sp_buscar_clientes", campos, dgv_tabla);
+            conn.cerrar();
 
             dgv_tabla.ClearSelection();
 
@@ -149,9 +154,36 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             conn.abrir();
             List<string> campos = new List<string>();
             campos.Add("'" + txt_nombre.Text + "'");
-            //campos.Add("1");
+            if (cb_inactivos.Checked == false)
+            {
+                campos.Add("1");
+            }
+            else
+            {
+                campos.Add("0");
+            }
             conn.llenarTabla("sp_buscar_clientes", campos, dgv_tabla);
             conn.cerrar();
+
+            dgv_tabla.ClearSelection();
+
+            for (int i = 0; i < dgv_tabla.Rows.Count; i++)
+            {
+                if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("1"))
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                }
+                else
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+            }
+            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
+            {
+                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
+                dgv_tabla.Columns[i].HeaderText = t;
+            }
         }
 
         private void bt_nuevo_Click(object sender, EventArgs e)
@@ -246,6 +278,11 @@ namespace Principal_Internet_elvis.ClientesCarpeta
                 MessageBox.Show(r.getCampos()[0]);
             }
             limpiar();
+        }
+
+        private void cb_inactivos_CheckedChanged(object sender, EventArgs e)
+        {
+            buscar();
         }
 
         private void bt_salir_Click(object sender, EventArgs e)

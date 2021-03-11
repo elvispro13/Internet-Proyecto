@@ -27,7 +27,30 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void UbicacionAgregar_Load(object sender, EventArgs e)
         {
-            limpiar();
+            if (this.Text.Contains("SECTOR"))
+            {
+                gb_codigo.Enabled = false;
+                gb_codigo2.Enabled = false;
+                gb_codigo2.Text = "";
+            }
+            else if (this.Text.Contains("BARRIO"))
+            {
+                gb_codigo.Enabled = false;
+                gb_codigo2.Enabled = true;
+                gb_codigo2.Text = "Sector";
+            }
+            else if (this.Text.Contains("LUGAR"))
+            {
+                gb_codigo.Enabled = false;
+                gb_codigo2.Enabled = true;
+                gb_codigo2.Text = "Barrio";
+            }
+
+            bt_eliminar.Enabled = false;
+
+            addFuente(Program.menu.fuente);
+
+            Program.menu.addRuta(ruta);
         }
 
         private void bt_salir_Click(object sender, EventArgs e)
@@ -39,35 +62,38 @@ namespace Principal_Internet_elvis.Ubicacion
         {
             if (this.Text.Contains("SECTOR"))
             {
-                gb_codigo.Enabled = false;
-                gb_codigo2.Enabled = false;
-                gb_codigo2.Text = "";
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
-                if (txt_nombre.Text.Equals(""))
+                campos.Add("' '");
+                campos.Add("1");
+                if (cb_inactivos.Checked == false)
                 {
-                    campos.Add("' '");
+                    campos.Add("1");
                 }
                 else
                 {
-                    campos.Add("'" + txt_nombre.Text + "'");
+                    campos.Add("0");
                 }
-                campos.Add("1");
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
                 dgv_tabla.Columns[0].Visible = false;
             }
             else if (this.Text.Contains("BARRIO"))
             {
-                gb_codigo.Enabled = false;
-                gb_codigo2.Enabled = true;
-                gb_codigo2.Text = "Sector";
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
                 campos.Add("' '");
                 campos.Add("2");
+                if (cb_inactivos.Checked == false)
+                {
+                    campos.Add("1");
+                }
+                else
+                {
+                    campos.Add("0");
+                }
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
                 dgv_tabla.Columns[0].Visible = false;
@@ -75,14 +101,19 @@ namespace Principal_Internet_elvis.Ubicacion
             }
             else if (this.Text.Contains("LUGAR"))
             {
-                gb_codigo.Enabled = false;
-                gb_codigo2.Enabled = true;
-                gb_codigo2.Text = "Barrio";
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
                 campos.Add("' '");
                 campos.Add("3");
+                if (cb_inactivos.Checked == false)
+                {
+                    campos.Add("1");
+                }
+                else
+                {
+                    campos.Add("0");
+                }
                 conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
                 conn.cerrar();
                 dgv_tabla.Columns[0].Visible = false;
@@ -120,9 +151,6 @@ namespace Principal_Internet_elvis.Ubicacion
             txt_codigo2.Text = "";
             txt_nombre.Text = "";
             txt_codigo.Text = "";
-            addFuente(Program.menu.fuente);
-
-            Program.menu.addRuta(ruta);
         }
 
         public void agregarDatos(int id, string nombre)
@@ -133,6 +161,11 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void bt_codigo2_Click(object sender, EventArgs e)
         {
+            if(row == -1)
+            {
+                MessageBox.Show("Elija una fila");
+                return;
+            }
             if (this.Text.Contains("BARRIO"))
             {
                 Program.ubicacionElegir = new UbicacionElegir();
@@ -223,8 +256,31 @@ namespace Principal_Internet_elvis.Ubicacion
             {
                 campos.Add("3");
             }
+            if (cb_inactivos.Checked == false)
+            {
+                campos.Add("1");
+            }
+            else
+            {
+                campos.Add("0");
+            }
             conn.llenarTabla("sp_buscar_ubicacion", campos, dgv_tabla);
             conn.cerrar();
+
+            dgv_tabla.ClearSelection();
+
+            for (int i = 0; i < dgv_tabla.Rows.Count; i++)
+            {
+                if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("1"))
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                }
+                else
+                {
+                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+            }
         }
 
         private void bt_nuevo_Click(object sender, EventArgs e)
@@ -236,6 +292,11 @@ namespace Principal_Internet_elvis.Ubicacion
         {
             if (row == -1)
             {
+                if(txt_codigo.Text == "" || txt_nombre.Text == "")
+                {
+                    MessageBox.Show("Llene los campos");
+                    return;
+                }
                 if (this.Text.Contains("SECTOR"))
                 {
                     ConexionDB conn = new ConexionDB();
@@ -339,6 +400,11 @@ namespace Principal_Internet_elvis.Ubicacion
 
         private void bt_eliminar_Click(object sender, EventArgs e)
         {
+            if(row == -1)
+            {
+                MessageBox.Show("Elija una fila");
+                return;
+            }
             ConexionDB conn2 = new ConexionDB();
             conn2.abrir();
             List<string> campos2 = new List<string>();
@@ -379,6 +445,11 @@ namespace Principal_Internet_elvis.Ubicacion
             Program.menu.removeRuta(ruta);
             Program.menu.AbrirFormEnPanel(retorno);
             this.Close();
+        }
+
+        private void cb_inactivos_CheckedChanged(object sender, EventArgs e)
+        {
+            buscar();
         }
 
         public void addFuente(Font f)

@@ -41,6 +41,7 @@
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.bt_guardar = new System.Windows.Forms.Button();
             this.bt_salir = new System.Windows.Forms.Button();
+            this.cb_inactivos = new System.Windows.Forms.CheckBox();
             this.gb_codigo.SuspendLayout();
             this.gb_codigo2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -79,7 +80,7 @@
             // 
             this.bt_codigo2.Location = new System.Drawing.Point(145, 17);
             this.bt_codigo2.Name = "bt_codigo2";
-            this.bt_codigo2.Size = new System.Drawing.Size(27, 23);
+            this.bt_codigo2.Size = new System.Drawing.Size(21, 23);
             this.bt_codigo2.TabIndex = 2;
             this.bt_codigo2.Text = "...";
             this.bt_codigo2.UseVisualStyleBackColor = true;
@@ -179,12 +180,24 @@
             this.bt_salir.UseVisualStyleBackColor = true;
             this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click_1);
             // 
+            // cb_inactivos
+            // 
+            this.cb_inactivos.AutoSize = true;
+            this.cb_inactivos.Location = new System.Drawing.Point(305, 380);
+            this.cb_inactivos.Name = "cb_inactivos";
+            this.cb_inactivos.Size = new System.Drawing.Size(87, 17);
+            this.cb_inactivos.TabIndex = 22;
+            this.cb_inactivos.Text = "Ver inactivos";
+            this.cb_inactivos.UseVisualStyleBackColor = true;
+            this.cb_inactivos.CheckedChanged += new System.EventHandler(this.cb_inactivos_CheckedChanged);
+            // 
             // UbicacionAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1064, 573);
+            this.Controls.Add(this.cb_inactivos);
             this.Controls.Add(this.bt_nuevo);
             this.Controls.Add(this.bt_buscar);
             this.Controls.Add(this.bt_eliminar);
@@ -207,6 +220,7 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -225,5 +239,6 @@
         private System.Windows.Forms.Button bt_eliminar;
         private System.Windows.Forms.Button bt_guardar;
         private System.Windows.Forms.Button bt_salir;
+        private System.Windows.Forms.CheckBox cb_inactivos;
     }
 }
