@@ -29,10 +29,12 @@ namespace Principal_Internet_elvis
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bt_actualizar = new System.Windows.Forms.Button();
             this.lb_pendiente = new System.Windows.Forms.Label();
             this.dgv_pendientes = new System.Windows.Forms.DataGridView();
+            this.tm_inicio = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pendientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,14 +67,14 @@ namespace Principal_Internet_elvis
             this.dgv_pendientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_pendientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_pendientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_pendientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_pendientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_pendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pendientes.Location = new System.Drawing.Point(560, 26);
             this.dgv_pendientes.Name = "dgv_pendientes";
@@ -81,6 +83,12 @@ namespace Principal_Internet_elvis
             this.dgv_pendientes.Size = new System.Drawing.Size(492, 258);
             this.dgv_pendientes.TabIndex = 6;
             this.dgv_pendientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pendientes_CellDoubleClick);
+            // 
+            // tm_inicio
+            // 
+            this.tm_inicio.Enabled = true;
+            this.tm_inicio.Interval = 500;
+            this.tm_inicio.Tick += new System.EventHandler(this.tm_inicio_Tick);
             // 
             // Dashboard
             // 
@@ -106,5 +114,6 @@ namespace Principal_Internet_elvis
         private System.Windows.Forms.Button bt_actualizar;
         private System.Windows.Forms.Label lb_pendiente;
         private System.Windows.Forms.DataGridView dgv_pendientes;
+        private System.Windows.Forms.Timer tm_inicio;
     }
 }

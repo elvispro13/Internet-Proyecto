@@ -52,14 +52,16 @@ namespace Principal_Internet_elvis.Configuraciones
                                         txt_desde.Text,
                                         txt_hasta.Text,
                                         txt_moneda.Text,
-                                        1);
+                                        1,
+                                        float.Parse(txt_mora.Text),
+                                        int.Parse(txt_dias_mora.Text));
             conn.cerrar();
             for (int i = 0; i < m.Rows.Count; i++)
             {
                 MessageBox.Show(m.Rows[i]["mensaje"].ToString());
             }
-            Program.principal.logo = pb_logo.Image;
-            Program.principal.activarConUser();
+            Program.menu.logo = pb_logo.Image;
+            Program.menu.activarConUser();
             Program.menu.removeRuta(ruta);
             Program.menu.AbrirFormEnPanel(retorno);
             Close();
@@ -76,7 +78,7 @@ namespace Principal_Internet_elvis.Configuraciones
         {
             ConexionDB conn = new ConexionDB();
             conn.abrir();
-            DataTable m = conn.empresa(null, null, null, null, null, null, null, null, null, null, 2);
+            DataTable m = conn.empresa(null, null, null, null, null, null, null, null, null, null, 2,0,0);
             conn.cerrar();
             for (int i = 0; i < m.Rows.Count; i++)
             {
@@ -89,6 +91,8 @@ namespace Principal_Internet_elvis.Configuraciones
                 txt_desde.Text = m.Rows[i]["desde"].ToString();
                 txt_hasta.Text = m.Rows[i]["hasta"].ToString();
                 txt_moneda.Text = m.Rows[i]["moneda"].ToString();
+                txt_mora.Text = m.Rows[i]["mora"].ToString();
+                txt_dias_mora.Text = m.Rows[i]["dias_mora"].ToString();
 
                 byte[] logo = (byte[])m.Rows[i]["logo"];
                 MemoryStream ms = new MemoryStream(logo);
@@ -112,6 +116,46 @@ namespace Principal_Internet_elvis.Configuraciones
             foreach (DateTimePicker e in Program.GetAllChildren(this).OfType<DateTimePicker>())
             {
                 e.Font = f;
+            }
+        }
+
+        private void txt_mora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_dias_mora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

@@ -97,7 +97,7 @@ namespace Proyecto_Internet
 
                 ConexionDB conn3 = new ConexionDB();
                 conn3.abrir();
-                DataTable m = conn3.empresa(null, null, null, null, null, null, null, null, null, null, 2);
+                DataTable m = conn3.empresa(null, null, null, null, null, null, null, null, null, null, 2, 0,0);
                 conn3.cerrar();
                 for (int i = 0; i < m.Rows.Count; i++)
                 {
@@ -108,6 +108,8 @@ namespace Proyecto_Internet
                     Program.menu.desde_e = int.Parse(m.Rows[i]["desde"].ToString());
                     Program.menu.hasta_e = int.Parse(m.Rows[i]["hasta"].ToString());
                     Program.menu.ide = int.Parse(m.Rows[i]["idempresa"].ToString());
+                    Program.menu.mora = m.Rows[i]["mora"].ToString();
+                    Program.menu.dias_mora = m.Rows[i]["dias_mora"].ToString();
                 }
 
                 MessageBox.Show("Bienvenido");
@@ -136,7 +138,6 @@ namespace Proyecto_Internet
                 MessageBox.Show("Debe agregar un usuario principal");
             }
             this.Focus();
-            txtUsuario.Select();
         }
 
         private void btnAjustes_Click(object sender, EventArgs e)
@@ -154,6 +155,12 @@ namespace Proyecto_Internet
         private void txtContra_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tm_inicio_Tick(object sender, EventArgs e)
+        {
+            txtUsuario.Focus();
+            tm_inicio.Enabled = false;
         }
     }
 }

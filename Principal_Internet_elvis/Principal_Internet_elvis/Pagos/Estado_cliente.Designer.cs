@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@
             this.bt_estado = new System.Windows.Forms.Button();
             this.bt_ping = new System.Windows.Forms.Button();
             this.bt_antena = new System.Windows.Forms.Button();
+            this.tm_inicio = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -200,6 +202,12 @@
             this.bt_antena.UseVisualStyleBackColor = true;
             this.bt_antena.Click += new System.EventHandler(this.bt_antena_Click);
             // 
+            // tm_inicio
+            // 
+            this.tm_inicio.Enabled = true;
+            this.tm_inicio.Interval = 500;
+            this.tm_inicio.Tick += new System.EventHandler(this.tm_inicio_Tick);
+            // 
             // Estado_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,5 +252,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button bt_ping;
         private System.Windows.Forms.Button bt_antena;
+        private System.Windows.Forms.Timer tm_inicio;
     }
 }

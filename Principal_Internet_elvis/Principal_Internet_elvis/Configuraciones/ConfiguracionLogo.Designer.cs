@@ -53,6 +53,10 @@
             this.txt_hasta = new System.Windows.Forms.TextBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.txt_moneda = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_mora = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_dias_mora = new System.Windows.Forms.TextBox();
             this.gb_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.gb_nombre.SuspendLayout();
@@ -64,6 +68,8 @@
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_logo
@@ -288,12 +294,52 @@
             this.txt_moneda.Size = new System.Drawing.Size(197, 20);
             this.txt_moneda.TabIndex = 0;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_mora);
+            this.groupBox1.Location = new System.Drawing.Point(677, 263);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(209, 50);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "MORA APLICADA";
+            // 
+            // txt_mora
+            // 
+            this.txt_mora.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_mora.Location = new System.Drawing.Point(6, 19);
+            this.txt_mora.Name = "txt_mora";
+            this.txt_mora.Size = new System.Drawing.Size(197, 20);
+            this.txt_mora.TabIndex = 0;
+            this.txt_mora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_mora_KeyPress);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txt_dias_mora);
+            this.groupBox2.Location = new System.Drawing.Point(677, 319);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(209, 50);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "DIAS PARA APLICAR MORA";
+            // 
+            // txt_dias_mora
+            // 
+            this.txt_dias_mora.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_dias_mora.Location = new System.Drawing.Point(6, 19);
+            this.txt_dias_mora.Name = "txt_dias_mora";
+            this.txt_dias_mora.Size = new System.Drawing.Size(197, 20);
+            this.txt_dias_mora.TabIndex = 0;
+            this.txt_dias_mora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_mora_KeyPress);
+            // 
             // ConfiguracionLogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1048, 557);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
@@ -331,6 +377,10 @@
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -362,5 +412,9 @@
         private System.Windows.Forms.TextBox txt_hasta;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TextBox txt_moneda;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txt_mora;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txt_dias_mora;
     }
 }

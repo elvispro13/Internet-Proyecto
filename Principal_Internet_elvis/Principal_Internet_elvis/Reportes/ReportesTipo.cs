@@ -36,7 +36,7 @@ namespace Principal_Internet_elvis.Reportes
                 rango = 1;
 
             string xsql = "exec sp_buscar_mora 1,'" + dtp_mora_desde.Value.ToString("yyyy/MM/dd") + "','" +
-                            dtp_mora_hasta.Value.ToString("yyyy/MM/dd") + "'," + Program.principal.ide + "," + rango + ";";
+                            dtp_mora_hasta.Value.ToString("yyyy/MM/dd") + "'," + Program.menu.ide + "," + rango + ";";
 
             ReportesViwer formulario = new ReportesViwer();
 

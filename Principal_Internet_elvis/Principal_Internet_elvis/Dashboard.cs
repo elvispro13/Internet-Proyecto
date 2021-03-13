@@ -30,7 +30,7 @@ namespace Principal_Internet_elvis
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            //actualizar();
+            
         }
 
         private void actualizar()
@@ -80,6 +80,12 @@ namespace Principal_Internet_elvis
                 Program.menu.setRuta("CONTRATOS/");
                 Program.menu.AbrirFormEnPanel(Program.estado_Cliente);
             }
+        }
+
+        private void tm_inicio_Tick(object sender, EventArgs e)
+        {
+            actualizar();
+            tm_inicio.Enabled = false;
         }
     }
 }

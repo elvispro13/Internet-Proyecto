@@ -25,6 +25,7 @@ namespace Principal_Internet_elvis.Paquetes
         private void PaquetesAgregar_Load(object sender, EventArgs e)
         {
             Program.menu.addRuta(ruta);
+            bt_eliminar.Enabled = false;
             if (this.Text.Contains("SERVICIO"))
             {
                 gb_codigo.Enabled = false;
@@ -34,17 +35,16 @@ namespace Principal_Internet_elvis.Paquetes
                 gb_c2.Text = "ISV";
                 bt_servicios.Enabled = false;
                 bt_servicios.Visible = false;
+                gb_datos.Visible = false;
             }
             else if (this.Text.Contains("PAQUETE"))
             {
                 gb_codigo.Enabled = false;
                 gb_c1.Enabled = true;
                 gb_c2.Enabled = false;
-                gb_c1.Text = "DESCUENTO";
+                gb_c1.Text = "DESCUENTO %";
                 gb_c2.Text = "";
-
             }
-            //limpiar();
         }
 
         private void limpiar()
@@ -116,6 +116,16 @@ namespace Principal_Internet_elvis.Paquetes
             txt_c2.Text = "";
             row = -1;
             estado = -1;
+
+            txt_max_limit_1.Text = "";
+            txt_max_limit_2.Text = "";
+            txt_burst_limit_1.Text = "";
+            txt_burst_limit_2.Text = "";
+            txt_burst_threshold_1.Text = "";
+            txt_burst_threshold_2.Text = "";
+            txt_burst_time_1.Text = "";
+            txt_burst_time_2.Text = "";
+
             addFuente(Program.menu.fuente);
         }
 
@@ -185,6 +195,15 @@ namespace Principal_Internet_elvis.Paquetes
                 txt_descripcion.Text = dgv_tabla.Rows[row].Cells[1].Value.ToString();
                 txt_c1.Text = dgv_tabla.Rows[row].Cells[2].Value.ToString();
                 estado = int.Parse(dgv_tabla.Rows[row].Cells[3].Value.ToString());
+
+                txt_max_limit_1.Text = dgv_tabla.Rows[row].Cells["max_limit"].Value.ToString().Split('/')[0];
+                txt_max_limit_2.Text = dgv_tabla.Rows[row].Cells["max_limit"].Value.ToString().Split('/')[1];
+                txt_burst_limit_1.Text = dgv_tabla.Rows[row].Cells["burst_limit"].Value.ToString().Split('/')[0];
+                txt_burst_limit_2.Text = dgv_tabla.Rows[row].Cells["burst_limit"].Value.ToString().Split('/')[1];
+                txt_burst_threshold_1.Text = dgv_tabla.Rows[row].Cells["burst_threshold"].Value.ToString().Split('/')[0];
+                txt_burst_threshold_2.Text = dgv_tabla.Rows[row].Cells["burst_threshold"].Value.ToString().Split('/')[1];
+                txt_burst_time_1.Text = dgv_tabla.Rows[row].Cells["burst_time"].Value.ToString().Split('/')[0];
+                txt_burst_time_2.Text = dgv_tabla.Rows[row].Cells["burst_time"].Value.ToString().Split('/')[1];
             }
             else if (this.Text.Contains("SERVICIO"))
             {
@@ -195,23 +214,6 @@ namespace Principal_Internet_elvis.Paquetes
                 estado = int.Parse(dgv_tabla.Rows[row].Cells[4].Value.ToString());
             }
             bt_eliminar.Enabled = true;
-        }
-
-        private void bt_servicios_Click(object sender, EventArgs e)
-        {
-            if (row != -1)
-            {
-                Program.paquetesElegir = new PaquetesElegir();
-                Program.paquetesElegir.id = int.Parse(txt_codigo.Text);
-                Program.paquetesElegir.Text = "ELEGIR-SERVICIOS";
-                Program.paquetesElegir.ruta = "Elegir servicios";
-                Program.paquetesElegir.retorno = Program.paquetesAgregar;
-                Program.menu.AbrirFormEnPanel(Program.paquetesElegir);
-            }
-            else
-            {
-                MessageBox.Show("Debe elegir un paquete");
-            }
         }
 
         private void txt_descripcion_KeyDown(object sender, KeyEventArgs e)
@@ -276,6 +278,12 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void bt_aceptar_Click(object sender, EventArgs e)
         {
+            if(txt_c1.Text.Equals("") ||
+                txt_descripcion.Text.Equals(""))
+            {
+                MessageBox.Show("Llene los campos");
+                return;
+            }
             if (row == -1)
             {
                 ConexionDB conn = new ConexionDB();
@@ -304,6 +312,10 @@ namespace Principal_Internet_elvis.Paquetes
                 {
                     campos.Add("'" + txt_descripcion.Text + "'");
                     campos.Add("" + txt_c1.Text);
+                    campos.Add("'" + txt_max_limit_1.Text + "/" + txt_max_limit_2.Text + "'");
+                    campos.Add("'" + txt_burst_limit_1.Text + "/" + txt_burst_limit_2.Text + "'");
+                    campos.Add("'" + txt_burst_threshold_1.Text + "/" + txt_burst_threshold_2.Text + "'");
+                    campos.Add("'" + txt_burst_time_1.Text + "/" + txt_burst_time_2.Text + "'");
                     m = conn.insertar("sp_insertar_paquete", campos);
                 }
 
@@ -399,6 +411,11 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void bt_eliminar_Click(object sender, EventArgs e)
         {
+            if(row == -1)
+            {
+                MessageBox.Show("Elija una fila");
+                return;
+            }
             if (this.Text.Contains("SERVICIO"))
             {
                 ConexionDB conn2 = new ConexionDB();
@@ -449,6 +466,30 @@ namespace Principal_Internet_elvis.Paquetes
         private void cb_inactivos_CheckedChanged(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void bt_servicios_Click(object sender, EventArgs e)
+        {
+            if (row != -1)
+            {
+                Program.paquetesElegir = new PaquetesElegir();
+                Program.paquetesElegir.id = int.Parse(txt_codigo.Text);
+                Program.paquetesElegir.Text = "ELEGIR-SERVICIOS";
+                Program.paquetesElegir.ruta = "Elegir servicios";
+                Program.paquetesElegir.retorno = Program.paquetesAgregar;
+                Program.menu.AbrirFormEnPanel(Program.paquetesElegir);
+            }
+            else
+            {
+                MessageBox.Show("Debe elegir un paquete");
+            }
+        }
+
+        private void tm_inicio_Tick(object sender, EventArgs e)
+        {
+            limpiar();
+
+            tm_inicio.Enabled = false;
         }
 
         public void addFuente(Font f)

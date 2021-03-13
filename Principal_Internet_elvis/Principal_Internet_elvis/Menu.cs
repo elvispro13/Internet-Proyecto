@@ -29,7 +29,7 @@ namespace Principal_Internet_elvis
     public partial class Menu : Form
     {
         public int idu;
-        public string user, clave, desc, nombre;
+        public string user, clave, desc, nombre, mora, dias_mora;
         public Font fuente;
         public Image logo;
 

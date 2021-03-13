@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.bt_agregar = new System.Windows.Forms.Button();
             this.bt_quitar = new System.Windows.Forms.Button();
             this.bt_salir = new System.Windows.Forms.Button();
+            this.tm_inicio = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +82,12 @@
             this.bt_salir.UseVisualStyleBackColor = true;
             this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
             // 
+            // tm_inicio
+            // 
+            this.tm_inicio.Enabled = true;
+            this.tm_inicio.Interval = 500;
+            this.tm_inicio.Tick += new System.EventHandler(this.tm_inicio_Tick);
+            // 
             // ClientesPaquetes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,5 +114,6 @@
         private System.Windows.Forms.Button bt_agregar;
         private System.Windows.Forms.Button bt_quitar;
         private System.Windows.Forms.Button bt_salir;
+        private System.Windows.Forms.Timer tm_inicio;
     }
 }

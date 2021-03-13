@@ -426,7 +426,7 @@
             this.groupBox7.Controls.Add(this.dgv_detalles);
             this.groupBox7.Location = new System.Drawing.Point(66, 397);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(923, 114);
+            this.groupBox7.Size = new System.Drawing.Size(923, 256);
             this.groupBox7.TabIndex = 13;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "DETALLE DEL COMPROBANTE DE PAGO";
@@ -441,14 +441,14 @@
             this.dgv_detalles.Name = "dgv_detalles";
             this.dgv_detalles.ReadOnly = true;
             this.dgv_detalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_detalles.Size = new System.Drawing.Size(910, 89);
+            this.dgv_detalles.Size = new System.Drawing.Size(910, 231);
             this.dgv_detalles.TabIndex = 0;
             this.dgv_detalles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_detalles_CellClick);
             // 
             // txt_totalpagar
             // 
             this.txt_totalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_totalpagar.Location = new System.Drawing.Point(842, 530);
+            this.txt_totalpagar.Location = new System.Drawing.Point(842, 676);
             this.txt_totalpagar.Name = "txt_totalpagar";
             this.txt_totalpagar.ReadOnly = true;
             this.txt_totalpagar.Size = new System.Drawing.Size(142, 20);
@@ -458,7 +458,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(683, 530);
+            this.label9.Location = new System.Drawing.Point(683, 676);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(153, 20);
             this.label9.TabIndex = 9;
@@ -468,7 +468,7 @@
             // 
             this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(224, 513);
+            this.btnSalir.Location = new System.Drawing.Point(224, 659);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(152, 55);
             this.btnSalir.TabIndex = 15;
@@ -483,7 +483,7 @@
             this.btnImprimir.Enabled = false;
             this.btnImprimir.Image = global::Principal_Internet_elvis.Properties.Resources.Print_icon_icons_com_55835;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(382, 513);
+            this.btnImprimir.Location = new System.Drawing.Point(382, 659);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(152, 55);
             this.btnImprimir.TabIndex = 14;
@@ -497,7 +497,7 @@
             // 
             this.btnGuardar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(64, 513);
+            this.btnGuardar.Location = new System.Drawing.Point(64, 659);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(152, 55);
             this.btnGuardar.TabIndex = 9;
@@ -569,9 +569,8 @@
             this.cb_tipopago.Items.AddRange(new object[] {
             "EFECTIVO",
             "TARGETA DE CREDITO",
-            "BITCOIN",
-            "TIGO MONEY",
-            "DEPOSITO BANCARIO"});
+            "DEPOSITO BANCARIO",
+            "TIGO MONEY"});
             this.cb_tipopago.Location = new System.Drawing.Point(6, 19);
             this.cb_tipopago.Name = "cb_tipopago";
             this.cb_tipopago.Size = new System.Drawing.Size(194, 21);
@@ -632,7 +631,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1080, 612);
+            this.ClientSize = new System.Drawing.Size(1080, 726);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

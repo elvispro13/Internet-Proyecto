@@ -167,6 +167,13 @@ namespace Principal_Internet_elvis.Configuraciones
             System.Diagnostics.Process.Start("chrome.exe", dgv_tabla.Rows[row].Cells["ip"].Value.ToString());
         }
 
+        private void tm_inicio_Tick(object sender, EventArgs e)
+        {
+            limpiar();
+
+            tm_inicio.Enabled = false;
+        }
+
         private void bt_estado_Click(object sender, EventArgs e)
         {
             if(idcleintepa == -1)

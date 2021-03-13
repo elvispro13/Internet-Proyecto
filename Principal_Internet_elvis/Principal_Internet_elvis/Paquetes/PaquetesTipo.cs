@@ -21,7 +21,7 @@ namespace Principal_Internet_elvis.Paquetes
         {
             Program.paquetesAgregar = new PaquetesAgregar();
             Program.paquetesAgregar.Text = "PAQUETE";
-            Program.paquetesAgregar.ruta = "Paquetes/";
+            Program.paquetesAgregar.ruta = "Agregar paquetes/";
             Program.paquetesAgregar.retorno = Program.paquetesTipo;
             Program.menu.AbrirFormEnPanel(Program.paquetesAgregar);
         }
@@ -30,7 +30,7 @@ namespace Principal_Internet_elvis.Paquetes
         {
             Program.paquetesAgregar = new PaquetesAgregar();
             Program.paquetesAgregar.Text = "SERVICIO";
-            Program.paquetesAgregar.ruta = "Servicios/";
+            Program.paquetesAgregar.ruta = "Agregar servicios/";
             Program.paquetesAgregar.retorno = Program.paquetesTipo;
             Program.menu.AbrirFormEnPanel(Program.paquetesAgregar);
         }
@@ -64,23 +64,7 @@ namespace Principal_Internet_elvis.Paquetes
 
         private void PaquetesTipo_Load(object sender, EventArgs e)
         {
-            ConexionDB conn = new ConexionDB();
-            conn.abrir();
-            List<string> campos = new List<string>();
-            campos.Add("' '");
-            campos.Add("3");
-            conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
-            conn.cerrar();
-
-            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
-            {
-                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
-                dgv_tabla.Columns[i].HeaderText = t;
-            }
-
-            dgv_tabla.ClearSelection();
-
-            addFuente(Program.menu.fuente);
+            
         }
 
         public void addFuente(Font f)
@@ -115,6 +99,29 @@ namespace Principal_Internet_elvis.Paquetes
         {
             Program.menu.bt_inicio_Click(null, null);
             this.Close();
+        }
+
+        private void tm_inicio_Tick(object sender, EventArgs e)
+        {
+            ConexionDB conn = new ConexionDB();
+            conn.abrir();
+            List<string> campos = new List<string>();
+            campos.Add("' '");
+            campos.Add("3");
+            conn.llenarTabla("sp_buscar_paquetes", campos, dgv_tabla);
+            conn.cerrar();
+
+            for (int i = 0; i < dgv_tabla.Columns.Count; i++)
+            {
+                string t = dgv_tabla.Columns[i].HeaderText.ToUpper();
+                dgv_tabla.Columns[i].HeaderText = t;
+            }
+
+            dgv_tabla.ClearSelection();
+
+            addFuente(Program.menu.fuente);
+
+            tm_inicio.Enabled = false;
         }
     }
 }

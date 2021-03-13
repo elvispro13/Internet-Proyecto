@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEntrar = new System.Windows.Forms.PictureBox();
             this.btnAjustes = new System.Windows.Forms.PictureBox();
@@ -39,6 +40,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tm_inicio = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEntrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAjustes)).BeginInit();
@@ -158,9 +160,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 18);
+            this.label1.Size = new System.Drawing.Size(136, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Inicio de sesion";
+            this.label1.Text = "INICIO DE SESION";
             // 
             // pictureBox1
             // 
@@ -171,6 +173,12 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // tm_inicio
+            // 
+            this.tm_inicio.Enabled = true;
+            this.tm_inicio.Interval = 500;
+            this.tm_inicio.Tick += new System.EventHandler(this.tm_inicio_Tick);
             // 
             // Inicio
             // 
@@ -207,5 +215,6 @@
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.PictureBox btnAjustes;
         private System.Windows.Forms.PictureBox btnEntrar;
+        private System.Windows.Forms.Timer tm_inicio;
     }
 }

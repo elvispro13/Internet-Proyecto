@@ -23,7 +23,8 @@ namespace Principal_Internet_elvis.ClientesCarpeta
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            //limpiar();
+            bt_eliminar.Enabled = false;
+            tm_inicio.Enabled = true;
         }
 
         private void limpiar()
@@ -123,21 +124,6 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             }
 
             bt_eliminar.Enabled = true;
-        }
-
-        private void bt_paquetes_Click(object sender, EventArgs e)
-        {
-            if (row != -1)
-            {
-                Program.clientesPaquetes = new ClientesPaquetes();
-                Program.clientesPaquetes.id = int.Parse(txt_codigo.Text);
-                Program.clientesPaquetes.cliente = txt_nombre.Text + " - " + txt_rtn.Text;
-                Program.menu.AbrirFormEnPanel(Program.clientesPaquetes);
-            }
-            else
-            {
-                MessageBox.Show("Debe elegir un cliente");
-            }
         }
 
         private void txt_nombre_KeyDown(object sender, KeyEventArgs e)
@@ -258,6 +244,11 @@ namespace Principal_Internet_elvis.ClientesCarpeta
 
         private void bt_eliminar_Click(object sender, EventArgs e)
         {
+            if(row == -1)
+            {
+                MessageBox.Show("Elija una fila");
+                return;
+            }
             ConexionDB conn2 = new ConexionDB();
             conn2.abrir();
             List<string> campos2 = new List<string>();
@@ -283,6 +274,27 @@ namespace Principal_Internet_elvis.ClientesCarpeta
         private void cb_inactivos_CheckedChanged(object sender, EventArgs e)
         {
             buscar();
+        }
+
+        private void bt_paquetes_Click(object sender, EventArgs e)
+        {
+            if (row != -1)
+            {
+                Program.clientesPaquetes = new ClientesPaquetes();
+                Program.clientesPaquetes.id = int.Parse(txt_codigo.Text);
+                Program.clientesPaquetes.cliente = txt_nombre.Text + " - " + txt_rtn.Text;
+                Program.menu.AbrirFormEnPanel(Program.clientesPaquetes);
+            }
+            else
+            {
+                MessageBox.Show("Debe elegir un cliente");
+            }
+        }
+
+        private void tm_inicio_Tick(object sender, EventArgs e)
+        {
+            limpiar();
+            tm_inicio.Enabled = false;
         }
 
         private void bt_salir_Click(object sender, EventArgs e)

@@ -24,7 +24,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
         private void ClientesPaquetes_Load(object sender, EventArgs e)
         {
             Program.menu.addRuta("Paquetes contratados por: " + cliente + "/");
-            limpiar();
+            
         }
 
         public void limpiar()
@@ -135,6 +135,13 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             {
                 e.Font = f;
             }
+        }
+
+        private void tm_inicio_Tick(object sender, EventArgs e)
+        {
+            limpiar();
+
+            tm_inicio.Enabled = false;
         }
 
         private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)

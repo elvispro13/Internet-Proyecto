@@ -68,7 +68,7 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.bt_mora_buscar);
-            this.groupBox1.Location = new System.Drawing.Point(303, 50);
+            this.groupBox1.Location = new System.Drawing.Point(303, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(459, 129);
             this.groupBox1.TabIndex = 0;

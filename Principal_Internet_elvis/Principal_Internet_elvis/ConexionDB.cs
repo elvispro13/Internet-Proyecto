@@ -101,7 +101,9 @@ namespace Principal_Internet_elvis
             string desde,
             string hasta,
             string moneda,
-            int tipo)
+            int tipo,
+            float mora,
+            int dias_mora)
         {
             try
             {
@@ -122,6 +124,8 @@ namespace Principal_Internet_elvis
                     cmd.Parameters.Add("@desde", SqlDbType.Int).Value = int.Parse(desde);
                     cmd.Parameters.Add("@hasta", SqlDbType.Int).Value = int.Parse(hasta);
                     cmd.Parameters.Add("@moneda", SqlDbType.NVarChar).Value = moneda;
+                    cmd.Parameters.Add("@mora", SqlDbType.Float).Value = mora;
+                    cmd.Parameters.Add("@dias_mora", SqlDbType.Int).Value = dias_mora;
                 }
 
                 da = new SqlDataAdapter(cmd);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -49,13 +50,14 @@
             this.bt_lugar = new System.Windows.Forms.Button();
             this.txt_lugar = new System.Windows.Forms.TextBox();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
-            this.bt_paquetes = new System.Windows.Forms.Button();
-            this.bt_aceptar = new System.Windows.Forms.Button();
-            this.bt_salir = new System.Windows.Forms.Button();
+            this.cb_inactivos = new System.Windows.Forms.CheckBox();
+            this.bt_paquetes = new System.Windows.Forms.PictureBox();
             this.bt_nuevo = new System.Windows.Forms.Button();
             this.bt_buscar = new System.Windows.Forms.Button();
             this.bt_eliminar = new System.Windows.Forms.Button();
-            this.cb_inactivos = new System.Windows.Forms.CheckBox();
+            this.bt_aceptar = new System.Windows.Forms.Button();
+            this.bt_salir = new System.Windows.Forms.Button();
+            this.tm_inicio = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -66,6 +68,7 @@
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_paquetes)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -271,35 +274,27 @@
             this.dgv_tabla.TabIndex = 10;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
+            // cb_inactivos
+            // 
+            this.cb_inactivos.AutoSize = true;
+            this.cb_inactivos.Location = new System.Drawing.Point(410, 552);
+            this.cb_inactivos.Name = "cb_inactivos";
+            this.cb_inactivos.Size = new System.Drawing.Size(87, 17);
+            this.cb_inactivos.TabIndex = 17;
+            this.cb_inactivos.Text = "Ver inactivos";
+            this.cb_inactivos.UseVisualStyleBackColor = true;
+            this.cb_inactivos.CheckedChanged += new System.EventHandler(this.cb_inactivos_CheckedChanged);
+            // 
             // bt_paquetes
             // 
-            this.bt_paquetes.Location = new System.Drawing.Point(72, 533);
+            this.bt_paquetes.Image = global::Principal_Internet_elvis.Properties.Resources.contratos;
+            this.bt_paquetes.Location = new System.Drawing.Point(147, 533);
             this.bt_paquetes.Name = "bt_paquetes";
-            this.bt_paquetes.Size = new System.Drawing.Size(288, 53);
-            this.bt_paquetes.TabIndex = 13;
-            this.bt_paquetes.Text = "PAQUETES-CONTRATADOS";
-            this.bt_paquetes.UseVisualStyleBackColor = true;
+            this.bt_paquetes.Size = new System.Drawing.Size(107, 79);
+            this.bt_paquetes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bt_paquetes.TabIndex = 18;
+            this.bt_paquetes.TabStop = false;
             this.bt_paquetes.Click += new System.EventHandler(this.bt_paquetes_Click);
-            // 
-            // bt_aceptar
-            // 
-            this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
-            this.bt_aceptar.Location = new System.Drawing.Point(638, 534);
-            this.bt_aceptar.Name = "bt_aceptar";
-            this.bt_aceptar.Size = new System.Drawing.Size(76, 52);
-            this.bt_aceptar.TabIndex = 12;
-            this.bt_aceptar.UseVisualStyleBackColor = true;
-            this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
-            // 
-            // bt_salir
-            // 
-            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_salir.Location = new System.Drawing.Point(917, 533);
-            this.bt_salir.Name = "bt_salir";
-            this.bt_salir.Size = new System.Drawing.Size(68, 52);
-            this.bt_salir.TabIndex = 11;
-            this.bt_salir.UseVisualStyleBackColor = true;
-            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
             // 
             // bt_nuevo
             // 
@@ -331,16 +326,30 @@
             this.bt_eliminar.UseVisualStyleBackColor = true;
             this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
-            // cb_inactivos
+            // bt_aceptar
             // 
-            this.cb_inactivos.AutoSize = true;
-            this.cb_inactivos.Location = new System.Drawing.Point(410, 552);
-            this.cb_inactivos.Name = "cb_inactivos";
-            this.cb_inactivos.Size = new System.Drawing.Size(87, 17);
-            this.cb_inactivos.TabIndex = 17;
-            this.cb_inactivos.Text = "Ver inactivos";
-            this.cb_inactivos.UseVisualStyleBackColor = true;
-            this.cb_inactivos.CheckedChanged += new System.EventHandler(this.cb_inactivos_CheckedChanged);
+            this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
+            this.bt_aceptar.Location = new System.Drawing.Point(638, 534);
+            this.bt_aceptar.Name = "bt_aceptar";
+            this.bt_aceptar.Size = new System.Drawing.Size(76, 52);
+            this.bt_aceptar.TabIndex = 12;
+            this.bt_aceptar.UseVisualStyleBackColor = true;
+            this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
+            // 
+            // bt_salir
+            // 
+            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
+            this.bt_salir.Location = new System.Drawing.Point(917, 533);
+            this.bt_salir.Name = "bt_salir";
+            this.bt_salir.Size = new System.Drawing.Size(68, 52);
+            this.bt_salir.TabIndex = 11;
+            this.bt_salir.UseVisualStyleBackColor = true;
+            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
+            // 
+            // tm_inicio
+            // 
+            this.tm_inicio.Interval = 500;
+            this.tm_inicio.Tick += new System.EventHandler(this.tm_inicio_Tick);
             // 
             // Clientes
             // 
@@ -348,11 +357,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1080, 612);
+            this.Controls.Add(this.bt_paquetes);
             this.Controls.Add(this.cb_inactivos);
             this.Controls.Add(this.bt_nuevo);
             this.Controls.Add(this.bt_buscar);
             this.Controls.Add(this.bt_eliminar);
-            this.Controls.Add(this.bt_paquetes);
             this.Controls.Add(this.bt_aceptar);
             this.Controls.Add(this.bt_salir);
             this.Controls.Add(this.dgv_tabla);
@@ -388,6 +397,7 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bt_paquetes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,10 +428,11 @@
         private System.Windows.Forms.DataGridView dgv_tabla;
         private System.Windows.Forms.Button bt_salir;
         private System.Windows.Forms.Button bt_aceptar;
-        private System.Windows.Forms.Button bt_paquetes;
         private System.Windows.Forms.Button bt_nuevo;
         private System.Windows.Forms.Button bt_buscar;
         private System.Windows.Forms.Button bt_eliminar;
         private System.Windows.Forms.CheckBox cb_inactivos;
+        private System.Windows.Forms.PictureBox bt_paquetes;
+        private System.Windows.Forms.Timer tm_inicio;
     }
 }

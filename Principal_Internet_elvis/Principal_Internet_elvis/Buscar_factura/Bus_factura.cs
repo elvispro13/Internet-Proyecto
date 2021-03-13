@@ -23,7 +23,8 @@ namespace Principal_Internet_elvis
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Program.menu.bt_inicio_Click(null, null);
+            Close();
         }
 
         private void Bus_factura_Load(object sender, EventArgs e)

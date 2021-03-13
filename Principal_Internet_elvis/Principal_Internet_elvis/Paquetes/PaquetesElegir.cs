@@ -27,10 +27,8 @@ namespace Principal_Internet_elvis.Paquetes
         {
             if (this.Text.Contains("SERVICIOS"))
             {
-                gb_instalacion.Enabled = false;
-                gb_instalacion.Visible = false;
-                gb_ip.Enabled = false;
-                gb_ip.Visible = false;
+                gb_datos.Enabled = false;
+                gb_datos.Visible = false;
             }
             Program.menu.addRuta(ruta);
         }
@@ -116,7 +114,9 @@ namespace Principal_Internet_elvis.Paquetes
                 {
                     return;
                 }
-                txt_ip.Text = Program.menu.getIP(rows2[0].getCampos()[0]);
+                String ip = Program.menu.getIP(rows2[0].getCampos()[0]);
+                txt_ip.Text = ip;
+                txt_gateway.Text = ip.Split('.')[0] + "." + ip.Split('.')[1] + "." + ip.Split('.')[2] + ".1";
             }
 
 
@@ -159,7 +159,12 @@ namespace Principal_Internet_elvis.Paquetes
             }
             else if (this.Text.Contains("PAQUETES"))
             {
-                if(txt_ip.Text.Equals("") || txt_intalacion.Text.Equals(""))
+                if(txt_ip.Text.Equals("") || txt_intalacion.Text.Equals("") ||
+                    txt_gateway.Text.Equals("") || txt_max_limit_1.Text.Equals("") ||
+                    txt_max_limit_2.Text.Equals("") || txt_burst_limit_1.Text.Equals("") ||
+                    txt_burst_limit_2.Text.Equals("") || txt_burst_threshold_1.Text.Equals("") ||
+                    txt_burst_threshold_2.Text.Equals("") || txt_burst_time_1.Text.Equals("") ||
+                    txt_burst_time_2.Text.Equals(""))
                 {
                     MessageBox.Show("Llene los campos.");
                     return;
@@ -179,6 +184,12 @@ namespace Principal_Internet_elvis.Paquetes
                         campos2.Add("" + dgv_tabla.SelectedRows[i].Cells["descuento"].Value.ToString());
                         campos2.Add("'" + txt_ip.Text + "'");
                         campos2.Add("" + txt_intalacion.Text);
+                        campos2.Add("'" + dtp_fecha_pago.Value.ToString("yyyy/MM/dd hh:mm:ss") + "'");
+                        campos2.Add("'"+ txt_gateway.Text +"'");
+                        campos2.Add("'" + txt_max_limit_1.Text + "/" + txt_max_limit_2.Text + "'");
+                        campos2.Add("'" + txt_burst_limit_1.Text + "/" + txt_burst_limit_2.Text + "'");
+                        campos2.Add("'" + txt_burst_threshold_1.Text + "/" + txt_burst_threshold_2.Text + "'");
+                        campos2.Add("'" + txt_burst_time_1.Text + "/" + txt_burst_time_2.Text + "'");
                         conn2.insertar("sp_insertar_clientepaquete", campos2);
                         conn2.cerrar();
                     }
@@ -273,6 +284,28 @@ namespace Principal_Internet_elvis.Paquetes
             buscar();
         }
 
+        private void bt_ping_Click(object sender, EventArgs e)
+        {
+            if (txt_ip.Text.Equals(""))
+            {
+                MessageBox.Show("Escriba una IP");
+                txt_ip.Select();
+                return;
+            }
+            Program.hacerPing = new HacerPing();
+            Program.hacerPing.TopMost = true;
+            Program.hacerPing.BringToFront();
+            Program.hacerPing.ip = txt_ip.Text;
+            Program.hacerPing.cliente = "";
+            Program.hacerPing.Show();
+        }
+
+        private void tm_inicio_Tick(object sender, EventArgs e)
+        {
+            buscar();
+            tm_inicio.Enabled = false;
+        }
+
         private void dgv_tabla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Int32 selectedRowCount = dgv_tabla.Rows.GetRowCount(DataGridViewElementStates.Selected);
@@ -296,6 +329,17 @@ namespace Principal_Internet_elvis.Paquetes
                         dgv_tabla.Rows[con].Selected = i;
                         con++;
                     }
+                }
+                else
+                {
+                    txt_max_limit_1.Text = dgv_tabla.Rows[row].Cells["max_limit"].Value.ToString().Split('/')[0];
+                    txt_max_limit_2.Text = dgv_tabla.Rows[row].Cells["max_limit"].Value.ToString().Split('/')[1];
+                    txt_burst_limit_1.Text = dgv_tabla.Rows[row].Cells["burst_limit"].Value.ToString().Split('/')[0];
+                    txt_burst_limit_2.Text = dgv_tabla.Rows[row].Cells["burst_limit"].Value.ToString().Split('/')[1];
+                    txt_burst_threshold_1.Text = dgv_tabla.Rows[row].Cells["burst_threshold"].Value.ToString().Split('/')[0];
+                    txt_burst_threshold_2.Text = dgv_tabla.Rows[row].Cells["burst_threshold"].Value.ToString().Split('/')[1];
+                    txt_burst_time_1.Text = dgv_tabla.Rows[row].Cells["burst_time"].Value.ToString().Split('/')[0];
+                    txt_burst_time_2.Text = dgv_tabla.Rows[row].Cells["burst_time"].Value.ToString().Split('/')[1];
                 }
             }
         }

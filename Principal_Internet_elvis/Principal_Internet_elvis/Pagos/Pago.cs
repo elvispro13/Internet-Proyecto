@@ -14,8 +14,8 @@ namespace Principal_Internet_elvis.Pagos
 {
     public partial class Pago : Form
     {
-        private int idclientepa = -1;
-        private float total = -1, desc = -1, isv = -1, totalpagar = 0, subtotal = 0, descuento = 0, impuesto = 0, instalacion = 0;
+        private int idclientepa = -1, id_men = -1;
+        private float total = -1, desc = -1, isv = -1, totalpagar = 0, subtotal = 0, descuento = 0, impuesto = 0, instalacion = 0, mora = 0;
         private string mensualidad = "";
 
         private int idfactura;
@@ -48,6 +48,7 @@ namespace Principal_Internet_elvis.Pagos
             dt.Columns.Add("CANTIDAD");
             dt.Columns.Add("MONTO");
             dt.Columns.Add("%_DESCUENTO");
+            dt.Columns.Add("ID_MEN");
 
             dgv_detalles.DataSource = dt;
             //dgv_detalles.Columns[0].Visible = false;
@@ -55,6 +56,7 @@ namespace Principal_Internet_elvis.Pagos
             dgv_detalles.Columns[2].Visible = false;
             dgv_detalles.Columns[3].Visible = false;
             dgv_detalles.Columns[4].Visible = false;
+            dgv_detalles.Columns["ID_MEN"].Visible = false;
             cb_desc_insta.Enabled = false;
             cb_desc_insta.Visible = false;
         }
@@ -140,6 +142,20 @@ namespace Principal_Internet_elvis.Pagos
                 MessageBox.Show("Seleccione un detalle para poder borrarlo.");
                 return;
             }
+            if (!dt.Rows[filadetalles]["PAQUETE"].ToString().Contains("Mora"))
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (dt.Rows[i]["PAQUETE"].ToString().Contains("Mora") && 
+                        dt.Rows[i]["ID_MEN"].ToString().Equals(dt.Rows[filadetalles]["ID_MEN"].ToString()))
+                    {
+                        MessageBox.Show("No puede quitar una mensualidad que tiene mora aplicada. " +
+                            "Si la quiere remover, primero quite la mora aplicada.");
+                        return;
+                    }
+                }
+            }
+      
             dt.Rows[filadetalles].Delete();
             limpiarPaquete();
         }
@@ -208,6 +224,7 @@ namespace Principal_Internet_elvis.Pagos
                     string t = dgv_tabla_c.Columns[i].HeaderText.ToUpper();
                     dgv_tabla_c.Columns[i].HeaderText = t;
                 }
+                dgv_tabla_c.ClearSelection();
             }
         }
 
@@ -261,16 +278,31 @@ namespace Principal_Internet_elvis.Pagos
                     campos.Add("" + int.Parse(txt_codigo_c.Text));
                     campos.Add("'" + dtp_mes_p.Value.ToString("yyyy/MM/dd") + "'");
                     campos.Add("" + dgv_tabla_p.Rows[row].Cells["instalacion"].Value.ToString());
+                    campos.Add("" + dgv_tabla_p.Rows[row].Cells["mora"].Value.ToString());
+                    campos.Add("" + dgv_tabla_p.Rows[row].Cells["dias_mora"].Value.ToString());
                     conn.llenarTabla("sp_buscar_meses", campos, dgv_tabla_p);
                     conn.cerrar();
+                    dgv_tabla_p.Columns["id"].Visible = false;
                     dgv_tabla_p.Columns["fecha"].Visible = false;
 
+                    for (int i = 0; i < dgv_tabla_p.Rows.Count; i++)
+                    {
+                        for (int m = 0; m < dt.Rows.Count; m++)
+                        {
+                            DataRow mm = dt.Rows[m];
+                            if (dgv_tabla_p.Rows[i].Cells["id"].Value.ToString().Equals(mm["ID_MEN"].ToString()) && !dgv_tabla_p.Rows[i].Cells["id"].Value.ToString().Equals("1"))
+                            {
+                                dgv_tabla_p.Rows[i].Visible = false;
+                                break;
+                            }
+                        }
+                    }
                     for (int i = 0; i < dgv_tabla_p.Columns.Count; i++)
                     {
                         string t = dgv_tabla_p.Columns[i].HeaderText.ToUpper();
                         dgv_tabla_p.Columns[i].HeaderText = t;
                     }
-
+                    
                     dgv_tabla_p.ClearSelection();
                 }
                 else
@@ -290,8 +322,14 @@ namespace Principal_Internet_elvis.Pagos
                     {
                         cb_adelantado.Checked = true;
                     }
+                    else
+                    {
+                        cb_adelantado.Checked = false;
+                    }
+                    id_men = int.Parse(dgv_tabla_p.Rows[row].Cells["id"].Value.ToString());
                     dtp_mes_p.Value = DateTime.Parse(dgv_tabla_p.Rows[row].Cells["fecha"].Value.ToString());
                     mensualidad = dgv_tabla_p.Rows[row].Cells["mensualidad"].Value.ToString();
+                    mora = float.Parse(dgv_tabla_p.Rows[row].Cells["mora"].Value.ToString());
                     dgv_tabla_p.DataSource = null;
                     gBusConcep.Visible = false;
                     gb_paquete.Visible = true;
@@ -401,10 +439,35 @@ namespace Principal_Internet_elvis.Pagos
 
             dr["CANTIDAD"] = 1;
             dr["MONTO"] = txt_monto_p.Text;
+            dr["ID_MEN"] = id_men;
 
             dt.Rows.Add(dr);
 
+            if(mora > 0)
+            {
+                agregarMora();
+            }
+
             limpiarPaquete();
+        }
+
+        private void agregarMora()
+        {
+            DataRow dr = dt.NewRow();
+            dr["ID"] = "" + int.Parse(txt_codigo_p.Text);
+            dr["FECHA"] = dtp_mes_p.Value.ToString("yyyy/MM/dd");
+
+            dr["PAQUETE"] = "Mora aplicada a " + txt_descripcion_p.Text + " - Mes: " + mensualidad.ToUpper();
+            dr["DESCUENTO"] = 0;
+            dr["ISV"] = "" + 0;
+            dr["TOTAL"] = "" + mora;
+            dr["%_DESCUENTO"] = "% " + 0;
+
+            dr["CANTIDAD"] = 1;
+            dr["MONTO"] = mora.ToString("L.0.00");
+            dr["ID_MEN"] = id_men;
+
+            dt.Rows.Add(dr);
         }
 
 
@@ -426,6 +489,7 @@ namespace Principal_Internet_elvis.Pagos
             totalpagar = 0;
             subtotal = 0;
             descuento = 0;
+            mora = 0;
             for(int i = 0; i < dt.Rows.Count; i++)
             {
                 subtotal += float.Parse(dt.Rows[i]["TOTAL"].ToString());

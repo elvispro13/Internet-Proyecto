@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bt_salir = new System.Windows.Forms.Button();
             this.bt_servicio = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.tm_inicio = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla)).BeginInit();
@@ -131,6 +133,12 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "VISTA PREVIA DE PAQUETES";
             // 
+            // tm_inicio
+            // 
+            this.tm_inicio.Enabled = true;
+            this.tm_inicio.Interval = 500;
+            this.tm_inicio.Tick += new System.EventHandler(this.tm_inicio_Tick);
+            // 
             // PaquetesTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,5 +173,6 @@
         private System.Windows.Forms.DataGridView dgv_tabla;
         private System.Windows.Forms.Button bt_salir;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer tm_inicio;
     }
 }
