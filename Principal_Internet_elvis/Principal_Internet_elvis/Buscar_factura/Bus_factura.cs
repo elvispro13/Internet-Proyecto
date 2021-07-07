@@ -39,7 +39,7 @@ namespace Principal_Internet_elvis
             List<string> campos = new List<string>();
             campos.Add("'" + txt_buscar.Text + "'");
             campos.Add("'" + dtpDesde.Value.ToString("yyyy/MM/dd") + "'");
-            campos.Add("'" + dtpHasta.Value.ToString("yyyy/MM/dd") + "'");
+            campos.Add("'" + dtpHasta.Value.ToString("yyyy/MM/dd hh:mm:ss") + "'");
             campos.Add("1");
             conn.llenarTabla("sp_buscar_factura", campos, dgv_tabla);
             conn.cerrar();

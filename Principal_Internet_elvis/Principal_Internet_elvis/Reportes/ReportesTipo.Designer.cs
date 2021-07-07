@@ -68,7 +68,7 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.bt_mora_buscar);
-            this.groupBox1.Location = new System.Drawing.Point(303, 23);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(459, 129);
             this.groupBox1.TabIndex = 0;
@@ -140,7 +140,7 @@
             this.gb_estado.Controls.Add(this.groupBox5);
             this.gb_estado.Controls.Add(this.groupBox6);
             this.gb_estado.Controls.Add(this.bt_estado_imprimir);
-            this.gb_estado.Location = new System.Drawing.Point(303, 185);
+            this.gb_estado.Location = new System.Drawing.Point(12, 173);
             this.gb_estado.Name = "gb_estado";
             this.gb_estado.Size = new System.Drawing.Size(459, 187);
             this.gb_estado.TabIndex = 1;
@@ -250,7 +250,7 @@
             this.gb_estado_buscar.Controls.Add(this.dgv_estado_tabla);
             this.gb_estado_buscar.Controls.Add(this.bt_estado_atras);
             this.gb_estado_buscar.Controls.Add(this.txt_estado_buscar);
-            this.gb_estado_buscar.Location = new System.Drawing.Point(298, 177);
+            this.gb_estado_buscar.Location = new System.Drawing.Point(12, 157);
             this.gb_estado_buscar.Name = "gb_estado_buscar";
             this.gb_estado_buscar.Size = new System.Drawing.Size(458, 197);
             this.gb_estado_buscar.TabIndex = 2;
@@ -292,11 +292,15 @@
             // 
             // bt_salir
             // 
+            this.bt_salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
-            this.bt_salir.Location = new System.Drawing.Point(469, 380);
+            this.bt_salir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_salir.Location = new System.Drawing.Point(922, 501);
             this.bt_salir.Name = "bt_salir";
-            this.bt_salir.Size = new System.Drawing.Size(115, 57);
+            this.bt_salir.Size = new System.Drawing.Size(130, 60);
             this.bt_salir.TabIndex = 3;
+            this.bt_salir.Text = "SALIR";
+            this.bt_salir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_salir.UseVisualStyleBackColor = true;
             this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
             // 

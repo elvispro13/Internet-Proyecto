@@ -36,10 +36,13 @@
             this.gb_c1 = new System.Windows.Forms.GroupBox();
             this.txt_c1 = new System.Windows.Forms.TextBox();
             this.gb_c2 = new System.Windows.Forms.GroupBox();
+            this.bt_calcular = new System.Windows.Forms.Button();
             this.txt_c2 = new System.Windows.Forms.TextBox();
             this.dgv_tabla = new System.Windows.Forms.DataGridView();
             this.cb_inactivos = new System.Windows.Forms.CheckBox();
             this.gb_datos = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.gb_burst_time = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_burst_time_2 = new System.Windows.Forms.TextBox();
@@ -56,9 +59,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_max_limit_2 = new System.Windows.Forms.TextBox();
             this.txt_max_limit_1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.bt_calcular = new System.Windows.Forms.Button();
             this.bt_servicios = new System.Windows.Forms.PictureBox();
             this.bt_nuevo = new System.Windows.Forms.Button();
             this.bt_buscar = new System.Windows.Forms.Button();
@@ -66,6 +66,7 @@
             this.bt_salir = new System.Windows.Forms.Button();
             this.bt_guardar = new System.Windows.Forms.Button();
             this.tm_inicio = new System.Windows.Forms.Timer(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gb_codigo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_c1.SuspendLayout();
@@ -77,12 +78,13 @@
             this.gb_burst_limit.SuspendLayout();
             this.gb_max_limit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_servicios)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_codigo
             // 
             this.gb_codigo.Controls.Add(this.txt_codigo);
-            this.gb_codigo.Location = new System.Drawing.Point(259, 36);
+            this.gb_codigo.Location = new System.Drawing.Point(211, 12);
             this.gb_codigo.Name = "gb_codigo";
             this.gb_codigo.Size = new System.Drawing.Size(234, 51);
             this.gb_codigo.TabIndex = 0;
@@ -99,7 +101,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_descripcion);
-            this.groupBox2.Location = new System.Drawing.Point(259, 93);
+            this.groupBox2.Location = new System.Drawing.Point(211, 70);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(234, 51);
             this.groupBox2.TabIndex = 1;
@@ -119,7 +121,7 @@
             // gb_c1
             // 
             this.gb_c1.Controls.Add(this.txt_c1);
-            this.gb_c1.Location = new System.Drawing.Point(259, 150);
+            this.gb_c1.Location = new System.Drawing.Point(211, 127);
             this.gb_c1.Name = "gb_c1";
             this.gb_c1.Size = new System.Drawing.Size(234, 51);
             this.gb_c1.TabIndex = 2;
@@ -139,18 +141,29 @@
             // 
             this.gb_c2.Controls.Add(this.bt_calcular);
             this.gb_c2.Controls.Add(this.txt_c2);
-            this.gb_c2.Location = new System.Drawing.Point(259, 207);
+            this.gb_c2.Location = new System.Drawing.Point(211, 184);
             this.gb_c2.Name = "gb_c2";
             this.gb_c2.Size = new System.Drawing.Size(234, 51);
             this.gb_c2.TabIndex = 3;
             this.gb_c2.TabStop = false;
             this.gb_c2.Text = "CAMPO2";
             // 
+            // bt_calcular
+            // 
+            this.bt_calcular.Location = new System.Drawing.Point(168, 17);
+            this.bt_calcular.Name = "bt_calcular";
+            this.bt_calcular.Size = new System.Drawing.Size(60, 23);
+            this.bt_calcular.TabIndex = 20;
+            this.bt_calcular.Text = "Calcular";
+            this.bt_calcular.UseVisualStyleBackColor = true;
+            this.bt_calcular.Click += new System.EventHandler(this.bt_calcular_Click);
+            // 
             // txt_c2
             // 
             this.txt_c2.Location = new System.Drawing.Point(6, 19);
             this.txt_c2.MaxLength = 20;
             this.txt_c2.Name = "txt_c2";
+            this.txt_c2.ReadOnly = true;
             this.txt_c2.Size = new System.Drawing.Size(156, 20);
             this.txt_c2.TabIndex = 1;
             this.txt_c2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_c2_KeyPress);
@@ -159,22 +172,25 @@
             // 
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(499, 36);
+            this.dgv_tabla.Location = new System.Drawing.Point(451, 12);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(507, 293);
+            this.dgv_tabla.Size = new System.Drawing.Size(617, 482);
             this.dgv_tabla.TabIndex = 6;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellContentClick);
             // 
             // cb_inactivos
             // 
             this.cb_inactivos.AutoSize = true;
-            this.cb_inactivos.Location = new System.Drawing.Point(790, 405);
+            this.cb_inactivos.Location = new System.Drawing.Point(6, 43);
             this.cb_inactivos.Name = "cb_inactivos";
             this.cb_inactivos.Size = new System.Drawing.Size(87, 17);
             this.cb_inactivos.TabIndex = 18;
@@ -190,12 +206,30 @@
             this.gb_datos.Controls.Add(this.gb_burst_threshold);
             this.gb_datos.Controls.Add(this.gb_burst_limit);
             this.gb_datos.Controls.Add(this.gb_max_limit);
-            this.gb_datos.Location = new System.Drawing.Point(60, 36);
+            this.gb_datos.Location = new System.Drawing.Point(12, 12);
             this.gb_datos.Name = "gb_datos";
             this.gb_datos.Size = new System.Drawing.Size(193, 258);
             this.gb_datos.TabIndex = 19;
             this.gb_datos.TabStop = false;
             this.gb_datos.Text = "DATOS";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(116, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Bajada";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Subida";
             // 
             // gb_burst_time
             // 
@@ -337,37 +371,11 @@
             this.txt_max_limit_1.Size = new System.Drawing.Size(71, 20);
             this.txt_max_limit_1.TabIndex = 2;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Subida";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(116, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Bajada";
-            // 
-            // bt_calcular
-            // 
-            this.bt_calcular.Location = new System.Drawing.Point(168, 19);
-            this.bt_calcular.Name = "bt_calcular";
-            this.bt_calcular.Size = new System.Drawing.Size(60, 23);
-            this.bt_calcular.TabIndex = 20;
-            this.bt_calcular.Text = "Calcular";
-            this.bt_calcular.UseVisualStyleBackColor = true;
-            // 
             // bt_servicios
             // 
+            this.bt_servicios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_servicios.Image = global::Principal_Internet_elvis.Properties.Resources.servicios_grande;
-            this.bt_servicios.Location = new System.Drawing.Point(323, 264);
+            this.bt_servicios.Location = new System.Drawing.Point(181, 506);
             this.bt_servicios.Name = "bt_servicios";
             this.bt_servicios.Size = new System.Drawing.Size(98, 94);
             this.bt_servicios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -378,50 +386,65 @@
             // bt_nuevo
             // 
             this.bt_nuevo.Image = global::Principal_Internet_elvis.Properties.Resources.rounded_add_button_icon_icons_com_72592;
-            this.bt_nuevo.Location = new System.Drawing.Point(259, 381);
+            this.bt_nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_nuevo.Location = new System.Drawing.Point(99, 19);
             this.bt_nuevo.Name = "bt_nuevo";
-            this.bt_nuevo.Size = new System.Drawing.Size(98, 63);
+            this.bt_nuevo.Size = new System.Drawing.Size(130, 63);
             this.bt_nuevo.TabIndex = 10;
+            this.bt_nuevo.Text = "CREAR";
+            this.bt_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_nuevo.UseVisualStyleBackColor = true;
             this.bt_nuevo.Click += new System.EventHandler(this.bt_nuevo_Click);
             // 
             // bt_buscar
             // 
             this.bt_buscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
-            this.bt_buscar.Location = new System.Drawing.Point(467, 381);
+            this.bt_buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_buscar.Location = new System.Drawing.Point(371, 19);
             this.bt_buscar.Name = "bt_buscar";
-            this.bt_buscar.Size = new System.Drawing.Size(98, 63);
+            this.bt_buscar.Size = new System.Drawing.Size(130, 63);
             this.bt_buscar.TabIndex = 9;
+            this.bt_buscar.Text = "BUSCAR";
+            this.bt_buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_buscar.UseVisualStyleBackColor = true;
             this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
             // 
             // bt_eliminar
             // 
             this.bt_eliminar.Image = global::Principal_Internet_elvis.Properties.Resources._9;
-            this.bt_eliminar.Location = new System.Drawing.Point(571, 381);
+            this.bt_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_eliminar.Location = new System.Drawing.Point(507, 19);
             this.bt_eliminar.Name = "bt_eliminar";
-            this.bt_eliminar.Size = new System.Drawing.Size(98, 63);
+            this.bt_eliminar.Size = new System.Drawing.Size(130, 63);
             this.bt_eliminar.TabIndex = 8;
+            this.bt_eliminar.Text = "ESTADO";
+            this.bt_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_eliminar.UseVisualStyleBackColor = true;
             this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
             // 
             // bt_salir
             // 
-            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_salir.Location = new System.Drawing.Point(675, 381);
+            this.bt_salir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
+            this.bt_salir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_salir.Location = new System.Drawing.Point(643, 19);
             this.bt_salir.Name = "bt_salir";
-            this.bt_salir.Size = new System.Drawing.Size(98, 63);
+            this.bt_salir.Size = new System.Drawing.Size(130, 63);
             this.bt_salir.TabIndex = 5;
+            this.bt_salir.Text = "SALIR";
+            this.bt_salir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_salir.UseVisualStyleBackColor = true;
             this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
             // 
             // bt_guardar
             // 
             this.bt_guardar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
-            this.bt_guardar.Location = new System.Drawing.Point(363, 381);
+            this.bt_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_guardar.Location = new System.Drawing.Point(235, 19);
             this.bt_guardar.Name = "bt_guardar";
-            this.bt_guardar.Size = new System.Drawing.Size(98, 63);
+            this.bt_guardar.Size = new System.Drawing.Size(130, 63);
             this.bt_guardar.TabIndex = 4;
+            this.bt_guardar.Text = "GUARDAR";
+            this.bt_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_guardar.UseVisualStyleBackColor = true;
             this.bt_guardar.Click += new System.EventHandler(this.bt_aceptar_Click);
             // 
@@ -431,21 +454,32 @@
             this.tm_inicio.Interval = 500;
             this.tm_inicio.Tick += new System.EventHandler(this.tm_inicio_Tick);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.bt_nuevo);
+            this.groupBox1.Controls.Add(this.cb_inactivos);
+            this.groupBox1.Controls.Add(this.bt_guardar);
+            this.groupBox1.Controls.Add(this.bt_eliminar);
+            this.groupBox1.Controls.Add(this.bt_salir);
+            this.groupBox1.Controls.Add(this.bt_buscar);
+            this.groupBox1.Location = new System.Drawing.Point(285, 500);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(783, 100);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ACCIONES";
+            // 
             // PaquetesAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1080, 612);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bt_servicios);
             this.Controls.Add(this.gb_datos);
-            this.Controls.Add(this.cb_inactivos);
-            this.Controls.Add(this.bt_nuevo);
-            this.Controls.Add(this.bt_buscar);
-            this.Controls.Add(this.bt_eliminar);
             this.Controls.Add(this.dgv_tabla);
-            this.Controls.Add(this.bt_salir);
-            this.Controls.Add(this.bt_guardar);
             this.Controls.Add(this.gb_c2);
             this.Controls.Add(this.gb_c1);
             this.Controls.Add(this.groupBox2);
@@ -475,8 +509,9 @@
             this.gb_max_limit.ResumeLayout(false);
             this.gb_max_limit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bt_servicios)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -519,5 +554,6 @@
         private System.Windows.Forms.Button bt_calcular;
         private System.Windows.Forms.PictureBox bt_servicios;
         private System.Windows.Forms.Timer tm_inicio;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

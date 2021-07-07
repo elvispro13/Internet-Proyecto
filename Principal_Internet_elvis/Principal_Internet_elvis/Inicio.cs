@@ -1,4 +1,5 @@
 ﻿using Principal_Internet_elvis;
+using Principal_Internet_elvis.Configuraciones;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -81,23 +82,36 @@ namespace Proyecto_Internet
                 Program.menu.desc = rows[0].getCampos()[3];
                 Program.menu.nombre = rows[0].getCampos()[8];
 
+                Program.menu.permisos.Clear();
+                foreach (Capsula c in rows)
+                {
+                    Program.menu.permisos.Add(int.Parse(c.getCampos()[5]), c.getCampos()[6]);
+                }
+
                 ConexionDB conn2 = new ConexionDB();
                 conn2.abrir();
                 DataTable r = conn2.fuente(Program.menu.idu, null, 2);
                 conn2.cerrar();
                 for (int i = 0; i < r.Rows.Count; i++)
                 {
-                    byte[] fuente = (byte[])r.Rows[i]["fuente"];
-                    MemoryStream memorystreamd = new MemoryStream(fuente);
-                    BinaryFormatter bfd = new BinaryFormatter();
-                    Capsula f = bfd.Deserialize(memorystreamd) as Capsula;
-                    Program.menu.fuente = f.getFuente();
-                    Program.actualizarFuente();
+                    try
+                    {
+                        byte[] fuente = (byte[])r.Rows[i]["fuente"];
+                        MemoryStream memorystreamd = new MemoryStream(fuente);
+                        BinaryFormatter bfd = new BinaryFormatter();
+                        Capsula f = bfd.Deserialize(memorystreamd) as Capsula;
+                        Program.menu.fuente = f.getFuente();
+                        Program.actualizarFuente();
+                    }
+                    catch(Exception ex)
+                    {
+
+                    }
                 }
 
                 ConexionDB conn3 = new ConexionDB();
                 conn3.abrir();
-                DataTable m = conn3.empresa(null, null, null, null, null, null, null, null, null, null, 2, 0,0);
+                DataTable m = conn3.empresa(null, null, null, null, null, null, null, null, null, null, 2, 0,0,0);
                 conn3.cerrar();
                 for (int i = 0; i < m.Rows.Count; i++)
                 {
@@ -110,9 +124,10 @@ namespace Proyecto_Internet
                     Program.menu.ide = int.Parse(m.Rows[i]["idempresa"].ToString());
                     Program.menu.mora = m.Rows[i]["mora"].ToString();
                     Program.menu.dias_mora = m.Rows[i]["dias_mora"].ToString();
+                    Program.menu.isv = float.Parse(m.Rows[i]["isv"].ToString());
                 }
 
-                MessageBox.Show("Bienvenido");
+                MessageBox.Show("Bienvenido "+ Program.menu.nombre);
                 Program.menu.Focus();
                 Program.menu.BringToFront();
                 Program.menu.activarConUser();
@@ -142,8 +157,9 @@ namespace Proyecto_Internet
 
         private void btnAjustes_Click(object sender, EventArgs e)
         {
-            Configuracion f = new Configuracion();
-            f.Show();
+            Program.servidorConexion = new ServidorConexion();
+            Program.menu.AbrirFormEnPanel(Program.servidorConexion);
+            Program.servidorConexion.ocultarCerrar();
             Visible = false;
         }
 

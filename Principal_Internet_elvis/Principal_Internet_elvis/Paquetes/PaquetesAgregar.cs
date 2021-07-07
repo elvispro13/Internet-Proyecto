@@ -295,14 +295,10 @@ namespace Principal_Internet_elvis.Paquetes
                 {
                     if (txt_c2.Text.Equals("") || txt_c1.Text.Equals(""))
                     {
-                        MessageBox.Show("Escriba el porcentaje de impuestos.");
+                        MessageBox.Show("Calcule el impuesto.");
                         return;
                     }
-                    float p = float.Parse(txt_c1.Text);
-                    float isv = float.Parse(txt_c2.Text);
-                    isv = (isv / 100) + 1;
-                    isv = p - (p / isv);
-                    txt_c2.Text = "" + isv.ToString("0.00").Replace(",",".");
+                    
                     campos.Add("'" + txt_descripcion.Text + "'");
                     campos.Add("" + txt_c1.Text);
                     campos.Add("" + txt_c2.Text);
@@ -490,6 +486,20 @@ namespace Principal_Internet_elvis.Paquetes
             limpiar();
 
             tm_inicio.Enabled = false;
+        }
+
+        private void bt_calcular_Click(object sender, EventArgs e)
+        {
+            if(txt_c1.Text.Equals(""))
+            {
+                MessageBox.Show("Escriba el precio");
+                return;
+            }
+            float p = float.Parse(txt_c1.Text.Replace(".",","));
+            float isv = Program.menu.isv;
+            isv = (isv / 100) + 1;
+            isv = p - (p / isv);
+            txt_c2.Text = "" + isv.ToString("0.00").Replace(",", ".");
         }
 
         public void addFuente(Font f)

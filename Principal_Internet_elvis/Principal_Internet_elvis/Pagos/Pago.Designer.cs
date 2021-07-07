@@ -46,6 +46,8 @@
             this.btnAtrasConcepto = new System.Windows.Forms.Button();
             this.dgv_tabla_p = new System.Windows.Forms.DataGridView();
             this.gb_paquete = new System.Windows.Forms.GroupBox();
+            this.txt_meses_adelantados = new System.Windows.Forms.TextBox();
+            this.cb_meses_adelantdos = new System.Windows.Forms.CheckBox();
             this.cb_desc_insta = new System.Windows.Forms.CheckBox();
             this.cb_adelantado = new System.Windows.Forms.CheckBox();
             this.dtp_mes_p = new System.Windows.Forms.DateTimePicker();
@@ -66,7 +68,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.img_logo = new System.Windows.Forms.PictureBox();
             this.bt_agregar = new System.Windows.Forms.Button();
             this.bt_borrar = new System.Windows.Forms.Button();
             this.bt_cancelar = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
             this.gb_acciones.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -105,9 +105,9 @@
             this.gb_cliente.Controls.Add(this.label2);
             this.gb_cliente.Controls.Add(this.txt_codigo_c);
             this.gb_cliente.Controls.Add(this.label1);
-            this.gb_cliente.Location = new System.Drawing.Point(255, 12);
+            this.gb_cliente.Location = new System.Drawing.Point(17, 1);
             this.gb_cliente.Name = "gb_cliente";
-            this.gb_cliente.Size = new System.Drawing.Size(509, 188);
+            this.gb_cliente.Size = new System.Drawing.Size(799, 188);
             this.gb_cliente.TabIndex = 0;
             this.gb_cliente.TabStop = false;
             this.gb_cliente.Text = "DATOS DEL CLIENTE";
@@ -116,7 +116,7 @@
             // 
             this.btnbusCLI.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
             this.btnbusCLI.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbusCLI.Location = new System.Drawing.Point(393, 13);
+            this.btnbusCLI.Location = new System.Drawing.Point(685, 7);
             this.btnbusCLI.Name = "btnbusCLI";
             this.btnbusCLI.Size = new System.Drawing.Size(108, 47);
             this.btnbusCLI.TabIndex = 8;
@@ -139,7 +139,7 @@
             this.txt_direccion_c.Location = new System.Drawing.Point(84, 115);
             this.txt_direccion_c.Name = "txt_direccion_c";
             this.txt_direccion_c.ReadOnly = true;
-            this.txt_direccion_c.Size = new System.Drawing.Size(417, 20);
+            this.txt_direccion_c.Size = new System.Drawing.Size(637, 20);
             this.txt_direccion_c.TabIndex = 6;
             // 
             // txt_rtn_c
@@ -147,7 +147,7 @@
             this.txt_rtn_c.Location = new System.Drawing.Point(69, 89);
             this.txt_rtn_c.Name = "txt_rtn_c";
             this.txt_rtn_c.ReadOnly = true;
-            this.txt_rtn_c.Size = new System.Drawing.Size(168, 20);
+            this.txt_rtn_c.Size = new System.Drawing.Size(652, 20);
             this.txt_rtn_c.TabIndex = 5;
             // 
             // label3
@@ -164,7 +164,7 @@
             this.txt_nombre_c.Location = new System.Drawing.Point(69, 63);
             this.txt_nombre_c.Name = "txt_nombre_c";
             this.txt_nombre_c.ReadOnly = true;
-            this.txt_nombre_c.Size = new System.Drawing.Size(432, 20);
+            this.txt_nombre_c.Size = new System.Drawing.Size(652, 20);
             this.txt_nombre_c.TabIndex = 3;
             // 
             // label2
@@ -181,7 +181,7 @@
             this.txt_codigo_c.Location = new System.Drawing.Point(69, 37);
             this.txt_codigo_c.Name = "txt_codigo_c";
             this.txt_codigo_c.ReadOnly = true;
-            this.txt_codigo_c.Size = new System.Drawing.Size(100, 20);
+            this.txt_codigo_c.Size = new System.Drawing.Size(290, 20);
             this.txt_codigo_c.TabIndex = 1;
             // 
             // label1
@@ -199,9 +199,9 @@
             this.gBusCliente.Controls.Add(this.txt_buscar_c);
             this.gBusCliente.Controls.Add(this.btnAtrasCliente);
             this.gBusCliente.Controls.Add(this.dgv_tabla_c);
-            this.gBusCliente.Location = new System.Drawing.Point(261, 12);
+            this.gBusCliente.Location = new System.Drawing.Point(25, 7);
             this.gBusCliente.Name = "gBusCliente";
-            this.gBusCliente.Size = new System.Drawing.Size(509, 188);
+            this.gBusCliente.Size = new System.Drawing.Size(797, 188);
             this.gBusCliente.TabIndex = 1;
             this.gBusCliente.TabStop = false;
             this.gBusCliente.Text = "BUSCAR CLIENTE";
@@ -211,13 +211,13 @@
             this.txt_buscar_c.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_buscar_c.Location = new System.Drawing.Point(9, 14);
             this.txt_buscar_c.Name = "txt_buscar_c";
-            this.txt_buscar_c.Size = new System.Drawing.Size(411, 20);
+            this.txt_buscar_c.Size = new System.Drawing.Size(695, 20);
             this.txt_buscar_c.TabIndex = 4;
             this.txt_buscar_c.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_c_KeyDown);
             // 
             // btnAtrasCliente
             // 
-            this.btnAtrasCliente.Location = new System.Drawing.Point(426, 12);
+            this.btnAtrasCliente.Location = new System.Drawing.Point(713, 13);
             this.btnAtrasCliente.Name = "btnAtrasCliente";
             this.btnAtrasCliente.Size = new System.Drawing.Size(75, 23);
             this.btnAtrasCliente.TabIndex = 1;
@@ -235,7 +235,7 @@
             this.dgv_tabla_c.Name = "dgv_tabla_c";
             this.dgv_tabla_c.ReadOnly = true;
             this.dgv_tabla_c.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla_c.Size = new System.Drawing.Size(495, 137);
+            this.dgv_tabla_c.Size = new System.Drawing.Size(782, 137);
             this.dgv_tabla_c.TabIndex = 0;
             this.dgv_tabla_c.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_c_CellDoubleClick);
             // 
@@ -244,16 +244,16 @@
             this.gBusConcep.BackColor = System.Drawing.Color.White;
             this.gBusConcep.Controls.Add(this.btnAtrasConcepto);
             this.gBusConcep.Controls.Add(this.dgv_tabla_p);
-            this.gBusConcep.Location = new System.Drawing.Point(261, 206);
+            this.gBusConcep.Location = new System.Drawing.Point(26, 206);
             this.gBusConcep.Name = "gBusConcep";
-            this.gBusConcep.Size = new System.Drawing.Size(509, 185);
+            this.gBusConcep.Size = new System.Drawing.Size(796, 185);
             this.gBusConcep.TabIndex = 6;
             this.gBusConcep.TabStop = false;
             this.gBusConcep.Text = "BUSCAR PAQUETE";
             // 
             // btnAtrasConcepto
             // 
-            this.btnAtrasConcepto.Location = new System.Drawing.Point(420, 15);
+            this.btnAtrasConcepto.Location = new System.Drawing.Point(709, 10);
             this.btnAtrasConcepto.Name = "btnAtrasConcepto";
             this.btnAtrasConcepto.Size = new System.Drawing.Size(75, 23);
             this.btnAtrasConcepto.TabIndex = 1;
@@ -271,13 +271,15 @@
             this.dgv_tabla_p.Name = "dgv_tabla_p";
             this.dgv_tabla_p.ReadOnly = true;
             this.dgv_tabla_p.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla_p.Size = new System.Drawing.Size(489, 138);
+            this.dgv_tabla_p.Size = new System.Drawing.Size(784, 138);
             this.dgv_tabla_p.TabIndex = 0;
             this.dgv_tabla_p.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_p_CellDoubleClick);
             // 
             // gb_paquete
             // 
             this.gb_paquete.BackColor = System.Drawing.Color.White;
+            this.gb_paquete.Controls.Add(this.txt_meses_adelantados);
+            this.gb_paquete.Controls.Add(this.cb_meses_adelantdos);
             this.gb_paquete.Controls.Add(this.cb_desc_insta);
             this.gb_paquete.Controls.Add(this.cb_adelantado);
             this.gb_paquete.Controls.Add(this.dtp_mes_p);
@@ -289,19 +291,38 @@
             this.gb_paquete.Controls.Add(this.label7);
             this.gb_paquete.Controls.Add(this.txt_codigo_p);
             this.gb_paquete.Controls.Add(this.label8);
-            this.gb_paquete.Location = new System.Drawing.Point(255, 208);
+            this.gb_paquete.Location = new System.Drawing.Point(17, 206);
             this.gb_paquete.Name = "gb_paquete";
-            this.gb_paquete.Size = new System.Drawing.Size(509, 179);
+            this.gb_paquete.Size = new System.Drawing.Size(799, 179);
             this.gb_paquete.TabIndex = 5;
             this.gb_paquete.TabStop = false;
             this.gb_paquete.Text = "PAGO";
+            // 
+            // txt_meses_adelantados
+            // 
+            this.txt_meses_adelantados.Location = new System.Drawing.Point(606, 135);
+            this.txt_meses_adelantados.Name = "txt_meses_adelantados";
+            this.txt_meses_adelantados.Size = new System.Drawing.Size(71, 20);
+            this.txt_meses_adelantados.TabIndex = 12;
+            this.txt_meses_adelantados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_meses_adelantados_KeyPress);
+            // 
+            // cb_meses_adelantdos
+            // 
+            this.cb_meses_adelantdos.AutoSize = true;
+            this.cb_meses_adelantdos.Location = new System.Drawing.Point(606, 104);
+            this.cb_meses_adelantdos.Name = "cb_meses_adelantdos";
+            this.cb_meses_adelantdos.Size = new System.Drawing.Size(146, 17);
+            this.cb_meses_adelantdos.TabIndex = 11;
+            this.cb_meses_adelantdos.Text = "MESES ADELANTADOS";
+            this.cb_meses_adelantdos.UseVisualStyleBackColor = true;
+            this.cb_meses_adelantdos.CheckedChanged += new System.EventHandler(this.cb_meses_adelantdos_CheckedChanged);
             // 
             // cb_desc_insta
             // 
             this.cb_desc_insta.AutoSize = true;
             this.cb_desc_insta.Checked = true;
             this.cb_desc_insta.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_desc_insta.Location = new System.Drawing.Point(215, 143);
+            this.cb_desc_insta.Location = new System.Drawing.Point(8, 148);
             this.cb_desc_insta.Name = "cb_desc_insta";
             this.cb_desc_insta.Size = new System.Drawing.Size(177, 17);
             this.cb_desc_insta.TabIndex = 10;
@@ -311,11 +332,11 @@
             // cb_adelantado
             // 
             this.cb_adelantado.AutoSize = true;
-            this.cb_adelantado.Location = new System.Drawing.Point(15, 143);
+            this.cb_adelantado.Location = new System.Drawing.Point(9, 125);
             this.cb_adelantado.Name = "cb_adelantado";
-            this.cb_adelantado.Size = new System.Drawing.Size(125, 17);
+            this.cb_adelantado.Size = new System.Drawing.Size(219, 17);
             this.cb_adelantado.TabIndex = 9;
-            this.cb_adelantado.Text = "MES ADELANTADO";
+            this.cb_adelantado.Text = "MES ADELANTADO PERSONALIZADO";
             this.cb_adelantado.UseVisualStyleBackColor = true;
             this.cb_adelantado.CheckedChanged += new System.EventHandler(this.cb_adelantado_CheckedChanged);
             // 
@@ -325,7 +346,7 @@
             this.dtp_mes_p.Enabled = false;
             this.dtp_mes_p.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_mes_p.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtp_mes_p.Location = new System.Drawing.Point(375, 99);
+            this.dtp_mes_p.Location = new System.Drawing.Point(412, 99);
             this.dtp_mes_p.Name = "dtp_mes_p";
             this.dtp_mes_p.ShowUpDown = true;
             this.dtp_mes_p.Size = new System.Drawing.Size(126, 20);
@@ -336,7 +357,7 @@
             // 
             this.btnBusCON.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
             this.btnBusCON.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusCON.Location = new System.Drawing.Point(393, 14);
+            this.btnBusCON.Location = new System.Drawing.Point(685, 7);
             this.btnBusCON.Name = "btnBusCON";
             this.btnBusCON.Size = new System.Drawing.Size(108, 47);
             this.btnBusCON.TabIndex = 8;
@@ -348,7 +369,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(270, 102);
+            this.label5.Location = new System.Drawing.Point(310, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 7;
@@ -359,7 +380,7 @@
             this.txt_monto_p.Location = new System.Drawing.Point(94, 99);
             this.txt_monto_p.Name = "txt_monto_p";
             this.txt_monto_p.ReadOnly = true;
-            this.txt_monto_p.Size = new System.Drawing.Size(143, 20);
+            this.txt_monto_p.Size = new System.Drawing.Size(210, 20);
             this.txt_monto_p.TabIndex = 5;
             // 
             // label6
@@ -375,7 +396,7 @@
             // 
             this.txt_descripcion_p.Location = new System.Drawing.Point(94, 67);
             this.txt_descripcion_p.Name = "txt_descripcion_p";
-            this.txt_descripcion_p.Size = new System.Drawing.Size(407, 20);
+            this.txt_descripcion_p.Size = new System.Drawing.Size(604, 20);
             this.txt_descripcion_p.TabIndex = 3;
             // 
             // label7
@@ -392,7 +413,7 @@
             this.txt_codigo_p.Location = new System.Drawing.Point(94, 38);
             this.txt_codigo_p.Name = "txt_codigo_p";
             this.txt_codigo_p.ReadOnly = true;
-            this.txt_codigo_p.Size = new System.Drawing.Size(100, 20);
+            this.txt_codigo_p.Size = new System.Drawing.Size(265, 20);
             this.txt_codigo_p.TabIndex = 1;
             // 
             // label8
@@ -406,8 +427,9 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.dtp_fechaemision);
-            this.groupBox6.Location = new System.Drawing.Point(771, 66);
+            this.groupBox6.Location = new System.Drawing.Point(855, 71);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(213, 65);
             this.groupBox6.TabIndex = 8;
@@ -423,10 +445,13 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.dgv_detalles);
-            this.groupBox7.Location = new System.Drawing.Point(66, 397);
+            this.groupBox7.Location = new System.Drawing.Point(17, 397);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(923, 256);
+            this.groupBox7.Size = new System.Drawing.Size(844, 256);
             this.groupBox7.TabIndex = 13;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "DETALLE DEL COMPROBANTE DE PAGO";
@@ -435,30 +460,35 @@
             // 
             this.dgv_detalles.AllowUserToAddRows = false;
             this.dgv_detalles.AllowUserToDeleteRows = false;
+            this.dgv_detalles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_detalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_detalles.Location = new System.Drawing.Point(6, 19);
             this.dgv_detalles.Name = "dgv_detalles";
             this.dgv_detalles.ReadOnly = true;
             this.dgv_detalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_detalles.Size = new System.Drawing.Size(910, 231);
+            this.dgv_detalles.Size = new System.Drawing.Size(832, 231);
             this.dgv_detalles.TabIndex = 0;
             this.dgv_detalles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_detalles_CellClick);
             // 
             // txt_totalpagar
             // 
+            this.txt_totalpagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_totalpagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_totalpagar.Location = new System.Drawing.Point(842, 676);
+            this.txt_totalpagar.Location = new System.Drawing.Point(889, 695);
             this.txt_totalpagar.Name = "txt_totalpagar";
             this.txt_totalpagar.ReadOnly = true;
-            this.txt_totalpagar.Size = new System.Drawing.Size(142, 20);
+            this.txt_totalpagar.Size = new System.Drawing.Size(179, 20);
             this.txt_totalpagar.TabIndex = 10;
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(683, 676);
+            this.label9.Location = new System.Drawing.Point(908, 672);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(153, 20);
             this.label9.TabIndex = 9;
@@ -466,11 +496,12 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(224, 659);
+            this.btnSalir.Location = new System.Drawing.Point(175, 660);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(152, 55);
+            this.btnSalir.Size = new System.Drawing.Size(152, 60);
             this.btnSalir.TabIndex = 15;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -479,13 +510,14 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnImprimir.Enabled = false;
             this.btnImprimir.Image = global::Principal_Internet_elvis.Properties.Resources.Print_icon_icons_com_55835;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(382, 659);
+            this.btnImprimir.Location = new System.Drawing.Point(333, 660);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(152, 55);
+            this.btnImprimir.Size = new System.Drawing.Size(152, 60);
             this.btnImprimir.TabIndex = 14;
             this.btnImprimir.Text = "IMPRIMIR";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -495,25 +527,17 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGuardar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958_1_;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(64, 659);
+            this.btnGuardar.Location = new System.Drawing.Point(17, 660);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(152, 55);
+            this.btnGuardar.Size = new System.Drawing.Size(152, 60);
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // img_logo
-            // 
-            this.img_logo.Location = new System.Drawing.Point(72, 101);
-            this.img_logo.Name = "img_logo";
-            this.img_logo.Size = new System.Drawing.Size(167, 135);
-            this.img_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.img_logo.TabIndex = 12;
-            this.img_logo.TabStop = false;
             // 
             // bt_agregar
             // 
@@ -553,10 +577,11 @@
             // 
             // gb_acciones
             // 
+            this.gb_acciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_acciones.Controls.Add(this.bt_agregar);
             this.gb_acciones.Controls.Add(this.bt_borrar);
             this.gb_acciones.Controls.Add(this.bt_cancelar);
-            this.gb_acciones.Location = new System.Drawing.Point(771, 137);
+            this.gb_acciones.Location = new System.Drawing.Point(861, 216);
             this.gb_acciones.Name = "gb_acciones";
             this.gb_acciones.Size = new System.Drawing.Size(213, 152);
             this.gb_acciones.TabIndex = 16;
@@ -568,9 +593,8 @@
             this.cb_tipopago.FormattingEnabled = true;
             this.cb_tipopago.Items.AddRange(new object[] {
             "EFECTIVO",
-            "TARGETA DE CREDITO",
-            "DEPOSITO BANCARIO",
-            "TIGO MONEY"});
+            "TARJETA DE CREDITO",
+            "DEPOSITO BANCARIO"});
             this.cb_tipopago.Location = new System.Drawing.Point(6, 19);
             this.cb_tipopago.Name = "cb_tipopago";
             this.cb_tipopago.Size = new System.Drawing.Size(194, 21);
@@ -579,8 +603,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.cb_tipopago);
-            this.groupBox1.Location = new System.Drawing.Point(777, 295);
+            this.groupBox1.Location = new System.Drawing.Point(867, 466);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(207, 48);
             this.groupBox1.TabIndex = 18;
@@ -589,8 +614,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txt_efectivo);
-            this.groupBox2.Location = new System.Drawing.Point(777, 349);
+            this.groupBox2.Location = new System.Drawing.Point(867, 520);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(97, 48);
             this.groupBox2.TabIndex = 19;
@@ -610,8 +636,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.txt_cambio);
-            this.groupBox3.Location = new System.Drawing.Point(880, 349);
+            this.groupBox3.Location = new System.Drawing.Point(970, 520);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(104, 48);
             this.groupBox3.TabIndex = 20;
@@ -645,7 +672,6 @@
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.img_logo);
             this.Controls.Add(this.gBusConcep);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.gBusCliente);
@@ -668,7 +694,6 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_logo)).EndInit();
             this.gb_acciones.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -714,7 +739,6 @@
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.Button bt_borrar;
         private System.Windows.Forms.Button bt_agregar;
-        private System.Windows.Forms.PictureBox img_logo;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.DataGridView dgv_detalles;
         private System.Windows.Forms.Button btnGuardar;
@@ -731,5 +755,7 @@
         private System.Windows.Forms.TextBox txt_cambio;
         private System.Windows.Forms.CheckBox cb_adelantado;
         private System.Windows.Forms.CheckBox cb_desc_insta;
+        private System.Windows.Forms.TextBox txt_meses_adelantados;
+        private System.Windows.Forms.CheckBox cb_meses_adelantdos;
     }
 }

@@ -117,6 +117,8 @@ namespace Principal_Internet_elvis.Paquetes
                 String ip = Program.menu.getIP(rows2[0].getCampos()[0]);
                 txt_ip.Text = ip;
                 txt_gateway.Text = ip.Split('.')[0] + "." + ip.Split('.')[1] + "." + ip.Split('.')[2] + ".1";
+                txt_mora.Text = "" + Program.menu.mora;
+                txt_dias_mora.Text = "" + Program.menu.dias_mora;
             }
 
 
@@ -164,7 +166,8 @@ namespace Principal_Internet_elvis.Paquetes
                     txt_max_limit_2.Text.Equals("") || txt_burst_limit_1.Text.Equals("") ||
                     txt_burst_limit_2.Text.Equals("") || txt_burst_threshold_1.Text.Equals("") ||
                     txt_burst_threshold_2.Text.Equals("") || txt_burst_time_1.Text.Equals("") ||
-                    txt_burst_time_2.Text.Equals(""))
+                    txt_burst_time_2.Text.Equals("") || txt_mora.Text.Equals("") ||
+                    txt_dias_mora.Text.Equals(""))
                 {
                     MessageBox.Show("Llene los campos.");
                     return;
@@ -190,6 +193,8 @@ namespace Principal_Internet_elvis.Paquetes
                         campos2.Add("'" + txt_burst_limit_1.Text + "/" + txt_burst_limit_2.Text + "'");
                         campos2.Add("'" + txt_burst_threshold_1.Text + "/" + txt_burst_threshold_2.Text + "'");
                         campos2.Add("'" + txt_burst_time_1.Text + "/" + txt_burst_time_2.Text + "'");
+                        campos2.Add("" + txt_mora.Text);
+                        campos2.Add("" + txt_dias_mora.Text);
                         conn2.insertar("sp_insertar_clientepaquete", campos2);
                         conn2.cerrar();
                     }

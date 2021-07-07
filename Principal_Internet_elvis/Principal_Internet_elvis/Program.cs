@@ -27,10 +27,12 @@ namespace Principal_Internet_elvis
         public static Principal principal;
         public static Inicio inicio;
         public static Usuarios usuarios;
+        public static Permisos permisos;
         public static Opciones OpCliente; 
 
         public static Configuracion configuracion;
         public static ConfiguracionLogo configuracionLogo;
+        public static ServidorConexion servidorConexion;
 
         public static UbicacionTipo ubicacionTipo;
         public static UbicacionAgregar ubicacionAgregar;

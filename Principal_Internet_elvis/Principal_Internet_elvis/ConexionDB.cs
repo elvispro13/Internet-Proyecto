@@ -12,9 +12,8 @@ namespace Principal_Internet_elvis
 {
     class ConexionDB
     {
-        public string servar = "none";
-        string db = "proyecto";
-        string conexion;
+        string conexion = "";
+        public string server = "", user = "", pass = "", db = "";
         public SqlConnection conectardb = new SqlConnection();
         public SqlCommand cmd;
         public SqlDataReader rd;
@@ -23,7 +22,7 @@ namespace Principal_Internet_elvis
 
         public ConexionDB()
         {
-            try
+            /*try
             {
                 string ruta = Application.StartupPath + "\\config.txt";
                 if (File.Exists(ruta))
@@ -44,11 +43,30 @@ namespace Principal_Internet_elvis
             catch(Exception ex)
             {
 
-            }
+            }*/
 
             //conexion = "Data Source=" + servar + ";Initial Catalog="+ db + ";Integrated Security=true";
-            conexion = "Data Source=" + servar + ";Initial Catalog="+ db + ";Uid=elvis;pwd=adoni123;";
-            conectardb.ConnectionString = conexion;
+            string ruta = Application.StartupPath + "\\config.txt";
+            try
+            {
+                using (Stream st = File.Open(ruta, FileMode.Open))
+                {
+                    var binfor = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                    DatosConexionSql d = (DatosConexionSql)binfor.Deserialize(st);
+                    server = d.server;
+                    user = d.user;
+                    pass = d.pass;
+                    db = d.db;
+
+                    conexion = "Data Source=" + server + ";Initial Catalog=" + db + ";Uid=" + user + ";pwd=" + pass + ";";
+                    conectardb.ConnectionString = conexion;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public void abrir()
@@ -103,7 +121,8 @@ namespace Principal_Internet_elvis
             string moneda,
             int tipo,
             float mora,
-            int dias_mora)
+            int dias_mora,
+            float isv)
         {
             try
             {
@@ -126,6 +145,7 @@ namespace Principal_Internet_elvis
                     cmd.Parameters.Add("@moneda", SqlDbType.NVarChar).Value = moneda;
                     cmd.Parameters.Add("@mora", SqlDbType.Float).Value = mora;
                     cmd.Parameters.Add("@dias_mora", SqlDbType.Int).Value = dias_mora;
+                    cmd.Parameters.Add("@isv", SqlDbType.Float).Value = isv;
                 }
 
                 da = new SqlDataAdapter(cmd);

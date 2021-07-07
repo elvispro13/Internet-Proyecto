@@ -82,7 +82,7 @@ namespace Principal_Internet_elvis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(603, 394);
             this.Controls.Add(this.lb_titulo);
             this.Controls.Add(this.bt_salir);

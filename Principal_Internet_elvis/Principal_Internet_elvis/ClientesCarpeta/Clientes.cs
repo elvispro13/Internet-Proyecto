@@ -89,6 +89,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             Program.ubicacionElegir = new UbicacionElegir();
             Program.ubicacionElegir.Text = "ELEGIR-LUGAR";
             Program.ubicacionElegir.ruta = "Elegir lugar";
+            Program.ubicacionElegir.retorno = this;
             Program.menu.AbrirFormEnPanel(Program.ubicacionElegir);
         }
 
@@ -104,7 +105,8 @@ namespace Principal_Internet_elvis.ClientesCarpeta
 
         private void seleccionar()
         {
-            txt_codigo.Text = dgv_tabla.Rows[row].Cells["idcliente"].Value.ToString();
+            int codigo = int.Parse(dgv_tabla.Rows[row].Cells["idcliente"].Value.ToString());
+            txt_codigo.Text = codigo.ToString("D10");
             txt_nombre.Text = dgv_tabla.Rows[row].Cells["nombre"].Value.ToString();
             txt_rtn.Text = dgv_tabla.Rows[row].Cells["rtn"].Value.ToString();
             txt_telefono.Text = dgv_tabla.Rows[row].Cells["telefono"].Value.ToString();
@@ -184,6 +186,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
                 List<string> campos = new List<string>();
+
                 campos.Add("'" + txt_nombre.Text + "'");
                 campos.Add("'" + txt_rtn.Text + "'");
                 campos.Add("'" + txt_telefono.Text + "'");
@@ -211,7 +214,8 @@ namespace Principal_Internet_elvis.ClientesCarpeta
                 ConexionDB conn2 = new ConexionDB();
                 conn2.abrir();
                 List<string> campos2 = new List<string>();
-                campos2.Add("" + txt_codigo.Text);
+
+                campos2.Add("" + int.Parse(txt_codigo.Text));
                 campos2.Add("'" + txt_nombre.Text + "'");
                 campos2.Add("'" + txt_rtn.Text + "'");
                 campos2.Add("'" + txt_telefono.Text + "'");
@@ -252,7 +256,7 @@ namespace Principal_Internet_elvis.ClientesCarpeta
             ConexionDB conn2 = new ConexionDB();
             conn2.abrir();
             List<string> campos2 = new List<string>();
-            campos2.Add("" + txt_codigo.Text);
+            campos2.Add("" + int.Parse(txt_codigo.Text));
             campos2.Add("1");
             if (estado == 1)
             {

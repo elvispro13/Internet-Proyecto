@@ -22,30 +22,6 @@ namespace Principal_Internet_elvis
             InitializeComponent();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            if(txt_server.Text == "")
-            {
-                MessageBox.Show("Llene los campos.");
-                return;
-            }
-
-            try
-            {
-                string ruta = Application.StartupPath + "\\config.txt";
-                StreamWriter streamWriter = new StreamWriter(ruta);
-                streamWriter.WriteLine(txt_server.Text);
-                streamWriter.Close();
-                Inicio f = new Inicio();
-                f.Show();
-                this.Close();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Problema al guardar");
-            }
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Program.menu.bt_inicio_Click(null,null);
@@ -64,8 +40,6 @@ namespace Principal_Internet_elvis
 
         private void Configuracion_Load(object sender, EventArgs e)
         {
-            ConexionDB conn = new ConexionDB();
-            txt_server.Text = conn.servar;
             addFuente(Program.menu.fuente);
         }
 
@@ -83,7 +57,7 @@ namespace Principal_Internet_elvis
 
                 ConexionDB conn = new ConexionDB();
                 conn.abrir();
-                DataTable r = conn.fuente(Program.principal.idu,fuente,1);
+                DataTable r = conn.fuente(Program.menu.idu,fuente,1);
                 conn.cerrar();
 
                 for(int i = 0; i < r.Rows.Count; i++)
@@ -91,7 +65,7 @@ namespace Principal_Internet_elvis
                     MessageBox.Show(r.Rows[i]["mensaje"].ToString());
                 }
 
-                Program.principal.fuente = f.getFuente();
+                Program.menu.fuente = f.getFuente();
                 Program.actualizarFuente();
 
                 addFuente(f.getFuente());
@@ -155,8 +129,18 @@ namespace Principal_Internet_elvis
         {
             Program.usuarios = new Usuarios();
             Program.usuarios.Text = "USUARIOS";
-            Program.usuarios.Show();
-            Program.usuarios.Focus();
+            Program.usuarios.retorno = this;
+            Program.usuarios.ruta = "Usuarios/";
+            Program.menu.AbrirFormEnPanel(Program.usuarios);
+        }
+
+        private void bt_servidor_Click(object sender, EventArgs e)
+        {
+            Program.servidorConexion = new ServidorConexion();
+            Program.servidorConexion.retorno = this;
+            Program.servidorConexion.ruta = "Servidor/";
+            Program.menu.AbrirFormEnPanel(Program.servidorConexion);
+            Program.servidorConexion.Focus();
         }
     }
 }

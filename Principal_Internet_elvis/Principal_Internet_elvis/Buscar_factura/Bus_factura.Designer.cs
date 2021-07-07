@@ -45,9 +45,10 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(75, 373);
+            this.btnSalir.Location = new System.Drawing.Point(953, 541);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(115, 59);
             this.btnSalir.TabIndex = 9;
@@ -60,27 +61,30 @@
             // 
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(357, 12);
+            this.dgv_tabla.Location = new System.Drawing.Point(294, 12);
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(621, 420);
+            this.dgv_tabla.Size = new System.Drawing.Size(774, 523);
             this.dgv_tabla.TabIndex = 8;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.bt_imprimir);
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txt_buscar);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpDesde);
             this.groupBox1.Controls.Add(this.dtpHasta);
-            this.groupBox1.Location = new System.Drawing.Point(75, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(276, 196);
             this.groupBox1.TabIndex = 7;
@@ -91,7 +95,7 @@
             // 
             this.bt_imprimir.Image = global::Principal_Internet_elvis.Properties.Resources.Print_icon_icons_com_55835;
             this.bt_imprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_imprimir.Location = new System.Drawing.Point(138, 143);
+            this.bt_imprimir.Location = new System.Drawing.Point(135, 147);
             this.bt_imprimir.Name = "bt_imprimir";
             this.bt_imprimir.Size = new System.Drawing.Size(132, 43);
             this.bt_imprimir.TabIndex = 6;
@@ -104,7 +108,7 @@
             // 
             this.btnBuscar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(9, 143);
+            this.btnBuscar.Location = new System.Drawing.Point(6, 147);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(123, 43);
             this.btnBuscar.TabIndex = 4;

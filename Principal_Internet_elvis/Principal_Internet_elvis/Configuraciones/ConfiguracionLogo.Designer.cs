@@ -57,6 +57,10 @@
             this.txt_mora = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_dias_mora = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_isv = new System.Windows.Forms.TextBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gb_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.gb_nombre.SuspendLayout();
@@ -70,6 +74,8 @@
             this.groupBox10.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_logo
@@ -84,7 +90,7 @@
             this.gb_logo.Controls.Add(this.pb_logo);
             this.gb_logo.Controls.Add(this.bt_logo);
             this.gb_logo.Controls.Add(this.txt_logo);
-            this.gb_logo.Location = new System.Drawing.Point(144, 37);
+            this.gb_logo.Location = new System.Drawing.Point(12, 12);
             this.gb_logo.Name = "gb_logo";
             this.gb_logo.Size = new System.Drawing.Size(242, 276);
             this.gb_logo.TabIndex = 1;
@@ -116,30 +122,38 @@
             // 
             // bt_aceptar
             // 
+            this.bt_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958;
-            this.bt_aceptar.Location = new System.Drawing.Point(144, 319);
+            this.bt_aceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_aceptar.Location = new System.Drawing.Point(770, 477);
             this.bt_aceptar.Name = "bt_aceptar";
-            this.bt_aceptar.Size = new System.Drawing.Size(123, 55);
+            this.bt_aceptar.Size = new System.Drawing.Size(130, 68);
             this.bt_aceptar.TabIndex = 2;
+            this.bt_aceptar.Text = "GUARGAR";
+            this.bt_aceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_aceptar.UseVisualStyleBackColor = true;
             this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_cancelar.Location = new System.Drawing.Point(273, 319);
+            this.bt_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_cancelar.Image = global::Principal_Internet_elvis.Properties.Resources._8;
+            this.bt_cancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cancelar.Location = new System.Drawing.Point(906, 477);
             this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(123, 55);
+            this.bt_cancelar.Size = new System.Drawing.Size(130, 68);
             this.bt_cancelar.TabIndex = 3;
+            this.bt_cancelar.Text = "SALIR";
+            this.bt_cancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_cancelar.UseVisualStyleBackColor = true;
             this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
             // gb_nombre
             // 
             this.gb_nombre.Controls.Add(this.txt_nombre);
-            this.gb_nombre.Location = new System.Drawing.Point(392, 37);
+            this.gb_nombre.Location = new System.Drawing.Point(260, 12);
             this.gb_nombre.Name = "gb_nombre";
-            this.gb_nombre.Size = new System.Drawing.Size(209, 50);
+            this.gb_nombre.Size = new System.Drawing.Size(259, 50);
             this.gb_nombre.TabIndex = 4;
             this.gb_nombre.TabStop = false;
             this.gb_nombre.Text = "NOMBRE";
@@ -149,15 +163,15 @@
             this.txt_nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombre.Location = new System.Drawing.Point(6, 19);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(197, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(247, 20);
             this.txt_nombre.TabIndex = 0;
             // 
             // gb_eslogan
             // 
             this.gb_eslogan.Controls.Add(this.txt_eslogan);
-            this.gb_eslogan.Location = new System.Drawing.Point(392, 93);
+            this.gb_eslogan.Location = new System.Drawing.Point(260, 68);
             this.gb_eslogan.Name = "gb_eslogan";
-            this.gb_eslogan.Size = new System.Drawing.Size(209, 50);
+            this.gb_eslogan.Size = new System.Drawing.Size(259, 50);
             this.gb_eslogan.TabIndex = 5;
             this.gb_eslogan.TabStop = false;
             this.gb_eslogan.Text = "ESLOGAN";
@@ -167,15 +181,15 @@
             this.txt_eslogan.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_eslogan.Location = new System.Drawing.Point(6, 19);
             this.txt_eslogan.Name = "txt_eslogan";
-            this.txt_eslogan.Size = new System.Drawing.Size(197, 20);
+            this.txt_eslogan.Size = new System.Drawing.Size(247, 20);
             this.txt_eslogan.TabIndex = 0;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txt_rtn);
-            this.groupBox4.Location = new System.Drawing.Point(392, 149);
+            this.groupBox4.Location = new System.Drawing.Point(260, 124);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(209, 50);
+            this.groupBox4.Size = new System.Drawing.Size(259, 50);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "RTN";
@@ -185,15 +199,15 @@
             this.txt_rtn.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_rtn.Location = new System.Drawing.Point(6, 19);
             this.txt_rtn.Name = "txt_rtn";
-            this.txt_rtn.Size = new System.Drawing.Size(197, 20);
+            this.txt_rtn.Size = new System.Drawing.Size(247, 20);
             this.txt_rtn.TabIndex = 0;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.txt_cai);
-            this.groupBox5.Location = new System.Drawing.Point(392, 205);
+            this.groupBox5.Location = new System.Drawing.Point(260, 180);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(209, 50);
+            this.groupBox5.Size = new System.Drawing.Size(259, 50);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "CAI";
@@ -203,15 +217,15 @@
             this.txt_cai.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_cai.Location = new System.Drawing.Point(6, 19);
             this.txt_cai.Name = "txt_cai";
-            this.txt_cai.Size = new System.Drawing.Size(197, 20);
+            this.txt_cai.Size = new System.Drawing.Size(247, 20);
             this.txt_cai.TabIndex = 0;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.txt_correo);
-            this.groupBox6.Location = new System.Drawing.Point(392, 261);
+            this.groupBox6.Location = new System.Drawing.Point(260, 238);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(209, 50);
+            this.groupBox6.Size = new System.Drawing.Size(259, 50);
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "CORREO";
@@ -220,15 +234,16 @@
             // 
             this.txt_correo.Location = new System.Drawing.Point(6, 19);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(197, 20);
+            this.txt_correo.Size = new System.Drawing.Size(247, 20);
             this.txt_correo.TabIndex = 0;
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.dtp_fechalimite);
-            this.groupBox7.Location = new System.Drawing.Point(677, 37);
+            this.groupBox7.Location = new System.Drawing.Point(753, 12);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(208, 50);
+            this.groupBox7.Size = new System.Drawing.Size(283, 50);
             this.groupBox7.TabIndex = 9;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "FECHA LIMITE";
@@ -237,51 +252,54 @@
             // 
             this.dtp_fechalimite.Location = new System.Drawing.Point(6, 16);
             this.dtp_fechalimite.Name = "dtp_fechalimite";
-            this.dtp_fechalimite.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fechalimite.Size = new System.Drawing.Size(271, 20);
             this.dtp_fechalimite.TabIndex = 10;
             // 
             // groupBox8
             // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.txt_desde);
-            this.groupBox8.Location = new System.Drawing.Point(677, 93);
+            this.groupBox8.Location = new System.Drawing.Point(753, 124);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(209, 50);
+            this.groupBox8.Size = new System.Drawing.Size(283, 50);
             this.groupBox8.TabIndex = 10;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "DESDE";
+            this.groupBox8.Text = "RANGO AUTORIZADO  DESDE";
             // 
             // txt_desde
             // 
             this.txt_desde.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_desde.Location = new System.Drawing.Point(6, 19);
             this.txt_desde.Name = "txt_desde";
-            this.txt_desde.Size = new System.Drawing.Size(197, 20);
+            this.txt_desde.Size = new System.Drawing.Size(271, 20);
             this.txt_desde.TabIndex = 0;
             // 
             // groupBox9
             // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox9.Controls.Add(this.txt_hasta);
-            this.groupBox9.Location = new System.Drawing.Point(677, 149);
+            this.groupBox9.Location = new System.Drawing.Point(753, 180);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(209, 50);
+            this.groupBox9.Size = new System.Drawing.Size(283, 50);
             this.groupBox9.TabIndex = 11;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "HASTA";
+            this.groupBox9.Text = "RANGO AUTORIZADO HASTA";
             // 
             // txt_hasta
             // 
             this.txt_hasta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_hasta.Location = new System.Drawing.Point(6, 19);
             this.txt_hasta.Name = "txt_hasta";
-            this.txt_hasta.Size = new System.Drawing.Size(197, 20);
+            this.txt_hasta.Size = new System.Drawing.Size(271, 20);
             this.txt_hasta.TabIndex = 0;
             // 
             // groupBox10
             // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox10.Controls.Add(this.txt_moneda);
-            this.groupBox10.Location = new System.Drawing.Point(677, 205);
+            this.groupBox10.Location = new System.Drawing.Point(753, 236);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(209, 50);
+            this.groupBox10.Size = new System.Drawing.Size(283, 50);
             this.groupBox10.TabIndex = 12;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "SIMBOLO MONEDA";
@@ -291,15 +309,16 @@
             this.txt_moneda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_moneda.Location = new System.Drawing.Point(6, 19);
             this.txt_moneda.Name = "txt_moneda";
-            this.txt_moneda.Size = new System.Drawing.Size(197, 20);
+            this.txt_moneda.Size = new System.Drawing.Size(271, 20);
             this.txt_moneda.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txt_mora);
-            this.groupBox1.Location = new System.Drawing.Point(677, 263);
+            this.groupBox1.Location = new System.Drawing.Point(753, 292);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(209, 50);
+            this.groupBox1.Size = new System.Drawing.Size(283, 50);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MORA APLICADA";
@@ -309,16 +328,17 @@
             this.txt_mora.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_mora.Location = new System.Drawing.Point(6, 19);
             this.txt_mora.Name = "txt_mora";
-            this.txt_mora.Size = new System.Drawing.Size(197, 20);
+            this.txt_mora.Size = new System.Drawing.Size(271, 20);
             this.txt_mora.TabIndex = 0;
             this.txt_mora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_mora_KeyPress);
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txt_dias_mora);
-            this.groupBox2.Location = new System.Drawing.Point(677, 319);
+            this.groupBox2.Location = new System.Drawing.Point(753, 348);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(209, 50);
+            this.groupBox2.Size = new System.Drawing.Size(283, 50);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DIAS PARA APLICAR MORA";
@@ -328,9 +348,46 @@
             this.txt_dias_mora.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_dias_mora.Location = new System.Drawing.Point(6, 19);
             this.txt_dias_mora.Name = "txt_dias_mora";
-            this.txt_dias_mora.Size = new System.Drawing.Size(197, 20);
+            this.txt_dias_mora.Size = new System.Drawing.Size(271, 20);
             this.txt_dias_mora.TabIndex = 0;
             this.txt_dias_mora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_mora_KeyPress);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt_isv);
+            this.groupBox3.Location = new System.Drawing.Point(260, 294);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(259, 50);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "ISV %";
+            // 
+            // txt_isv
+            // 
+            this.txt_isv.Location = new System.Drawing.Point(6, 19);
+            this.txt_isv.Name = "txt_isv";
+            this.txt_isv.Size = new System.Drawing.Size(247, 20);
+            this.txt_isv.TabIndex = 0;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox11.Controls.Add(this.textBox1);
+            this.groupBox11.Location = new System.Drawing.Point(752, 68);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(284, 50);
+            this.groupBox11.TabIndex = 11;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "PRIMEROS DIGITOS DE RANGO";
+            // 
+            // textBox1
+            // 
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox1.Location = new System.Drawing.Point(6, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(272, 20);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "001-001-01";
             // 
             // ConfiguracionLogo
             // 
@@ -338,6 +395,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1048, 557);
+            this.Controls.Add(this.groupBox11);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox10);
@@ -381,6 +440,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -416,5 +479,9 @@
         private System.Windows.Forms.TextBox txt_mora;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_dias_mora;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txt_isv;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

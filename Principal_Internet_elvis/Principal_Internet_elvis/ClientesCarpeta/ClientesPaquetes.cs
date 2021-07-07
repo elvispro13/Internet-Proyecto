@@ -48,8 +48,8 @@ namespace Principal_Internet_elvis.ClientesCarpeta
                 }
                 else if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("SERVICIO ACTIVO"))
                 {
-                    dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
-                    dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    //dgv_tabla.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                    //dgv_tabla.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                 }
                 else if (dgv_tabla.Rows[i].Cells["estado"].Value.ToString().Equals("CORTE DE SERVICIO"))
                 {

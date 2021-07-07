@@ -15,10 +15,10 @@ namespace Principal_Internet_elvis.Pagos
     public partial class Pago : Form
     {
         private int idclientepa = -1, id_men = -1;
-        private float total = -1, desc = -1, isv = -1, totalpagar = 0, subtotal = 0, descuento = 0, impuesto = 0, instalacion = 0, mora = 0;
+        private float total = -1, desc = -1, isv = -1, gravado = -1, totalpagar = 0, subtotal = 0, descuento = 0, impuesto = 0, instalacion = 0, mora = 0;
         private string mensualidad = "";
 
-        private int idfactura;
+        private int idfactura = -1;
 
         DataTable dt = new DataTable();
         private int filadetalles = -1;
@@ -33,12 +33,6 @@ namespace Principal_Internet_elvis.Pagos
         private void Pago_Load(object sender, EventArgs e)
         {
             addFuente(Program.menu.fuente);
-            if (Program.menu.logo != null)
-            {
-                img_logo.Image = Program.menu.logo;
-                img_logo.Visible = true;
-            }
-
             dt.Columns.Add("ID");
             dt.Columns.Add("FECHA");
             dt.Columns.Add("TOTAL");
@@ -276,21 +270,33 @@ namespace Principal_Internet_elvis.Pagos
                     campos.Add("1");
                     campos.Add("" + idclientepa);
                     campos.Add("" + int.Parse(txt_codigo_c.Text));
-                    campos.Add("'" + dtp_mes_p.Value.ToString("yyyy/MM/dd") + "'");
+                    campos.Add("'" + dtp_mes_p.Value.ToString("yyyy/MM/dd") + "'"); // fecha de pago
+                    //campos.Add("'2020/12/24'"); // fecha de pago
+                    //MessageBox.Show("'" + dtp_mes_p.Value.ToString("yyyy/MM/dd") + "'");
                     campos.Add("" + dgv_tabla_p.Rows[row].Cells["instalacion"].Value.ToString());
                     campos.Add("" + dgv_tabla_p.Rows[row].Cells["mora"].Value.ToString());
                     campos.Add("" + dgv_tabla_p.Rows[row].Cells["dias_mora"].Value.ToString());
+                    if(cb_meses_adelantdos.Checked == false || txt_meses_adelantados.Text == "")
+                    {
+                        campos.Add("0");
+                    }
+                    else
+                    {
+                        campos.Add("" + txt_meses_adelantados.Text);
+                    }
                     conn.llenarTabla("sp_buscar_meses", campos, dgv_tabla_p);
                     conn.cerrar();
                     dgv_tabla_p.Columns["id"].Visible = false;
                     dgv_tabla_p.Columns["fecha"].Visible = false;
+                    dgv_tabla_p.Columns["idp"].Visible = false;
 
                     for (int i = 0; i < dgv_tabla_p.Rows.Count; i++)
                     {
                         for (int m = 0; m < dt.Rows.Count; m++)
                         {
                             DataRow mm = dt.Rows[m];
-                            if (dgv_tabla_p.Rows[i].Cells["id"].Value.ToString().Equals(mm["ID_MEN"].ToString()) && !dgv_tabla_p.Rows[i].Cells["id"].Value.ToString().Equals("1"))
+                            if (dgv_tabla_p.Rows[i].Cells["id"].Value.ToString().Equals(mm["ID_MEN"].ToString()) && !dgv_tabla_p.Rows[i].Cells["id"].Value.ToString().Equals("1") &&
+                                dgv_tabla_p.Rows[i].Cells["idp"].Value.ToString().Equals(mm["ID"].ToString()))
                             {
                                 dgv_tabla_p.Rows[i].Visible = false;
                                 break;
@@ -464,12 +470,56 @@ namespace Principal_Internet_elvis.Pagos
             dr["%_DESCUENTO"] = "% " + 0;
 
             dr["CANTIDAD"] = 1;
-            dr["MONTO"] = mora.ToString("L.0.00");
+            dr["MONTO"] = mora.ToString("L0.00");
             dr["ID_MEN"] = id_men;
 
             dt.Rows.Add(dr);
         }
 
+        private void txt_meses_adelantados_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cb_meses_adelantdos_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(cb_meses_adelantdos.Checked == true)
+                {
+                    if (txt_meses_adelantados.Text == "")
+                    {
+                        cb_meses_adelantdos.Checked = false;
+                        MessageBox.Show("Escriba la cantidad de meses adelantados.");
+                        txt_meses_adelantados.Focus();
+                    }
+                    else
+                    {
+                        int i = int.Parse(txt_meses_adelantados.Text);
+                    }
+                }
+            }catch(Exception)
+            {
+                cb_meses_adelantdos.Checked = false;
+                MessageBox.Show("Escriba la cantidad de meses adelantados.");
+                txt_meses_adelantados.Focus();
+            }
+        }
 
         private void limpiarPaquete()
         {
@@ -489,14 +539,26 @@ namespace Principal_Internet_elvis.Pagos
             totalpagar = 0;
             subtotal = 0;
             descuento = 0;
+            gravado = 0;
             mora = 0;
+            impuesto = 0;
             for(int i = 0; i < dt.Rows.Count; i++)
             {
                 subtotal += float.Parse(dt.Rows[i]["TOTAL"].ToString());
                 descuento += float.Parse(dt.Rows[i]["DESCUENTO"].ToString());
                 impuesto += float.Parse(dt.Rows[i]["ISV"].ToString());
+                if(float.Parse(dt.Rows[i]["ISV"].ToString()) == 0)
+                {
+                    gravado += float.Parse(dt.Rows[i]["TOTAL"].ToString());
+                }
             }
+
             totalpagar = subtotal - descuento;
+
+            float isv = Program.menu.isv;
+            isv = (isv / 100) + 1;
+
+            gravado = (totalpagar - gravado) / isv;
 
             txt_totalpagar.Text = totalpagar.ToString("L0.00");
 
@@ -505,7 +567,7 @@ namespace Principal_Internet_elvis.Pagos
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if(idfactura == null)
+            if(idfactura == -1)
             {
                 MessageBox.Show("No hay niguna factura hecha actualmente.");
                 return;
@@ -582,28 +644,29 @@ namespace Principal_Internet_elvis.Pagos
             conn.abrir();
             List<string> campos = new List<string>();
             campos.Add("" + int.Parse(txt_codigo_c.Text));
-            campos.Add("" + Program.principal.ide);
+            campos.Add("" + Program.menu.ide);
             campos.Add("'" + txt_nombre_c.Text + "'");
             campos.Add("'" + txt_rtn_c.Text + "'");
             campos.Add("'" + dtp_fechaemision.Value.ToString("yyyy/MM/dd hh:mm:ss") + "'");
-            campos.Add("" + Program.principal.idu);
-            campos.Add("'" + Program.principal.nombre + "'");
+            campos.Add("" + Program.menu.idu);
+            campos.Add("'" + Program.menu.nombre + "'");
             campos.Add("'CONTADO'");
             campos.Add("'" + cb_tipopago.Text + "'");
-            campos.Add("" + subtotal);
-            campos.Add("" + impuesto);
+            campos.Add("" + subtotal.ToString("0.00").Replace(",","."));
+            campos.Add("" + impuesto.ToString("0.00").Replace(",", "."));
             campos.Add("" + 0);
-            campos.Add("" + descuento);
+            campos.Add("" + descuento.ToString("0.00").Replace(",", "."));
             campos.Add("" + 0);
             campos.Add("" + 0);
-            campos.Add("" + txt_efectivo.Text); // efectivo
-            campos.Add("" + txt_cambio.Text); // cambio
+            campos.Add("" + txt_efectivo.Text.Replace(",", ".")); // efectivo
+            campos.Add("" + txt_cambio.Text.Replace(",", ".")); // cambio
             Conv c = new Conv();
             campos.Add("'" + c.enletras(""+totalpagar) + "'"); // letras
-            campos.Add("" + totalpagar);
+            campos.Add("" + totalpagar.ToString("0.00").Replace(",", "."));
             campos.Add("" + 1);
-            campos.Add("" + Program.principal.desde_e);
-            campos.Add("" + Program.principal.hasta_e);
+            campos.Add("" + Program.menu.desde_e);
+            campos.Add("" + Program.menu.hasta_e);
+            campos.Add("" + gravado.ToString("0.00").Replace(",", "."));
             List<Capsula> m = conn.insertar("sp_insertar_factura", campos);
             conn.cerrar();
             foreach (Capsula i in m)
@@ -651,17 +714,17 @@ namespace Principal_Internet_elvis.Pagos
             ConexionDB conn = new ConexionDB();
             conn.abrir();
             List<string> campos = new List<string>();
-            campos.Add("" + Program.principal.idu);
+            campos.Add("" + Program.menu.idu);
             campos.Add("" + int.Parse(txt_codigo_c.Text));
             campos.Add("" + idclientepa);
             campos.Add("" + idfactura);
-            campos.Add("'" + Program.principal.nombre + "'");
+            campos.Add("'" + Program.menu.nombre + "'");
             campos.Add("'" + descrip + "'");
             campos.Add("'" + fecha + "'");
             campos.Add("'" + mes + "'");
-            campos.Add("" + monto);
-            campos.Add("" + descuent);
-            campos.Add("" + isv);
+            campos.Add("" + monto.ToString("0.00").Replace(",", "."));
+            campos.Add("" + descuent.ToString("0.00").Replace(",", "."));
+            campos.Add("" + isv.ToString("0.00").Replace(",", "."));
             campos.Add("" + estado);
 
             conn.insertar("sp_insertar_detallefactura", campos);

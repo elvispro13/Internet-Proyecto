@@ -54,7 +54,8 @@ namespace Principal_Internet_elvis.Configuraciones
                                         txt_moneda.Text,
                                         1,
                                         float.Parse(txt_mora.Text),
-                                        int.Parse(txt_dias_mora.Text));
+                                        int.Parse(txt_dias_mora.Text),
+                                        float.Parse(txt_isv.Text));
             conn.cerrar();
             for (int i = 0; i < m.Rows.Count; i++)
             {
@@ -78,7 +79,7 @@ namespace Principal_Internet_elvis.Configuraciones
         {
             ConexionDB conn = new ConexionDB();
             conn.abrir();
-            DataTable m = conn.empresa(null, null, null, null, null, null, null, null, null, null, 2,0,0);
+            DataTable m = conn.empresa(null, null, null, null, null, null, null, null, null, null, 2,0,0,0);
             conn.cerrar();
             for (int i = 0; i < m.Rows.Count; i++)
             {
@@ -93,6 +94,7 @@ namespace Principal_Internet_elvis.Configuraciones
                 txt_moneda.Text = m.Rows[i]["moneda"].ToString();
                 txt_mora.Text = m.Rows[i]["mora"].ToString();
                 txt_dias_mora.Text = m.Rows[i]["dias_mora"].ToString();
+                txt_isv.Text = m.Rows[i]["isv"].ToString();
 
                 byte[] logo = (byte[])m.Rows[i]["logo"];
                 MemoryStream ms = new MemoryStream(logo);

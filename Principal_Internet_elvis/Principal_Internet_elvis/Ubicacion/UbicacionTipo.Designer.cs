@@ -43,11 +43,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.bt_salir);
             this.groupBox1.Controls.Add(this.bt_sector);
             this.groupBox1.Controls.Add(this.bt_barrio);
             this.groupBox1.Controls.Add(this.bt_lugar);
-            this.groupBox1.Location = new System.Drawing.Point(102, 327);
+            this.groupBox1.Location = new System.Drawing.Point(525, 510);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(543, 90);
             this.groupBox1.TabIndex = 0;
@@ -100,10 +101,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txt_buscar);
-            this.groupBox2.Location = new System.Drawing.Point(651, 346);
+            this.groupBox2.Location = new System.Drawing.Point(659, 436);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(306, 46);
+            this.groupBox2.Size = new System.Drawing.Size(409, 46);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BUSCAR UBICACIONES";
@@ -114,7 +116,7 @@
             this.txt_buscar.Location = new System.Drawing.Point(6, 19);
             this.txt_buscar.MaxLength = 255;
             this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(294, 20);
+            this.txt_buscar.Size = new System.Drawing.Size(393, 20);
             this.txt_buscar.TabIndex = 2;
             this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
             // 
@@ -122,15 +124,18 @@
             // 
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla.Location = new System.Drawing.Point(102, 46);
+            this.dgv_tabla.Location = new System.Drawing.Point(12, 12);
             this.dgv_tabla.MultiSelect = false;
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(870, 275);
+            this.dgv_tabla.Size = new System.Drawing.Size(1056, 418);
             this.dgv_tabla.TabIndex = 2;
             // 
             // UbicacionTipo

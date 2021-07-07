@@ -93,6 +93,12 @@
     <Compile Include="Configuraciones\ConfiguracionLogo.Designer.cs">
       <DependentUpon>ConfiguracionLogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuraciones\ServidorConexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuraciones\ServidorConexion.Designer.cs">
+      <DependentUpon>ServidorConexion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conv.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -101,6 +107,7 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Data.cs" />
+    <Compile Include="DatosConexionSql.cs" />
     <Compile Include="FirebaseConexion.cs" />
     <Compile Include="HacerPing.cs">
       <SubType>Form</SubType>
@@ -163,6 +170,12 @@
     </Compile>
     <Compile Include="Paquetes\PaquetesTipo.Designer.cs">
       <DependentUpon>PaquetesTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Permisos.Designer.cs">
+      <DependentUpon>Permisos.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -255,6 +268,9 @@
     <EmbeddedResource Include="Configuraciones\ConfiguracionLogo.resx">
       <DependentUpon>ConfiguracionLogo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuraciones\ServidorConexion.resx">
+      <DependentUpon>ServidorConexion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Paquetes\PaquetesTipo.resx">
       <DependentUpon>PaquetesTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permisos.resx">
+      <DependentUpon>Permisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

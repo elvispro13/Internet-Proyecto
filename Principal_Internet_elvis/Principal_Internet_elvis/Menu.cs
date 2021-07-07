@@ -28,14 +28,17 @@ namespace Principal_Internet_elvis
 {
     public partial class Menu : Form
     {
+
         public int idu;
         public string user, clave, desc, nombre, mora, dias_mora;
         public Font fuente;
         public Image logo;
+        public Dictionary<int, string> permisos = new Dictionary<int, string>();
 
         //empresa
         public string nombre_e, eslogan_e, rtn_e, cai_e, correo_e, fechalimite_e;
         public int desde_e, hasta_e, ide;
+        public float isv;
 
         public Menu()
         {
@@ -89,14 +92,51 @@ namespace Principal_Internet_elvis
 
         public void activarConUser()
         {
-            bt_pagos.Enabled = true;
-            bt_clientes.Enabled = true;
-            bt_contratos.Enabled = true;
-            bt_paquetes.Enabled = true;
-            bt_facturas.Enabled = true;
-            bt_ubicacion.Enabled = true;
-            bt_reportes.Enabled = true;
-            bt_configuracion.Enabled = true;
+            bool confg = false;
+            for(int i = 1; i <= 17; i++)
+            {
+                try
+                {
+                    string m = permisos[i];
+                    switch (i)
+                    {
+                        case 1:
+                            bt_pagos.Enabled = true;
+                            break;
+                        case 3:
+                            bt_clientes.Enabled = true;
+                            break;
+                        case 5:
+                            bt_contratos.Enabled = true;
+                            break;
+                        case 8:
+                            bt_paquetes.Enabled = true;
+                            break;
+                        case 10:
+                            bt_facturas.Enabled = true;
+                            break;
+                        case 12:
+                            bt_ubicacion.Enabled = true;
+                            break;
+                        case 14:
+                            bt_reportes.Enabled = true;
+                            break;
+                        case 15:
+                        case 16:
+                        case 17:
+                            confg = true;
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+
+            bt_inicio.Enabled = true;
+            bt_configuracion.Enabled = confg;
+
             if (logo != null)
             {
                 img_logo.Image = logo;

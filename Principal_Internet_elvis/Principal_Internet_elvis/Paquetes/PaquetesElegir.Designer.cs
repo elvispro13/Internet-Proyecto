@@ -40,6 +40,13 @@
             this.gb_instalacion = new System.Windows.Forms.GroupBox();
             this.txt_intalacion = new System.Windows.Forms.TextBox();
             this.gb_datos = new System.Windows.Forms.GroupBox();
+            this.gb_mora = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_dias_mora = new System.Windows.Forms.TextBox();
+            this.txt_mora = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.bt_ping = new System.Windows.Forms.Button();
             this.gb_fecha_pago = new System.Windows.Forms.GroupBox();
             this.dtp_fecha_pago = new System.Windows.Forms.DateTimePicker();
@@ -61,8 +68,6 @@
             this.txt_max_limit_1 = new System.Windows.Forms.TextBox();
             this.gb_gateway = new System.Windows.Forms.GroupBox();
             this.txt_gateway = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.bt_actualizar = new System.Windows.Forms.Button();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_aceptar = new System.Windows.Forms.Button();
@@ -72,6 +77,7 @@
             this.gb_ip.SuspendLayout();
             this.gb_instalacion.SuspendLayout();
             this.gb_datos.SuspendLayout();
+            this.gb_mora.SuspendLayout();
             this.gb_fecha_pago.SuspendLayout();
             this.gb_burst_time.SuspendLayout();
             this.gb_burst_threshold.SuspendLayout();
@@ -84,6 +90,9 @@
             // 
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -103,7 +112,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_tabla.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_tabla.Location = new System.Drawing.Point(379, 29);
+            this.dgv_tabla.Location = new System.Drawing.Point(211, 12);
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -115,16 +124,17 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(478, 350);
+            this.dgv_tabla.Size = new System.Drawing.Size(841, 483);
             this.dgv_tabla.TabIndex = 13;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txt_buscar);
-            this.groupBox1.Location = new System.Drawing.Point(382, 387);
+            this.groupBox1.Location = new System.Drawing.Point(281, 501);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(239, 47);
+            this.groupBox1.Size = new System.Drawing.Size(363, 47);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BUSCAR";
@@ -134,7 +144,7 @@
             this.txt_buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_buscar.Location = new System.Drawing.Point(6, 19);
             this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Size = new System.Drawing.Size(227, 20);
+            this.txt_buscar.Size = new System.Drawing.Size(351, 20);
             this.txt_buscar.TabIndex = 0;
             this.txt_buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyDown);
             // 
@@ -176,6 +186,7 @@
             // 
             // gb_datos
             // 
+            this.gb_datos.Controls.Add(this.gb_mora);
             this.gb_datos.Controls.Add(this.label6);
             this.gb_datos.Controls.Add(this.label5);
             this.gb_datos.Controls.Add(this.bt_ping);
@@ -187,12 +198,75 @@
             this.gb_datos.Controls.Add(this.gb_max_limit);
             this.gb_datos.Controls.Add(this.gb_gateway);
             this.gb_datos.Controls.Add(this.gb_ip);
-            this.gb_datos.Location = new System.Drawing.Point(180, 24);
+            this.gb_datos.Location = new System.Drawing.Point(12, 12);
             this.gb_datos.Name = "gb_datos";
-            this.gb_datos.Size = new System.Drawing.Size(193, 436);
+            this.gb_datos.Size = new System.Drawing.Size(193, 498);
             this.gb_datos.TabIndex = 11;
             this.gb_datos.TabStop = false;
             this.gb_datos.Text = "DATOS";
+            // 
+            // gb_mora
+            // 
+            this.gb_mora.Controls.Add(this.label8);
+            this.gb_mora.Controls.Add(this.label7);
+            this.gb_mora.Controls.Add(this.txt_dias_mora);
+            this.gb_mora.Controls.Add(this.txt_mora);
+            this.gb_mora.Location = new System.Drawing.Point(6, 436);
+            this.gb_mora.Name = "gb_mora";
+            this.gb_mora.Size = new System.Drawing.Size(178, 56);
+            this.gb_mora.TabIndex = 11;
+            this.gb_mora.TabStop = false;
+            this.gb_mora.Text = "MORA";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(86, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(28, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Dias";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Monto";
+            // 
+            // txt_dias_mora
+            // 
+            this.txt_dias_mora.Location = new System.Drawing.Point(96, 30);
+            this.txt_dias_mora.Name = "txt_dias_mora";
+            this.txt_dias_mora.Size = new System.Drawing.Size(72, 20);
+            this.txt_dias_mora.TabIndex = 11;
+            // 
+            // txt_mora
+            // 
+            this.txt_mora.Location = new System.Drawing.Point(6, 30);
+            this.txt_mora.Name = "txt_mora";
+            this.txt_mora.Size = new System.Drawing.Size(72, 20);
+            this.txt_mora.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(116, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Bajada";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 129);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Subida";
             // 
             // bt_ping
             // 
@@ -379,51 +453,45 @@
             this.txt_gateway.Size = new System.Drawing.Size(164, 20);
             this.txt_gateway.TabIndex = 1;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(116, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Bajada";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 129);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Subida";
-            // 
             // bt_actualizar
             // 
+            this.bt_actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_actualizar.Image = global::Principal_Internet_elvis.Properties.Resources.lupa_chiquito;
-            this.bt_actualizar.Location = new System.Drawing.Point(624, 385);
+            this.bt_actualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_actualizar.Location = new System.Drawing.Point(650, 501);
             this.bt_actualizar.Name = "bt_actualizar";
-            this.bt_actualizar.Size = new System.Drawing.Size(77, 60);
+            this.bt_actualizar.Size = new System.Drawing.Size(130, 60);
             this.bt_actualizar.TabIndex = 10;
+            this.bt_actualizar.Text = "BUSCAR";
+            this.bt_actualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_actualizar.UseVisualStyleBackColor = true;
             this.bt_actualizar.Click += new System.EventHandler(this.bt_actualizar_Click);
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Image = global::Principal_Internet_elvis.Properties.Resources.emblemunreadable_93487;
-            this.bt_cancelar.Location = new System.Drawing.Point(787, 385);
+            this.bt_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_cancelar.Image = global::Principal_Internet_elvis.Properties.Resources._8;
+            this.bt_cancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_cancelar.Location = new System.Drawing.Point(922, 501);
             this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(69, 60);
+            this.bt_cancelar.Size = new System.Drawing.Size(130, 60);
             this.bt_cancelar.TabIndex = 2;
+            this.bt_cancelar.Text = "SALIR";
+            this.bt_cancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_cancelar.UseVisualStyleBackColor = true;
             this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
             // bt_aceptar
             // 
+            this.bt_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_aceptar.Image = global::Principal_Internet_elvis.Properties.Resources.savetheapplication_guardar_2958;
-            this.bt_aceptar.Location = new System.Drawing.Point(707, 385);
+            this.bt_aceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_aceptar.Location = new System.Drawing.Point(786, 501);
             this.bt_aceptar.Name = "bt_aceptar";
-            this.bt_aceptar.Size = new System.Drawing.Size(74, 60);
+            this.bt_aceptar.Size = new System.Drawing.Size(130, 60);
             this.bt_aceptar.TabIndex = 1;
+            this.bt_aceptar.Text = "GUARDAR";
+            this.bt_aceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_aceptar.UseVisualStyleBackColor = true;
             this.bt_aceptar.Click += new System.EventHandler(this.bt_aceptar_Click);
             // 
@@ -459,6 +527,8 @@
             this.gb_instalacion.PerformLayout();
             this.gb_datos.ResumeLayout(false);
             this.gb_datos.PerformLayout();
+            this.gb_mora.ResumeLayout(false);
+            this.gb_mora.PerformLayout();
             this.gb_fecha_pago.ResumeLayout(false);
             this.gb_burst_time.ResumeLayout(false);
             this.gb_burst_time.PerformLayout();
@@ -511,5 +581,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer tm_inicio;
+        private System.Windows.Forms.GroupBox gb_mora;
+        private System.Windows.Forms.TextBox txt_mora;
+        private System.Windows.Forms.TextBox txt_dias_mora;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

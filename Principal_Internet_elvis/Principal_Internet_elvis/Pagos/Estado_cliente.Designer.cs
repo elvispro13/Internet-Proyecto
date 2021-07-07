@@ -52,23 +52,27 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dgv_tabla);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(88, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(859, 439);
+            this.groupBox1.Size = new System.Drawing.Size(1040, 500);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ESTADO DEL CONTRATO";
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.txt_buscar);
             this.groupBox4.Controls.Add(this.bt_buscar);
-            this.groupBox4.Location = new System.Drawing.Point(436, 17);
+            this.groupBox4.Location = new System.Drawing.Point(617, 17);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(417, 62);
             this.groupBox4.TabIndex = 8;
@@ -142,6 +146,9 @@
             // 
             this.dgv_tabla.AllowUserToAddRows = false;
             this.dgv_tabla.AllowUserToDeleteRows = false;
+            this.dgv_tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_tabla.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -150,16 +157,17 @@
             this.dgv_tabla.Name = "dgv_tabla";
             this.dgv_tabla.ReadOnly = true;
             this.dgv_tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tabla.Size = new System.Drawing.Size(847, 302);
+            this.dgv_tabla.Size = new System.Drawing.Size(1028, 363);
             this.dgv_tabla.TabIndex = 1;
             this.dgv_tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tabla_CellClick);
             // 
             // btnSalir
             // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Image = global::Principal_Internet_elvis.Properties.Resources._8;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(821, 457);
+            this.btnSalir.Location = new System.Drawing.Point(932, 518);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(120, 66);
             this.btnSalir.TabIndex = 2;
@@ -170,10 +178,11 @@
             // 
             // bt_estado
             // 
+            this.bt_estado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_estado.Image = global::Principal_Internet_elvis.Properties.Resources._9;
             this.bt_estado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_estado.Location = new System.Drawing.Point(617, 457);
+            this.bt_estado.Location = new System.Drawing.Point(728, 518);
             this.bt_estado.Name = "bt_estado";
             this.bt_estado.Size = new System.Drawing.Size(198, 66);
             this.bt_estado.TabIndex = 3;
@@ -184,21 +193,23 @@
             // 
             // bt_ping
             // 
-            this.bt_ping.Location = new System.Drawing.Point(446, 457);
+            this.bt_ping.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_ping.Location = new System.Drawing.Point(559, 518);
             this.bt_ping.Name = "bt_ping";
             this.bt_ping.Size = new System.Drawing.Size(163, 66);
             this.bt_ping.TabIndex = 4;
-            this.bt_ping.Text = "Hacer ping";
+            this.bt_ping.Text = "HACER PING";
             this.bt_ping.UseVisualStyleBackColor = true;
             this.bt_ping.Click += new System.EventHandler(this.bt_ping_Click);
             // 
             // bt_antena
             // 
-            this.bt_antena.Location = new System.Drawing.Point(277, 457);
+            this.bt_antena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_antena.Location = new System.Drawing.Point(390, 518);
             this.bt_antena.Name = "bt_antena";
             this.bt_antena.Size = new System.Drawing.Size(163, 66);
             this.bt_antena.TabIndex = 5;
-            this.bt_antena.Text = "Abrir antena";
+            this.bt_antena.Text = "ABRIR ANTENA";
             this.bt_antena.UseVisualStyleBackColor = true;
             this.bt_antena.Click += new System.EventHandler(this.bt_antena_Click);
             // 
